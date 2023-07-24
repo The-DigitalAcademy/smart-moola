@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup} from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router'
+import { Users } from 'src/app/interface/users';
+import { UsersService } from 'src/app/services/users.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -11,38 +15,69 @@ import { NgForm } from '@angular/forms';
 export class RegisterComponent implements OnInit {
   userService: any;
 
-  // form: FormGroup;
+  fb!:FormGroup;
+  users!:Users;
+  regInvalid = false;
 
-  constructor(private fb: FormBuilder) {
-    // this.form = this.fb.group({
-    //   name: ['', Validators.required],
-    //   surname: ['', Validators.required],
-    //   email: ['', [Validators.required, Validators.email]],
-    //   phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-    //   password: ['', [Validators.required, Validators.minLength(8)]],
-    //   confirmPassword: ['', Validators.required]
-    // }, { validators: this.passwordMatchValidator });
-  }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+        constructor(
+          private usersService: UsersService,
+          private router: Router,
+          ) { }
 
-  submit(form : NgForm) {
+          ngOnInit(){
+            this.regInvalid = false;
 
-    this.userService.createUser(form.value)
-    console.log(form.value);
-    // you can send the form data to a server or perform any other action you need
-  }
+            this.fb = new FormGroup({
+      
+              fullname: new FormControl(null,[Validators.required,Validators.min(6)]),
+              email:new FormControl(null,[Validators.required,Validators.email]),
+              password:new FormControl(null,[Validators.required,Validators.min(8),this.passwordValidator]),
+              confirmpassword:new FormControl(null,[Validators.required,Validators.min(8),this.passwordValidator]),
+            });
+          }
 
-  passwordMatchValidator(form: FormGroup) {
-    const password = form.get('password');
-    const confirmPassword = form.get('confirmPassword');
-  
-    if (password && confirmPassword && password.value !== confirmPassword.value) {
-      confirmPassword.setErrors({ mismatch: true });
-    } else {
-      confirmPassword?.setErrors(null);
+    passwordValidator(control:FormControl):{[key:string]:boolean}|null{
+            const value : string = control.value;
+            const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(value);
+            const hasNumber = /\d/.test(value);
+            const hasLetter = /[a-zA-Z]/.test(value);
+      
+            if (!hasSymbol||!hasNumber||!hasLetter){
+              return {invalidPassword:true};
+            }
+              return null;
     }
-  }
-  
+
+    
+          onSubmit() {
+            
+          }
+          
+          register(){
+              if (this.fb.valid) {
+                this.usersService.createUser(this.fb.value).subscribe(res=>{
+                    this.users = res
+                    console.log(res);
+                    
+                });
+                Swal.fire({
+                  icon: 'success',
+                  title: 'Registration Successful!',
+                  text: 'You can now login',
+                  confirmButtonColor: '#38A3A5',
+                }).then((result)=>{
+                  if (result.value){
+                    this.router.navigate(["/login"])
+                  }})
+
+                  this.router.navigate(['/login']); 
+                      console.log("Register successful");       
+              } else {
+                this.regInvalid = true;
+                console.log("form invalid"); 
+              }
+          }
+      
+         
 }
+

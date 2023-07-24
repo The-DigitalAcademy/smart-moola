@@ -3,7 +3,7 @@ module.exports = (app) => {
   
     const router = require('express').Router();
   
-    router.post('/', users.create);
+    router.post('/signup', users.create);
     router.get('/', users.findAll);
     router.get('/:id', users.findOne);
     router.put('/:id', users.update);
