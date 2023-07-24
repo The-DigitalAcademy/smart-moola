@@ -18,12 +18,12 @@ import { RegisterComponent } from './components/register/register.component';
   
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
+    BrowserModule, 
+    AppRoutingModule, 
+    HttpClientModule, 
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
