@@ -6,8 +6,6 @@ require("./config/db.config")
 // Running Express Application 
 const app = express();
 
-const users = require("./routes/user.routes");
-
 var corsOptions = {
   origin: "*"
 };
@@ -18,14 +16,12 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', users);
+const users = require("./routes/user.routes");
+app.use("/api/users", users);
 
 const PORT = 4545;
 
-console.log(process.env.PGUSER, process.env.PGHOST, process.env.PGDATABASE, process.env.PGPASSWORD, process.env.PGPORT);
-
 app.listen(PORT, () => {
   console.log(`App running on port: ${PORT}`);
-})
+});
 
-console.log(process.env.PGUSER, process.env.PGHOST, process.env.PGDATABASE, process.env.PGPASSWORD, process.env.PGPORT);
