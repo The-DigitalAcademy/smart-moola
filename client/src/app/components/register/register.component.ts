@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  userService: any;
+
 
   fb!:FormGroup;
   users!:Users;
