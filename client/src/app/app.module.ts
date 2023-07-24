@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { RegisterTsComponent } from './service/register.ts/register.ts.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { RegisterTsComponent } from './service/register.ts/register.ts.component
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterTsComponent
+  
   ],
   imports: [
     BrowserModule,
