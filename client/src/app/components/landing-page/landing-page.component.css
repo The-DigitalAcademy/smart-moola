@@ -1,0 +1,148 @@
+.landing-page {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .group-wrapper {
+    border: 1px none;
+    height: 937px;
+    width: 430px;
+  }
+  
+  .group {
+    height: 937px;
+  }
+  
+  .landing {
+    height: 937px;
+    width: 430px;
+  }
+  
+  .overlap-group {
+    height: 937px;
+    position: relative;
+    width: 463px;
+  }
+  
+  .comp-instance {
+    left: 0 !important;
+    position: absolute !important;
+    top: 5px !important;
+  }
+  
+  .comp-nav-instance {
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+  }
+  
+  .design-component-instance-node {
+    border-radius: unset !important;
+  }
+  
+  .comp-but-instance {
+    left: 31px !important;
+    position: absolute !important;
+    top: 846px !important;
+    width: 362px !important;
+  }
+  
+  .comp-but-2 {
+    color: #ffffff !important;
+  }
+  
+  .ellipse {
+    background-color: #669bbc;
+    border-radius: 171px/184px;
+    height: 368px;
+    left: 45px;
+    position: absolute;
+    top: 320px;
+    width: 342px;
+  }
+  
+  .screenshot {
+    height: 449px;
+    left: 45px;
+    object-fit: cover;
+    position: absolute;
+    top: 279px;
+    width: 418px;
+  }
+  
+  .take-charge-of-your {
+    color: transparent;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    left: 161px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 569px;
+    width: 120px;
+  }
+  
+  .text-wrapper {
+    color: #669bbc;
+  }
+  
+  .span {
+    color: #222227;
+  }
+  
+  .div {
+    color: #669bbc;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-size: 12px;
+    font-weight: 800;
+    left: 174px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 395px;
+    width: 95px;
+  }
+  
+  .p {
+    color: #669bbc;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 162px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 423px;
+    width: 120px;
+  }
+  
+  .h-1 {
+    color: #669bbc;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-size: 48px;
+    font-weight: 800;
+    left: 33px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 141px;
+    width: 347px;
+  }
+  
+  .credit-card-mockup {
+    height: 98px;
+    left: 152px;
+    object-fit: cover;
+    position: absolute;
+    top: 469px;
+    width: 141px;
+  }
+  

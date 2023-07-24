@@ -1,0 +1,26 @@
+.comp-but {
+    align-items: center;
+    background-color: #669bbc;
+    border-radius: 5px;
+    display: flex;
+    gap: 6px;
+    height: 42px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px 24px;
+    position: relative;
+    width: 271px;
+  }
+  
+  .comp-but .submit {
+    color: #000000;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
