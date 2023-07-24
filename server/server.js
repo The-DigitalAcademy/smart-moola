@@ -2,6 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 require("./config/db.config")
+const sequelize = require("./config/db.config");
 
 // Running Express Application 
 const app = express();
@@ -21,7 +22,13 @@ app.use("/api/users", users);
 
 const PORT = 4545;
 
-app.listen(PORT, () => {
-  console.log(`App running on port: ${PORT}`);
-});
-
+sequelize
+  .sync()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`App running on port: ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Error synchronizing the database:', err);
+  });
