@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div class="container">
+    <h1>SmartMoola</h1>
+
+    <div class="users">
+        <label for="userType">What type of user are you:</label>
+        <select id="userType" [(ngModel)]="selectedUserType" name="userType">
+            <option *ngFor="let userType of userTypes" [value]="userType">{{ userType }}</option>
+        </select>
+    </div>
+
+</div>

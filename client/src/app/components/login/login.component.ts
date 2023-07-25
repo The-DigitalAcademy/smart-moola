@@ -1,67 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Users } from 'src/app/interface/users';
-import { UsersService } from 'src/app/services/users.service';
-import Swal from 'sweetalert2';
+import { UsersService } from '../../services/users.service';
+import { AuthGuardService } from '../../services/auth.guard';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit{
-  loginForm!:FormGroup;
-  users!: Users;
-  email!: string;
-  invalidCredentials = false;
+export class LoginComponent {
 
-  constructor( private auth: UsersService,
+  form!: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    private usersService: UsersService,
     private router: Router,
-    private formB : FormBuilder,
-    ) {
-      this.loginForm=this.formB.group({
-        email:['',[Validators.required,Validators.email]],
-        password:['',[Validators.required]],
-      });
-    }
-
-  ngOnInit() {
-
-    this.invalidCredentials = false;
+    private auth: AuthGuardService
+  ) {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+    });
   }
 
-  onLogin() {
+  submitForm() {
 
-    if (this.loginForm.valid) {       // Form is valid, perform login logic
+    if (this.form.valid) {
+      this.usersService.userLogin(this.form.value);
 
-    this.auth.login(this.loginForm.value).subscribe(response => {
-        // Handle the successful response here.
-        console.log("success");
-
-         Swal.fire({
-          icon: 'success',
-          title: 'Login Successful!',
-          text: 'You have successfully logged in.',
-          confirmButtonColor: '#38A3A5',
-        }).then((result)=>{
-          if (result.value){
-            this.router.navigate(["/home"])
-          }})
-
-      },
-      (error) => {
-        // Handle the error here or display it to the user.
-        console.error(error);
-      }
-    );
-
-   } else {
-    this.invalidCredentials = true;
-    console.log("Wrong credentials");
-   }
-
+    };
   }
-
 
 }
+

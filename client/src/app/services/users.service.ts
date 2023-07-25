@@ -1,7 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Users } from '../interface/users';
-import { Observable, catchError, throwError } from 'rxjs';
+import { LoginResponse, User, UserLogin } from '../interface/users';
+import { usersAPI } from 'src/environments/environment';
+import { Router } from '@angular/router';
+// import { usersAPI } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -9,25 +11,44 @@ import { Observable, catchError, throwError } from 'rxjs';
 
 export class UsersService {
 
-  private apiUrls = 'http://localhost:4500/';
+  usersURL: any = usersAPI;
 
-  // headers: any = new HttpHeaders({
-  //   'Content-Type': 'application/json'
-  // });
-  // options = { headers: this.headers };
-  constructor(private http: HttpClient) { }
+  headers: any = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
 
-  createUser(user: Users):Observable<any> {
-    return this.http.post('${this.apiUrls}/signup', user);
+  options = { headers: this.headers };
+
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) { }
+
+  createUser(user: User) {
+    this.http.post(`${this.usersURL}/postUser`, user, this.options).subscribe(data => {
+      console.log(data)
+    })
   }
 
-  login(credentials: { email: string, password: string }): Observable<any> {
-    return this.http.post('${this.apiUrls}/sign', credentials).pipe(
-      catchError((error: HttpErrorResponse) => {
-        // Handle the error here or rethrow it to be caught by the component.
-        return throwError(error.error.message);
-      })
-    );
+  userLogin(userLogin: UserLogin) {
+    this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options).subscribe((data) => {
+      console.log("userData", data.id);
+
+      const accessToken = data.accessToken;
+      const loggedInUserEmail = data.email;
+      const id = data.id;
+
+      localStorage.setItem('Token', accessToken);
+      localStorage.setItem('Email', loggedInUserEmail);
+      localStorage.setItem('id', id);
+
+      if (accessToken) {
+        this.router.navigate(['/home']);
+      } else {
+        this.router.navigate(['/landing']);
+      }
+
+    });
   }
 
 }
