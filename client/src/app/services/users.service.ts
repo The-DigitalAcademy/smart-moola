@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 // import { usersAPI } from 'src/environments/environment.prod';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 export class UsersService {
