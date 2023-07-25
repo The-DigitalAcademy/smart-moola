@@ -62,7 +62,6 @@ const getUserById = async (request, response) => {
     }
 };
 
-
 const updateUser = async (request, response) => {
     const id = parseInt(request.params.id);
     const { fullName, email, password } = request.body;
@@ -90,7 +89,6 @@ const updateUser = async (request, response) => {
     }
 };
 
-
 const deleteUser = async (request, response) => {
     const id = parseInt(request.params.id);
 
@@ -112,7 +110,6 @@ const deleteUser = async (request, response) => {
     }
 };
 
-
 const findOne = async (email) => {
     try {
         // Use Sequelize's 'findOne' method to find a user by email
@@ -122,7 +119,6 @@ const findOne = async (email) => {
         throw error;
     }
 };
-
 
 const login = async (req, res) => {
     try {

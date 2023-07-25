@@ -29,7 +29,7 @@ const User = sequelize.define('users', {
 });
 
 // Create the table if it doesn't exist
-User.sync({ force: false })
+User.sync({ force: true })
     .then(() => {
         console.log('Users table created successfully.');
     })
