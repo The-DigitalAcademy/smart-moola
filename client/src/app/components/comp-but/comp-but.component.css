@@ -23,4 +23,12 @@
     white-space: nowrap;
     width: fit-content;
   }
+
+  .center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height of the container to full viewport height */
+  }
+  
   
