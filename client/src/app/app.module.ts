@@ -10,6 +10,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
+import { AuthGuardService } from '../app/services/auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,15 +21,23 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
     LoginComponent,
     RegisterComponent,
     LandingPageComponent
-  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        }
+      }
+    }),
+
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthGuardService],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

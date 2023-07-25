@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
 import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-// import { HomeComponent } from './components/home/home.component'; // Replace 'HomeComponent' with the actual component for your homepage
-
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
 
-  {path:'register', component: RegisterComponent},
-  {path:'landing', component: LandingPageComponent},
- // {path:'',redirectTo: 'home', pathMatch: 'full'} 
- // { path: 'home', component: HomeComponent } 
-
+  { path: '', redirectTo: 'landing', pathMatch: 'full' },
+  { path: 'landing', component: LandingPageComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent },
 ];
 
 @NgModule({
