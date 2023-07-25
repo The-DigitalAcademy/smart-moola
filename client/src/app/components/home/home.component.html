@@ -4,7 +4,7 @@
     <div class="users">
         <label for="userType">What type of user are you:</label>
         <select id="userType" [(ngModel)]="selectedUserType" name="userType">
-            <option *ngFor="let userType of userTypes" [value]="userType">{{ userType }}</option>
+            <option *ngFor="let userType of userTypes" [value]="userType" class="userOptions">{{ userType }}</option>
         </select>
     </div>
 </div>
