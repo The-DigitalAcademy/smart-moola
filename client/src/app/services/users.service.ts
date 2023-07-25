@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginResponse, User, UserLogin } from '../interface/users';
+import { LoginResponse, Users, UserLogin } from '../interface/users';
 import { usersAPI } from 'src/environments/environment';
 import { Router } from '@angular/router';
 // import { usersAPI } from 'src/environments/environment.prod';
@@ -24,7 +24,7 @@ export class UsersService {
     private router: Router
   ) { }
 
-  createUser(user: User) {
+  createUser(user: Users) {
     this.http.post(`${this.usersURL}/postUser`, user, this.options).subscribe(data => {
       console.log(data)
     })

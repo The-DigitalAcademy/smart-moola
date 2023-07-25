@@ -57,6 +57,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UsersService } from '../../services/users.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -65,6 +66,7 @@ import { UsersService } from '../../services/users.service';
 export class RegisterComponent {
 
   form: FormGroup;
+  router: any;
 
   constructor(
     private fb: FormBuilder,
@@ -94,6 +96,7 @@ export class RegisterComponent {
     if (this.form.valid) {
       this.userService.createUser(this.form.value)
       console.log(this.form.value);
+
     }
   }
 
