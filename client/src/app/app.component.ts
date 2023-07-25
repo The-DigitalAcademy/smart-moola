@@ -23,7 +23,7 @@ export class AppComponent {
   }
 
   public addNumber () {
-    this.valueService.addValue(this.number)?.subscribe(_ => {
+    this.valueService.addValue(this.number)?.subscribe((_: any) => {
       this.getNumbers();
     });
     
