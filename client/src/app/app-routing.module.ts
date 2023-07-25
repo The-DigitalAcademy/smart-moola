@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'getstarted', component: GetstartedPageComponent}
-  // { path: '', redirectTo: 'home', pathMatch: 'full' }
+ 
 ];
 
 @NgModule({
