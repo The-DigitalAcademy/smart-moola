@@ -13,6 +13,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
+import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AuthGuardService } from '../app/services/auth.guard';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    GetstartedPageComponent
   ],
   imports: [
     BrowserModule,

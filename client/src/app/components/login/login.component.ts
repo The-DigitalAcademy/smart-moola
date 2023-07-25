@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { AuthGuardService } from '../../services/auth.guard';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -30,6 +31,14 @@ export class LoginComponent {
 
     if (this.form.valid) {
       this.usersService.userLogin(this.form.value);
+
+      Swal.fire({
+        icon: 'success',
+        title: 'Login Successful!',
+      }).then((result)=>{
+        if (result.value){
+          this.router.navigate(["/home"])
+        }})
 
     };
   }
