@@ -9,11 +9,6 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { CompComponent } from './components/comp/comp.component';
-import { CompButComponent } from './components/comp-but/comp-but.component';
-import { CompNavComponent } from './components/comp-nav/comp-nav.component';
-
-
 
 @NgModule({
   declarations: [
@@ -21,10 +16,7 @@ import { CompNavComponent } from './components/comp-nav/comp-nav.component';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    LandingPageComponent,
-    CompComponent,
-    CompButComponent,
-    CompNavComponent
+    LandingPageComponent
   
   ],
   imports: [
