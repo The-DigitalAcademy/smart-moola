@@ -1,0 +1,181 @@
+.container {
+  height: 100vh;
+  position: fixed;
+}
+
+.getting-started {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.getting-started .overlap-wrapper {
+  border: 1px none;
+  height: 932px;
+  width: 430px;
+}
+
+.getting-started .overlap-group {
+  height: 932px;
+  position: relative;
+}
+
+.getting-started .design-component-instance-node {
+  border-radius: unset !important;
+}
+
+.getting-started .comp-nav-wrapper {
+  background-color: #ffffff;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 430px;
+}
+
+.getting-started .comp-nav-2 {
+  height: 91px !important;
+}
+
+.getting-started .join-us-on-this-game {
+  color: #669bbc;
+  font-family: "Inter-Bold", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  height: 118px;
+  left: 29px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: fixed;
+  text-align: center;
+  top: 26em;
+  width: 355px;
+}
+
+.getting-started .overlap-group-wrapper {
+  height: 38px;
+  left: 35px;
+  position: absolute;
+  top: 792px;
+  width: 347px;
+}
+
+.getting-started .overlap {
+  height: 38px;
+  position: relative;
+}
+
+.getting-started .div-wrapper {
+  height: 38px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 177px;
+}
+
+.getting-started .div {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #003049;
+  height: 38px;
+  position: relative;
+  width: 175px;
+}
+
+.getting-started .text-wrapper {
+  color: #000000;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 57px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: right;
+  top: 10px;
+  white-space: nowrap;
+  width: 60px;
+}
+
+.getting-started .group-wrapper {
+  height: 38px;
+  left: 175px;
+  position: absolute;
+  top: 0;
+  width: 171px
+}
+
+.getting-started .group-2 {
+  height: 38px;
+  width: 173px;
+}
+
+.getting-started .overlap-group-2 {
+  background-color: #669bbc;
+  border: 1px solid;
+  border-color: #003049;
+  height: 38px;
+  position: absolute;
+  width: 171px;
+}
+
+.getting-started .text-wrapper-2 {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 14px;
+  font-weight: 400;
+  left: 62px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 10px;
+  white-space: nowrap;
+  width: 46px;
+}
+
+.submit {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  background-color: #669BBC;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  position: fixed;
+  top: 38em;
+}
+
+.submit:hover {
+  background-color: #669BBC;
+}
+
+.ellipse {
+  background-color: #669bbc;
+  border-radius: 171px/184px;
+  height: 22em;
+  width: 23em;
+  left: 1.5em;
+  position: absolute;
+  top: 377px;
+  margin-top: -16em;
+
+}
+
+.getStartedImg {
+  height: 32em;
+  width: 35em;
+  position: absolute;
+  top: -10em;
+  left: -6em;
+}
+
+.anchor {
+  display: inline-block;
+  background-color: pink;
+
+}
