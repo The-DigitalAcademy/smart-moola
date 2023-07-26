@@ -50,7 +50,7 @@
   line-height: normal;
   position: fixed;
   text-align: center;
-  top: 26em;
+  top: 26.5em;
   width: 355px;
 }
 
@@ -146,12 +146,23 @@
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  position: fixed;
-  top: 38em;
 }
 
 .submit:hover {
   background-color: #669BBC;
+}
+
+.navigation{
+  position: fixed;
+  top: 38em;
+  display: block;
+  width: 97%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 }
 
 .ellipse {
