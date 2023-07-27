@@ -170,9 +170,11 @@
   color: #000000;
 }
 .navigation {
-  position: fixed;
+  // position: fixed;
   margin-left: 0.5em;
-  top: 38em;
+  // top: 38em;
+  position: fixed;
+  top: 44em;
   white-space: nowrap;
 }
 
