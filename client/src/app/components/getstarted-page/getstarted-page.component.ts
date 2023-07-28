@@ -4,8 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-getstarted-page',
   templateUrl: './getstarted-page.component.html',
 
-  styleUrls: ['./getstarted-page.component.css']
-
   styleUrls: ['./getstarted-page.component.scss']
 
 })

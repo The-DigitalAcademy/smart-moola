@@ -58,9 +58,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../../services/users.service';
 
 import Swal from 'sweetalert2';
-=======
-// import Swal from 'sweetalert2';
-import Swal, { SweetAlertResult } from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
