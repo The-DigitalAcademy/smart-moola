@@ -65,36 +65,6 @@ export class UsersService {
     );
   }
 
-  // generateOTP(): number {
-  //   return Math.floor(100000 + Math.random() * 900000);
-  // }  
-
-  // updateUser(user: User) {
-  //   // Make an HTTP PUT request to update the user on the backend
-  //   // Assuming the backend API is at 'usersAPI' endpoint
-  //   this.http.put(`${usersAPI}/${user.id}`, user).subscribe(
-  //     (response) => {
-  //       console.log('User updated successfully:', response);
-
-  //       // After updating the user, trigger the email sending from the backend
-  //       // You can make another HTTP request to the backend API to trigger the email sending
-  //       this.http
-  //         .post(`${usersAPI}/send-email`, { email: user.email })
-  //         .subscribe(
-  //           (response) => {
-  //             console.log('Email sent:', response);
-  //           },
-  //           (error) => {
-  //             console.log('Error sending email:', error);
-  //           }
-  //         );
-  //     },
-  //     (error) => {
-  //       console.log('Error updating user:', error);
-  //     }
-  //   );
-  // }
-
     // Method to trigger email sending
     sendEmail(email: string) {
       // Make an HTTP POST request to the backend API to trigger the email sending
