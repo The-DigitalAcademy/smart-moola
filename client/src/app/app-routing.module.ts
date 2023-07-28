@@ -5,7 +5,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
+
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
+
 
 const routes: Routes = [
 
@@ -14,8 +16,11 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
+
+  { path: 'getstarted', component: GetstartedPageComponent}
   { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'resetpassword', component: PasswordResetComponent }
+
 
 ];
 

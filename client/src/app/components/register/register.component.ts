@@ -56,9 +56,11 @@ import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UsersService } from '../../services/users.service';
+
+import Swal from 'sweetalert2';
+=======
 // import Swal from 'sweetalert2';
 import Swal, { SweetAlertResult } from 'sweetalert2';
-
 
 @Component({
   selector: 'app-register',
@@ -97,14 +99,16 @@ export class RegisterComponent {
   submitForm() {
     if (this.form.valid) {
       this.userService.createUser(this.form.value)
-      // console.log(this.form.value);
 
+      // console.log(this.form.value);
+      console.log(this.form.value);
       Swal.fire({
         icon: 'success',
         title: 'registered Successful!',
       }).then((result)=>{
         if (result.value){
           this.router.navigate(["/login"])
+          this.router.navigate(["home"])
         }})
 
     }
