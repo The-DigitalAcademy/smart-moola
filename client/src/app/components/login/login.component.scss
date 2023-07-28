@@ -5,9 +5,9 @@
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     height: 100vh;
 }
 
@@ -21,7 +21,6 @@ form {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 .container input::placeholder {
@@ -30,7 +29,7 @@ form {
 
 h2 {
     text-align: center;
-    margin-bottom: 2.4em;
+    // margin-bottom: 2.4em;
     color: #669BBC;
 }
 
