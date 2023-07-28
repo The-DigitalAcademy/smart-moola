@@ -15,6 +15,9 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,9 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
     LoginComponent,
     RegisterComponent,
     LandingPageComponent,
-    GetstartedPageComponent
+    GetstartedPageComponent,
+    PasswordResetComponent
+
   ],
   imports: [
     BrowserModule,
