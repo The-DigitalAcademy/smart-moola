@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
+
 import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
+import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
 const routes: Routes = [
 
@@ -15,7 +17,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'getstarted', component: GetstartedPageComponent },
-  { path: 'resetpassword', component: PasswordResetComponent }
+  { path: 'resetpassword', component: PasswordResetComponent },
+  { path: 'verify-otp', component: VerifyOtpComponent }
 
 ];
 

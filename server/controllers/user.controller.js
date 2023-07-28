@@ -1,10 +1,53 @@
 const bcrypt = require("bcrypt");
 let jwt = require("jsonwebtoken");
-const JwtSecret = require('../config/JwtSecret.config')
+const JwtSecret = require('../config/JwtSecret.config');
+const nodemailer = require("nodemailer");
 
 const db = require('../config/db.config');
 
 const User = require("../models/user.model"); // Import the Sequelize model for "User"
+
+// Function to send verification email with OTP
+const sendVerificationEmail = (email, otp) => {
+    // Create a Nodemailer transporter
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "sotomelaowethugmail.com",
+            pass: "Sotomela@1",
+        },
+    });
+
+    const mailOptions = {
+        from: "sotomelaowethugmail.com",
+        to: email,
+        subject: "Email Verification OTP",
+        text: `Your OTP for email verification is: ${otp}`,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log("Error sending email: ", error);
+        } else {
+            console.log("Email sent: ", info.response);
+        }
+    });
+};
+
+const sendEmail = async (req, res) => {
+    // Get the email from the request body
+    const { email } = req.body;
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+  
+    try {
+      // Call the sendVerificationEmail function from the same controller
+      sendVerificationEmail(email, otp);
+      res.status(200).send({ message: 'Email sending triggered successfully' });
+    } catch (error) {
+      console.log('Error sending email:', error);
+      res.status(500).send({ error: 'Internal server error' });
+    }
+};
 
 const createUser = async (request, response) => {
     const { fullName, email, password, confirmPassword } = request.body;
@@ -184,5 +227,6 @@ module.exports = {
     updateUser,
     deleteUser,
     login,
+    sendEmail
     // deleteAll
 }

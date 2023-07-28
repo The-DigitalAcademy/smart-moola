@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-//import { FormsModule } from '@angular/forms';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -15,7 +14,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
-
+import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,8 @@ import { PasswordResetComponent } from './components/password-reset/password-res
     RegisterComponent,
     LandingPageComponent,
     GetstartedPageComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    VerifyOtpComponent
   ],
   imports: [
     BrowserModule,
