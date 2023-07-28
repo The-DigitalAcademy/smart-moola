@@ -14,7 +14,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
+
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { PasswordResetComponent } from './components/password-reset/password-res
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent
+
   ],
   imports: [
     BrowserModule,
