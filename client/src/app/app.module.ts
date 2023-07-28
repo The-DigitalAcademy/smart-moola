@@ -13,8 +13,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
+
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +25,10 @@ import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component
     RegisterComponent,
     LandingPageComponent,
     GetstartedPageComponent,
+    forgot-password
     PasswordResetComponent,
     VerifyOtpComponent
+    PasswordResetComponent
   ],
   imports: [
     BrowserModule,
