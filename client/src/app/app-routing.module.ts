@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
 
-  { path: 'getstarted', component: GetstartedPageComponent}
+  { path: 'getstarted', component: GetstartedPageComponent},
   { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'resetpassword', component: PasswordResetComponent }
 
