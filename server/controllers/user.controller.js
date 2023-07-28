@@ -7,18 +7,18 @@ const db = require('../config/db.config');
 
 const User = require("../models/user.model"); // Import the Sequelize model for "User"
 
-const sendVerificationEmail = (email, otp, callback) => {
+const sendVerificationEmail = (req, res, email, otp, callback) => {
     // Create a Nodemailer transporter
     const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "sotomelaowethu@gmail.com",
-            pass: "1@Sotomela@1",
+            user: "owethusotomela@gmail.com",
+            pass: "69384876Os",
         },
     });
 
     const mailOptions = {
-        from: "sotomelaowethu@gmail.com",
+        from: "owethusotomela@gmail.com",
         to: email,
         subject: "Email Verification OTP",
         text: `Your OTP for email verification is: ${otp}`,
@@ -29,11 +29,15 @@ const sendVerificationEmail = (email, otp, callback) => {
 
 const sendEmail = async (req, res) => {
     const { email } = req.body;
+    console.log('Request Body:', req.body);
+
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+    console.log("Otp", otp);
 
     try {
         // Call the sendVerificationEmail function from the same controller
-        sendVerificationEmail(email, otp, (error, info) => {
+        sendVerificationEmail(req, res, email, otp, (error, info) => {
             if (error) {
                 console.log("Error sending email: ", error);
                 res.status(500).send({ error: "Error sending email" });
@@ -47,7 +51,6 @@ const sendEmail = async (req, res) => {
         res.status(500).send({ error: "Internal server error" });
     }
 };
-
 
 const createUser = async (request, response) => {
     const { fullName, email, password, confirmPassword } = request.body;
