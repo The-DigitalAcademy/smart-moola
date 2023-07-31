@@ -8,6 +8,7 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
 
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
+import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 
 
 const routes: Routes = [
