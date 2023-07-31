@@ -18,6 +18,7 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 
 
 
@@ -32,6 +33,8 @@ import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b
     PasswordResetComponent,
     ScenarioAComponent,
     ScenarioBComponent,
+    AaComponent
+ 
 
 
   ],
