@@ -19,8 +19,6 @@ import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +33,6 @@ import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
     ScenarioBComponent,
     AaComponent,
     BaComponent
- 
-
 
   ],
   imports: [
