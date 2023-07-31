@@ -29,28 +29,8 @@ export class UsersService {
     this.http.post(`${this.usersURL}/postUser`, user, this.options).subscribe(data => {
       console.log(data)
     })
+    this.router.navigate(['/home']);
   }
-
-  // userLogin(userLogin: UserLogin) {
-  //   this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options).subscribe((data) => {
-  //     console.log("userData", data.id);
-
-  //     const accessToken = data.accessToken;
-  //     const loggedInUserEmail = data.email;
-  //     const id = data.id;
-
-  //     localStorage.setItem('Token', accessToken);
-  //     localStorage.setItem('Email', loggedInUserEmail);
-  //     localStorage.setItem('id', id);
-
-  //     if (accessToken) {
-  //       this.router.navigate(['/home']);
-  //     } else {
-  //       this.router.navigate(['/landing']);
-  //     }
-
-  //   });
-  // }
 
   userLogin(userLogin: UserLogin) {
     this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options).subscribe(
