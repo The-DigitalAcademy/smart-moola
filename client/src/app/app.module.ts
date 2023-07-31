@@ -17,6 +17,9 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
 
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
+import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { ProfileComponent } from './components/profile/profile.component';
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent,
-    ProfileComponent
+    ProfileComponent,
+    ScenarioAComponent,
+    ScenarioBComponent,
+
 
   ],
   imports: [
