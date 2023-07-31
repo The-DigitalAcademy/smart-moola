@@ -13,8 +13,10 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 
 
 
@@ -27,8 +29,11 @@ import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent,
+    ProfileComponent,
     ScenarioAComponent,
     ScenarioBComponent,
+    AaComponent
+ 
 
 
   ],
