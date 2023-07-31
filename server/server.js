@@ -22,6 +22,10 @@ app.use("/api/users", users);
 
 const PORT = 4545;
 
+app.get('/', (req, res) => {
+  res.json({"name": "Smart Moola"})
+})
+
 sequelize
   .sync()
   .then(() => {

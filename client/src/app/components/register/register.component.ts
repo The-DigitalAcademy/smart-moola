@@ -42,13 +42,15 @@ export class RegisterComponent {
   submitForm() {
     if (this.form.valid) {
       this.userService.createUser(this.form.value)
-      console.log(this.form.value);
 
+      // console.log(this.form.value);
+      console.log(this.form.value);
       Swal.fire({
         icon: 'success',
         title: 'registered Successful!',
-      }).then((result) => {
-        if (result.value) {
+      }).then((result)=>{
+        if (result.value){
+          this.router.navigate(["/login"])
           this.router.navigate(["home"])
         }
       })
