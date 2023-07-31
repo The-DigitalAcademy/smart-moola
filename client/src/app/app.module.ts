@@ -16,6 +16,7 @@ import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PasswordResetComponent } from './components/password-reset/password-res
     RegisterComponent,
     LandingPageComponent,
     GetstartedPageComponent,
-    PasswordResetComponent
+    PasswordResetComponent,
+    ProfileComponent
 
   ],
   imports: [
