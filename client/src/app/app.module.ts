@@ -17,6 +17,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
+import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 
 
 
@@ -32,7 +33,8 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     ProfileComponent,
     ScenarioAComponent,
     ScenarioBComponent,
-    AaComponent
+    AaComponent,
+    BaComponent
  
 
 

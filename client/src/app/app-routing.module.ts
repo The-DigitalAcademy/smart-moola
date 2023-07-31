@@ -9,6 +9,7 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
+import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 
 const routes: Routes = [
 
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'scenario-a', component: ScenarioAComponent },
-  { path: 'aa', component: AaComponent }
+  { path: 'aa', component: AaComponent },
+  { path: 'ba', component: BaComponent }
 
 ];
 
