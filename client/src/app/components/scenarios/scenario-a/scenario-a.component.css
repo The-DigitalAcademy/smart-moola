@@ -1,32 +1,94 @@
-.card-container{
-        width:100%;
-        height:auto;
-        text-align:center;
-        margin:auto 0;  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-top: 5vh;
+    text-align: center;
+    color: #669BBC;
+    font-weight: 700;
+}
+
+h4 {
+    margin-top: 5vh;
+    text-align: center;
+    color: #669BBC;
+    font-weight: 600;
+}
+
+h5 {
+    margin-top: 4vh;
+    text-align: center;
+    color: #669BBC;
+    font-weight: 500;
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+ 
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Float four columns side by side */
+  .getHomeImg {
+    height: 8em;
+    width: 5em;
+    position: absolute;
+    top: 10em;
+    left: 0.3em;
+  }
+
+ .column {
+    float: right;
+    width: 85%;
+    padding: 12px;
+    height: 5%;
+    margin-left: 80px;
+    margin-top: 5px; 
+  }
+
+  .column1 {
+    float: right;
+    width: 40%;
+    padding: 80px;
+    height: 30%;
+    margin-left: 30px;
+    margin-top: 5px; 
+  }
+ 
+
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 5px;
+    text-align: center;
+   background-color: #f1f1f1;
+    color: #669BBC;
+    margin-left: -75px;
+    width: 22rem;
+  }
+  
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 200px) {
+    .column {
+      width: 100%;
+      display: flex;
+      margin-bottom: 30px;
     }
-    .card-container ul{
-        text-align:center;
-        margin:auto 0;
-    }
-    .card-container li{
-        list-style-type:none;
-        padding:.5em .5em .5em .5em;
-        float:left;
-        text-align:left;
-        grid-column: auto;
-    }
-    .card{
-        transition: 0.2s;
-        overflow:hidden;
-        width:9em;
-        word-wrap:break-word;
-        padding: auto;
-    }
-    .card-theme{
-        padding: .1em .1em .1em .1em;
-        background-color:#999;
-        word-wrap: break-word;
-    }
-    .card:hover{
-    box-shadow: 0 5px 5px 0 rgba(0,0,33,1);
-    }
+  }
+  .container {
+    height: 100vh;
+    position: fixed;
+  }
+  
+
+.btn
+{
+    background-color: #669BBC;
+    color: #fff;
+}
