@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginResponse, Users, UserLogin } from '../interface/users';
+import { LoginResponse, User, UserLogin } from '../interface/users';
 import { usersAPI } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -25,7 +25,7 @@ export class UsersService {
     private router: Router
   ) { }
 
-  createUser(user: Users) {
+  createUser(user: User) {
     this.http.post(`${this.usersURL}/postUser`, user, this.options).subscribe(data => {
       console.log(data)
     })
@@ -65,6 +65,18 @@ export class UsersService {
       }
     );
   }
-  
+
+    // Method to trigger email sending
+    sendEmail(email: string) {
+      // Make an HTTP POST request to the backend API to trigger the email sending
+      this.http.post(`${usersAPI}/send-email`, { email }).subscribe(
+        (response) => {
+          console.log('Email sent:', response);
+        },
+        (error) => {
+          console.log('Error sending email:', error);
+        }
+      );
+    }
 
 }
