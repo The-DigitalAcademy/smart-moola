@@ -48,8 +48,6 @@ export class RegisterComponent {
       Swal.fire({
         icon: 'success',
         title: 'registered Successful!',
-      }).then((result) => {
-        if (result.value) {
       }).then((result)=>{
         if (result.value){
           this.router.navigate(["/login"])

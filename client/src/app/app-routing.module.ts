@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'resetpassword', component: PasswordResetComponent },
-  { path: 'verify-otp', component: VerifyOtpComponent }
+  { path: 'verify-otp', component: VerifyOtpComponent },
   { path: 'scenario-a', component: ScenarioAComponent },
   { path: 'aa', component: AaComponent },
   { path: 'ba', component: BaComponent }

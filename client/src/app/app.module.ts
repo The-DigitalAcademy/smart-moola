@@ -28,15 +28,8 @@ import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
     RegisterComponent,
     LandingPageComponent,
     GetstartedPageComponent,
-    forgot-password,
     PasswordResetComponent,
-    VerifyOtpComponent,
-    PasswordResetComponent
-    ProfileComponent,
-    ScenarioAComponent,
-    ScenarioBComponent,
-    AaComponent,
-    BaComponent
+    VerifyOtpComponent
   ],
   imports: [
     BrowserModule,
