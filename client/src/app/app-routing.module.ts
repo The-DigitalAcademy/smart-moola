@@ -10,6 +10,9 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
+import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
+import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
+import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 
 const routes: Routes = [
 
@@ -18,12 +21,12 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-
-  { path: 'getstarted', component: GetstartedPageComponent},
   { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'resetpassword', component: PasswordResetComponent },
-  { path: 'verify-otp', component: VerifyOtpComponent }
-
+  { path: 'verify-otp', component: VerifyOtpComponent },
+  { path: 'scenario-a', component: ScenarioAComponent },
+  { path: 'aa', component: AaComponent },
+  { path: 'ba', component: BaComponent }
 
 ];
 
