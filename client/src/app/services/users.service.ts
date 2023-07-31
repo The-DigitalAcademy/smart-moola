@@ -29,6 +29,7 @@ export class UsersService {
     this.http.post(`${this.usersURL}/postUser`, user, this.options).subscribe(data => {
       console.log(data)
     })
+    this.router.navigate(['/home']);
   }
 
   userLogin(userLogin: UserLogin) {

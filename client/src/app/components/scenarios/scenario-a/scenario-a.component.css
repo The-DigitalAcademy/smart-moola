@@ -1,0 +1,32 @@
+.card-container{
+        width:100%;
+        height:auto;
+        text-align:center;
+        margin:auto 0;  
+    }
+    .card-container ul{
+        text-align:center;
+        margin:auto 0;
+    }
+    .card-container li{
+        list-style-type:none;
+        padding:.5em .5em .5em .5em;
+        float:left;
+        text-align:left;
+        grid-column: auto;
+    }
+    .card{
+        transition: 0.2s;
+        overflow:hidden;
+        width:9em;
+        word-wrap:break-word;
+        padding: auto;
+    }
+    .card-theme{
+        padding: .1em .1em .1em .1em;
+        background-color:#999;
+        word-wrap: break-word;
+    }
+    .card:hover{
+    box-shadow: 0 5px 5px 0 rgba(0,0,33,1);
+    }

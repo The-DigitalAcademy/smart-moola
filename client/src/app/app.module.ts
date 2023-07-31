@@ -8,14 +8,17 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
-
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
+import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
+import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 
 @NgModule({
   declarations: [
@@ -25,10 +28,15 @@ import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component
     RegisterComponent,
     LandingPageComponent,
     GetstartedPageComponent,
-    forgot-password
+    forgot-password,
     PasswordResetComponent,
-    VerifyOtpComponent
+    VerifyOtpComponent,
     PasswordResetComponent
+    ProfileComponent,
+    ScenarioAComponent,
+    ScenarioBComponent,
+    AaComponent,
+    BaComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +51,6 @@ import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component
         }
       }
     }),
-
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent],
