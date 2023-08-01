@@ -1,10 +1,56 @@
 const bcrypt = require("bcrypt");
 let jwt = require("jsonwebtoken");
-const JwtSecret = require('../config/JwtSecret.config')
+const JwtSecret = require('../config/JwtSecret.config');
+const nodemailer = require("nodemailer");
 
 const db = require('../config/db.config');
 
 const User = require("../models/user.model"); // Import the Sequelize model for "User"
+
+const sendVerificationEmail = (req, res, email, otp, callback) => {
+    // Create a Nodemailer transporter
+    const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "owethusotomela@gmail.com",
+            pass: "69384876Os",
+        },
+    });
+
+    const mailOptions = {
+        from: "owethusotomela@gmail.com",
+        to: email,
+        subject: "Email Verification OTP",
+        text: `Your OTP for email verification is: ${otp}`,
+    };
+
+    transporter.sendMail(mailOptions, callback);
+};
+
+const sendEmail = async (req, res) => {
+    const { email } = req.body;
+    console.log('Request Body:', req.body);
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+
+    console.log("Otp", otp);
+
+    try {
+        // Call the sendVerificationEmail function from the same controller
+        sendVerificationEmail(req, res, email, otp, (error, info) => {
+            if (error) {
+                console.log("Error sending email: ", error);
+                res.status(500).send({ error: "Error sending email" });
+            } else {
+                console.log("Email sent: ", info.response);
+                res.status(200).send({ message: "Email sent successfully" });
+            }
+        });
+    } catch (error) {
+        console.log("Error sending email:", error);
+        res.status(500).send({ error: "Internal server error" });
+    }
+};
 
 const createUser = async (request, response) => {
     const { fullName, email, password, confirmPassword } = request.body;
@@ -184,5 +230,6 @@ module.exports = {
     updateUser,
     deleteUser,
     login,
+    sendEmail
     // deleteAll
 }
