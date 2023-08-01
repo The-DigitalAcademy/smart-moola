@@ -23,6 +23,8 @@ import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
+import { QuestionsComponent } from './components/scenarios/scenario-a/questions/questions.component';
+import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 
 
 
-    VerifyOtpComponent
+    VerifyOtpComponent,
+       QuestionsComponent,
+       AnswersComponent
 
   ],
   imports: [
