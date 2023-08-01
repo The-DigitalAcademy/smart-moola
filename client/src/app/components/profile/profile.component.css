@@ -1,0 +1,141 @@
+/* Your other styles */
+
+.profile {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .div {
+    background-color: #ffffff;
+    border: 1px none;
+    height: 92px;
+    width: 40px;
+  }
+  
+ .rectangle{
+    width: 29rem;
+    background-color: aquamarine;
+    height: 16rem;
+   margin-left: -15rem;
+   margin-top: 2rem;
+ }
+  
+
+  
+  .rectangle-2 {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    height: 515px;
+    left: 22.5px;
+    position: absolute;
+    top: 169px;
+    width: 345px;
+  }
+  
+  .text-wrapper {
+    color: #669bbc;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 13.6px;
+    font-weight: 700;
+    left: 60px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 253px;
+    width: 312px;
+  }
+  
+  .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter-ExtraBold", Helvetica;
+    font-size: 16px;
+    font-weight: 800;
+    left: 47px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 39px;
+    width: 157px;
+  }
+  
+  .text-wrapper-3 {
+    color: #669bbc;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    left: 120px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 368px;
+    width: 155px;
+  }
+  
+  .text-wrapper-4 {
+    color: #669bbc;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    left: 120px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 316px;
+    width: 155px;
+  }
+  
+  .text-wrapper-5 {
+    color: #669bbc;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    left: 120px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 474px;
+    width: 155px;
+  }
+  
+  .text-wrapper-6 {
+    color: #669bbc;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    left: 120px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 421px;
+    width: 155px;
+  }
+  
+  .text-wrapper-7 {
+    color: #669bbc;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    left: 125px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 526px;
+    width: 155px;
+  }
+  
+  .frame {
+    background-image: url(https://res.cloudinary.com/dp4dd0gis/image/upload/v1690278790/getStartedF_j1r4l1.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 30px;
+    height: 166px;
+    left: 141px;
+    position: absolute;
+    top: 71px;
+    width: 150px;
+  }
+  

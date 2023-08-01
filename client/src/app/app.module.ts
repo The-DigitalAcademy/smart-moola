@@ -19,6 +19,7 @@ import { PasswordResetComponent } from './components/password-reset/password-res
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 import { CompNavComponent } from './components/comp-nav/comp-nav.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -34,6 +35,7 @@ import { CompNavComponent } from './components/comp-nav/comp-nav.component';
     ScenarioAComponent,
     ScenarioBComponent,
     CompNavComponent,
+    ProfileComponent,
 
 
   ],
