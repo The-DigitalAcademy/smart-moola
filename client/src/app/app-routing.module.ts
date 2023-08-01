@@ -8,7 +8,6 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
 
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
-import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -23,7 +22,6 @@ const routes: Routes = [
   { path: 'getstarted', component: GetstartedPageComponent },
  { path: 'resetpassword', component: PasswordResetComponent },
  { path: 'scenario-a', component: ScenarioAComponent},
- { path: 'profile', component:  ProfileComponent},
 
 
 ];
