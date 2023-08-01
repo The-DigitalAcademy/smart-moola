@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginResponse, Users, UserLogin } from '../interface/users';
 import { usersAPI } from 'src/environments/environment';
@@ -31,60 +31,36 @@ export class UsersService {
     })
   }
 
-  // userLogin(userLogin: UserLogin) {
-  //   this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options).subscribe((data) => {
-  //     console.log("userData", data.id);
-
-  //     const accessToken = data.accessToken;
-  //     const loggedInUserEmail = data.email;
-  //     const id = data.id;
-
-  //     localStorage.setItem('Token', accessToken);
-  //     localStorage.setItem('Email', loggedInUserEmail);
-  //     localStorage.setItem('id', id);
-
-  //     if (accessToken) {
-  //       this.router.navigate(['/home']);
-  //     } else {
-  //       this.router.navigate(['/landing']);
-  //     }
-
-  //   });
-  // }
-
   userLogin(userLogin: UserLogin) {
-    this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options).subscribe(
-      (data) => {
-        console.log("userData", data.id);
-  
-        const accessToken = data.accessToken;
-        const loggedInUserEmail = data.email;
-        const id = data.id;
-  
-        localStorage.setItem('Token', accessToken);
-        localStorage.setItem('Email', loggedInUserEmail);
-        localStorage.setItem('id', id);
-  
-        // Check if accessToken is present and valid
-        if (accessToken && accessToken !== 'undefined') {
-          this.router.navigate(['/home']);
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Login Failed!',
-            text: 'Invalid username or password',
-          });
-        }
-      },
-      (error) => {
+    this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options).subscribe((data) => {
+      console.log("userData", data.id);
+
+      const accessToken = data.accessToken;
+      const loggedInUserEmail = data.email;
+      const id = data.id;
+
+      localStorage.setItem('Token', accessToken);
+      localStorage.setItem('Email', loggedInUserEmail);
+      localStorage.setItem('id', id);
+
+      if (accessToken && accessToken !== 'undefined') {
+        this.router.navigate(['/home']);
+      } else {
         Swal.fire({
           icon: 'error',
           title: 'Login Failed!',
-          text: 'An error occurred during login. Please try again later.',
+          text: 'Invalid username or password',
         });
       }
-    );
-  }
+    },
+    (error) => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Login Failed!',
+        text: 'An error occurred during login. Please try again later.',
+      });
+    }
+  );
+}
   
-
 }
