@@ -6,7 +6,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
-
+import { ProfileComponent } from './components/profile/profile.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
@@ -22,11 +22,18 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'getstarted', component: GetstartedPageComponent },
+
+ { path: 'resetpassword', component: PasswordResetComponent },
+ { path: 'scenario-a', component: ScenarioAComponent},
+ { path: 'profile', component: ProfileComponent},
+
+
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
   { path: 'scenario-a', component: ScenarioAComponent },
   { path: 'aa', component: AaComponent },
   { path: 'ba', component: BaComponent }
+
 
 ];
 
