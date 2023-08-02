@@ -13,6 +13,8 @@ import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
+import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
+
 
 const routes: Routes = [
 
@@ -27,7 +29,7 @@ const routes: Routes = [
  { path: 'scenario-a', component: ScenarioAComponent},
  { path: 'profile', component: ProfileComponent},
 
-
+ { path: 'profile-editor', component: ProfileEditorComponent},
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
   { path: 'scenario-a', component: ScenarioAComponent },
