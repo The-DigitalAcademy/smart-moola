@@ -32,7 +32,7 @@ const routes: Routes = [
  { path: 'profile-editor', component: ProfileEditorComponent},
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
-  { path: 'scenario-a', component: ScenarioAComponent },
+ { path: 'scenario-a', component: ScenarioAComponent },
   { path: 'aa', component: AaComponent },
   { path: 'ba', component: BaComponent }
 
