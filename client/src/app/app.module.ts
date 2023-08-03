@@ -28,6 +28,8 @@ import { QuestionsComponent } from './components/scenarios/scenario-a/questions/
 import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
+import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
+import { WrongAnswersComponent } from './components/scenarios/scenario-a/wrong-answers/wrong-answers.component';
 
 
 
@@ -51,9 +53,10 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
     VerifyOtpComponent,
 
        QuestionsComponent,
-       AnswersComponent
-
-       ProfileEditorComponent
+       AnswersComponent,
+       ProfileEditorComponent,
+       CorrectAnswersComponent,
+       WrongAnswersComponent
 
 
   ],
