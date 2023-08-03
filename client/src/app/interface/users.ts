@@ -1,4 +1,5 @@
-export interface Users {
+export interface User {
+    id: Number,
     fullName: String,
     email: String,
     password: String,
@@ -15,5 +16,4 @@ export interface LoginResponse {
     email: string;
     role: string;
     accessToken: string;
-  }
-  
+}

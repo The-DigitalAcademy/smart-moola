@@ -1,0 +1,49 @@
+<div class="container">
+    <h2>OTP Verification</h2>
+    <!-- <img src="https://res.cloudinary.com/dp4dd0gis/image/upload/v1690465380/otp_aba588.png" class="otpV"/>
+    <p>Enter the OTP sent to your email</p> -->
+    <form *ngIf="form" [formGroup]="form" (ngSubmit)="submitForm()">
+
+        <h2>OTP Verification</h2>
+
+        <img src="https://res.cloudinary.com/dp4dd0gis/image/upload/v1690465380/otp_aba588.png" class="otpV" />
+        <p>Enter the OTP sent to your email</p>
+
+        <div class="otpUI">
+
+            <div class="box">
+                <input type="text" id="otp" formControlName="fullName" />
+                <div *ngIf="form.get('fullName')?.invalid && (form.get('fullName')?.dirty || form.get('fullName')?.touched)"
+                    class="mt-3">
+                    <div *ngIf="form.get('fullName')?.errors?.['required']" class="error">Full name is required.</div>
+
+                </div>
+            </div>
+            <div class="box">
+                <input type="text" id="otp" formControlName="fullName" />
+                <div *ngIf="form.get('fullName')?.invalid && (form.get('fullName')?.dirty || form.get('fullName')?.touched)"
+                    class="mt-3">
+                    <div *ngIf="form.get('fullName')?.errors?.['required']" class="error">Full name is required.</div>
+                </div>
+            </div>
+            <div class="box">
+                <input type="text" id="otp" formControlName="fullName" />
+                <div *ngIf="form.get('fullName')?.invalid && (form.get('fullName')?.dirty || form.get('fullName')?.touched)"
+                    class="mt-3">
+                    <div *ngIf="form.get('fullName')?.errors?.['required']" class="error">Full name is required.</div>
+                </div>
+            </div>
+
+            <div class="box">
+                <input type="text" id="otp" formControlName="fullName" />
+                <div *ngIf="form.get('fullName')?.invalid && (form.get('fullName')?.dirty || form.get('fullName')?.touched)"
+                    class="mt-3">
+                    <div *ngIf="form.get('fullName')?.errors?.['required']" class="error">Full name is required.</div>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="submit" [disabled]="form.invalid"><a>Verify</a></button>
+
+    </form>
+</div>
