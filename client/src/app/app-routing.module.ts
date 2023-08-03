@@ -30,7 +30,7 @@ const routes: Routes = [
 
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
-  { path: 'scenario-a', component: ScenarioAComponent },
+ { path: 'scenario-a', component: ScenarioAComponent },
   { path: 'aa', component: AaComponent },
   { path: 'ba', component: BaComponent }
 
