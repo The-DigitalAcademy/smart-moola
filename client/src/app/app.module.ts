@@ -47,18 +47,21 @@ import { WrongAnswersComponent } from './components/scenarios/scenario-a/wrong-a
     ScenarioBComponent,
     CompNavComponent,
     ProfileComponent,
-
+    ProfileEditorComponent,
 
 
     VerifyOtpComponent,
 
        QuestionsComponent,
+
        AnswersComponent,
        ProfileEditorComponent,
        CorrectAnswersComponent,
        WrongAnswersComponent
 
+       AnswersComponent
 
+      
   ],
   imports: [
     BrowserModule,
