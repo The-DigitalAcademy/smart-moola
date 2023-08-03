@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ScenarioBComponent } from '../scenario-b/scenario-b.component';
 @Component({
   selector: 'app-scenario-a',
   templateUrl: './scenario-a.component.html',
