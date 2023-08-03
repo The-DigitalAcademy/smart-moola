@@ -45,7 +45,7 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
     ScenarioBComponent,
     CompNavComponent,
     ProfileComponent,
-
+    ProfileEditorComponent,
 
 
     VerifyOtpComponent,
@@ -53,7 +53,7 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
        QuestionsComponent,
        AnswersComponent
 
-       ProfileEditorComponent
+       
 
 
   ],

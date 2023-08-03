@@ -4,6 +4,7 @@ import { LoginResponse, User, UserLogin } from '../interface/users';
 import { usersAPI } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs/internal/Observable';
 // import { usersAPI } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -79,4 +80,13 @@ export class UsersService {
       );
     }
 
+    updateUser(user: User): Observable<User> {
+
+      let id = localStorage.getItem('id');
+
+      console.log("For an ID, Service", id);
+
+      const url = `${this.usersURL}/${id}`;
+      return this.http.put<User>(url, user, this.options);
+    }
 }
