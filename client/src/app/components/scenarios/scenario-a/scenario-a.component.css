@@ -50,7 +50,7 @@ h5 {
     float: right;
     width: 20%;
     padding: 80px;
-    height: 80%;
+    height: -81px;
     margin-left: 15px;
     margin-top: -125px; 
   }
@@ -75,7 +75,7 @@ h5 {
     }
   }
   .container {
-    height: 100vh;
+    height: 80vh;
     /* position: fixed; */
     margin-bottom: 190px;
   }
@@ -84,6 +84,16 @@ h5 {
 {
     background-color: #669BBC;
     color: #fff;
+}
+
+.progress-bar
+{
+  background-color: #669BBC;
+}
+
+.progress-bar
+{
+  width: 62rem;
 }
 
 .submit {
