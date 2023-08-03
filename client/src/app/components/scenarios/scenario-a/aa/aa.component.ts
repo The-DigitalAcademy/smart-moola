@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { QuestionService } from 'src/app/services/question.service';
 
 @Component({
   selector: 'app-aa',
@@ -6,10 +8,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aa.component.css']
 })
 export class AaComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+verifyAnswer() {
+   this.router.navigate(["/answers"])
 
 }
+submitMandla() {
+throw new Error('Method not implemented.');
+}
+
+  question : any
+
+  constructor(private router : Router , private questionsService : QuestionService) { }
+
+  ngOnInit(): void {
+    
+      // this.questionsService.getQnA().subscribe(data =>{
+      //   console.log(data,"data received");
+        
+      // })
+    
+  }
+
+
+
+ 
+
+
+ 
+  }
+    
+
+
+
+

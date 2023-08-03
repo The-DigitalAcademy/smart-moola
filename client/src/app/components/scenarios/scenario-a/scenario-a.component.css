@@ -89,12 +89,11 @@ h5 {
 .progress-bar
 {
   background-color: #669BBC;
+  width: 62rem;
+  
 }
 
-.progress-bar
-{
-  width: 62rem;
-}
+
 
 .submit {
     display: block;
