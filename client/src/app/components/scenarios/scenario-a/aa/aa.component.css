@@ -103,24 +103,16 @@ body {
   cursor: pointer;
   margin-left: 4px;
   text-align: center;
-  margin-top: 13px;
+  margin-top: 130px;
 }
 
-.submit {
-  display: block;
-  width: 80%;
-  padding: 10px;
-  background-color: #669BBC;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 4px;
-  text-align: center;
-  margin-top: 13px;
-}
 
 .progress-bar
 {
   background-color: #669BBC;
+}
+
+.span
+{
+  margin-top: 64px;
 }

@@ -16,6 +16,6 @@ export class AnswersComponent implements OnInit {
 
     setTimeout(() => {
       this.router.navigate(["/correctAnswer"])
-    }, 2500);
+    }, 2700);
   }
 }
