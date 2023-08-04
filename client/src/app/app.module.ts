@@ -29,7 +29,6 @@ import { AnswersComponent } from './components/scenarios/scenario-a/answers/answ
 
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
-import { WrongAnswersComponent } from './components/scenarios/scenario-a/wrong-answers/wrong-answers.component';
 
 
 
@@ -56,7 +55,7 @@ import { WrongAnswersComponent } from './components/scenarios/scenario-a/wrong-a
        AnswersComponent,
        ProfileEditorComponent,
        CorrectAnswersComponent,
-       WrongAnswersComponent
+ 
 
 
   ],
