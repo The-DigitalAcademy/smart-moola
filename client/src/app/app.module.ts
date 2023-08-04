@@ -46,18 +46,21 @@ import { CorrectAnswersComponent } from './components/scenarios/scenario-a/corre
     ScenarioBComponent,
     CompNavComponent,
     ProfileComponent,
-
+    ProfileEditorComponent,
 
 
     VerifyOtpComponent,
 
        QuestionsComponent,
+
        AnswersComponent,
        ProfileEditorComponent,
        CorrectAnswersComponent,
  
 
+       AnswersComponent
 
+      
   ],
   imports: [
     BrowserModule,
