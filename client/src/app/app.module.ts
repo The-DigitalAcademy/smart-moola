@@ -57,7 +57,7 @@ import { WrongAnswersComponent } from './components/scenarios/scenario-a/wrong-a
        AnswersComponent,
        ProfileEditorComponent,
        CorrectAnswersComponent,
-       WrongAnswersComponent
+       WrongAnswersComponent,
 
        AnswersComponent
 
