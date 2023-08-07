@@ -11,8 +11,8 @@ import { SessionsService } from 'src/app/services/sessions.service';
 export class AaComponent implements OnInit {
   question = '';
   active = 'q1';
-mandlaResponse = "";
-tumiResponse = "";
+  mandlaResponse = "";
+  tumiResponse = "";
 
   verify() {
     this.active = this.session.getActiveQuestion();
