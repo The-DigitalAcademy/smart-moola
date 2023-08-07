@@ -14,11 +14,8 @@ import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 
-import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
-import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
-import { CompNavComponent } from './components/comp-nav/comp-nav.component';
-import { ProfileComponent } from './components/profile/profile.component';
 
+import { CompNavComponent } from './components/comp-nav/comp-nav.component';
 
 
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
