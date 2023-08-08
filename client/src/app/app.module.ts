@@ -56,7 +56,11 @@ import { CorrectAnswersComponent } from './components/scenarios/scenario-a/corre
        AnswersComponent,
        ProfileEditorComponent,
        CorrectAnswersComponent,
+
+       WrongAnswersComponent,
+
  
+
 
        AnswersComponent
 
