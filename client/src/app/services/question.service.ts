@@ -12,7 +12,6 @@ export class QuestionService {
 
 url = "http://localhost:4545/api/qna/"
 
-
 constructor(private http : HttpClient, private router : Router){}
 
  /* private questions: Question[] = [
@@ -33,7 +32,6 @@ constructor(private http : HttpClient, private router : Router){}
   }
 */
   
-
 getQnA() : Observable<any>{
    return this.http.get("http://localhost:4545/api/qna/qna").pipe(
     catchError((error : HttpErrorResponse)=>{
@@ -42,7 +40,4 @@ getQnA() : Observable<any>{
 
     this.router.navigate(['/home']);
   }
-
-
-
 }
