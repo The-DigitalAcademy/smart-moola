@@ -9,7 +9,7 @@ import { catchError, retry } from 'rxjs/operators';
 export class ValueServiceService {
 
   constructor(private http: HttpClient) { }
-
+/*
   configUrl = '/api';
 
   getValues() {
@@ -38,4 +38,5 @@ export class ValueServiceService {
     // Return an observable with a user-facing error message.
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
+  */
 }
