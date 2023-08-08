@@ -14,7 +14,12 @@ import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
+
+import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
+import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
+
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+
 
 
 const routes: Routes = [
@@ -33,9 +38,17 @@ const routes: Routes = [
   { path: 'profile-editor', component: ProfileEditorComponent },
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
+
+ { path: 'scenario-a', component: ScenarioAComponent },
+  { path: 'aa', component: AaComponent},
+  { path: 'ba', component: BaComponent },
+  { path: 'answers', component:AnswersComponent },
+  { path: 'correctAnswer', component:CorrectAnswersComponent },
+
   { path: 'scenario-b', component: ScenarioBComponent },
   { path: 'aa', component: AaComponent },
   { path: 'ba', component: BaComponent }
+
 
 ];
 

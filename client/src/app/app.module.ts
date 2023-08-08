@@ -26,6 +26,7 @@ import { QuestionsComponent } from './components/scenarios/scenario-a/questions/
 import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
+import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
 
 @NgModule({
   declarations: [
@@ -40,12 +41,25 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
     ScenarioBComponent,
     CompNavComponent,
     ProfileComponent,
+    indebted-user
     VerifyOtpComponent,
     QuestionsComponent,
     AnswersComponent,
     ProfileEditorComponent
+    VerifyOtpComponent,
+       QuestionsComponent,
+       AnswersComponent,
+       ProfileEditorComponent,
+       CorrectAnswersComponent,
+
+       WrongAnswersComponent,
+
+ 
 
 
+       AnswersComponent
+
+      
   ],
   imports: [
     BrowserModule,
