@@ -12,20 +12,20 @@ export class AppComponent {
   public number: Number | null = null;
 
   constructor(private valueService: ValueServiceService){
-    this.getNumbers();
+   // this.getNumbers();
   }
 
-  private getNumbers () {
-    this.valueService.getValues()
-    .subscribe((data: Number[]) => {
-      this.numbers = data;
-    });
-  }
+  // private getNumbers () {
+  //   this.valueService.getValues()
+  //   .subscribe((data: Number[]) => {
+  //     this.numbers = data;
+  //   });
+  // }
 
-  public addNumber () {
-    this.valueService.addValue(this.number)?.subscribe((_: any) => {
-      this.getNumbers();
-    });
+  // public addNumber () {
+  //   this.valueService.addValue(this.number)?.subscribe((_: any) => {
+  //     this.getNumbers();
+  //   });
     
-  }
+  // }
 }
