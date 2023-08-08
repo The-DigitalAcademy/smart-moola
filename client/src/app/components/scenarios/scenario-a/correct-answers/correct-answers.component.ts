@@ -13,6 +13,7 @@ export class CorrectAnswersComponent implements OnInit {
 
   ngOnInit(): void {
   }
-//  continueToNext() {
-// this.router.navigate(["/"])    }
+  continueToNext() {
+ this.router.navigate(["/aa"]) 
+   }
 }
