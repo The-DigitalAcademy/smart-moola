@@ -3,6 +3,7 @@ const q1 ="q1"
 const q2 ="q2"
 const q3 ="q3"
 const activeQ = "activeQ"
+const LOGGED_USER="logged_user"
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class SessionsService {
   }
 
 
+  public saveLoggedUser(user: any){
+    window.sessionStorage.setItem(activeQ, JSON.stringify(user))
+  }
+
   public saveQ1(quiz:boolean){
     window.sessionStorage.setItem(q1, JSON.stringify(quiz))
   }
@@ -30,6 +35,13 @@ export class SessionsService {
     }
   }
 
+
+  public getLoggedUser(){
+    const question1 = window.sessionStorage.getItem(LOGGED_USER)
+    if(question1){
+      return JSON.parse(question1)
+    }
+  }
 
   public getQ1(){
     const question1 = window.sessionStorage.getItem(q1)

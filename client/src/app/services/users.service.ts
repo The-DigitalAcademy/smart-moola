@@ -5,7 +5,7 @@ import { usersAPI } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs/internal/Observable';
-// import { usersAPI } from 'src/environments/environment.prod';
+//  import { usersAPI } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
@@ -13,8 +13,8 @@ import { Observable } from 'rxjs/internal/Observable';
 
 export class UsersService {
 
-  usersURL: any = usersAPI;
-
+  //usersURL: any = usersAPI;
+  usersURL = "http://localhost:4545/api/users"
   headers: any = new HttpHeaders({
     'Content-Type': 'application/json'
   });
@@ -33,39 +33,39 @@ export class UsersService {
     this.router.navigate(['/home']);
   }
 
-  userLogin(userLogin: UserLogin) {
-    this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options).subscribe(
-      (data) => {
-        console.log("userData", data.id);
+  userLogin(userLogin: UserLogin):Observable<any> {
+  return  this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options)
+       // console.log("userData", data.id);
   
-        const accessToken = data.accessToken;
-        const loggedInUserEmail = data.email;
-        const id = data.id;
+        // const accessToken = data.accessToken;
+        // const loggedInUserEmail = data.email;
+        // const id = data.id;
   
-        localStorage.setItem('Token', accessToken);
-        localStorage.setItem('Email', loggedInUserEmail);
-        localStorage.setItem('id', id);
+        // localStorage.setItem('Token', accessToken);
+        // localStorage.setItem('Email', loggedInUserEmail);
+        // localStorage.setItem('id', id);
   
         // Check if accessToken is present and valid
-        if (accessToken && accessToken !== 'undefined') {
-          this.router.navigate(['/home']);
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Login Failed!',
-            text: 'Invalid username or password',
-          });
-        }
-      },
-      (error) => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Login Failed!',
-          text: 'An error occurred during login. Please try again later.',
-        });
-      }
-    );
-  }
+      //   if (accessToken && accessToken !== 'undefined') {
+      //     this.router.navigate(['/home']);
+      //   } else {
+      //     Swal.fire({
+      //       icon: 'error',
+      //       title: 'Login Failed!',
+      //       text: 'Invalid username or password',
+      //     });
+      //   }
+      // },
+      // (error) => {
+      //   Swal.fire({
+      //     icon: 'error',
+      //     title: 'Login Failed!',
+      //     text: 'An error occurred during login. Please try again later.',
+      //   });
+      //}
+   // );
+  
+}
 
     // Method to trigger email sending
     sendEmail(email: string) {

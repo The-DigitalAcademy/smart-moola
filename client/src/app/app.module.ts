@@ -57,7 +57,7 @@ import { CorrectAnswersComponent } from './components/scenarios/scenario-a/corre
        ProfileEditorComponent,
        CorrectAnswersComponent,
 
-       WrongAnswersComponent,
+       AnswersComponent,
 
  
 
