@@ -16,8 +16,6 @@ import { PasswordResetComponent } from './components/password-reset/password-res
 import { CompNavComponent } from './components/comp-nav/comp-nav.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-
-
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
@@ -30,8 +28,6 @@ import { AnswersComponent } from './components/scenarios/scenario-a/answers/answ
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,18 +37,17 @@ import { CorrectAnswersComponent } from './components/scenarios/scenario-a/corre
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent,
-
     ScenarioAComponent,
     ScenarioBComponent,
     CompNavComponent,
     ProfileComponent,
-    ProfileEditorComponent,
-
-
+    indebted-user
     VerifyOtpComponent,
-
+    QuestionsComponent,
+    AnswersComponent,
+    ProfileEditorComponent
+    VerifyOtpComponent,
        QuestionsComponent,
-
        AnswersComponent,
        ProfileEditorComponent,
        CorrectAnswersComponent,
