@@ -6,8 +6,8 @@ import { AnswersComponent } from '../answers/answers.component';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-questions: any;
-@Input() answers: any;  
+  questions: any;
+  @Input() answers: any;
 
   constructor() { }
 
