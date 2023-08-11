@@ -5,12 +5,16 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable, catchError, throwError } from 'rxjs';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
 
 url = "http://localhost:4545/api/qna/"
+
+private backendUrl = "http://localhost:4545/api/meaning"
 
 constructor(private http : HttpClient, private router : Router){}
 
@@ -40,4 +44,14 @@ getQnA() : Observable<any>{
 
     this.router.navigate(['/home']);
   }
+
+  sendQuestionAndGetExplanation(question: string): Observable<any> {
+    const endpoint = `${this.backendUrl}/meaning`; // Adjust the endpoint accordingly
+
+    return this.http.post(endpoint, { question });
+  }
+
+
 }
+//Servive for passing quiz to back end
+//////////////////////////////////////

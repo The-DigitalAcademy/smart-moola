@@ -1,6 +1,6 @@
 <div>
     <label for="word">Enter a word:</label>
-    <input type="text" [(ngModel)]="word" name="word" id="word" />
+    <input type="text" [(ngModel)]="question" name="word" id="word" />
     <button (click)="getMeaning()">Get Meaning</button>
   </div>
   <div *ngIf="explanation">
@@ -10,4 +10,3 @@
   <div *ngIf="error">
     <p>{{ error }}</p>
   </div>
-  

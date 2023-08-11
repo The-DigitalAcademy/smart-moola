@@ -7,7 +7,7 @@ import axios from 'axios';
   styleUrls: ['./response.component.css']
 })
 export class responseComponent implements OnInit {
-  word!: string;
+  question!: string;
   explanation!: string;
   error!: string;
 
@@ -18,7 +18,7 @@ export class responseComponent implements OnInit {
 
   async getMeaning(): Promise<void> {
     try {
-      const response = await axios.post('/api/meaning', { word: this.word });
+      const response = await axios.post('/api/meaning', { question: this.question });
       this.explanation = response.data.explanation;
       this.error = 'null';
     } catch (error) {
