@@ -14,8 +14,8 @@ import Swal from 'sweetalert2';
 export class ProfileEditorComponent implements OnInit {
   form: FormGroup;
   router: any;
-  fullname = ""
-  emaill="my E"
+  fullName = ""
+  emaill=""
   password=""
   confirmPassword = ""
   loggedUser : any 
@@ -30,17 +30,18 @@ export class ProfileEditorComponent implements OnInit {
   ) {
     this.form = this.fb.group(
       {
-        fullName: [this.loggedUser.fullName, [Validators.required, Validators.minLength(3)]],
-        email: [this.emaill, [Validators.required, Validators.email]],
-        password: [this.password, [Validators.required, Validators.minLength(8)]],
-        confirmPassword: [this.confirmPassword, Validators.required],
+        fullName: [this.sessions.getLoggedUser().fullName, [Validators.required, Validators.minLength(3)]],
+        email: [this.sessions.getLoggedUser().email, [Validators.required, Validators.email]],
+        password: [this.sessions.getLoggedUser().password, [Validators.required, Validators.minLength(8)]],
+        confirmPassword: [this.sessions.getLoggedUser().confirmPassword, Validators.required],
       },
       { validators: this.passwordMatchValidator }
     );
   }
+
   ngOnInit(): void {
     this.loggedUser = this.sessions.getLoggedUser()
-    console.log("name who logged");
+    console.log(this.loggedUser,"name who logged");
 
     // this.emaill="meee"
     // = window.localStorage.getItem("fullName")
@@ -66,8 +67,9 @@ export class ProfileEditorComponent implements OnInit {
     if (this.form.valid) {
       const updatedUser: User = this.form.value; // Get the form values as a User object.
   
-      this.userService.updateUser(updatedUser).subscribe(
-        (data: User) => {
+      console.log(updatedUser,"updated user");
+      
+      this.userService.updateUser(updatedUser).subscribe(data => {
           console.log('Update successful!', data);
   
           Swal.fire({

@@ -21,7 +21,7 @@ export class SessionsService {
 
 
   public saveLoggedUser(user: any){
-    window.sessionStorage.setItem(activeQ, JSON.stringify(user))
+    window.sessionStorage.setItem(LOGGED_USER, JSON.stringify(user))
   }
 
   public saveQ1(quiz:boolean){

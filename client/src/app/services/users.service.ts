@@ -80,13 +80,13 @@ export class UsersService {
       );
     }
 
-    updateUser(user: User): Observable<User> {
+    updateUser(user: User): Observable<any> {
 
       let id = localStorage.getItem('id');
 
       console.log("For an ID, Service", id);
 
       const url = `${this.usersURL}/${id}`;
-      return this.http.put<User>(url, user, this.options);
+      return this.http.put<any>(url, user, this.options);
     }
 }

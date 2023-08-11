@@ -41,6 +41,7 @@ export class LoginComponent {
         const id = data.id;
         
   this.session.saveLoggedUser(data)
+  
         localStorage.setItem('Token', accessToken);
         localStorage.setItem('Email', loggedInUserEmail);
         localStorage.setItem('id', id);
@@ -48,7 +49,7 @@ export class LoginComponent {
   
       //  Check if accessToken is present and valid
         if (accessToken && accessToken !== 'undefined') {
-          this.router.navigate(['/home']);
+        //  this.router.navigate(['/home']);
         } else {
           Swal.fire({
             icon: 'error',
