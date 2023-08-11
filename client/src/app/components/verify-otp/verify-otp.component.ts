@@ -14,7 +14,6 @@ export class VerifyOtpComponent implements OnInit {
     private fb: FormBuilder,
   ) {
     this.form = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
