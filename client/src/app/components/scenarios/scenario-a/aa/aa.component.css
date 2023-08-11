@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-top: 5vh;
+  text-align: center;
+  color: #669BBC;
+  font-weight: 700;
+}
+
+span
+{
+  margin-top: 5vh;
+  text-align: center;
+  color: #669BBC;
+  font-weight: 400; 
+
+}
+
+h4 {
+  margin-top: 5vh;
+  text-align: center;
+  color: #669BBC;
+  font-weight: 600;
+}
+
+h5 {
+  margin-top: 4vh;
+  text-align: center;
+  color: #669BBC;
+  font-weight: 500;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 14px;
+  height: 50%;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  /* this adds the "card" effect */
+  padding: 4px;
+  text-align: center;
+ background-color: #f1f1f1;
+  color: #669BBC;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 300px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+.container {
+  height: 100vh;
+  position: fixed;
+}
+
+.getHomeImg {
+  height: 15em;
+  width: 12em;
+  position: absolute;
+  top: 1em;
+  left: 6em;
+}
+
+
+.submit {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  background-color: #669BBC;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 4px;
+  text-align: center;
+  margin-top: 130px;
+}
+
+
+.progress-bar
+{
+  background-color: #669BBC;
+}
+
+.span
+{
+  margin-top: 64px;
+}
