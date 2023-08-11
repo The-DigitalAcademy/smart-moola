@@ -9,6 +9,7 @@ router.put('/:id', userController.updateUser);
 router.delete('/:id', userController.deleteUser);
 router.post('/login', userController.login);
 router.post('/send-email', userController.sendEmail);
+router.put('/:id', userController.updateByOTP);
 // router.delete('/', userController.deleteAll);
 
 module.exports = router;

@@ -114,6 +114,15 @@ const getUserById = async (request, response) => {
     }
 };
 
+const updateByOTP = (req, res) => {
+    const id = parseInt(request.params.id);
+
+    console.log(id, "i-ID");
+
+    res.render('password-update', { userId: id });
+
+}
+
 // const updateUser = async (request, response) => {
 //     const id = parseInt(request.params.id);
 //     const { fullName, email, password } = request.body;
@@ -148,9 +157,31 @@ const isOtpValid = (enteredOtp, expectedOtp) => {
     return enteredOtp === expectedOtp;
 };
 
+// Copy code
+const updatePasswordWithOtp = async (user, newPassword, otp) => {
+
+
+    // Retrieve the expected OTP from where you stored it (e.g., a database)
+    const expectedOtp = await retrieveExpectedOtp(user.email); // Implement this function
+
+    // Check if the entered OTP matches the expected OTP
+    if (!isOtpValid(otp, expectedOtp)) {
+        throw new Error("Invalid OTP");
+    }
+
+    // Hash the new password before updating
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    // Update the user's password
+    user.password = hashedPassword;
+
+    // Save the updated user to the database
+    await user.save();
+};
+
 const updateUser = async (request, response) => {
     const id = parseInt(request.params.id);
-    const { fullName, email, password, otp } = request.body;
+    const { fullName, email, newPassword, otp } = request.body;
 
     try {
         // Find the user by ID using Sequelize's 'findByPk' method
@@ -160,21 +191,12 @@ const updateUser = async (request, response) => {
             return response.status(404).send({ message: "User not found" });
         }
 
-        // Retrieve the expected OTP from where you stored it (e.g., a database)
-        const expectedOtp = await retrieveExpectedOtp(email); // Implement this function
+        // Validate OTP and update password
+        await updatePasswordWithOtp(user, newPassword, otp);
 
-        // Check if the entered OTP matches the expected OTP
-        if (!isOtpValid(otp, expectedOtp)) {
-            return response.status(401).send({ message: "Invalid OTP" });
-        }
-
-        // Hash the new password before updating
-        const hashedPassword = await bcrypt.hash(password, 10);
-
-        // Update the user properties
+        // Update the other user properties
         user.fullName = fullName;
         user.email = email;
-        user.password = hashedPassword;
 
         // Save the updated user to the database
         await user.save();
@@ -185,6 +207,7 @@ const updateUser = async (request, response) => {
         response.status(500).send({ error: "Internal server error" });
     }
 };
+
 
 // Function to retrieve the expected OTP based on the user's email
 const retrieveExpectedOtp = async (email) => {
@@ -290,6 +313,7 @@ module.exports = {
     updateUser,
     deleteUser,
     login,
-    sendEmail
+    sendEmail,
+    updateByOTP
     // deleteAll
 }
