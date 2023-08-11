@@ -37,8 +37,19 @@ const getAllQuestions = async (request, response) => {
         response.status(500).send({ error: "Internal server error" });
     }
 };
+
+const getFrombody = async (request,response)=>{
+
+    
+const {email,myname} = request.body;
+
+return console.log(email,myname)
+
+}
+
 module.exports = {
     storeQuestion,
-    getAllQuestions
+    getAllQuestions,
+    getFrombody
     // deleteAll
 }

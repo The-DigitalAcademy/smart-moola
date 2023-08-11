@@ -14,7 +14,7 @@ export class CorrectAnswersComponent implements OnInit {
   active = 'a1';
   mandlaAnswer = '';
   tumiAnswer = '';
-question: any;
+  question: any;
 
 
   verifyAns()
@@ -48,11 +48,17 @@ question: any;
     this.router.navigate(['/aa'])
     
   }
-  
+ 
+  verifyAnswer2()
+  {
+   
+    this.router.navigate(['/aa'])
+    
+  }
+
   constructor(
 
     private router: Router,
-    private answerService: AnswerService,
     private session: SessionsService
   ) {}
 
