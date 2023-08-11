@@ -97,13 +97,16 @@ export class AaComponent implements OnInit {
         this.mandlaResponse = "Credit allows you to get into debt that you might fail to to repay ";
         this.tumiResponse = "Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ";
       
-        this.session.saveActiveQuestion('q2');
+       this.session.saveActiveQuestion('q2');
         break;
     }
   }
 
   verifyAnswer() {
     this.router.navigate(['/answers']);
+  }
+  verifyAnswer2() {
+    this.router.navigate(['/answers2']);
   }
 
   submitMandla() {
@@ -115,7 +118,8 @@ export class AaComponent implements OnInit {
   }
 
   submitTumi() {
-    throw new Error('Method not implemented.');
+    this.router.navigate(['/aa']);
+ 
   }
 
   constructor(

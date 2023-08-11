@@ -24,10 +24,10 @@ import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
-import { QuestionsComponent } from './components/scenarios/scenario-a/questions/questions.component';
 import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
+import { responseComponent } from './components/response/response.component';
 
 @NgModule({
   declarations: [
@@ -43,14 +43,16 @@ import { CorrectAnswersComponent } from './components/scenarios/scenario-a/corre
     CompNavComponent,
     ProfileComponent,
     VerifyOtpComponent,
-    QuestionsComponent,
     AnswersComponent,
+  
     ProfileEditorComponent,
-    QuestionsComponent,
     AnswersComponent,
     ProfileEditorComponent,
     CorrectAnswersComponent,
     AnswersComponent,
+    responseComponent,
+  
+   
   ],
   imports: [
     BrowserModule,

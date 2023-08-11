@@ -1,0 +1,13 @@
+<div>
+    <label for="word">Enter a word:</label>
+    <input type="text" [(ngModel)]="word" name="word" id="word" />
+    <button (click)="getMeaning()">Get Meaning</button>
+  </div>
+  <div *ngIf="explanation">
+    <h2>Explanation:</h2>
+    <p>{{ explanation }}</p>
+  </div>
+  <div *ngIf="error">
+    <p>{{ error }}</p>
+  </div>
+  
