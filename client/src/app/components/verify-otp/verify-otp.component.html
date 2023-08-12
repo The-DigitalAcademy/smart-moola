@@ -1,5 +1,4 @@
 <div class="container">
-    <h2>OTP Verification</h2>
 
     <form *ngIf="form" [formGroup]="form" (ngSubmit)="submitForm()">
 
@@ -9,8 +8,8 @@
         <p>Enter the OTP sent to your email</p>
 
         <div class="otpUI">
-            <div *ngFor="let fieldName of otpFieldNames; let i = index" class="box">
-                <input type="text" [id]="fieldName" [formControlName]="fieldName" />
+            <div *ngFor="let fieldName of otpFieldNames; let i = index" class="otpBox">
+                <input type="text" [id]="fieldName" [formControlName]="fieldName" class="otpField" />
                 <div *ngIf="form.get(fieldName)?.invalid && (form.get(fieldName)?.dirty || form.get(fieldName)?.touched)"
                     class="mt-3">
                     <div *ngIf="form.get(fieldName)?.errors?.['required']" class="error">OTP is required.</div>

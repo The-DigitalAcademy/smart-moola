@@ -21,7 +21,7 @@ const sendVerificationEmail = (req, res, email, otp, callback) => {
         from: "owethusotomela@gmail.com",
         to: email,
         subject: "Email Verification OTP",
-        text: `Your OTP for email verification is: ${otp}`,
+        text: `Enter this OTP: ${otp} to reset your password`,
     };
 
     transporter.sendMail(mailOptions, callback);
@@ -31,7 +31,7 @@ const sendEmail = async (req, res) => {
     const { email } = req.body;
     console.log('Request Body:', req.body);
 
-    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const otp = Math.floor(1000 + Math.random() * 9000).toString();
 
     console.log("Otp", otp);
 

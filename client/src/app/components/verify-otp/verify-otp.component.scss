@@ -1,103 +1,269 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .container {
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-form {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    width: 25rem;
-
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
+    form {
+        background-color: #FFFFFF;
+        height: 100vh;
+
+        h2 {
+            text-align: center;
+            color: var(--main-color);
+            margin-top: 2em;
+        }
+
+        img {
+            width: 25vw;
+        }
+
+        .box {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                font-weight: bold;
+                color: #669BBC;
+            }
+
+            input[type="email"],
+            input[type="password"] {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+
+            }
+
+        }
+
+        .boxSubmit {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #669BBC;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            top: 12em;
+            width: 100%;
+
+        }
+
+        p {
+            margin-top: 0.5rem;
+            text-align: center;
+            color: #669BBC;
+            margin-bottom: 4em;
+        }
+
+        .otpUI {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 8em;
+
+        }
+
+        .otpField {
+            height: 5.5em;
+            width: 5.5em;
+            border: none;
+            border-radius: 20px;
+            background: #F6F6F6;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        }
+    }
 }
 
-.container input::placeholder {
-    color: #D9D9D9;
+@media only screen and (max-width: 1200px) {
+    .container {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        form {
+            background-color: #FFFFFF;
+            height: 100vh;
+
+            h2 {
+                text-align: center;
+            }
+
+            img {
+                width: 60vw;
+            }
+
+            .box {
+                margin-bottom: 20px;
+
+                label {
+                    display: block;
+                    font-weight: bold;
+                    color: #669BBC;
+                }
+
+                input[type="email"],
+                input[type="password"] {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+
+                }
+
+            }
+
+            .boxSubmit {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #669BBC;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+
+            }
+        }
+    }
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 2.4em;
-    margin-top: -5em;
-    color: #669BBC;
+@media only screen and (max-width: 600px) {
+    .container {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        form {
+            background-color: #FFFFFF;
+            height: 100vh;
+
+            h2 {
+                text-align: center;
+            }
+
+            img {
+                width: 60vw;
+            }
+
+            .box {
+                margin-bottom: 20px;
+
+                label {
+                    display: block;
+                    font-weight: bold;
+                    color: #669BBC;
+                }
+
+                input[type="email"],
+                input[type="password"] {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+
+                }
+
+            }
+
+            .boxSubmit {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #669BBC;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+
+            }
+        }
+    }
 }
 
-.otpV {
-    // height: 40vh;
-    height: 100%;
-    width: 100%;
-}
+@media only screen and (max-width: 430px) {
+    .container {
 
-.box {
-    margin-bottom: 20px;
-}
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
 
-label {
-    display: block;
-    font-weight: bold;
-    color: #669BBC;
-}
+        form {
+            background-color: #FFFFFF;
+            height: 100vh;
 
-input[type="text"],
-input[type="password"] {
-    width: 50%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+            h2 {
+                text-align: center;
+            }
 
-}
+            img {
+                width: 94vw;
+            }
 
-#password{
-   padding: 30px; 
-}
+            .box {
+                margin-bottom: 20px;
 
-.error {
-    color: red;
-    margin-top: 5px;
-}
+                label {
+                    display: block;
+                    font-weight: bold;
+                    color: #669BBC;
+                }
 
-.submit {
-    display: block;
-    width: 90%;
-    padding: 10px;
-    background-color: #669BBC;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    position: fixed;
-    top: 44em;
-    margin-top: -6em;
-}
+                input[type="email"],
+                input[type="password"] {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
 
-.submit:hover {
-    background-color: #669BBC;
-}
+                }
 
-p {
-    text-align: center;
-    margin-top: 10px;
-    color: #669BBC;
-    margin-bottom: 4em;
-}
+            }
 
-.otpUI{
-    width: 100%;
-    display: flex;
-    text-align: center;
+            .boxSubmit {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #669BBC;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+
+            }
+        }
+    }
+
 }

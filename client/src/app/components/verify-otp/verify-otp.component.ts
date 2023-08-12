@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class VerifyOtpComponent implements OnInit {
 
   form: FormGroup;
-  otpFieldNames: string[] = ['otp1', 'otp2', 'otp3', 'otp4', 'otp5', 'otp6'];
+  otpFieldNames: string[] = ['otp1', 'otp2', 'otp3', 'otp4'];
   userId!: string;
 
   constructor(
