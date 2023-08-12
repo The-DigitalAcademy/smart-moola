@@ -2,14 +2,19 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
 }
 
 :root {
     --main-color: #669BBC;
-
+    --WHITE: #FFFFFF;
 }
 
- /* body {
+ body {
+    background-color: var(--WHITE);
+    font-family: 'Poppins', sans-serif;
     font-size: 12px;
     display: flex;
     flex-direction: column;
@@ -61,4 +66,4 @@ h1 {
       } 
 
 } 
- */
+

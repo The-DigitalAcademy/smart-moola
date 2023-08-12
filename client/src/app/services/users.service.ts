@@ -103,8 +103,4 @@ export class UsersService {
     return this.http.put(url, body, this.options);
   }
 
-
-
-
-
 }

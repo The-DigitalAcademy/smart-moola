@@ -1,28 +1,100 @@
-
-.container{
+.container {
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: fixed;
 
-    form{
+    form {
         background-color: #FFFFFF;
         height: 100vh;
-        h2{
+
+        h2 {
+            text-align: center;
+            color: var(--main-color);
+            margin-top: 2em;
+        }
+
+        img {
+            width: 25vw;
+        }
+
+        .box {
+            margin-bottom: 20px;
+
+            label {
+                display: block;
+                font-weight: bold;
+                color: #669BBC;
+            }
+
+            input[type="email"],
+            input[type="password"] {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+
+            }
+
+        }
+
+        .boxSubmit {
+            display: flex;
+            flex-direction: column;
             text-align: center;
         }
-        img{
-            width: 30vw;
+
+        button {
+            padding: 10px;
+            background-color: #669BBC;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            top: 1.3em;
+
         }
-        .box{
-            margin-bottom: 20px;
-            label {
+
+        p{
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        form {
+            background-color: #FFFFFF;
+            height: 100vh;
+
+            h2 {
+                text-align: center;
+            }
+
+            img {
+                width: 60vw;
+            }
+
+            .box {
+                margin-bottom: 20px;
+
+                label {
                     display: block;
                     font-weight: bold;
                     color: #669BBC;
                 }
+
                 input[type="email"],
                 input[type="password"] {
                     width: 100%;
@@ -32,178 +104,144 @@
 
                 }
 
-        }
-        .boxSubmit{
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-        button{
+            }
+
+            .boxSubmit {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            button {
                 padding: 10px;
                 background-color: #669BBC;
                 color: white;
                 border: none;
                 border-radius: 4px;
                 cursor: pointer;
-               
+
+            }
         }
     }
 }
 
-@media only screen and (max-width: 1200px){
-    .container{
+@media only screen and (max-width: 600px) {
+    .container {
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
-    
-        form{
+
+        form {
             background-color: #FFFFFF;
             height: 100vh;
-            h2{
+
+            h2 {
                 text-align: center;
             }
-            img{
+
+            img {
                 width: 60vw;
             }
-            .box{
+
+            .box {
                 margin-bottom: 20px;
+
                 label {
-                        display: block;
-                        font-weight: bold;
-                        color: #669BBC;
-                    }
-                    input[type="email"],
-                    input[type="password"] {
-                        width: 100%;
-                        padding: 8px;
-                        border: 1px solid #ccc;
-                        border-radius: 4px;
-    
-                    }
-    
+                    display: block;
+                    font-weight: bold;
+                    color: #669BBC;
+                }
+
+                input[type="email"],
+                input[type="password"] {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+
+                }
+
             }
-            .boxSubmit{
+
+            .boxSubmit {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
             }
-            button{
-                    padding: 10px;
-                    background-color: #669BBC;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                   
+
+            button {
+                padding: 10px;
+                background-color: #669BBC;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+
             }
         }
     }
 }
-@media only screen and (max-width: 600px){
-    .container{
+
+@media only screen and (max-width: 430px) {
+    .container {
 
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
-    
-        form{
-            background-color: #FFFFFF;
-            height: 100vh;
-            h2{
-                text-align: center;
-            }
-            img{
-                width: 60vw;
-            }
-            .box{
-                margin-bottom: 20px;
-                label {
-                        display: block;
-                        font-weight: bold;
-                        color: #669BBC;
-                    }
-                    input[type="email"],
-                    input[type="password"] {
-                        width: 100%;
-                        padding: 8px;
-                        border: 1px solid #ccc;
-                        border-radius: 4px;
-    
-                    }
-    
-            }
-            .boxSubmit{
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-            }
-            button{
-                    padding: 10px;
-                    background-color: #669BBC;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                   
-            }
-        }
-    }
-}
-@media only screen and (max-width: 430px){
-	.container{
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    
-        form{
+        form {
             background-color: #FFFFFF;
             height: 100vh;
-            h2{
+
+            h2 {
                 text-align: center;
             }
-            img{
+
+            img {
                 width: 94vw;
             }
-            .box{
+
+            .box {
                 margin-bottom: 20px;
+
                 label {
-                        display: block;
-                        font-weight: bold;
-                        color: #669BBC;
-                    }
-                    input[type="email"],
-                    input[type="password"] {
-                        width: 100%;
-                        padding: 8px;
-                        border: 1px solid #ccc;
-                        border-radius: 4px;
-    
-                    }
-    
+                    display: block;
+                    font-weight: bold;
+                    color: #669BBC;
+                }
+
+                input[type="email"],
+                input[type="password"] {
+                    width: 100%;
+                    padding: 8px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+
+                }
+
             }
-            .boxSubmit{
+
+            .boxSubmit {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
             }
-            button{
-                    padding: 10px;
-                    background-color: #669BBC;
-                    color: white;
-                    border: none;
-                    border-radius: 4px;
-                    cursor: pointer;
-                   
+
+            button {
+                padding: 10px;
+                background-color: #669BBC;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+
             }
         }
     }
-    
+
 }
