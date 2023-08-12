@@ -42,12 +42,10 @@ const routes: Routes = [
 
   { path: 'scenario-a', component: ScenarioAComponent },
   { path: 'aa', component: AaComponent },
-  // { path: 'ba', component: BaComponent },
   { path: 'answers', component: AnswersComponent },
   { path: 'correctAnswer', component: CorrectAnswersComponent },
 
   { path: 'scenario-b', component: ScenarioBComponent },
-  // { path: 'aa', component: AaComponent },
   { path: 'ba', component: BaComponent },
   { path: 'password-update', component: PasswordUpdateComponent }
 
