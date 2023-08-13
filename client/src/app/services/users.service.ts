@@ -96,11 +96,16 @@ export class UsersService {
   updateUserWithOtp(id: string, newPassword: string, otp: string): Observable<any> {
     const url = `${this.usersURL}/${id}`;
     console.log(url, "url")// Use the correct URL
-    
+
     const body = { newPassword, otp }; // Include only the fields needed for updating
     console.log(body, "body")
 
     return this.http.put(url, body, this.options);
+  }
+
+  userLogout() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
 }

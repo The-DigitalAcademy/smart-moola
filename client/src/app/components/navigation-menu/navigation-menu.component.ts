@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-navigation-menu',
@@ -17,11 +18,17 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class NavigationMenuComponent implements OnInit {
   isMenuOpen: boolean = false;
 
-  constructor() {}
+  constructor(
+    public userServices: UsersService
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  logout() {
+    this.userServices.userLogout();
   }
 }

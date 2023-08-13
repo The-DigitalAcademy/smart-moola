@@ -6,6 +6,6 @@
 
 <div class="sidebar" [ngClass]="{'open': isMenuOpen}">
     <a routerLink="/profile">Profile</a>
-    <a routerLink="/logout">Logout</a>
+    <a (click)="logout()">Logout</a>
     <a (click)="toggleMenu()" class="closeMenu">Close</a>
 </div>
