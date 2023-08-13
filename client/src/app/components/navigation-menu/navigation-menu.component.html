@@ -2,11 +2,10 @@
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
-  </div>
-  
-  <div class="sidebar" [ngClass]="{'open': isMenuOpen}">
+</div>
+
+<div class="sidebar" [ngClass]="{'open': isMenuOpen}">
     <a routerLink="/profile">Profile</a>
     <a routerLink="/logout">Logout</a>
-    <a (click)="toggleMenu()">Close</a>
-  </div>
-  
+    <a (click)="toggleMenu()" class="closeMenu">Close</a>
+</div>
