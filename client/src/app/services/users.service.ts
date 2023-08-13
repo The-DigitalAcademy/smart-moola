@@ -86,13 +86,21 @@ export class UsersService {
     );
   }
 
-    updateUser(user: User): Observable<User> {
+  updateUser(user: User): Observable<User> {
+    let id = localStorage.getItem('id');
 
-      let id = localStorage.getItem('id');
+    const url = `${this.usersURL}/${id}`;
+    return this.http.put<User>(url, user, this.options);
+  }
 
-      console.log("For an ID, Service", id);
+  updateUserWithOtp(id: string, newPassword: string, otp: string): Observable<any> {
+    const url = `${this.usersURL}/${id}`;
+    console.log(url, "url")// Use the correct URL
+    
+    const body = { newPassword, otp }; // Include only the fields needed for updating
+    console.log(body, "body")
 
-      const url = `${this.usersURL}/${id}`;
-      return this.http.put<User>(url, user, this.options);
-    }
+    return this.http.put(url, body, this.options);
+  }
+
 }

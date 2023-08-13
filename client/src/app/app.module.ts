@@ -27,6 +27,7 @@ import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
+import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { responseComponent } from './components/response/response.component';
 
 @NgModule({
@@ -50,9 +51,8 @@ import { responseComponent } from './components/response/response.component';
     ProfileEditorComponent,
     CorrectAnswersComponent,
     AnswersComponent,
+    PasswordUpdateComponent,
     responseComponent,
-  
-   
   ],
   imports: [
     BrowserModule,
