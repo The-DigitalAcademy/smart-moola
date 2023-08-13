@@ -29,6 +29,7 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
 import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { responseComponent } from './components/response/response.component';
+import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { responseComponent } from './components/response/response.component';
     AnswersComponent,
     PasswordUpdateComponent,
     responseComponent,
+    NavigationMenuComponent,
   ],
   imports: [
     BrowserModule,
