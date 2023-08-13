@@ -20,6 +20,7 @@ import { CorrectAnswersComponent } from './components/scenarios/scenario-a/corre
 
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
+import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 
 
 
@@ -47,7 +48,8 @@ const routes: Routes = [
 
   { path: 'scenario-b', component: ScenarioBComponent },
   { path: 'ba', component: BaComponent },
-  { path: 'password-update', component: PasswordUpdateComponent }
+  { path: 'password-update', component: PasswordUpdateComponent },
+  { path: 'menu', component: NavigationMenuComponent }
 
 ];
 
