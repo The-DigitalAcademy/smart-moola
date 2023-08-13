@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
-import { Answer } from 'src/app/interface/questions';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-answers',
   templateUrl: './answers.component.html',
@@ -16,6 +15,6 @@ export class AnswersComponent implements OnInit {
 
     setTimeout(() => {
       this.router.navigate(["/correctAnswer"])
-    }, 2700);
+    }, 2500);
   }
 }
