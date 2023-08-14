@@ -6,7 +6,7 @@ import { SessionsService } from 'src/app/services/sessions.service';
 @Component({
   selector: 'app-aa',
   templateUrl: './aa.component.html',
-  styleUrls: ['./aa.component.css'],
+  styleUrls: ['./aa.component.scss'],
 })
 export class AaComponent implements OnInit {
 

@@ -49,7 +49,7 @@ export class VerifyOtpComponent implements OnInit {
         .subscribe(
           (response: any) => {
             console.log('Password updated successfully', response);
-            this.router.navigate(['/success']); // Navigate to success page or home page
+            this.router.navigate(['/password-update']); // Navigate to success page or home page
           },
           (error: any) => {
             console.error('Error updating password:', error);
