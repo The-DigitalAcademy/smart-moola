@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 const q1 ="q1"
 const activeQ = "activeQ"
 
@@ -6,9 +7,11 @@ const a1 = "a1"
 const activeA = "activeA"
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SessionsService {
+  constructor(private router: Router, private usersServices: UsersService) {}
+
 
 
   constructor() { }
@@ -22,6 +25,7 @@ export class SessionsService {
     window.sessionStorage.setItem(activeQ, JSON.stringify(a))
   }
 /////////////
+
 
 //quiz
   public saveQ1(quiz:boolean){
@@ -67,6 +71,7 @@ public saveAns1(ans:boolean){
     const answer1 = window.sessionStorage.getItem(a1)
     if(answer1){
       return JSON.parse(answer1)
+
     }
   }
   

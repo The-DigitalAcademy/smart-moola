@@ -54,6 +54,8 @@ const sendEmail = async (req, res) => {
 
 const createUser = async (request, response) => {
     const { fullName, email, password, confirmPassword } = request.body;
+    const loggedUser = request.body;
+    console.log(loggedUser,"this my loged user")
 
     console.log(fullName + "fullName", email + "email", password + "password", confirmPassword, " confirmPassword")
 
@@ -69,6 +71,7 @@ const createUser = async (request, response) => {
             confirmPassword: confirmPassword
         });
 
+
         console.log("newUser", newUser);
 
         response.status(201).send({
@@ -77,6 +80,7 @@ const createUser = async (request, response) => {
             fullName: fullName,
             email: email
         });
+
     } catch (error) {
         console.error("Error creating user", error);
         response.status(500).send({ error: "Internal server error" });
@@ -181,11 +185,14 @@ const updatePasswordWithOtp = async (user, newPassword, otp) => {
 
 const updateUser = async (request, response) => {
     const id = parseInt(request.params.id);
+
     const { fullName, email, newPassword, otp } = request.body;
 
     try {
         // Find the user by ID using Sequelize's 'findByPk' method
         const user = await User.findByPk(id);
+        
+        console.log(user,"this the user we dealing with")
 
         if (!user) {
             return response.status(404).send({ message: "User not found" });
