@@ -54,6 +54,8 @@ const sendEmail = async (req, res) => {
 
 const createUser = async (request, response) => {
     const { fullName, email, password, confirmPassword } = request.body;
+    const loggedUser = request.body;
+    console.log(loggedUser,"this my loged user")
 
     console.log(fullName + "fullName", email + "email", password + "password", confirmPassword, " confirmPassword")
 
@@ -110,11 +112,15 @@ const getUserById = async (request, response) => {
 
 const updateUser = async (request, response) => {
     const id = parseInt(request.params.id);
-    const { fullName, email, password } = request.body;
+    const userDet = { fullName, email, password } = request.body;
+ 
+
 
     try {
         // Find the user by ID using Sequelize's 'findByPk' method
         const user = await User.findByPk(id);
+        
+        console.log(user,"this the user we dealing with")
 
         if (!user) {
             return response.status(404).send({ message: "User not found" });
