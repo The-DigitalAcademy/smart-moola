@@ -13,6 +13,7 @@ export class RegisterComponent {
 
   form: FormGroup;
   router: any;
+  session: any;
 
   constructor(
     private fb: FormBuilder,
@@ -41,11 +42,22 @@ export class RegisterComponent {
     if (this.form.valid) {
       this.userService.createUser(this.form.value)
 
+      const accessToken = this.form.value.accessToken;
+        const loggedInUserEmail = this.form.value.email;
+        const id = this.form.value.id;
+        
+  
+        localStorage.setItem('Token', accessToken);
+        localStorage.setItem('Email', loggedInUserEmail);
+        localStorage.setItem('id', id);
+        localStorage.setItem('fullName',this.form.value.fullName)
+
       // console.log(this.form.value);
       console.log(this.form.value);
       Swal.fire({
         icon: 'success',
         title: 'registered Successful!',
+
       }).then((result) => {
         if (result.value) {
           this.router.navigate(["/login"])

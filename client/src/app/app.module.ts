@@ -43,6 +43,7 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     CompNavComponent,
     ProfileComponent,
     VerifyOtpComponent,
+
     AnswersComponent,
     AaComponent,
   
@@ -50,6 +51,13 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     AnswersComponent,
     ProfileEditorComponent,
     AnswersComponent,
+
+    QuestionsComponent,
+    ProfileEditorComponent,
+    AnswersComponent,
+    ProfileEditorComponent,
+    CorrectAnswersComponent,
+
     PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent,

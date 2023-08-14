@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import { SessionsService } from 'src/app/services/sessions.service';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-aa',
@@ -9,11 +10,13 @@ import { SessionsService } from 'src/app/services/sessions.service';
   styleUrls: ['./aa.component.scss'],
 })
 export class AaComponent implements OnInit {
+
   constructor(
     private router: Router,
     private questionsService: QuestionService,
-    private session: SessionsService
-  ) {}
+    private session: SessionsService,
+    private usersServices: UsersService
+  ) { }
 
   question = '';
   active = 'q1';
@@ -80,8 +83,15 @@ export class AaComponent implements OnInit {
         this.tumiResponse =
           'Credit is the ability to borrow money to obtaingood or services. ';
 
+
           this.prompt = 'Credit defination'
         this.session.saveActiveQuestion('q3');
+
+
+      //   break;
+      // case 'q3':
+      //   this.question = 'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
+
 
         break;
       case 'q3':
@@ -180,15 +190,37 @@ export class AaComponent implements OnInit {
       default:
         this.active = 'q1';
         this.question = 'Why is credit important?';
+
         this.mandlaResponse =
           'Credit allows you to get into debt that you might fail to to repay ';
         this.tumiResponse =
           'Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ';
           this.prompt = 'Why is credit important?'
 
-         
+        this.mandlaResponse = "Credit allows you to get into debt that you might fail to to repay ";
+        this.tumiResponse = "Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ";
 
         this.session.saveActiveQuestion('q2');
+
+        this.questionsService
+          .sendQuestionAndGetExplanation(this.question)
+          .subscribe((data) => {
+            console.log(data); // Log the response from the backend
+          });
+        break;
+    }
+
+
+         
+
+
+        this.session.saveActiveQuestion('q2');
+
+  submitTumi() {
+    this.router.navigate(['/aa']);
+
+  }
+
 
         // this.questionsService
         //   .sendQuestionAndGetExplanation(this.prompt)
@@ -202,5 +234,9 @@ export class AaComponent implements OnInit {
   ngOnInit(): void {
     this.verify();
     this.getQuestions();
+  }
+
+  goBack(){
+    this.usersServices.previousPage();
   }
 }
