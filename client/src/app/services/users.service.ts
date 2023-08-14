@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs/internal/Observable';
 // import { usersAPI } from 'src/environments/environment.prod';
-
+import { Location } from '@angular/common';
 @Injectable({
   providedIn: 'root',
 })
@@ -23,7 +23,8 @@ export class UsersService {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) { }
 
   createUser(user: User) {
@@ -108,4 +109,7 @@ export class UsersService {
     this.router.navigate(['/login']);
   }
 
+  previousPage() {
+    this.location.back();
+  }
 }
