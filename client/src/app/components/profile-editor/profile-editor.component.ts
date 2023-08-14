@@ -9,16 +9,16 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-profile-editor',
   templateUrl: './profile-editor.component.html',
-  styleUrls: ['./profile-editor.component.css'],
+  styleUrls: ['./profile-editor.component.scss'],
 })
 export class ProfileEditorComponent implements OnInit {
   form: FormGroup;
   router: any;
-  fullName = ""
-  emaill=""
-  password=""
-  confirmPassword = ""
-  loggedUser : any 
+  fullName = '';
+  emaill = '';
+  password = '';
+  confirmPassword = '';
+  loggedUser: any;
 
   private userId!: number;
 
@@ -26,26 +26,30 @@ export class ProfileEditorComponent implements OnInit {
     private fb: FormBuilder,
     private http: HttpClient,
     private userService: UsersService,
-    private sessions : SessionsService
+    private sessions: SessionsService
   ) {
     this.form = this.fb.group(
       {
-        fullName: [this.sessions.getLoggedUser().fullName, [Validators.required, Validators.minLength(3)]],
-        email: [this.sessions.getLoggedUser().email, [Validators.required, Validators.email]],
-        password: [this.sessions.getLoggedUser().password, [Validators.required, Validators.minLength(8)]],
-        confirmPassword: [this.sessions.getLoggedUser().confirmPassword, Validators.required],
+        fullName: [
+          localStorage.getItem('fullName'),
+          [Validators.required, Validators.minLength(3)],
+        ],
+        email: [
+          localStorage.getItem('Email'),
+          [Validators.required, Validators.email],
+        ],
       },
       { validators: this.passwordMatchValidator }
     );
   }
 
   ngOnInit(): void {
-    this.loggedUser = this.sessions.getLoggedUser()
-    console.log(this.loggedUser,"name who logged");
+    this.loggedUser = this.sessions.getLoggedUser();
+    console.log(this.loggedUser, 'name who logged');
 
     // this.emaill="meee"
     // = window.localStorage.getItem("fullName")
-   // throw new Error('Method not implemented.');
+    // throw new Error('Method not implemented.');
   }
 
   passwordMatchValidator(form: FormGroup) {
@@ -62,16 +66,17 @@ export class ProfileEditorComponent implements OnInit {
       confirmPassword.setErrors(null);
     }
   }
-  
+
   submitForm(): void {
     if (this.form.valid) {
       const updatedUser: User = this.form.value; // Get the form values as a User object.
-  
-      console.log(updatedUser,"updated user");
-      
-      this.userService.updateUser(updatedUser).subscribe(data => {
+
+      console.log(updatedUser, 'updated user');
+
+      this.userService.updateUser(updatedUser).subscribe(
+        (data) => {
           console.log('Update successful!', data);
-  
+
           Swal.fire({
             icon: 'success',
             title: 'Updated Successful!',
@@ -88,5 +93,8 @@ export class ProfileEditorComponent implements OnInit {
       );
     }
   }
-  
+
+  discardChanges() {
+    this.userService.discardProfileEdit();
+  }
 }

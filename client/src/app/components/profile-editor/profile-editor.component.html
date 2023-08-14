@@ -47,9 +47,8 @@
     </div>
 
     <div class="button-container">
-      <button type="submit" class="submit" [disabled]="form.invalid"><a>Discard Changes</a></button>
+      <button type="submit" class="submit" [disabled]="form.invalid" (click)="discardChanges()"><a>Discard Changes</a></button>
       <button type="submit" class="submit" [disabled]="form.invalid"><a>Save</a></button>
-
     </div>
   </form>
 </div>

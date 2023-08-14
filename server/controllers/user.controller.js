@@ -72,7 +72,9 @@ const createUser = async (request, response) => {
         });
 
         // Send a response with the newly created user data
-        response.status(201).send({ message: `User added with ID: ${newUser.id}` });
+        response.status(201).json({ 
+            message: `User added with ID: ${newUser.id}`
+         });
     } catch (error) {
         console.error("Error creating user", error);
         response.status(500).send({ error: "Internal server error" });
