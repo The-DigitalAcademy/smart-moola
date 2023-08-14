@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UsersService } from '../../services/users.service';
 import Swal from 'sweetalert2';
+import { User } from '../../interface/users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -12,12 +14,12 @@ import Swal from 'sweetalert2';
 export class RegisterComponent {
 
   form: FormGroup;
-  router: any;
   session: any;
 
   constructor(
     private fb: FormBuilder,
-    private userService: UsersService
+    private userService: UsersService,
+    private router: Router
   ) {
     this.form = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
@@ -38,35 +40,87 @@ export class RegisterComponent {
     }
   }
 
+  // submitForm() {
+  //   if (this.form.valid) {
+  //     // Call the createUser method and subscribe to the observable
+  //     this.userService.createUser(this.form.value).subscribe(
+  //       (data: any) => {
+  //         console.log("Data what you have", data);
+  //         console.log("Data Message?", data.message);
+  //         console.log("Data ID?", data.id);
+  //         console.log("Data ID?", data.id);
+  //         console.log("Data Name?", data.fullName);
+  //         console.log("Data Token?", data.accessToken);
+  //         console.log("Data email?", data.email);
+  //         // console.log(id, fullName, email, accessToken)
+
+  //         // Set the Id in the local storage using the user's id from the response
+  //         localStorage.setItem('Id', data.id); // Assuming the response contains the user's id
+  //         // const accessToken = this.form.value.accessToken;
+  //         // const loggedInUserEmail = this.form.value.email;
+  //         // Display a success message using Swal
+  //         Swal.fire({
+  //           icon: 'success',
+  //           title: 'Registered Successful!',
+  //         }).then((result) => {
+  //           if (result.value) {
+  //             // Navigate to the login page upon success
+  //             this.router.navigate(['/login']);
+  //           }
+  //         });
+  //       },
+  //       (error: any) => {
+  //         // Display an error message using Swal if registration fails
+  //         Swal.fire({
+  //           icon: 'error',
+  //           title: 'Registration Failed!',
+  //           text: 'An error occurred during registration. Please try again later.',
+  //         });
+  //       }
+  //     );
+  //   }
+  // }
+
   submitForm() {
     if (this.form.valid) {
-      this.userService.createUser(this.form.value)
+      this.userService.createUser(this.form.value).subscribe(
+        (data: User) => {
 
-      const accessToken = this.form.value.accessToken;
-        const loggedInUserEmail = this.form.value.email;
-        const id = this.form.value.id;
-        
-  
-        localStorage.setItem('Token', accessToken);
-        localStorage.setItem('Email', loggedInUserEmail);
-        localStorage.setItem('id', id);
-        localStorage.setItem('fullName',this.form.value.fullName)
+          console.log("This data", data)
+          console.log("This email", data.email)
+          console.log("This id", data.id)
+          console.log("This fullname", data.fullName)
 
-      // console.log(this.form.value);
-      console.log(this.form.value);
-      Swal.fire({
-        icon: 'success',
-        title: 'registered Successful!',
+          const id = data.id;
+          const email = data.email;
+          const fullName = data.fullName
 
-      }).then((result) => {
-        if (result.value) {
-          this.router.navigate(["/login"])
-          this.router.navigate(["home"])
-        }
-      })
+          localStorage.setItem('ID', id.toString());
+          localStorage.setItem('Email', email.toString());
+          localStorage.setItem('fullName', fullName.toString());
 
+          Swal.fire({
+            icon: 'success',
+            title: 'Registered Successful!',
+          }).then((result) => {
+            if (result.value) {
+              // Navigate to the login page upon success
+              this.router.navigate(['/home']);
+            }
+          });
+        },
+        (error: any) => {
+          // Display an error message using Swal if registration fails
+          Swal.fire({
+            icon: 'error',
+            title: 'Registration Failed!',
+            text: 'An error occurred during registration. Please try again later.',
+          });
+
+        })
     }
   }
+
 
 }
 

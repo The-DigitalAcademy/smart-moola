@@ -44,12 +44,7 @@ export class ProfileEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loggedUser = this.sessions.getLoggedUser();
-    console.log(this.loggedUser, 'name who logged');
-
-    // this.emaill="meee"
-    // = window.localStorage.getItem("fullName")
-    // throw new Error('Method not implemented.');
+    
   }
 
   passwordMatchValidator(form: FormGroup) {

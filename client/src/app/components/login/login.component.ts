@@ -6,6 +6,7 @@ import { UsersService } from '../../services/users.service';
 import { AuthGuardService } from '../../services/auth.guard';
 import Swal from 'sweetalert2';
 import { SessionsService } from 'src/app/services/sessions.service';
+import { LoginResponse } from 'src/app/interface/users';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class LoginComponent {
     private usersService: UsersService,
     private router: Router,
     private auth: AuthGuardService,
-    private session : SessionsService
+    private session: SessionsService
   ) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -30,54 +31,41 @@ export class LoginComponent {
   }
 
   submitForm() {
-
     if (this.form.valid) {
-      this.usersService.userLogin(this.form.value).subscribe(data=>{
-         console.log("userData", data);
-
+      this.usersService.userLogin(this.form.value).subscribe(
+        (data: LoginResponse) => {
+          console.log("userData", data);
   
-        const accessToken = data.accessToken;
-        const loggedInUserEmail = data.email;
-        const id = data.id;
-        
-  this.session.saveLoggedUser(data)
+          const accessToken = data.accessToken;
+          const loggedInUserEmail = data.email;
+          const id = data.id;
   
-        localStorage.setItem('Token', accessToken);
-        localStorage.setItem('Email', loggedInUserEmail);
-        localStorage.setItem('id', id);
-        localStorage.setItem('fullName',data.fullName)
+          localStorage.setItem('Token', accessToken);
+          localStorage.setItem('Email', loggedInUserEmail);
+          localStorage.setItem('id', id);
   
-      //  Check if accessToken is present and valid
-        if (accessToken && accessToken !== 'undefined') {
-        //  this.router.navigate(['/home']);
-        } else {
+          // Check if accessToken is present and valid
+          if (accessToken && accessToken !== 'undefined') {
+            this.router.navigate(['/home']);
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Login Failed!',
+              text: 'Invalid username or password',
+            });
+          }
+        },
+        (error: any) => {
           Swal.fire({
             icon: 'error',
             title: 'Login Failed!',
-            text: 'Invalid username or password',
+            text: 'An error occurred during login. Please try again later.',
           });
         }
-      },
-      (error) => {
-        Swal.fire({
-          icon: 'error',
-          title: 'Login Failed!',
-          text: 'An error occurred during login. Please try again later.',
-        });
-      }
-   );
-     // });
-
-    //   Swal.fire({
-    //     icon: 'success',
-    //     title: 'Login Successful!',
-    //   }).then((result)=>{
-    //     if (result.value){
-    //       this.router.navigate(["/home"])
-    //     }})
-
-     };
+      );
+    }
   }
+  
 
 }
 

@@ -54,10 +54,6 @@ const sendEmail = async (req, res) => {
 
 const createUser = async (request, response) => {
     const { fullName, email, password, confirmPassword } = request.body;
-    const loggedUser = request.body;
-    console.log(loggedUser,"this my loged user")
-
-    console.log(fullName + "fullName", email + "email", password + "password", confirmPassword, " confirmPassword")
 
     try {
         // Hash the password
@@ -68,9 +64,12 @@ const createUser = async (request, response) => {
             fullName: fullName,
             email: email,
             password: hashedPassword,
-            confirmPassword: confirmPassword
+            confirmPassword: confirmPassword,
         });
 
+        console.log("New-User", newUser)
+        // Generate an access token (you'll need to implement this part)
+        // const accessToken = generateAccessToken(newUser);
 
         console.log("newUser", newUser);
 
@@ -86,6 +85,7 @@ const createUser = async (request, response) => {
         response.status(500).send({ error: "Internal server error" });
     }
 };
+
 
 const getUsers = async (request, response) => {
     try {
@@ -191,8 +191,8 @@ const updateUser = async (request, response) => {
     try {
         // Find the user by ID using Sequelize's 'findByPk' method
         const user = await User.findByPk(id);
-        
-        console.log(user,"this the user we dealing with")
+
+        console.log(user, "this the user we dealing with")
 
         if (!user) {
             return response.status(404).send({ message: "User not found" });
