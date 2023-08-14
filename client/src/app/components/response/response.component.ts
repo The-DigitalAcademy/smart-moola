@@ -16,7 +16,7 @@ Continue() {
   question!: string;
   explanation!: string;
   error!: string;
-word: any;
+  word: any;
 
   constructor( private questionService: QuestionService) { }
 
