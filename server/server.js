@@ -1,3 +1,4 @@
+require("dotenv").config()
 // Express Application setup
 const express = require("express");
 const cors = require("cors");
@@ -36,7 +37,9 @@ app.get('/', (req, res) => {
 })
 
 sequelize
-.sync()
+.sync({
+  force: false, logging: true
+})
 .then(() => {
   app.listen(PORT, () => {
     console.log(`App running on port: ${PORT}`);
