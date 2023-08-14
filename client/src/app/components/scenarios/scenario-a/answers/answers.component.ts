@@ -14,7 +14,7 @@ export class AnswersComponent implements OnInit {
   ngOnInit(): void {
 
     setTimeout(() => {
-      this.router.navigate(["/correctAnswer"])
+      this.router.navigate(["/response"])
     }, 2500);
   }
 }

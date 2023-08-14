@@ -4,16 +4,16 @@ const QnA = require("../models/QnA.model"); // Import the Sequelize model for "U
 
 
 const storeQuestion = async (request, response) => {
-    const { question, answer } = request.body;
+    const { question} = request.body;
 
-    console.log(question + "quiz", answer + "ans")
+    console.log(question + "quiz")
 
     try {
 
         // Create a new user using Sequelize's 'create' method
         const newQnA= await QnA.create({
             question: question,
-            answer: answer,
+            // answer: answer,
           
         });
 

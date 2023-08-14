@@ -1,12 +1,9 @@
+<div class="container">
+<br><br>
 <div>
-    <label for="word">Enter a word:</label>
-    <input type="text" [(ngModel)]="question" name="word" id="word" />
-    <button (click)="getMeaning()">Get Meaning</button>
+  <div>
+   <h2 class="text">The correct answer was :</h2>
+    <p>{{ explanation }} : YES</p>
   </div>
-  <div *ngIf="explanation">
-    <h2>Explanation:</h2>
-    <p>{{ explanation }}</p>
-  </div>
-  <div *ngIf="error">
-    <p>{{ error }}</p>
-  </div>
+<div>
+</div>

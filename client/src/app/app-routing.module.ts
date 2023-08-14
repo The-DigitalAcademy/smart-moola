@@ -16,11 +16,11 @@ import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 
 import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
-import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
 
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
+import { responseComponent } from './components/response/response.component';
 
 
 
@@ -44,13 +44,14 @@ const routes: Routes = [
   { path: 'scenario-a', component: ScenarioAComponent },
   { path: 'aa', component: AaComponent },
   { path: 'answers', component: AnswersComponent },
-  { path: 'correctAnswer', component: CorrectAnswersComponent },
+ 
 
   { path: 'scenario-b', component: ScenarioBComponent },
   { path: 'ba', component: BaComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
-  { path: 'menu', component: NavigationMenuComponent }
+  { path: 'menu', component: NavigationMenuComponent },
 
+  {path: 'response', component: responseComponent}
 ];
 
 @NgModule({
