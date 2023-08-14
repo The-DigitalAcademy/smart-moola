@@ -1,9 +1,15 @@
 // question.service.ts
 import { Injectable } from '@angular/core';
 import { Question } from '../interface/questions';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable, catchError, throwError } from 'rxjs';
+
+const URL = 'http://localhost:4545/api/qna/getqna'
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 
 
@@ -11,6 +17,8 @@ import { Observable, catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class QuestionService {
+
+
 
 url = "http://localhost:4545/api/qna/"
 
@@ -48,10 +56,13 @@ getQnA() : Observable<any>{
   sendQuestionAndGetExplanation(question: string): Observable<any> {
     const endpoint = this.backendUrl // Adjust the endpoint accordingly
 
-    return this.http.post(endpoint, { question });
+    return this.http.post(endpoint, { question }, httpOptions);
   }
 
 
+  getAllQuestions(): Observable<any> {
+    return this.http.get(URL);
+  }
 }
 //Servive for passing quiz to back end
 //////////////////////////////////////

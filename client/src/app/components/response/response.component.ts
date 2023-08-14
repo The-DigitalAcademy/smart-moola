@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import axios from 'axios';
 import { QuestionService } from 'src/app/services/question.service';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-response',
@@ -9,40 +9,33 @@ import { Router } from 'express';
   styleUrls: ['./response.component.css']
 })
 export class responseComponent implements OnInit {
-  router: any;
-Continue() {
-  this.router.navigate['/aa'];
-}
-  question!: string;
-  explanation!: string;
+
+  question!: '';
+  @Input() explanation: any;
   error!: string;
   word: any;
+  router: any;
 
-  constructor( private questionService: QuestionService) { }
+  constructor( private questionService: QuestionService) {}
+
+  reloadPage(): void {
+    window.location.reload()
+  }
 
   ngOnInit(): void {
-
+    this.explanation = localStorage.getItem("explanation")
     
+   
 
   }
 
-  // async getMeaning(): Promise<void> {
-  //   try {
-  //     const response = await axios.post('/api/meaning', { question: this.question });
-  //     this.explanation = response.data.explanation;
-  //     this.error = 'null';
-  //   } catch (error) {
-  //     this.error = 'Error fetching meaning.';
-  //     console.error('Error fetching meaning:', error);
-  //   }
+
+
+  // getMeaning(){
+  //   this.questionService.sendQuestionAndGetExplanation(this.question).subscribe(data => {
+  //     console.log(data.explanation)
+  //     this.explanation = data.explanation
+  //   })
   // }
-
-  getMeaning(){
-    this.questionService.sendQuestionAndGetExplanation(this.question).subscribe(data => {
-      console.log(data.explanation)
-      this.explanation = data.explanation
-    })
-  }
-
 
 }

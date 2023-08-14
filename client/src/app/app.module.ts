@@ -27,6 +27,7 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { responseComponent } from './components/response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
+import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
     ProfileComponent,
     VerifyOtpComponent,
     AnswersComponent,
+    AaComponent,
   
     ProfileEditorComponent,
     AnswersComponent,

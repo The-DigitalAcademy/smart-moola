@@ -66,9 +66,6 @@ export class BaComponent implements OnInit {
             });
             break;
 
-         
-
-
     }
   }
 
