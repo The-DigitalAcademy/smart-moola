@@ -1,5 +1,5 @@
 <div class="container">
-
+    <br />
     <form *ngIf="form" [formGroup]="form" (ngSubmit)="submitForm()">
 
         <h2>Login</h2>
@@ -28,10 +28,12 @@
                 </div>
             </div>
         </div>
+        <div class="boxSubmit">
+            <button type="submit" class="submit" [disabled]="form.invalid"><a>Login</a></button>
+            <a routerLink="/resetpassword" class="fpassword">Forgot password?</a>
+            <p>Don't have an account? <a href="registration" routerLink="/register" class="anchor">Register</a></p>
+        </div>
 
-        <button type="submit" class="submit" [disabled]="form.invalid"><a>Login</a></button>
-        <a routerLink="/resetpassword" class="fpassword">Forgot password?</a>
-        <p>Don't have an account? <a href="registration" routerLink="/register" class="anchor">Register</a></p>
 
     </form>
 </div>

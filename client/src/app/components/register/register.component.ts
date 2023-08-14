@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UsersService } from '../../services/users.service';
@@ -18,7 +17,6 @@ export class RegisterComponent {
 
   constructor(
     private fb: FormBuilder,
-    private http: HttpClient,
     private userService: UsersService
   ) {
     this.form = this.fb.group({
@@ -59,9 +57,10 @@ export class RegisterComponent {
       Swal.fire({
         icon: 'success',
         title: 'registered Successful!',
-      }).then((result)=>{
-        if (result.value){
-          // this.router.navigate(["/login"])
+
+      }).then((result) => {
+        if (result.value) {
+          this.router.navigate(["/login"])
           this.router.navigate(["home"])
         }
       })

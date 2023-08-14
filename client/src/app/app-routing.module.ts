@@ -19,6 +19,8 @@ import { AnswersComponent } from './components/scenarios/scenario-a/answers/answ
 import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
 
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+import { PasswordUpdateComponent } from './components/password-update/password-update.component';
+import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 
 
 
@@ -39,16 +41,15 @@ const routes: Routes = [
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
 
- { path: 'scenario-a', component: ScenarioAComponent },
-  { path: 'aa', component: AaComponent},
-  { path: 'ba', component: BaComponent },
-  { path: 'answers', component:AnswersComponent },
-  { path: 'correctAnswer', component:CorrectAnswersComponent },
+  { path: 'scenario-a', component: ScenarioAComponent },
+  { path: 'aa', component: AaComponent },
+  { path: 'answers', component: AnswersComponent },
+  { path: 'correctAnswer', component: CorrectAnswersComponent },
 
   { path: 'scenario-b', component: ScenarioBComponent },
-  { path: 'aa', component: AaComponent },
-  { path: 'ba', component: BaComponent }
-
+  { path: 'ba', component: BaComponent },
+  { path: 'password-update', component: PasswordUpdateComponent },
+  { path: 'menu', component: NavigationMenuComponent }
 
 ];
 
