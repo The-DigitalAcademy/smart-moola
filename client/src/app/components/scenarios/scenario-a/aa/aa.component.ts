@@ -22,6 +22,23 @@ export class AaComponent implements OnInit {
   mandlaResponse = "";
   tumiResponse = "";
 
+  verifyAnswer() {
+    this.router.navigate(['/answers']);
+  }
+  submitMandla() {
+    // this.session.saveQ1(true)
+    this.router.navigate(['/aa']);
+    // if(this.session.getQ1()==true){
+    //     this.session.saveQ2(true)
+    // }
+  }
+
+  submitTumi() {
+    this.router.navigate(['/aa']);
+ 
+  }
+
+  
   verify() {
     this.active = this.session.getActiveQuestion();
     switch (this.active) {
@@ -118,27 +135,12 @@ export class AaComponent implements OnInit {
        this.questionsService
        .sendQuestionAndGetExplanation(this.question)
        .subscribe((data) => {
-         console.log(data); // Log the response from the backend
+         console.log(data.explanation); // Log the response from the backend
        });
         break;
     }
   }
 
-  verifyAnswer() {
-    this.router.navigate(['/answers']);
-  }
-  submitMandla() {
-    // this.session.saveQ1(true)
-    this.router.navigate(['/aa']);
-    // if(this.session.getQ1()==true){
-    //     this.session.saveQ2(true)
-    // }
-  }
-
-  submitTumi() {
-    this.router.navigate(['/aa']);
- 
-  }
 
 
   ngOnInit(): void {

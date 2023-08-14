@@ -46,7 +46,7 @@ getQnA() : Observable<any>{
   }
 
   sendQuestionAndGetExplanation(question: string): Observable<any> {
-    const endpoint = `${this.backendUrl}/meaning`; // Adjust the endpoint accordingly
+    const endpoint = this.backendUrl // Adjust the endpoint accordingly
 
     return this.http.post(endpoint, { question });
   }
