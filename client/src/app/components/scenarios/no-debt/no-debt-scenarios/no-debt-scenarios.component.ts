@@ -5,11 +5,11 @@ import { SessionsService } from 'src/app/services/sessions.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
-  selector: 'app-aa',
-  templateUrl: './aa.component.html',
-  styleUrls: ['./aa.component.scss'],
+  selector: 'app-no-debt-scenarios',
+  templateUrl: './no-debt-scenarios.component.html',
+  styleUrls: ['./no-debt-scenarios.component.scss'],
 })
-export class AaComponent implements OnInit {
+export class NoDebtUserScenariosComponent implements OnInit {
 
 
   constructor(
@@ -131,14 +131,14 @@ export class AaComponent implements OnInit {
   }
   submitMandla() {
     // this.session.saveQ1(true)
-    this.router.navigate(['/aa']);
+    this.router.navigate(['/no-debt-scenarios']);
     // if(this.session.getQ1()==true){
     //     this.session.saveQ2(true)
     // }
   }
 
   submitTumi() {
-    this.router.navigate(['/aa']);
+    this.router.navigate(['/no-debt-scenarios']);
 
   }
 
@@ -147,7 +147,7 @@ export class AaComponent implements OnInit {
     this.verify();
   }
 
-  goBack(){
+  goBack() {
     this.usersServices.previousPage();
   }
 }
