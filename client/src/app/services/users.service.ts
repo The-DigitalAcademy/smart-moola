@@ -27,7 +27,7 @@ export class UsersService {
     private location: Location
   ) { }
 
-  createUser(user: User): Observable<any> {
+  createUser(user: User): Observable<User> {
     return this.http.post<User>(`${this.usersURL}/postUser`, user, this.options);
   }
 

@@ -67,18 +67,17 @@ const createUser = async (request, response) => {
             confirmPassword: confirmPassword,
         });
 
-        console.log("New-User", newUser)
-        // Generate an access token (you'll need to implement this part)
-        // const accessToken = generateAccessToken(newUser);
-
         console.log("newUser", newUser);
 
         response.status(201).send({
             message: `User added with ID: ${newUser.id}`,
-            id: newUser.id,
-            fullName: fullName,
-            email: email
+            user: {
+                id: newUser.id,
+                fullName: fullName,
+                email: email
+            }
         });
+        
 
     } catch (error) {
         console.error("Error creating user", error);
