@@ -27,6 +27,8 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { responseComponent } from './components/response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
+
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 
 @NgModule({
@@ -44,6 +46,14 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     ProfileComponent,
     VerifyOtpComponent,
 
+    AaComponent,
+
+  
+    ProfileEditorComponent,
+    AnswersComponent,
+     PasswordUpdateComponent,
+
+
     AnswersComponent,
     AaComponent,
   
@@ -59,10 +69,13 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     CorrectAnswersComponent,
 
     PasswordUpdateComponent,
+
     responseComponent,
     NavigationMenuComponent,
+    
   ],
   imports: [
+    NgxUiLoaderModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
