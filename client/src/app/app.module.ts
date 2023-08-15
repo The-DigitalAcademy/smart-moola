@@ -20,10 +20,9 @@ import { PasswordResetComponent } from './components/password-reset/password-res
 import { ProfileComponent } from './components/profile/profile.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 import { NoDebtScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
-// import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
-import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+import { IndebtedScenarioComponent } from './components/scenarios/indebted/indebted.component';
 import { AaComponent } from './components/scenarios/no-debt/aa/aa.component';
-import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
+import { BaComponent } from './components/scenarios/indebted/ba/ba.component';
 import { AnswersComponent } from './components/scenarios/no-debt/answers/answers.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
@@ -39,9 +38,8 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent,
-    // ScenarioAComponent,
     NoDebtScenarioComponent,
-    ScenarioBComponent,
+    IndebtedScenarioComponent,
     ProfileComponent,
     VerifyOtpComponent,
     responseComponent,
