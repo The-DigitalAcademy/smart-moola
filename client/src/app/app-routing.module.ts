@@ -10,41 +10,36 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
-import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
-import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
+import { NoDebtScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
+import { AaComponent } from './components/scenarios/no-debt/aa/aa.component';
 import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 
-import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
-import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
+import { AnswersComponent } from './components/scenarios/no-debt/answers/answers.component';
 
 import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 
-
-
 const routes: Routes = [
 
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'landing', component: LandingPageComponent },
+  { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'getstarted', component: GetstartedPageComponent },
 
   { path: 'resetpassword', component: PasswordResetComponent },
-  { path: 'scenario-a', component: ScenarioAComponent },
+  { path: 'no-debt', component: NoDebtScenarioComponent },
+  { path: 'aa', component: AaComponent },
+
   { path: 'profile', component: ProfileComponent },
-
   { path: 'profile-editor', component: ProfileEditorComponent },
-  { path: 'resetpassword', component: PasswordResetComponent },
+
   { path: 'verify-otp', component: VerifyOtpComponent },
 
-  { path: 'scenario-a', component: ScenarioAComponent },
-  { path: 'aa', component: AaComponent },
   { path: 'answers', component: AnswersComponent },
-  { path: 'correctAnswer', component: CorrectAnswersComponent },
 
   { path: 'scenario-b', component: ScenarioBComponent },
   { path: 'ba', component: BaComponent },
