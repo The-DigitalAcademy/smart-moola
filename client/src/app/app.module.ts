@@ -26,10 +26,10 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
 import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
-import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { responseComponent } from './components/response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
 
 @NgModule({
   declarations: [
@@ -47,16 +47,16 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
     VerifyOtpComponent,
     AaComponent,
 
+  
     ProfileEditorComponent,
     AnswersComponent,
-    ProfileEditorComponent,
-    CorrectAnswersComponent,
      PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent,
     
   ],
   imports: [
+    NgxUiLoaderModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

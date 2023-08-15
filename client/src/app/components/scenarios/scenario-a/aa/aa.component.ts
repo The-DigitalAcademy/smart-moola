@@ -31,12 +31,14 @@ export class AaComponent implements OnInit {
     // this.router.navigate(['/answers']);
     this.router.navigate(['/response']);
   }
+
+  //Mandla submit button answer
   submitMandla() {
-  
     this.getMeaning()
     this.router.navigate(['/response']);
   }
 
+//Tumi submit button answer
   submitTumi() {
     this.getMeaning()
     this.router.navigate(['/response']);
@@ -64,9 +66,6 @@ export class AaComponent implements OnInit {
         this.question = 'Why is credit important?';
         this.mandlaResponse = "Credit is when you owe money to someone else.";
         this.tumiResponse = "Credit allows you to make large purchases...";
-        this.mandlaResponse = 'Credit is when you owe money to someone else.';
-        this.tumiResponse = 'Credit allows you to make large purchases...';
-        
         this.prompt = 'Why is credit important?'
         this.session.saveActiveQuestion('q2');
         break;
