@@ -45,7 +45,7 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
     CompNavComponent,
     ProfileComponent,
     VerifyOtpComponent,
-    QuestionsComponent,
+    responseComponent,
     ProfileEditorComponent,
     AnswersComponent,
     ProfileEditorComponent,
