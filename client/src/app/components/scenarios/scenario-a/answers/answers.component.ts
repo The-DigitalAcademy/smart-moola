@@ -15,6 +15,7 @@ export class AnswersComponent implements OnInit {
   ngOnInit(): void {
 
     setTimeout(() => {
+
       this.loaderService.startLoader()
 
       setTimeout(() => {
@@ -23,4 +24,5 @@ export class AnswersComponent implements OnInit {
       }, 3000)
     });
 }
+
 }
