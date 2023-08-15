@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: 'scenario-a', component: ScenarioAComponent },
   { path: 'aa', component: AaComponent },
   { path: 'answers', component: AnswersComponent },
-  { path: 'correctAnswer', component: CorrectAnswersComponent },
+ 
 
   { path: 'scenario-b', component: ScenarioBComponent },
   { path: 'ba', component: BaComponent },

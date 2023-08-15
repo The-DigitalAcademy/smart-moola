@@ -45,14 +45,16 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
     CompNavComponent,
     ProfileComponent,
     VerifyOtpComponent,
-    QuestionsComponent,
+    AaComponent,
+
     ProfileEditorComponent,
     AnswersComponent,
     ProfileEditorComponent,
     CorrectAnswersComponent,
-    PasswordUpdateComponent,
+     PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent,
+    
   ],
   imports: [
     BrowserModule,
