@@ -1,7 +1,6 @@
 const axios = require('axios');
 const dotenv = require('dotenv');
-const openAIApiKey = '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'
-
+const openAIApiKey = process.env.OPENAI
 
 
 
@@ -16,11 +15,6 @@ async function getExplanationForQuestion(req, res) {
     res.status(500).json({ error: 'Error fetching explanation' });
   }
 }
-
-
-
-
-
 
 async function getExplanationForWord(question) {
   try {
