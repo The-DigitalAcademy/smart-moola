@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./response.component.css']
 })
 export class responseComponent implements OnInit {
- 
   question!: '';
   @Input() explanation: any;
   error!: string;
@@ -17,7 +16,6 @@ export class responseComponent implements OnInit {
   router: any;
 
   constructor( private questionService: QuestionService) {}
-
   reloadPage(): void {
     window.location.reload()
   }
@@ -34,4 +32,10 @@ export class responseComponent implements OnInit {
     })
   }
 
+} 
+
+  }
+
+
 }
+

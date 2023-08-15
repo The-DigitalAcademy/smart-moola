@@ -11,7 +11,6 @@ import { SessionsService } from 'src/app/services/sessions.service';
 
 export class AaComponent implements OnInit {
 
-
   constructor(
     private router: Router,
     private questionsService: QuestionService,
@@ -20,6 +19,7 @@ export class AaComponent implements OnInit {
 
   question = '';
   active = 'q1';
+
   mandlaResponse = "";
   tumiResponse = "";
   prompt = ''
@@ -32,13 +32,11 @@ export class AaComponent implements OnInit {
     this.router.navigate(['/response']);
   }
 
-  //Mandla submit button answer
   submitMandla() {
     this.getMeaning()
     this.router.navigate(['/response']);
   }
 
-//Tumi submit button answer
   submitTumi() {
     this.getMeaning()
     this.router.navigate(['/response']);
@@ -64,9 +62,11 @@ export class AaComponent implements OnInit {
         switch (this.active) {
         case 'q1':
         this.question = 'Why is credit important?';
+
         this.mandlaResponse = "Credit is when you owe money to someone else.";
         this.tumiResponse = "Credit allows you to make large purchases...";
         this.prompt = 'Why is credit important?'
+
         this.session.saveActiveQuestion('q2');
         break;
 
@@ -94,6 +94,7 @@ export class AaComponent implements OnInit {
         case 'q4':
         this.question =
         'Between Mandla and Tumi is correct about credit score ';
+
 
         this.mandlaResponse =
         'Credit score is a prediction of your credit behavior, such as how likely you are to pay a loan back on time, based on information from your credit reports.';
@@ -124,6 +125,7 @@ export class AaComponent implements OnInit {
         this.prompt = 'What is debt?'
         this.session.saveActiveQuestion('q7');
         break;
+
 
          case 'q7':
         this.question =
@@ -157,32 +159,29 @@ export class AaComponent implements OnInit {
         this.tumiResponse =
         'Debt is bad when you are failing to repay it, that means you don’t afford to pay back debt. ';
         this.prompt = 'What is a bad debtor?'
-
         this.session.saveActiveQuestion('10');
         this.router.navigate(['/']);
         break;
 
+
       
         default:
+
         this.active = 'q1';
         this.question = 'Why is credit important?';
-        this.mandlaResponse = "Credit allows you to get into debt that you might fail to to repay ";
-        this.tumiResponse = "Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ";
-
-       this.session.saveActiveQuestion('q2');
 
         this.mandlaResponse =
-        'Credit allows you to get into debt that you might fail to to repay ';
+          'Credit allows you to get into debt that you might fail to to repay ';
         this.tumiResponse =
-        'Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ';
-        this.prompt = 'Why is credit important?'
-        this.session.saveActiveQuestion('q2');
-
+          'Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ';
+          this.prompt = 'Why is credit important?'
+      
         break;
     }
   }
   ngOnInit(): void {
     this.verify();
     this.getQuestions();
+
   }
 }
