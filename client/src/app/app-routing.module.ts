@@ -10,14 +10,17 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
-import { NoDebtScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
+// import { NoDebtScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
 import { AaComponent } from './components/scenarios/no-debt/aa/aa.component';
-import { BaComponent } from './components/scenarios/indebted/ba/ba.component';
+
+import { NoDebtScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
+import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
+import { IndebtedUserScenariosComponent } from './components/scenarios/indebted/indebted-scenarios/indebted-scenarios.component';
+
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 
 import { AnswersComponent } from './components/scenarios/no-debt/answers/answers.component';
 
-import { IndebtedScenarioComponent } from './components/scenarios/indebted/indebted.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 
@@ -41,8 +44,8 @@ const routes: Routes = [
 
   { path: 'answers', component: AnswersComponent },
 
-  { path: 'indebted', component: IndebtedScenarioComponent },
-  { path: 'ba', component: BaComponent },
+  { path: 'indebted', component: IndebtedScenariosComponent },
+  { path: 'indebted-scenarios', component: IndebtedUserScenariosComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent }
 

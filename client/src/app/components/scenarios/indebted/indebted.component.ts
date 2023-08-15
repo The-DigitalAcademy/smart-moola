@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './indebted.component.html',
   styleUrls: ['./indebted.component.scss']
 })
-export class IndebtedScenarioComponent {
+export class IndebtedScenariosComponent {
 
   constructor() { }
 

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IndebtedScenarioComponent } from './indebted.component';
+import { IndebtedScenariosComponent } from './indebted.component';
 
-describe('IndebtedScenarioComponent', () => {
-  let component: IndebtedScenarioComponent;
-  let fixture: ComponentFixture<IndebtedScenarioComponent>;
+describe('IndebtedScenariosComponent', () => {
+  let component: IndebtedScenariosComponent;
+  let fixture: ComponentFixture<IndebtedScenariosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IndebtedScenarioComponent ]
+      declarations: [ IndebtedScenariosComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(IndebtedScenarioComponent);
+    fixture = TestBed.createComponent(IndebtedScenariosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
