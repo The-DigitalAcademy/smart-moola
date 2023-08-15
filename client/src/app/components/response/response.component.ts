@@ -34,8 +34,6 @@ export class responseComponent implements OnInit {
 
 } 
 
-  }
+  
 
-
-}
 

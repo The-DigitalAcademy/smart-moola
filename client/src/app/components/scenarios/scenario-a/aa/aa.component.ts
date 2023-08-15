@@ -28,18 +28,18 @@ export class AaComponent implements OnInit {
   questions: any;
 
   verifyAnswer() {
-    // this.router.navigate(['/answers']);
-    this.router.navigate(['/response']);
+    this.router.navigate(['/answers']);
+    // this.router.navigate(['/response']);
   }
 
   submitMandla() {
     this.getMeaning()
-    this.router.navigate(['/response']);
+    this.router.navigate(['/answers']);
   }
 
   submitTumi() {
     this.getMeaning()
-    this.router.navigate(['/response']);
+    this.router.navigate(['/answers']);
   }
 
   getQuestions() {
@@ -160,11 +160,9 @@ export class AaComponent implements OnInit {
         'Debt is bad when you are failing to repay it, that means you don’t afford to pay back debt. ';
         this.prompt = 'What is a bad debtor?'
         this.session.saveActiveQuestion('10');
-        this.router.navigate(['/']);
+        this.router.navigate(['/home']);
         break;
 
-
-      
         default:
 
         this.active = 'q1';
@@ -175,6 +173,7 @@ export class AaComponent implements OnInit {
         this.tumiResponse =
           'Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ';
           this.prompt = 'Why is credit important?'
+          this.session.saveActiveQuestion('q2');
       
         break;
     }
