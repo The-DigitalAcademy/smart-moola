@@ -119,7 +119,7 @@
 //       }
 //     );
 //   }
-  
+
 //   updateUser(user: User): Observable<any> {
 //     let id = localStorage.getItem('id');
 
@@ -156,7 +156,7 @@
 //   updateUserWithOtp(id: string, newPassword: string, otp: string): Observable<any> {
 //     const url = `${this.usersURL}/${id}`;
 //     console.log(url, "url")// Use the correct URL
-  
+
 //     const body = { newPassword, otp }; // Include only the fields needed for updating
 //     console.log(body, "body")
 
@@ -171,7 +171,6 @@
 //     this.location.back();
 //   }
 // }
-
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -192,39 +191,50 @@ export class UsersService {
   });
 
   options = { headers: this.headers };
-  discardProfileEdit: any;
+  user: any = "";
+  // discardProfileEdit: any;
 
   constructor(
     private http: HttpClient,
     private router: Router,
     private location: Location
-  ) {}
+  ) { }
 
-  createUser(user: User) {
-    this.http
-      .post(`${this.usersURL}/postUser`, user, this.options)
-      .subscribe((data) => {
-        console.log(data);
-      });
-    this.router.navigate(['/home']);
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(`${this.usersURL}/postUser`, user, this.options);
   }
 
   userLogin(userLogin: UserLogin): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(
-      `${this.usersURL}/login`,
-      userLogin,
-      this.options
-    );
-  }
-
-  sendEmail(email: string): Observable<any> {
-    return this.http.post(`${usersAPI}/send-email`, { email });
+    return this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options);
   }
 
   updateUser(user: User): Observable<any> {
     const id = localStorage.getItem('id');
     const url = `${this.usersURL}/${id}`;
-    return this.http.put(url, user, this.options);
+    return this.http.put<any>(url, user, this.options);
+  }
+
+  // Method to trigger email sending
+  sendEmail(email: string) {
+    // Make an HTTP POST request to the backend API to trigger the email sending
+    this.http.post(`${usersAPI}/send-email`, { email }).subscribe(
+      (response) => {
+        console.log('Email sent:', response);
+        this.http.post<CreateUserResponse>(`${this.usersURL}/postUser`, this.user, this.options).subscribe(data => {
+          console.log("data", data);
+
+          const loggedInUserEmail = data.email;
+          const id = data.id.toString();
+
+          localStorage.setItem('Email', loggedInUserEmail);
+          localStorage.setItem('id', id);
+        })
+        this.router.navigate(['/home']);
+      })
+  }
+
+  discardProfileEdit() {
+    return this.router.navigate(['/profile']);
   }
 
   updateUserWithOtp(id: string, newPassword: string, otp: string): Observable<any> {
@@ -242,3 +252,4 @@ export class UsersService {
     this.location.back();
   }
 }
+

@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
-import axios from 'axios';
+import { Component, Input, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
-import { Router } from '@angular/router';
+import { NoDebtUserComponent } from '../scenarios/no-debt/no-debt-user/no-debt-user.component';
 
 @Component({
   selector: 'app-response',
@@ -15,25 +14,22 @@ export class responseComponent implements OnInit {
   word: any;
   router: any;
 
-  constructor( private questionService: QuestionService) {}
+  constructor(private questionService: QuestionService) { }
   reloadPage(): void {
     window.location.reload()
   }
 
   ngOnInit(): void {
     this.explanation = localStorage.getItem("explanation")
-    
+
   }
 
-  getMeaning(){
+  getMeaning() {
     this.questionService.sendQuestionAndGetExplanation(this.question).subscribe(data => {
       console.log(data.explanation)
       this.explanation = data.explanation
     })
   }
-
-} 
-
-  
+}
 
 
