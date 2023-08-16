@@ -1,0 +1,11 @@
+<div class="snackburger" (click)="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<div class="sidebar" [ngClass]="{'open': isMenuOpen}">
+    <a routerLink="/profile">Profile</a>
+    <a (click)="logout()">Logout</a>
+    <a (click)="toggleMenu()" class="closeMenu">Close</a>
+</div>
