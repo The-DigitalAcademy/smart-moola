@@ -50,7 +50,6 @@
     .card {
       display: flex;
       flex-direction: row;
-      // background-color: aqua;
 
       justify-content: space-between;
       color: var(--main-color);
@@ -58,13 +57,11 @@
       border: 1px solid black;
       border-radius: 20px;
 
-      .firstElem{
+      .firstElem {
         display: flex;
         flex-direction: column;
         text-align: center;
-        // background-color: aquamarine;
       }
-      
 
       .cardImg {
         height: 12em;
