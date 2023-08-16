@@ -29,8 +29,9 @@
   justify-content: space-between;
   background-color: var(--main-color);
   color: #FFFFFF;
-  padding: 80px;
+  padding: 38px;
   font-size: 18px;
+  display: block;
 }
 
 
