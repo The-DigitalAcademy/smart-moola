@@ -22,8 +22,8 @@ export class responseComponent implements OnInit {
 
   ngOnInit(): void {
     this.explanation = localStorage.getItem("explanation")
+    
   }
-
 
   getMeaning(){
     this.questionService.sendQuestionAndGetExplanation(this.question).subscribe(data => {
@@ -34,8 +34,6 @@ export class responseComponent implements OnInit {
 
 } 
 
-  }
+  
 
-
-}
 

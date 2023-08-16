@@ -38,7 +38,7 @@ getQnA() : Observable<any>{
 
     return this.http.post(endpoint, { question });
 
-    return this.http.post(endpoint, { question }, httpOptions);
+  //  return this.http.post(endpoint, { question }, httpOptions);
   }
   getAllQuestions(): Observable<any> {
     return this.http.get(URL);
