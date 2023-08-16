@@ -7,9 +7,17 @@ export interface User {
 }
 
 export interface UserLogin {
-    "email": String,
-    "password": String
+    email: String,
+    password: String
 }
+
+export interface CreateUserResponse {
+    message: string;
+    id: number;
+    fullName: string;
+    email: string;
+}
+
 export interface LoginResponse {
     id: string;
     fullName: string;
@@ -17,3 +25,4 @@ export interface LoginResponse {
     role: string;
     accessToken: string;
 }
+

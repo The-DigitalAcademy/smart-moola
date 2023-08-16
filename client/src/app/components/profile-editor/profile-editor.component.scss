@@ -1,0 +1,102 @@
+.container {
+
+  height: 100vh;
+
+  form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    width: 25rem;
+
+    h2 {
+      display: flex;
+      justify-content: center;
+      color: #669BBC;
+      margin-bottom: 2.4em;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: #669BBC;
+    }
+
+    input[type=text],
+    select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #password {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    #confirmPassword {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit]:hover {
+      background-color: #669BBC;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      // margin-top: 2em;
+      margin-top: 2em;
+      margin-bottom: 10em;
+      gap: 10px;
+    }
+
+    .submit {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #669BBC;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .error {
+      color: red;
+    }
+  }
+}

@@ -2,34 +2,36 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
+
+import { AuthGuardService } from '../app/services/auth.guard';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { JwtModule } from '@auth0/angular-jwt';
-import { AuthGuardService } from '../app/services/auth.guard';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component'
-import { CompNavComponent } from './components/comp-nav/comp-nav.component';
-
-
-import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
-import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
-import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
-import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
-import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
-
-import { QuestionsComponent } from './components/scenarios/scenario-a/questions/questions.component';
-import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
-
-import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
-import { CorrectAnswersComponent } from './components/scenarios/scenario-a/correct-answers/correct-answers.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
+// import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
+// import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+// import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
+import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
+import { PasswordUpdateComponent } from './components/password-update/password-update.component';
+import { responseComponent } from './components/response/response.component';
+import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
+import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
+// import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
 
-
+// import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 
 @NgModule({
   declarations: [
@@ -41,27 +43,29 @@ import { ProfileComponent } from './components/profile/profile.component';
     GetstartedPageComponent,
     PasswordResetComponent,
 
-    ScenarioAComponent,
-    ScenarioBComponent,
-    CompNavComponent,
+    NoDebtComponent,
+    // NoDebtScenarioComponent,
+
+    // NoDebtUserScenarioComponent,
+    IndebtedScenariosComponent,
     ProfileComponent,
-    ProfileEditorComponent,
-
-
     VerifyOtpComponent,
+    // AaComponent,
+    ProfileEditorComponent,
+    // AnswersComponent,
+    PasswordUpdateComponent,
+    ProfileEditorComponent,
+    ProfileEditorComponent,
+    responseComponent,
+    ProfileEditorComponent,
+    ProfileEditorComponent,
+    PasswordUpdateComponent,
+    responseComponent,
+    NavigationMenuComponent
 
-       QuestionsComponent,
-
-       AnswersComponent,
-       ProfileEditorComponent,
-       CorrectAnswersComponent,
- 
-
-       AnswersComponent
-
-      
   ],
   imports: [
+    NgxUiLoaderModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

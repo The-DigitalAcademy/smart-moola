@@ -1,0 +1,133 @@
+.container {
+  height: 100vh;
+  // background-color: pink;
+  position: fixed;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    // margin-bottom: 20em;
+    margin-top: 2em;
+
+    .progress {
+      position: fixed;
+      width: 70%;
+      left: 7em;
+    }
+  }
+
+  h1 {
+    margin-top: 5vh;
+    text-align: center;
+    color: #669BBC;
+    font-weight: 700;
+  }
+
+  h5 {
+    margin-top: 4vh;
+    margin-bottom: 2em;
+    text-align: center;
+    color: #669BBC;
+    font-weight: 500;
+  }
+
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0 6px;
+    height: 50%;
+
+    .card {
+      padding: 4px;
+      text-align: center;
+      background-color: #f1f1f1;
+      color: #669BBC;
+    }
+
+  }
+
+  .submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #669BBC;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 4px;
+    text-align: center;
+    margin-top: -45em;
+  }
+
+  .backBtn{
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    // margin-left: 2.4em;
+    // left: 60em;
+    text-align: center;
+  }
+
+}
+
+span {
+  margin-top: 5vh;
+  text-align: center;
+  color: #669BBC;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 300px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+.getHomeImg {
+  height: 15em;
+  width: 12em;
+  position: absolute;
+  top: 1em;
+  left: 6em;
+}
+
+
+
+.submit {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  background-color: #669BBC;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 4px;
+  text-align: center;
+  margin-top: 130px;
+  margin-top: -40em;
+}
+
+
+// .progress-bar {
+//   background-color: #669BBC;
+// }
+
+.progress-bar {
+  background-color: #669BBC;
+}
+
+
+// .span {
+//   margin-top: 64px;
+// }

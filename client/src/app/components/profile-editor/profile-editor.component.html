@@ -1,5 +1,5 @@
 <div class="container">
-  <form *ngIf="form" [formGroup]="form" (ngSubmit)="submitForm()">
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
 
     <h2>Update Profile</h2>
 
@@ -16,7 +16,7 @@
 
     <div class="box">
       <label for="surname">E-mail</label>
-      <input type="text" id="email" formControlName="email" placeholder="Enter your email"/>
+      <input type="text" id="email" formControlName="email" placeholder="Enter your email" />
       <div *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)" class="mt-3">
         <div *ngIf="form.get('email')?.errors?.['required']" class="error">E-name is required.</div>
       </div>
@@ -35,7 +35,7 @@
 
     <div class="box">
       <label for="confirmPassword">Confirm Password</label>
-      <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm password"/>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm password" />
       <div
         *ngIf="form.get('confirmPassword')?.invalid && (form.get('confirmPassword')?.dirty || form.get('confirmPassword')?.touched)"
         class="mt-3">
@@ -47,11 +47,9 @@
     </div>
 
     <div class="button-container">
-      <button type="submit" class="submit" [disabled]="form.invalid"><a>Discard Changes</a></button>
+      <button type="submit" class="submit" [disabled]="form.invalid" (click)="discardChanges()"><a>Discard
+          Changes</a></button>
       <button type="submit" class="submit" [disabled]="form.invalid"><a>Save</a></button>
-
     </div>
   </form>
 </div>
-
-
