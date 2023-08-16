@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsersService } from '../services/users.service';
+import { UsersService } from './users.service';
+import { LoginResponse } from '../interface/users';
 
 const q1 = "q1"
 const activeQ = "activeQ"
@@ -12,6 +13,10 @@ const activeA = "activeA"
   providedIn: 'root',
 })
 export class SessionsService {
+  getLoggedUser: any;
+  saveLoggedUser(data: LoginResponse) {
+    throw new Error('Method not implemented.');
+  }
   constructor(private router: Router, private usersServices: UsersService) { }
 
   //Quiz
@@ -23,7 +28,6 @@ export class SessionsService {
     window.sessionStorage.setItem(activeQ, JSON.stringify(a))
   }
   /////////////
-
 
   //quiz
   public saveQ1(quiz: boolean) {

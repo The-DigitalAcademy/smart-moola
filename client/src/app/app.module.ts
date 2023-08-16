@@ -19,14 +19,18 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
 import { PasswordResetComponent } from './components/password-reset/password-reset.component'
 import { ProfileComponent } from './components/profile/profile.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
-import { NoDebtScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
-// import { AaComponent } from './components/scenarios/no-debt/aa/aa.component';
-import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
-import { AnswersComponent } from './components/scenarios/no-debt/answers/answers.component';
+// import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
+// import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+// import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { responseComponent } from './components/response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
+import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
+
+// import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 
 @NgModule({
   declarations: [
@@ -37,19 +41,28 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent,
+    // NoDebtScenarioComponent,
 
-    NoDebtScenarioComponent,
+    NoDebtUserScenarioComponent,
     IndebtedScenariosComponent,
-
     ProfileComponent,
     VerifyOtpComponent,
+    // AaComponent,
+    ProfileEditorComponent,
+    // AnswersComponent,
+    PasswordUpdateComponent,
+    ProfileEditorComponent,
+    ProfileEditorComponent,
     responseComponent,
     ProfileEditorComponent,
-    AnswersComponent,
+    ProfileEditorComponent,
     PasswordUpdateComponent,
-    NavigationMenuComponent,
+    responseComponent,
+    NavigationMenuComponent
+
   ],
   imports: [
+    NgxUiLoaderModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

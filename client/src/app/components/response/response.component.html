@@ -1,12 +1,22 @@
-<div>
-    <label for="word">Enter a word:</label>
-    <input type="text" [(ngModel)]="question" name="word" id="word" />
-    <button (click)="getMeaning()">Get Meaning</button>
-  </div>
-  <div *ngIf="explanation">
-    <h2>Explanation:</h2>
+<div class="container">
+
+  <br /><br />
+  <!-- <div> -->
+  <div class="content">
+    <h2 class="text">The correct answer was :</h2>
     <p>{{ explanation }}</p>
   </div>
-  <div *ngIf="error">
-    <p>{{ error }}</p>
+
+  <div class="landing">
+    <a routerLink="/aa" class="submit-1">Continue</a>
   </div>
+</div>
+
+<br><br>
+<div>
+  <div>
+   <h2 class="text">The correct answer was :</h2>
+    <p>{{ explanation }}</p>
+  </div>
+<div>
+</div>
