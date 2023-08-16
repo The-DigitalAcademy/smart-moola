@@ -1,12 +1,12 @@
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import axios from 'axios';
-import { QuestionService } from 'src/app/services/question.service';
+import { QuestionService } from '../../services/question.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-response',
   templateUrl: './response.component.html',
-  styleUrls: ['./response.component.css']
+  styleUrls: ['./response.component.scss']
 })
 export class responseComponent implements OnInit {
   question!: '';
