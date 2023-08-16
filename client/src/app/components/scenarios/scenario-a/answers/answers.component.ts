@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoaderService } from 'src/app/services/Loader';
 @Component({
   selector: 'app-answers',
   templateUrl: './answers.component.html',
@@ -9,12 +10,19 @@ export class AnswersComponent implements OnInit {
   answers: [] = [];
   @Input() answer: any;
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, public loaderService: LoaderService) { }
 
   ngOnInit(): void {
 
     setTimeout(() => {
-      this.router.navigate(["/correctAnswer"])
-    }, 2500);
-  }
+
+      this.loaderService.startLoader()
+
+      setTimeout(() => {
+        this.loaderService.stopLoader();
+        this.router.navigate(['start'])
+      }, 3000)
+    });
+}
+
 }
