@@ -21,6 +21,7 @@ export class responseComponent implements OnInit {
 
   ngOnInit(): void {
     this.explanation = localStorage.getItem("explanation")
+    
   }
 
 

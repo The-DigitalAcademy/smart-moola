@@ -51,7 +51,7 @@ const routes: Routes = [
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
 
-  {path: 'response', component: responseComponent}
+  { path: 'response', component: responseComponent }
 ];
 
 @NgModule({
