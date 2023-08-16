@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
+import axios from 'axios';
 import { QuestionService } from 'src/app/services/question.service';
 import { Router } from '@angular/router';
 
@@ -21,9 +22,8 @@ export class responseComponent implements OnInit {
 
   ngOnInit(): void {
     this.explanation = localStorage.getItem("explanation")
-    
-  }
 
+  }
 
   getMeaning() {
     this.questionService.sendQuestionAndGetExplanation(this.question).subscribe(data => {

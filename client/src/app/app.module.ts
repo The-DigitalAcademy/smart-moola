@@ -28,7 +28,8 @@ import { responseComponent } from './components/response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { NgxUiLoaderModule } from "ngx-ui-loader";
 import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
-import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
+import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
+// import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
 
 // import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 
@@ -41,9 +42,11 @@ import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-d
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent,
+
+    NoDebtComponent,
     // NoDebtScenarioComponent,
 
-    NoDebtUserScenarioComponent,
+    // NoDebtUserScenarioComponent,
     IndebtedScenariosComponent,
     ProfileComponent,
     VerifyOtpComponent,
