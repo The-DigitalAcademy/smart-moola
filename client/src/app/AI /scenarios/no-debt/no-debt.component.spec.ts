@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScenarioAComponent } from './scenario-a.component';
+import { ScenarioAComponent } from './no-debt.component';
 
 describe('ScenarioAComponent', () => {
   let component: ScenarioAComponent;

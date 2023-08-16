@@ -19,16 +19,19 @@ import { GetstartedPageComponent } from './Pages/getstarted-page/getstarted-page
 import { PasswordResetComponent } from './Aunthentication/password-reset/password-reset.component'; 
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { VerifyOtpComponent } from './Aunthentication/verify-otp/verify-otp.component';
-import { ScenarioAComponent } from './AI /scenarios/scenario-a/scenario-a.component'; 
+
 import { ScenarioBComponent } from './AI /scenarios/scenario-b/scenario-b.component'; 
-import { AnswersComponent } from './AI /scenarios/scenario-a/answers/answers.component'; 
+import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component'; 
 import { ProfileEditorComponent } from './Pages/profile-editor/profile-editor.component'; 
 import { PasswordUpdateComponent } from './Aunthentication/password-update/password-update.component'; 
-import { responseComponent } from './components/response/response.component';
+import { responseComponent } from './AI /response/response.component'; 
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component';
+import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component';
 
-import { AaComponent } from './AI /scenarios/scenario-a/aa/aa.component'; 
+
+// import { AaComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component'; 
 
 @NgModule({
   declarations: [
@@ -39,22 +42,15 @@ import { AaComponent } from './AI /scenarios/scenario-a/aa/aa.component';
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent,
-    ScenarioAComponent,
+    NoDebtComponent,
     ScenarioBComponent,
     ProfileComponent,
     VerifyOtpComponent,
-
-    AaComponent,
-
-  
+    NoDebtUserComponent,
     ProfileEditorComponent,
     AnswersComponent,
      PasswordUpdateComponent,
-
-
     AnswersComponent,
-    AaComponent,
-  
     ProfileEditorComponent,
     AnswersComponent,
     ProfileEditorComponent,
