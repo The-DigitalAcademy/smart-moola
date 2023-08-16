@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScenarioBComponent } from './scenario-b.component';
+import { ScenarioAComponent } from './no-debt.component';
 
-describe('ScenarioBComponent', () => {
-  let component: ScenarioBComponent;
-  let fixture: ComponentFixture<ScenarioBComponent>;
+describe('ScenarioAComponent', () => {
+  let component: ScenarioAComponent;
+  let fixture: ComponentFixture<ScenarioAComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ScenarioBComponent ]
+      declarations: [ ScenarioAComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ScenarioBComponent);
+    fixture = TestBed.createComponent(ScenarioAComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

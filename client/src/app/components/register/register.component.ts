@@ -20,6 +20,8 @@ export class RegisterComponent {
     private fb: FormBuilder,
     private userService: UsersService,
     private router: Router
+    // private userService: UsersService,
+    // private router: Router
   ) {
     this.form = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],

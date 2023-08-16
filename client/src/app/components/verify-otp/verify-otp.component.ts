@@ -35,16 +35,16 @@ export class VerifyOtpComponent implements OnInit {
     this.route.queryParams.subscribe((params: any) => {
       const userId = params['userId']; // Replace 'userId' with the actual parameter name
       // Now you have the userId available for use
-      
+
     });
-    
+
   }
 
   submitForm() {
     if (this.form.valid) {
       const otp = this.otpFieldNames.map(fieldName => this.form.value[fieldName]).join('');
       const newPassword = 'newlyEnteredPassword'; // Get the newly entered password somehow
-  
+
       this.userService.updateUserWithOtp(this.userId, newPassword, otp)
         .subscribe(
           (response: any) => {
@@ -57,6 +57,5 @@ export class VerifyOtpComponent implements OnInit {
         );
     }
   }
-  
 
 }

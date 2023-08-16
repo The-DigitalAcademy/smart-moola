@@ -12,46 +12,61 @@
   align-items: center;
   height: 100vh;
 
-  .header{
+  .header {
     display: flex;
     flex-direction: row;
-    align-items: center; 
+    align-items: center;
     gap: 10px;
-    margin-bottom: 20em;
-    margin-top: -8em;
+    margin-bottom: 10em;
 
   }
 
   .getHomeImg {
-    height: 15em;
-    width: 12em;
+    height: 16em;
+    width: 16em;
     position: absolute;
-    margin-top: -24em;
+    margin-top: -30em;
   }
 
   background-color: #FFFFFF;
   height: 100vh;
 
   p {
+    background-color: #F6F6F6;
     color: var(--main-color);
     font-size: large;
     text-align: center;
     margin-bottom: 1em;
-    margin-top: 2em;
+    margin-top: 3em;
     font-weight: bold;
   }
 
   .card-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     gap: 1em;
 
     .card {
+      display: flex;
+      flex-direction: row;
+
       justify-content: space-between;
-      background-color: #D4D4D4;
-      color: #FFFFFF;
+      color: var(--main-color);
       padding: 10px;
+      border: 1px solid black;
+      border-radius: 20px;
+
+      .firstElem {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cardImg {
+        height: 12em;
+        width: 12em;
+      }
     }
 
     a {

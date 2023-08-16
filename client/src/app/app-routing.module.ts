@@ -10,51 +10,47 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
-import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
-import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
-import { BaComponent } from './components/scenarios/scenario-b/ba/ba.component';
+import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
+import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
+
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 
-import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
+// import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 
-import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { responseComponent } from './components/response/response.component';
 import { ModalComponent } from './components/modal/modal.component';
-
-
+import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
+import { NoDebtUserComponent } from './components/scenarios/no-debt/no-debt-user/no-debt-user.component';
 
 const routes: Routes = [
 
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'landing', component: LandingPageComponent },
+  { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'getstarted', component: GetstartedPageComponent },
 
   { path: 'resetpassword', component: PasswordResetComponent },
-  { path: 'scenario-a', component: ScenarioAComponent },
+
+  { path: 'no-debt', component: NoDebtComponent },
+  { path: 'no-debt-user', component: NoDebtUserComponent },
+
   { path: 'profile', component: ProfileComponent },
-
   { path: 'profile-editor', component: ProfileEditorComponent },
-  { path: 'resetpassword', component: PasswordResetComponent },
+
   { path: 'verify-otp', component: VerifyOtpComponent },
 
-  { path: 'scenario-a', component: ScenarioAComponent },
-  { path: 'aa', component: AaComponent },
-  { path: 'answers', component: AnswersComponent },
-  { path: 'modal', component: ModalComponent },
- 
+  // { path: 'answers', component: AnswersComponent },
 
-  { path: 'scenario-b', component: ScenarioBComponent },
-  { path: 'ba', component: BaComponent },
+  { path: 'indebted', component: IndebtedScenariosComponent },
+  { path: 'indebted-user', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
-  
 
-  {path: 'response', component: responseComponent}
+  { path: 'response', component: responseComponent }
 ];
 
 @NgModule({
