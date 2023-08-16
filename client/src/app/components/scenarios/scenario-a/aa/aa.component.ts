@@ -26,7 +26,7 @@ tumiResponse = "";
         break;
       case 'q2':
         this.question =
-          'Between Mandla and Tumi, who is correct with credit definition';
+          'Between Mandla and Tumi, who is correct with the credit definition';
 
           this.mandlaResponse = "Credit is when you owe money to someone else. ";
           this.tumiResponse = "Credit is the ability to borrow money to obtain goods or services. ";
