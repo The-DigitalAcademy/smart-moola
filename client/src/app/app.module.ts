@@ -52,27 +52,12 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     ProfileEditorComponent,
     AnswersComponent,
      PasswordUpdateComponent,
-
-
-    AnswersComponent,
-    AaComponent,
-  
     ProfileEditorComponent,
     AnswersComponent,
-    ProfileEditorComponent,
-    AnswersComponent,
-
-    QuestionsComponent,
-    ProfileEditorComponent,
-    AnswersComponent,
-    ProfileEditorComponent,
-    CorrectAnswersComponent,
-
-    PasswordUpdateComponent,
-
     responseComponent,
-    NavigationMenuComponent,
-    
+    PasswordUpdateComponent,
+    responseComponent,
+    NavigationMenuComponent 
   ],
   imports: [
     NgxUiLoaderModule,
