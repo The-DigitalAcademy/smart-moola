@@ -17,19 +17,20 @@ import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component'
-import { CompNavComponent } from './components/comp-nav/comp-nav.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
-import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
-import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
-import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
+// import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
+// import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
+// import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { responseComponent } from './components/response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
+import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
 
-import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
+// import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
 
 @NgModule({
   declarations: [
@@ -40,35 +41,25 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     LandingPageComponent,
     GetstartedPageComponent,
     PasswordResetComponent,
-    ScenarioAComponent,
-    ScenarioBComponent,
-    CompNavComponent,
+    // NoDebtScenarioComponent,
+
+    NoDebtUserScenarioComponent,
+    IndebtedScenariosComponent,
     ProfileComponent,
     VerifyOtpComponent,
-
-    AaComponent,
-
-  
+    // AaComponent,
     ProfileEditorComponent,
-    AnswersComponent,
-     PasswordUpdateComponent,
-
-
-    AnswersComponent,
-    AaComponent,
-  
+    // AnswersComponent,
+    PasswordUpdateComponent,
     ProfileEditorComponent,
-    AnswersComponent,
     ProfileEditorComponent,
-    AnswersComponent,
+    responseComponent,
     ProfileEditorComponent,
-    AnswersComponent,
     ProfileEditorComponent,
     PasswordUpdateComponent,
-
     responseComponent,
-    NavigationMenuComponent,
-    
+    NavigationMenuComponent
+
   ],
   imports: [
     NgxUiLoaderModule,
