@@ -10,8 +10,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
-import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
-import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
+// import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
+
 
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 
@@ -22,6 +22,9 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
 import { responseComponent } from './components/response/response.component';
 import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './components/scenarios/no-debt/no-debt-user/no-debt-user.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
+import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
 
 const routes: Routes = [
 
@@ -44,12 +47,14 @@ const routes: Routes = [
 
   // { path: 'answers', component: AnswersComponent },
 
-  { path: 'indebted', component: IndebtedScenariosComponent },
-  { path: 'indebted-user', component: IndebtedUserComponent },
+  { path: 'indebted', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
 
-  { path: 'response', component: responseComponent }
+  { path: 'response', component: responseComponent },
+  { path: 'footer', component: FooterComponent},
+  { path: 'indebtedscene', component: indebtedScenesComponent}
+
 ];
 
 @NgModule({
