@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompNavComponent } from './comp-nav.component';
+import { responseComponent } from './response.component';
 
-describe('CompNavComponent', () => {
-  let component: CompNavComponent;
-  let fixture: ComponentFixture<CompNavComponent>;
+describe('ResponseComponent', () => {
+  let component: responseComponent;
+  let fixture: ComponentFixture<responseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CompNavComponent ]
+      declarations: [ responseComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CompNavComponent);
+    fixture = TestBed.createComponent(responseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
