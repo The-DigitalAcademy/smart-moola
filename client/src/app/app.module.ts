@@ -17,7 +17,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component'
-import { CompNavComponent } from './components/comp-nav/comp-nav.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
@@ -30,6 +29,7 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
 import { NgxUiLoaderModule } from "ngx-ui-loader";
 
 import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     PasswordResetComponent,
     ScenarioAComponent,
     ScenarioBComponent,
-    CompNavComponent,
     ProfileComponent,
     VerifyOtpComponent,
 
@@ -61,7 +60,8 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
     ProfileEditorComponent,
     PasswordUpdateComponent,
     responseComponent,
-    NavigationMenuComponent 
+    NavigationMenuComponent,
+    ModalComponent 
   ],
   imports: [
     NgxUiLoaderModule,
