@@ -10,11 +10,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 
-import { NoDebtScenarioComponent, NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
-// import { NoDebtUserScenariosComponent } from './components/scenarios/no-debt/no-debt-scenarios/no-debt-scenarios.component';
-
 import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
-import { IndebtedUserScenariosComponent } from './components/scenarios/indebted/indebted-scenarios/indebted-scenarios.component';
+import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
 
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 
@@ -23,8 +20,8 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { responseComponent } from './components/response/response.component';
-
-
+import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
+import { NoDebtUserComponent } from './components/scenarios/no-debt/no-debt-user/no-debt-user.component';
 
 const routes: Routes = [
 
@@ -36,8 +33,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
 
   { path: 'resetpassword', component: PasswordResetComponent },
-  { path: 'no-debt', component: NoDebtScenarioComponent },
-  { path: 'no-debt-scenarios', component: NoDebtUserScenarioComponent },
+
+  { path: 'no-debt', component: NoDebtComponent },
+  { path: 'no-debt-user', component: NoDebtUserComponent },
 
   { path: 'profile', component: ProfileComponent },
   { path: 'profile-editor', component: ProfileEditorComponent },
@@ -47,7 +45,7 @@ const routes: Routes = [
   // { path: 'answers', component: AnswersComponent },
 
   { path: 'indebted', component: IndebtedScenariosComponent },
-  { path: 'indebted-scenarios', component: IndebtedUserScenariosComponent },
+  { path: 'indebted-user', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
 
