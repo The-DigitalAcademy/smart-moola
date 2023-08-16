@@ -6,8 +6,8 @@ import { LoginResponse } from '../interface/users';
 const q1 = "q1"
 const activeQ = "activeQ"
 
-const a1 = "a1"
-const activeA = "activeA"
+const a1 = 'a1';
+const activeA = 'activeA';
 
 @Injectable({
   providedIn: 'root',

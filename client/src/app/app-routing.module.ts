@@ -20,6 +20,7 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { responseComponent } from './components/response/response.component';
+import { ModalComponent } from './components/modal/modal.component';
 import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './components/scenarios/no-debt/no-debt-user/no-debt-user.component';
 

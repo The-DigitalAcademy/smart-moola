@@ -42,10 +42,18 @@ export class ProfileEditorComponent implements OnInit {
       { validators: this.passwordMatchValidator }
     );
   }
-
   ngOnInit(): void {
-    
+    throw new Error('Method not implemented.');
   }
+
+  // ngOnInit(): void {
+  //   this.loggedUser = this.sessions.getLoggedUser();
+  //   console.log(this.loggedUser, 'name who logged');
+
+  //   // this.emaill="meee"
+  //   // = window.localStorage.getItem("fullName")
+  //   // throw new Error('Method not implemented.');
+  // }
 
   passwordMatchValidator(form: FormGroup) {
     const password = form.get('password');
