@@ -14,15 +14,13 @@ export class AnswersComponent implements OnInit {
 
   ngOnInit(): void {
 
-    setTimeout(() => {
-
       this.loaderService.startLoader()
 
       setTimeout(() => {
         this.loaderService.stopLoader();
-        this.router.navigate(['start'])
+        this.router.navigate(['/response'])
       }, 3000)
-    });
+    }
 }
 
-}
+

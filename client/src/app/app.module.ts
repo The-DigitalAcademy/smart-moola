@@ -54,7 +54,11 @@ import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
      PasswordUpdateComponent,
     ProfileEditorComponent,
     AnswersComponent,
-    responseComponent,
+    ProfileEditorComponent,
+    AnswersComponent,
+    ProfileEditorComponent,
+    AnswersComponent,
+    ProfileEditorComponent,
     PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent 
