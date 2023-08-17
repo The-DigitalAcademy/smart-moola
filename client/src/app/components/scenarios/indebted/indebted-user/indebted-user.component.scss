@@ -11,16 +11,6 @@
         height: 15%;
         padding-top: 4%;
         padding-bottom: 4%;
-        
-        .back-button{
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-            width: 22rem;
-            padding-left: 1%;
-            padding-right: 4%;
-            color: var(--main-color);
-
-        }
 
        .pgbar{
          margin-top: 1%;
@@ -36,42 +26,85 @@
     }
     
     .body{
-        height: 75%;
+        height: 65%;
         width: 100%;
         color: var(--main-color);
         font-size: 12px;
         padding-top: 4%;
         padding-bottom: 4%;
-        .imagebox{
-            width: 20rem;
-            height: 15rem;
-        }
+        background: #F6F6F6;
+        border-radius: 0.5rem;
 
-        
-
-        
-        }
-
-        .btn-group{
-          
-            align-content: center;
-            margin-top: 1.5rem;
-            margin-left: 5rem;
-            gap: 2rem;
-            width: 50%;
-            .btn{
-               
+        .topStatement{
+            height: 15%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+           
+            .statement{
                 text-align: center;
-                color: var(--WHITE);
-                cursor: pointer; 
-                border: none;
-                background-color: var(--main-color);
-                &:hover {
-                    background-color: #175175;
-                }
+                font-weight: bolder;
             }
            
         }
+
+        .TheImage{
+
+            height: 70%;
+            background-color: aquamarine;
+
+            .imagebox1{
+                width: 100%;
+                 height: 100%;
+            }
+
+        }
+
+        .BottomStatement{
+            height: 15%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-top: 1rem;
+           
+            .statement2{
+                text-align: center;
+                font-weight: bolder;
+            }
+           
+        }
+
+        
+
+        
+
+        
+        // }
+
+        // .btn-group{
+          
+        //     align-content: center;
+        //     margin-top: 1.5rem;
+        //     margin-left: 5rem;
+        //     gap: 2rem;
+        //     width: 50%;
+        //     .btn{
+               
+        //         text-align: center;
+        //         color: var(--WHITE);
+        //         cursor: pointer; 
+        //         border: none;
+        //         background-color: var(--main-color);
+        //         &:hover {
+        //             background-color: #175175;
+        //         }
+        //     }
+           
+
+    }
+
+    .btnNext
+    {
+        height: 10%;
+        background-color: var(--WHITE);
     }
     
     .footer
@@ -79,5 +112,6 @@
         height: 10%;
         padding-top: 5%;
         
+    }
 }
 
