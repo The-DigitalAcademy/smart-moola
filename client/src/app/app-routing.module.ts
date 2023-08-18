@@ -17,6 +17,9 @@ import { responseComponent } from './AI /response/response.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component'; 
 import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component'; 
+import { FooterComponent } from './components/footer/footer.component';
+import { indebtedScenesComponent } from './AI /scenarios/indebted-scenes/indebted-scenes.component'; 
+import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component'; 
 import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
 
 const routes: Routes = [
@@ -40,11 +43,14 @@ const routes: Routes = [
 
   { path: 'answers', component: AnswersComponent },
 
-
+  { path: 'indebted', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
 
-  { path: 'response', component: responseComponent }
+  { path: 'response', component: responseComponent },
+  { path: 'footer', component: FooterComponent},
+  { path: 'indebtedscene', component: indebtedScenesComponent}
+
 ];
 
 @NgModule({
