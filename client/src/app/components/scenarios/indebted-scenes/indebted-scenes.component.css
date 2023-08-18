@@ -1,18 +1,17 @@
-.container
-{
+.container {
     width: 100%;
     height: 100vh;
     background-color: var(--WHITE);
 
 
-    .header{
-        
+    .header {
+
         background-color: var(--WHITE);
         height: 15%;
         padding-top: 4%;
         padding-bottom: 4%;
-        
-        .back-button{
+
+        .back-button {
             margin-top: 1rem;
             margin-left: 0.5rem;
             width: 22rem;
@@ -22,33 +21,33 @@
 
         }
 
-       .pgbar{
-         margin-top: 1%;
-         width: 22rem;
-         height: 1rem;
-         margin-left: 2%;
-         margin-right: 2%;
-         margin-bottom: 1%;
-         padding-top: 5%;
-        
-       } 
-        
+        .pgbar {
+            margin-top: 1%;
+            width: 22rem;
+            height: 1rem;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 1%;
+            padding-top: 5%;
+
+        }
+
     }
-    
-    .body{
+
+    .body {
         height: 75%;
         width: 100%;
         color: var(--main-color);
         font-size: 12px;
         padding-top: 4%;
         padding-bottom: 4%;
-        .imagebox{
+
+        .imagebox {
             width: 20rem;
             height: 15rem;
         }
 
-        .textScene
-        {
+        .textScene {
             font-weight: bold;
             margin-top: 0.1rem;
             margin-bottom: 0.5rem;
@@ -59,69 +58,69 @@
             height: 17%;
         }
 
-        .QandA{
+        .QandA {
             background-color: #F6F6F6;
             border-radius: 2%;
             height: 32%;
-            .question{
+
+            .question {
                 font-weight: bold;
                 margin-left: 0.2rem;
             }
-            .option1
-            {
+
+            .option1 {
                 margin-left: 1rem;
                 margin-right: 0.5rem;
                 margin-top: 0.8rem;
                 margin-bottom: 0.8rem;
-               
+
             }
 
-            .option2
-            {
+            .option2 {
                 margin-left: 1rem;
                 margin-right: 0.5rem;
                 margin-top: 0.8rem;
                 margin-bottom: 0.8rem;
-               
+
             }
 
-            .option3
-            {
+            .option3 {
                 margin-left: 1rem;
                 margin-right: 0.5rem;
                 margin-top: 0.8rem;
                 margin-bottom: 0.8rem;
-               
+
             }
         }
 
-        .btn-group{
-          
+        .btn-group {
+
             align-content: center;
             margin-top: 1.5rem;
             margin-left: 5rem;
             gap: 2rem;
             width: 50%;
-            .btn{
-               
+
+            .btn {
+
                 text-align: center;
                 color: var(--WHITE);
-                cursor: pointer; 
+                cursor: pointer;
                 border: none;
                 background-color: var(--main-color);
+
                 &:hover {
                     background-color: #175175;
                 }
             }
-           
+
         }
     }
-    
-    .footer
-    {
+
+    .footer {
         height: 10%;
         padding-top: 5%;
-        
+
     }
 
 }
