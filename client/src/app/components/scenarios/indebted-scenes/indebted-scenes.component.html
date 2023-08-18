@@ -22,19 +22,19 @@
       <p class="textScene">{{ currentStatement }}</p>
     
       <div class="QandA">
-        <form action="/your_server.php">
+        <form>
             <!-- <p class="question">
                 What will be affected below based on Mbali’s scenario? Select One answer
             </p> -->
             <p class="question">{{ currentQuestion }}</p>
             
-            <input class="option1" type="radio" id="Answe1" name="debt-manage" value="Credit limit">
+            <input class="option1" type="radio" id="Answe1" name="debt-manage" value="Credit limit" [(ngModel)]="isRadioSelected">
             <label class="lbl1" for="Answe1">{{ labels[currentStepIndex].text }}</label><br>
     
-            <input class="option2" type="radio" id="Answe2" name="debt-manage" value="Credit Score">
+            <input class="option2" type="radio" id="Answe2" name="debt-manage" value="Credit Score" [(ngModel)]="isRadioSelected">
             <label class="lbl2" for="Answe2">{{ labels[currentStepIndex].text2 }}</label><br>
     
-            <input class="option3" type="radio" id="Answe3" name="debt-manage" value="Debtor status">
+            <input class="option3" type="radio" id="Answe3" name="debt-manage" value="Debtor status" [(ngModel)]="isRadioSelected">
             <label class="lbl3" for="Answe3">{{ labels[currentStepIndex].text3 }}</label><br>
 
             
@@ -42,8 +42,9 @@
       </div>
       <div class="btn-group">
         <!-- <button class="btn" (click)="previousStatement()">Previous</button> -->
-        <button class="btn" (click)="nextStatement()" [disabled]="isRadioSelected">Submit</button>
+        <button class="btn" type="button" (click)="nextStatement()" [disabled]="!isRadioSelected">Submit</button>
       </div>
+      <div *ngIf="showIncorrectMessage" class="incorrect-message">Incorrect Answer</div>
       
     </div>
     

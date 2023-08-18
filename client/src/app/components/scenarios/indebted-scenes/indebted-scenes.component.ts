@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-indebted-scenes',
@@ -6,6 +6,8 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
   styleUrls: ['./indebted-scenes.component.css']
 })
 export class indebtedScenesComponent implements OnInit, AfterViewInit{
+
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   statements = [
     "Mbali overspent on his credit card, resulting in a large debt with added interest charges from the credit card company.",
@@ -22,6 +24,14 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     "what helps people in debt by creating a manageable repayment plan"
   ];
 
+  correctAnswers = [
+    'Credit Score',         // Answer for the first statement
+    'Debt Counselling',     // Answer for the second statement
+    'Debt Consolidation',
+    'Debt Review'                  // Add correct answers for other statements
+  ];
+  
+
   labels = [
     { for: 'first Answers', text: 'Credit limits', text2: 'Credit Score', text3: 'Debtor status'},
     { for: 'second Answers', text: 'Debt Review', text2: 'Debt Counselling', text3: 'Debt Consolidation' },
@@ -36,7 +46,8 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   currentStatement: string = ''; // Declare the property here
   currentQuestion: string = '';
   progressPercentage = 0; // Initialize the progress percentage
-  isRadioSelected = false; // initially setting the radio boxes to false(not selected)
+  isRadioSelected: boolean = false; // initially setting the radio boxes to false(not selected)
+  showIncorrectMessage = false; 
 
   
   // isFirstIteration = true; // Flag to track the first iteration
@@ -75,13 +86,39 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     }
   }
 
+  getCorrectAnswer(): string {
+    // Implement this function to return the correct answer for the current statement
+    return this.correctAnswers[this.currentStatementIndex];
+
+  }
+  
+  getSelectedAnswer(): string {
+  const selectedRadio = Array.from(document.getElementsByName('debt-manage'))
+    .find(option => option instanceof HTMLInputElement && option.checked) as HTMLInputElement;
+  return selectedRadio ? selectedRadio.value : '';
+}
+
+
   nextStatement() {
     if (this.currentStatementIndex < this.statements.length - 1) {
-      this.currentStatementIndex++;
-      this.currentStepIndex++;
-      this.updateTextScene();
-      this.checkRadioSelection();
-      // this.updateLabels();
+      const correctAnswer = this.getCorrectAnswer(); // Implement this function to get the correct answer
+      
+      if (this.isRadioSelected && this.getSelectedAnswer() === correctAnswer) {
+        this.showIncorrectMessage = false; // Hide the message if the answer is correct
+      } else {
+        this.showIncorrectMessage = true; // Show the message for an incorrect answer
+      }
+      
+      this.cdRef.detectChanges(); // Trigger change detection
+      
+      setTimeout(() => {
+        this.showIncorrectMessage = false; // Reset the message after a timeout
+        this.isRadioSelected = false; // Reset radio selection
+        this.currentStatementIndex++;
+        this.currentStepIndex++;
+        this.updateTextScene();
+        this.cdRef.detectChanges(); // Trigger change detection
+      }, 2000); // Adjust the timeout duration as needed
     }
   }
   
@@ -122,13 +159,14 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
   checkRadioSelection() {
     const radioOptions = Array.from(document.getElementsByName('debt-manage')) as HTMLInputElement[];
-    
+    // this.isRadioSelected = radioOptions.some(option => option.checked);
     // Use forEach to iterate through the array
     radioOptions.forEach(option => {
       if (option.checked) {
         this.isRadioSelected = true;
         return;
       }
+       
     });
 
     }
