@@ -25,22 +25,34 @@ export class NoDebtUserComponent implements OnInit {
   prompt = ''
   explanation= ''
 
+
+
   questions: any;
+  progressValue: number = 0;
 
   verifyAnswer() {
     this.router.navigate(['/answers']);
     // this.router.navigate(['/response']);
+   
   }
 
   submitMandla() {
-    this.getMeaning()
+    this.getMeaning();
     this.router.navigate(['/answers']);
+    const totalSteps = 9; // Total number of steps
+    const currentStep = 1; // Replace this with the actual step number
+    this.progressValue = (currentStep / totalSteps) * 100;
+    
   }
 
   submitTumi() {
-    this.getMeaning()
+    this.getMeaning();
     this.router.navigate(['/answers']);
+    const totalSteps = 9; // Total number of steps
+    const currentStep = 1; // Replace this with the actual step number
+    this.progressValue = (currentStep / totalSteps) * 100;
   }
+  
 
   getQuestions() {
     this.questionsService.getAllQuestions().subscribe((data) => {
@@ -167,7 +179,7 @@ export class NoDebtUserComponent implements OnInit {
          //sending this quiz to AI
         this.prompt = 'What is a bad debtor?'
         this.session.saveActiveQuestion('10');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/summary']);
         break;
 
         default:
@@ -188,7 +200,40 @@ export class NoDebtUserComponent implements OnInit {
   }
   ngOnInit(): void {
     this.verify();
-    this.getQuestions();
+   this.getQuestions();
 
   }
+
+  // currentStatementIndex = 0;
+  // currentStepIndex = 0;
+  // currentStatement: string = ''; // Declare the property here
+  // currentQuestion: string = '';
+  // progressPercentage = 0; // Initialize the progress percentage
+  
+
+  // updateTextScene() {
+  //   this.question = this.prompt[this.currentStatementIndex];
+  //   this.currentQuestion = this.questions[this.currentStepIndex];
+  //   this.progressPercentage = (this.currentStatementIndex + 1) * 25; // Update progress
+  // }
+
+  
+  //  // This method is added to handle the vanilla JavaScript logic
+  //  initializeVanillaJSLogic() {
+  //   const textSceneElement = document.querySelector('.textScene') as HTMLParagraphElement;
+  //   const previousBtn = document.getElementById('previousBtn') as HTMLButtonElement;
+  //   const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
+
+
+  //   let currentStatementIndex = 0;
+
+  //   const updateTextScene = () => {
+  //     textSceneElement.textContent = this.question[currentStatementIndex];
+  //   };
+
+  //   updateTextScene();
+  
+  // }
+  
 }
+

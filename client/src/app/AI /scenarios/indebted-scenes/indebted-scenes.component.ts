@@ -39,8 +39,6 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     this.updateTextScene();
   }
 
-  
-
 
   ngAfterViewInit(): void {
     this.initializeVanillaJSLogic();
