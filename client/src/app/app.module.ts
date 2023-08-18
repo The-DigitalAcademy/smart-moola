@@ -61,6 +61,8 @@ import { SummaryComponent } from './components/summary/summary.component';
     PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent,
+    SummaryComponent
+
     FooterComponent,
     indebtedScenesComponent,
     IndebtedUserComponent,

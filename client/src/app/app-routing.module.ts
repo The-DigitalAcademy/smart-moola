@@ -47,6 +47,7 @@ const routes: Routes = [
   { path: 'indebted', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
+  { path: 'summary', component: SummaryComponent},
 
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
