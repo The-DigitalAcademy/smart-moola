@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NoDebtUserComponent } from './no-debt-user/no-debt-user.component';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-no-debt',
@@ -8,9 +8,24 @@ import { NoDebtUserComponent } from './no-debt-user/no-debt-user.component';
 })
 export class NoDebtComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private usersServices: UsersService
+  ) { }
 
-  ngOnInit(): void {
+  fullName: any = '';
+
+  getLoggedInUserName() {
+    this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName
+    console.log(this.fullName);
+  }
+
+  ngOnInit() {
+    this.getLoggedInUserName();
+    console.log(this.getLoggedInUserName())
+  }
+  
+  goBack() {
+    this.usersServices.previousPage();
   }
 
 }

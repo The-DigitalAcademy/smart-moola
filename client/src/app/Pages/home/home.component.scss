@@ -1,89 +1,260 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
 }
 
-h1 {
-    margin-top: 5vh;
-    text-align: center;
-    color: #669BBC;
-    font-weight: 700;
-}
+.container {
 
-h4 {
-    margin-top: 5vh;
-    text-align: center;
-    color: #669BBC;
-    font-weight: 600;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
-h5 {
-    margin-top: 4vh;
-    text-align: center;
-    color: #669BBC;
-    font-weight: 500;
-}
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10em;
 
+  }
 
-* {
-    box-sizing: border-box;
+  .getHomeImg {
+    height: 16em;
+    width: 16em;
+    position: absolute;
+    margin-top: -30em;
   }
- 
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  /* Float four columns side by side */
-  .column {
-    float: left;
-    width: 50%;
-    padding: 0 14px;
-    height: 50%;
-  }
- 
-  /* Remove extra left and right margins, due to padding in columns */
-  .row {margin: 0 -5px;}
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Style the counter cards */
-  .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
-    padding: 12px;
+
+  background-color: #FFFFFF;
+  height: 100vh;
+
+  p {
+    background-color: #F6F6F6;
+    color: var(--main-color);
+    font-size: large;
     text-align: center;
-   background-color: #f1f1f1;
-    color: #669BBC;
+    margin-bottom: 1em;
+    margin-top: 3em;
+    font-weight: bold;
   }
-  
-  /* Responsive columns - one column layout (vertical) on small screens */
-  @media screen and (max-width: 300px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 30px;
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+
+    .card {
+      display: flex;
+      flex-direction: row;
+
+      justify-content: space-between;
+      color: var(--main-color);
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 20px;
+
+      .firstElem {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cardImg {
+        height: 12em;
+        width: 12em;
+      }
+    }
+
+    a {
+      background-color: #669BBC;
+      color: #fff;
+      margin-top: 1em;
     }
   }
+
+}
+
+@media only screen and (max-width: 1200px) {
   .container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    position: fixed;
+
+    form {
+      background-color: #FFFFFF;
+      height: 100vh;
+
+      h2 {
+        text-align: center;
+      }
+
+      img {
+        width: 60vw;
+      }
+
+      .box {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          font-weight: bold;
+          color: #669BBC;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+
+        }
+
+      }
+
+      .boxSubmit {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #669BBC;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+      }
+    }
   }
-  
-  .getHomeImg {
-    height: 15em;
-    width: 12em;
-    position: absolute;
-    top: 1em;
-    left: 6em;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    form {
+      background-color: #FFFFFF;
+      height: 100vh;
+
+      h2 {
+        text-align: center;
+      }
+
+      img {
+        width: 60vw;
+      }
+
+      .box {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          font-weight: bold;
+          color: #669BBC;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+
+        }
+
+      }
+
+      .boxSubmit {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #669BBC;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    form {
+      background-color: #FFFFFF;
+      height: 100vh;
+
+      h2 {
+        text-align: center;
+      }
+
+      img {
+        width: 94vw;
+      }
+
+      .box {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          font-weight: bold;
+          color: #669BBC;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+
+        }
+
+      }
+
+      .boxSubmit {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #669BBC;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+      }
+    }
   }
 
-.btn
-{
-    background-color: #669BBC;
-    color: #fff;
 }
