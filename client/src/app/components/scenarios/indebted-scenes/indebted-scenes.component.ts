@@ -18,13 +18,16 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   questions = [
     "What will be affected below based on Mbali’s scenario? Select One answer",
     "Which debt management program helped Mbali? Select One answer",
-    "Which debt management do you think Nandi needs? Select One answer"
+    "Which debt management do you think Nandi needs? Select One answer",
+    "what helps people in debt by creating a manageable repayment plan"
   ];
 
   labels = [
     { for: 'first Answers', text: 'Credit limits', text2: 'Credit Score', text3: 'Debtor status'},
     { for: 'second Answers', text: 'Debt Review', text2: 'Debt Counselling', text3: 'Debt Consolidation' },
   ];
+
+
 
 
  
@@ -34,6 +37,10 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   currentQuestion: string = '';
   progressPercentage = 0; // Initialize the progress percentage
   isRadioSelected = false; // initially setting the radio boxes to false(not selected)
+
+  
+  // isFirstIteration = true; // Flag to track the first iteration
+
 
   ngOnInit(): void {
     this.updateTextScene();
@@ -52,6 +59,14 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     this.progressPercentage = (this.currentStatementIndex + 1) * 25; // Update progress
   }
 
+  // updateLabels() {
+  //   if (this.isFirstIteration) {
+  //     this.labels[0].text2 = 'Credit Score'; // Update the label text for the first iteration
+  //     this.isFirstIteration = false; // Set the flag to false after the first iteration
+  //   }
+  // }
+
+
   previousStatement() {
     if (this.currentStatementIndex > 0) {
       this.currentStatementIndex--;
@@ -65,6 +80,8 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
       this.currentStatementIndex++;
       this.currentStepIndex++;
       this.updateTextScene();
+      this.checkRadioSelection();
+      // this.updateLabels();
     }
   }
   
@@ -113,6 +130,7 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
         return;
       }
     });
+
     }
 
 }
