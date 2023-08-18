@@ -22,6 +22,7 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
 import { responseComponent } from './components/response/response.component';
 import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './components/scenarios/no-debt/no-debt-user/no-debt-user.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 const routes: Routes = [
 
@@ -48,6 +49,7 @@ const routes: Routes = [
   { path: 'indebted-user', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
+  { path: 'summary', component: SummaryComponent},
 
   { path: 'response', component: responseComponent }
 ];
