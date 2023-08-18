@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { indebtedScenesComponent } from './AI /scenarios/indebted-scenes/indebted-scenes.component'; 
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component'; 
 import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
+import { SummaryComponent } from './components/summary/summary.component';
 
 const routes: Routes = [
 
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'indebted', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
+  { path: 'summary', component: SummaryComponent},
 
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
