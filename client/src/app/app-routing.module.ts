@@ -13,10 +13,10 @@ import { VerifyOtpComponent } from './Aunthentication/verify-otp/verify-otp.comp
 import { ProfileEditorComponent } from './Pages/profile-editor/profile-editor.component'; 
 import { PasswordUpdateComponent } from './Aunthentication/password-update/password-update.component'; 
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
-import { responseComponent } from './AI /response/response.component'; 
-import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component'; 
-import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component'; 
-import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
+import { responseComponent } from './components/response/response.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
+import { NoDebtUserComponent } from './components/scenarios/no-debt/no-debt-user/no-debt-user.component';
 
 const routes: Routes = [
 
