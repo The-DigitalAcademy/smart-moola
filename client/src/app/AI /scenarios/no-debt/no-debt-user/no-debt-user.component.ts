@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import { SessionsService } from 'src/app/services/sessions.service';
+import { LoaderService } from 'src/app/services/Loader';
 
 @Component({
   selector: 'app-no-debt-user',
@@ -14,7 +15,7 @@ export class NoDebtUserComponent implements OnInit {
   constructor(
     private router: Router,
     private questionsService: QuestionService,
-    private session: SessionsService
+    private session: SessionsService,public loaderService: LoaderService
   ) {}
 
   question = '';
@@ -39,18 +40,14 @@ export class NoDebtUserComponent implements OnInit {
   submitMandla() {
     this.getMeaning();
     this.router.navigate(['/answers']);
-    const totalSteps = 9; // Total number of steps
-    const currentStep = 1; // Replace this with the actual step number
-    this.progressValue = (currentStep / totalSteps) * 100;
+ 
     
   }
 
   submitTumi() {
     this.getMeaning();
-    this.router.navigate(['/answers']);
-    const totalSteps = 9; // Total number of steps
-    const currentStep = 1; // Replace this with the actual step number
-    this.progressValue = (currentStep / totalSteps) * 100;
+    this.router.navigate(['/wrong-answers']);
+ 
   }
   
 
@@ -202,38 +199,13 @@ export class NoDebtUserComponent implements OnInit {
     this.verify();
    this.getQuestions();
 
+   
+  //  setTimeout(() => {
+  //     this.loaderService.startLoader()
+  //     this.router.navigate(['/wrong-answers'])
+  //     this.loaderService.stopLoader();
+  //   }, 5000)
   }
-
-  // currentStatementIndex = 0;
-  // currentStepIndex = 0;
-  // currentStatement: string = ''; // Declare the property here
-  // currentQuestion: string = '';
-  // progressPercentage = 0; // Initialize the progress percentage
-  
-
-  // updateTextScene() {
-  //   this.question = this.prompt[this.currentStatementIndex];
-  //   this.currentQuestion = this.questions[this.currentStepIndex];
-  //   this.progressPercentage = (this.currentStatementIndex + 1) * 25; // Update progress
-  // }
-
-  
-  //  // This method is added to handle the vanilla JavaScript logic
-  //  initializeVanillaJSLogic() {
-  //   const textSceneElement = document.querySelector('.textScene') as HTMLParagraphElement;
-  //   const previousBtn = document.getElementById('previousBtn') as HTMLButtonElement;
-  //   const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
-
-
-  //   let currentStatementIndex = 0;
-
-  //   const updateTextScene = () => {
-  //     textSceneElement.textContent = this.question[currentStatementIndex];
-  //   };
-
-  //   updateTextScene();
-  
-  // }
   
 }
 

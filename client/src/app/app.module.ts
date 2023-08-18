@@ -33,6 +33,7 @@ import { indebtedScenesComponent } from './AI /scenarios/indebted-scenes/indebte
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component'; 
 import { HomeComponent } from './Pages/home/home.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 
 
 // import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
@@ -61,14 +62,15 @@ import { SummaryComponent } from './components/summary/summary.component';
     PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent,
-    SummaryComponent
+    SummaryComponent,
 
     FooterComponent,
     indebtedScenesComponent,
     IndebtedUserComponent,
     NoDebtComponent,
-    SummaryComponent
-   
+    SummaryComponent,
+    WrongAnswersComponent
+  
   ],
 
   imports: [
