@@ -119,7 +119,7 @@
 //       }
 //     );
 //   }
-  
+
 //   updateUser(user: User): Observable<any> {
 //     let id = localStorage.getItem('id');
 
@@ -156,7 +156,7 @@
 //   updateUserWithOtp(id: string, newPassword: string, otp: string): Observable<any> {
 //     const url = `${this.usersURL}/${id}`;
 //     console.log(url, "url")// Use the correct URL
-  
+
 //     const body = { newPassword, otp }; // Include only the fields needed for updating
 //     console.log(body, "body")
 
@@ -175,7 +175,7 @@
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginResponse, User, CreateUserResponse, UserLogin } from '../interface/users';
+import { LoginResponse, User, CreateUserResponse, UserLogin, PasswordUpdate } from '../interface/users';
 import { usersAPI } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -220,6 +220,9 @@ export class UsersService {
     return this.http.put<any>(url, user, this.options);
   }
 
+  updatePassword(passwordUpdate: PasswordUpdate): Observable<any> {
+    return this.http.post<any>(`${this.usersURL}/password-update`, passwordUpdate);
+  }
   // Method to trigger email sending
   sendEmail(email: string) {
     // Make an HTTP POST request to the backend API to trigger the email sending
@@ -235,7 +238,6 @@ export class UsersService {
           localStorage.setItem('Email', loggedInUserEmail);
           localStorage.setItem('id', id);
         })
-        this.router.navigate(['/home']);
       })
   }
 
@@ -243,14 +245,9 @@ export class UsersService {
     return this.router.navigate(['/profile']);
   }
 
-  updateUserWithOtp(id: string, newPassword: string, otp: string): Observable<any> {
-    const url = `${this.usersURL}/${id}`;
-    console.log(url, "url")// Use the correct URL
-
-    const body = { newPassword, otp }; // Include only the fields needed for updating
-    console.log(body, "body")
-
-    return this.http.put(url, body, this.options);
+  isOtpValid(otp: string): Observable<any> {
+    const otpData = { otp };
+    return this.http.post<any>(`http://localhost:4545/api/users/otp-verification`, otpData);
   }
 
   userLogout() {

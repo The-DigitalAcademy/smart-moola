@@ -31,24 +31,17 @@ export class VerifyOtpComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Get userId from query parameters using ActivatedRoute
-    this.route.queryParams.subscribe((params: any) => {
-      const userId = params['userId']; // Replace 'userId' with the actual parameter name
-      // Now you have the userId available for use
-
-    });
 
   }
 
   submitForm() {
     if (this.form.valid) {
       const otp = this.otpFieldNames.map(fieldName => this.form.value[fieldName]).join('');
-      const newPassword = 'newlyEnteredPassword'; // Get the newly entered password somehow
 
-      this.userService.updateUserWithOtp(this.userId, newPassword, otp)
+      this.userService.isOtpValid(otp)
         .subscribe(
           (response: any) => {
-            console.log('Password updated successfully', response);
+            console.log('Ready to update password updated successfully', response);
             this.router.navigate(['/password-update']); // Navigate to success page or home page
           },
           (error: any) => {

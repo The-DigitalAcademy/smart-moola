@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -15,35 +14,28 @@ export class PasswordUpdateComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
     private userService: UsersService
   ) {
     this.passwordUpdateForm = this.fb.group({
-      newPassword: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', [Validators.required]],
     }, { validators: this.passwordsMatchValidator });
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      const otp = params['otp'];
-      const newPassword = params['newPassword'];
-  
-      // Set the values in the form controls if needed
-      this.passwordUpdateForm.patchValue({
-        otp: otp,
-        newPassword: newPassword
-      });
-    });
-  }  
+  }
 
   submitForm() {
     if (this.passwordUpdateForm.valid) {
-      const newPassword = this.passwordUpdateForm.value.newPassword;
-      const enteredOtp = this.passwordUpdateForm.value.otp;
-      const userId = this.userId; // Get the userId from wherever you're storing it
-  
-      this.userService.updateUserWithOtp(userId, newPassword, enteredOtp)
+      const password = this.passwordUpdateForm.value.password;
+      const confirmPassword = this.passwordUpdateForm.value.confirmPassword;
+
+      const passwordUpdate = {
+        password,
+        confirmPassword
+      };
+
+      this.userService.updatePassword(passwordUpdate)
         .subscribe(
           response => {
             console.log('Password updated successfully', response);
@@ -54,7 +46,7 @@ export class PasswordUpdateComponent implements OnInit {
         );
     }
   }
-  
+
 
   passwordsMatchValidator(formGroup: FormGroup) {
     // ... validator logic ...

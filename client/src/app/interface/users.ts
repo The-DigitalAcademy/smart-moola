@@ -11,6 +11,11 @@ export interface UserLogin {
     password: String
 }
 
+export interface PasswordUpdate {
+    password: string,
+    confirmPassword: string
+}
+
 export interface CreateUserResponse {
     message: string;
     id: number;

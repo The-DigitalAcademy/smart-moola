@@ -3,7 +3,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 @Component({
   selector: 'app-indebted-scenes',
   templateUrl: './indebted-scenes.component.html',
-  styleUrls: ['./indebted-scenes.component.css']
+  styleUrls: ['./indebted-scenes.component.scss']
 })
 export class indebtedScenesComponent implements OnInit, AfterViewInit {
 
