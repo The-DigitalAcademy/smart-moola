@@ -20,17 +20,21 @@
     text-decoration: none;
     text-align: center;
     position: absolute;
-    bottom: 5em;
-    left: 1
+    bottom: 10em;
+   left:1.5em;
 
 }
 
 .card {
-  justify-content: space-between;
+  // justify-content: space-between;
   background-color: var(--main-color);
   color: #FFFFFF;
-  padding: 38px;
+  padding: 40px 0;
   font-size: 18px;
+  display: block;
+  bottom: -15em;
+  width: 90%;
+  left: 1em;
   display: block;
 }
 

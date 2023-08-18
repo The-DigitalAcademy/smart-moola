@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
-import { NoDebtUserComponent } from '../scenarios/no-debt/no-debt-user/no-debt-user.component';
 
 @Component({
   selector: 'app-response',
