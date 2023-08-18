@@ -1,0 +1,55 @@
+<div class="container">
+  
+    <div class="header">
+    
+        <div class="back-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left" viewBox="0 0 16 16"  (click)="previousStatement()">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+        </div>
+        <div class="pgbar">
+        <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
+          aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" [style.width.%]="progressPercentage">{{ progressPercentage }}%</div>
+        </div>
+      </div>
+       
+    </div>
+    
+    
+    <div class="body">
+      <img class="imagebox" src="https://cdn.discordapp.com/attachments/1093145057919520828/1138459034161270844/Free_Vector___Calculator_concept_illustration-removebg-preview.png" alt="">
+      <p class="textScene">{{ currentStatement }}</p>
+    
+      <div class="QandA">
+        <form action="/your_server.php">
+            <!-- <p class="question">
+                What will be affected below based on Mbali’s scenario? Select One answer
+            </p> -->
+            <p class="question">{{ currentQuestion }}</p>
+            
+            <input class="option1" type="radio" id="Credit limit" name="debt-manage" value="Credit limit">
+            <label class="lbl1" for="dog">{{ labels[currentStepIndex].text }}</label><br>
+    
+            <input class="option2" type="radio" id="Credit Score" name="debt-manage" value="Credit Score">
+            <label class="lbl2" for="monkey">{{ labels[currentStepIndex].text2 }}</label><br>
+    
+            <input class="option3" type="radio" id="Debtor status" name="debt-manage" value="Debtor status">
+            <label class="lbl3" for="cat">{{ labels[currentStepIndex].text3 }}</label><br>
+    
+        </form>
+      </div>
+    
+      <div class="btn-group">
+        <!-- <button class="btn" (click)="previousStatement()">Previous</button> -->
+        <button class="btn" (click)="nextStatement()" [disabled]="isRadioSelected">Submit</button>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="menu">
+        <app-footer></app-footer>
+      </div>
+    </div>
+    
+    </div>

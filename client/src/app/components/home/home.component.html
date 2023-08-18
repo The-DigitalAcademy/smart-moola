@@ -1,28 +1,37 @@
 <div class="container">
   <div class="header">
-    <app-navigation-menu></app-navigation-menu>
+    <!-- <app-navigation-menu></app-navigation-menu> -->
     <h1>SmartMoola</h1>
   </div>
 
-  <img
-    src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1690531147/3D_young_woman_chatting_online_with_headphones_Illustration_1_t3qqa0.png"
-    class="getHomeImg" />
-  <p>Hello Lerato, please choose the option that relates with you.</p>
+  <img src="https://res.cloudinary.com/dp4dd0gis/image/upload/v1692178189/1w_bunawu.png" class="getHomeImg" />
+  <p>Hello {{fullName}}, please choose the option that relates with you.</p>
 
   <ul class="card-container">
     <li>
       <div class="card">
-        Failing to make payments can harm credit score and future
-        financial opportunities, even without existing debt.
-        <a href="no-debt" class="btn btn-primary">No Debt</a>
+        <div class="firstElem">
+          Failing to make payments can harm credit score and future
+          financial opportunities, even without existing debt.
+          <a href="no-debt" class="btn btn-primary">No Debt</a>
+        </div>
+
+        <div cardElem>
+          <img src="https://res.cloudinary.com/dp4dd0gis/image/upload/v1692178188/2w_ww6woh.jpg" class="cardImg" />
+        </div>
       </div>
     </li>
 
     <li>
       <div class="card">
-        You don't have to face the suffocating debt alone; help is here to
-        support you and find a way to ease your financial burden.
-        <a href="indebted" class="btn btn-primary">Indebted</a>
+        <div class="firstElem">
+          You don't have to face the suffocating debt alone; help is here to
+          support you and find a way to ease your financial burden.
+          <button routerLink="/indebted" class="btn btn-primary">Indebted</button>
+        </div>
+        <div cardElem>
+          <img src="https://res.cloudinary.com/dp4dd0gis/image/upload/v1692178188/3w_snxtf4.jpg" class="cardImg" />
+        </div>
       </div>
     </li>
   </ul>
