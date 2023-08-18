@@ -16,7 +16,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
-import { PasswordResetComponent } from './components/password-reset/password-reset.component'
+import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
 // import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
@@ -26,9 +26,15 @@ import { ProfileEditorComponent } from './components/profile-editor/profile-edit
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { responseComponent } from './components/response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
-import { NgxUiLoaderModule } from "ngx-ui-loader";
-import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+
 import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
+import { FooterComponent } from './components/footer/footer.component';
+// import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
+import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
+import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
+
+
 // import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
 
 // import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
@@ -47,7 +53,7 @@ import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.componen
     // NoDebtScenarioComponent,
 
     // NoDebtUserScenarioComponent,
-    IndebtedScenariosComponent,
+    // IndebtedScenariosComponent,
     ProfileComponent,
     VerifyOtpComponent,
     // AaComponent,
@@ -61,9 +67,13 @@ import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.componen
     ProfileEditorComponent,
     PasswordUpdateComponent,
     responseComponent,
-    NavigationMenuComponent
-
+    NavigationMenuComponent,
+    FooterComponent,
+    indebtedScenesComponent,
+    IndebtedUserComponent
+    
   ],
+
   imports: [
     NgxUiLoaderModule,
     BrowserModule,
@@ -75,11 +85,11 @@ import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.componen
       config: {
         tokenGetter: () => {
           return localStorage.getItem('token');
-        }
-      }
+        },
+      },
     }),
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
