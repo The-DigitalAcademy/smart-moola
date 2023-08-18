@@ -19,8 +19,6 @@ import { GetstartedPageComponent } from './components/getstarted-page/getstarted
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
-// import { ScenarioAComponent } from './components/scenarios/scenario-a/scenario-a.component';
-// import { ScenarioBComponent } from './components/scenarios/scenario-b/scenario-b.component';
 // import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
@@ -29,6 +27,8 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
+import { SummaryComponent } from './components/summary/summary.component';
+
 import { FooterComponent } from './components/footer/footer.component';
 // import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
 import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
@@ -68,6 +68,8 @@ import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-
     PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent,
+    SummaryComponent
+
     FooterComponent,
     indebtedScenesComponent,
     IndebtedUserComponent

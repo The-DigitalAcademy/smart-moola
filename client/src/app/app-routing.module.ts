@@ -23,6 +23,7 @@ import { responseComponent } from './components/response/response.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './components/scenarios/no-debt/no-debt-user/no-debt-user.component';
+import { SummaryComponent } from './components/summary/summary.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
 import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
@@ -51,6 +52,7 @@ const routes: Routes = [
   { path: 'indebted', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
+  { path: 'summary', component: SummaryComponent},
 
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
