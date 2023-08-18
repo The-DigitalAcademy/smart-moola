@@ -2,6 +2,7 @@
   height: 100vh;
   flex-direction: column;
   align-items: center;
+  position: fixed;
 
   .header {
     display: flex;
@@ -117,7 +118,7 @@
   cursor: pointer;
   margin-left: 22px;
   text-align: center;
-  margin-top: -30px;
+  margin-top: -45px;
 
 }
 

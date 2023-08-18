@@ -1,7 +1,5 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
-import axios from 'axios';
-import { QuestionService } from 'src/app/services/question.service';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { QuestionService } from '../../services/question.service';
 
 @Component({
   selector: 'app-response',
