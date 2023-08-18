@@ -68,7 +68,7 @@ import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-
     PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent,
-    SummaryComponent
+    SummaryComponent,
 
     FooterComponent,
     indebtedScenesComponent,
