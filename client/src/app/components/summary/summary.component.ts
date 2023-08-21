@@ -16,7 +16,7 @@ export class SummaryComponent implements OnInit {
   }
 
   goBack(){
-    this.usersServices.previousPage();
+    this.usersServices.previousPage
   }
 
 }
