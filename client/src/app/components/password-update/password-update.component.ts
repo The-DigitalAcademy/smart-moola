@@ -29,8 +29,10 @@ export class PasswordUpdateComponent implements OnInit {
     if (this.passwordUpdateForm.valid) {
       const password = this.passwordUpdateForm.value.password;
       const confirmPassword = this.passwordUpdateForm.value.confirmPassword;
+      const email = this.passwordUpdateForm.value.email;
 
       const passwordUpdate = {
+        email,
         password,
         confirmPassword
       };
