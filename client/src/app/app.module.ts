@@ -25,9 +25,6 @@ import { responseComponent } from './AI /response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
-import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
-import { SummaryComponent } from './components/summary/summary.component';
-
 import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component'; 
 import { FooterComponent } from './components/footer/footer.component';
 // import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
@@ -70,7 +67,6 @@ import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wro
     indebtedScenesComponent,
     IndebtedUserComponent,
     NoDebtComponent,
-    SummaryComponent,
     WrongAnswersComponent
   
   ],
