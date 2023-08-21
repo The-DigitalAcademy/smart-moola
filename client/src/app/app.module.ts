@@ -33,6 +33,7 @@ import { FooterComponent } from './components/footer/footer.component';
 // import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
 import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
 import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
+import { Summary2Component } from './components/summary2/summary2.component';
 
 
 // import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
@@ -68,11 +69,12 @@ import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-
     PasswordUpdateComponent,
     responseComponent,
     NavigationMenuComponent,
-    SummaryComponent
+    SummaryComponent,
 
     FooterComponent,
     indebtedScenesComponent,
-    IndebtedUserComponent
+    IndebtedUserComponent,
+    Summary2Component
     
   ],
 

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { RegisterComponent } from './components/register/register.component';
@@ -27,6 +27,7 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
 import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
+import { Summary2Component } from './components/summary2/summary2.component';
 
 const routes: Routes = [
 
@@ -53,6 +54,7 @@ const routes: Routes = [
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
   { path: 'summary', component: SummaryComponent},
+  { path: 'summary2', component: Summary2Component},
 
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
