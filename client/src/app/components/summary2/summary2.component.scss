@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 5px;
+  padding: 2px;
   box-sizing: border-box;
 }
 
@@ -11,8 +11,6 @@
     flex-direction: row;
     align-items: center;
     margin-top: -12em;
-    // margin-left: -2em;
-
 
     .backBtn {
       display: block;
@@ -24,12 +22,28 @@
       border-radius: 4px;
       cursor: pointer;
       text-align: center;
+
+    }
+
+    .bi-arrow-left {
+      position: absolute;
+      /* Position the SVG absolutely */
+      left: 8;
+      /* Place it at the left edge of the container */
+      margin-bottom: 6em;
+      margin-top: -2em;
+    }
+
+    .progress{
+      width: 100%;;
     }
   }
 
   h5 {
     color: #669BBC;
     font-weight: 800;
+    text-align: center;
+    margin-bottom: 1em;
   }
 
   display: flex;
@@ -38,7 +52,6 @@
   align-items: center;
   height: 100vh;
   background-color: #FFFFFF;
-  height: 100vh;
 
   .card-container {
     flex-direction: row;
@@ -53,21 +66,40 @@
       text-align: center;
       color: #FFFFFF;
       padding: 10px;
-      ;
+      border-radius: 20px;
       margin-top: 3rem;
       padding: 15px 20px;
       width: 90vw;
       border: 1px solid black;
 
-      p {
-        font-size: large;
-        margin-bottom: 20px;
 
+      p {
+        font-size: largef;
+        margin-bottom: 20px;
+        color: #669BBC;
+        text-align: center;
+        padding: 10px;
+        // background-color: pink;
       }
 
       .a {
         background-color: #FFFFFF;
         color: #669BBC;
+
+      }
+
+      .amdBtn {
+        background-color: #FFFFFF;
+        color: #669BBC;
+        font-weight: 500;
+      }
+
+      .ndaBtn {
+        background-color: #FFFFFF;
+        color: #669BBC;
+        font-weight: 500;
+        margin-top: 2.5em;
+        margin-bottom: -1em;
       }
 
     }
@@ -84,5 +116,13 @@
       width: 100%;
     }
 
+  }
+
+  .content {
+    padding: 20px;
+    color: #669BBC;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: -3em;
   }
 }
