@@ -119,7 +119,7 @@
 //       }
 //     );
 //   }
-
+  
 //   updateUser(user: User): Observable<any> {
 //     let id = localStorage.getItem('id');
 
@@ -156,7 +156,7 @@
 //   updateUserWithOtp(id: string, newPassword: string, otp: string): Observable<any> {
 //     const url = `${this.usersURL}/${id}`;
 //     console.log(url, "url")// Use the correct URL
-
+  
 //     const body = { newPassword, otp }; // Include only the fields needed for updating
 //     console.log(body, "body")
 
@@ -172,6 +172,7 @@
 //   }
 // }
 
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginResponse, User, CreateUserResponse, UserLogin } from '../interface/users';
@@ -180,13 +181,15 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs/internal/Observable';
 import { Location } from '@angular/common';
-
+// import { HttpClient, HttpHeaders } from '@angular/common/http';
+//  import { usersAPI } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root',
 })
 export class UsersService {
+  //usersURL: any = usersAPI;
   usersURL = 'https://smart-9qg3.onrender.com/api/users';
-  headers: HttpHeaders = new HttpHeaders({
+  headers: any = new HttpHeaders({
     'Content-Type': 'application/json',
   });
 
@@ -225,7 +228,10 @@ export class UsersService {
   }
 
   updateUser(user: User): Observable<any> {
-    const id = localStorage.getItem('id');
+    let id = localStorage.getItem('id');
+
+    console.log('For an ID, Service', id);
+
     const url = `${this.usersURL}/${id}`;
     return this.http.put<any>(url, user, this.options);
   }
@@ -255,7 +261,11 @@ export class UsersService {
 
   updateUserWithOtp(id: string, newPassword: string, otp: string): Observable<any> {
     const url = `${this.usersURL}/${id}`;
-    const body = { newPassword, otp };
+    console.log(url, "url")// Use the correct URL
+
+    const body = { newPassword, otp }; // Include only the fields needed for updating
+    console.log(body, "body")
+
     return this.http.put(url, body, this.options);
   }
 
@@ -268,4 +278,3 @@ export class UsersService {
     this.location.back();
   }
 }
-

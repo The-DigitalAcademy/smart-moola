@@ -5,9 +5,9 @@ import { LoginResponse } from '../interface/users';
 
 const q1 = "q1"
 const activeQ = "activeQ"
-
-const a1 = "a1"
-const activeA = "activeA"
+const convo = "convo"
+const a1 = 'a1';
+const activeA = 'activeA';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +23,7 @@ export class SessionsService {
   public saveActiveQuestion(q: string) {
     window.sessionStorage.setItem(activeQ, JSON.stringify(q))
   }
-  //Answer
+ 
   public saveActiveAnswer(a: string) {
     window.sessionStorage.setItem(activeQ, JSON.stringify(a))
   }
