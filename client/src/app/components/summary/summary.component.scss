@@ -67,7 +67,9 @@
       a {
         background-color: #FFFFFF;
         width: 100%;
-        color: #669BBC;
+       color: #669BBC;
+       
+
       }
 
     }
@@ -85,4 +87,19 @@
     }
 
   }
+  .submit-1 {
+    display: block;
+    width: 90%;
+    padding: 10px 0;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    position: absolute;
+    bottom: 10em;
+   left:1.5em;
+
+}
 }

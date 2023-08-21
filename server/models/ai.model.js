@@ -19,8 +19,8 @@ async function getExplanationForWord(prompt) {
       'https://api.openai.com/v1/engines/text-davinci-003/completions',
       // Use 'text-davinci-003' engine for GPT-3.5 Turbo
       {
-        prompt: `Explain "${prompt}" in a simplified way, credit and debt meaning, use a maximum of 500 words:`,
-        max_tokens: 50,
+        prompt: `Explain "${prompt}" in a simplified way, credit and debt meaning, use a maximum of a 60 words, provide this in paragragh format:`,
+        max_tokens: 60,
         temperature: 0.7,
       },
       {

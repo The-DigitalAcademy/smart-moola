@@ -16,28 +16,6 @@
       width: 70%;
       left: 7em;
     }
-
-
-    .back-button {
-      margin-top: 0rem;
-      margin-left: 0.5rem;
-      width: 22rem;
-      padding-left: 1%;
-      padding-right: 4%;
-      color: var(--main-color);
-
-    }
-
-    .pgbar {
-      margin-top: 1%;
-      width: 22rem;
-      height: 1rem;
-      margin-left: 2%;
-      margin-right: 2%;
-      margin-bottom: 1%;
-      padding-top: 5%;
-
-    }
   }
 
   h1 {
@@ -96,6 +74,11 @@
     text-align: center;
   }
 
+  .footer
+  {
+      position: absolute;
+      bottom: 1em;    
+  }
 }
 
 span {
@@ -138,16 +121,7 @@ span {
   margin-top: -40em;
 }
 
-
 // .progress-bar {
 //   background-color: #669BBC;
 // }
 
-.progress-bar {
-  background-color: #669BBC;
-}
-
-
-// .span {
-//   margin-top: 64px;
-// }
