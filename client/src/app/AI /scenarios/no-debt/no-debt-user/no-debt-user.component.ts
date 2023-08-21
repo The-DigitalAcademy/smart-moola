@@ -35,12 +35,12 @@ export class NoDebtUserComponent implements OnInit {
 
   submitMandla() {
     this.getMeaning()
-    this.router.navigate(['/answes']);
+    this.router.navigate(['/response']);
   }
 
   submitTumi() {
     this.getMeaning()
-    this.router.navigate(['/answers']);
+    this.router.navigate(['/response']);
   }
 
   getQuestions() {
@@ -50,7 +50,6 @@ export class NoDebtUserComponent implements OnInit {
       }
     });
   }
-  
   getMeaning() {
     this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
       console.log(data.explanation)
