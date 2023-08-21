@@ -1,14 +1,19 @@
 export interface User {
-    id: number,
-    fullName: string,
-    email: string,
-    password: string,
-    confirmPassword: string
+    id: Number,
+    fullName: String,
+    email: String,
+    password: String,
+    confirmPassword: String
 }
 
 export interface UserLogin {
-    email: string,
-    password: string
+    email: String,
+    password: String
+}
+
+export interface PasswordUpdate {
+    password: string,
+    confirmPassword: string
 }
 
 export interface CreateUserResponse {
@@ -25,4 +30,3 @@ export interface LoginResponse {
     role: string;
     accessToken: string;
 }
-
