@@ -14,4 +14,6 @@ export class IndebtedResponseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
+
 }

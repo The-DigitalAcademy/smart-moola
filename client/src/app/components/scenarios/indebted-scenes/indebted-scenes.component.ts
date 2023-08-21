@@ -1,4 +1,7 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+// import { IndebtedResponseComponent } from '../../indebted-response/indebted-response.component';
+// import { MdbModalRef,MdbModalService } from 'mdb-angular-ui-kit/modal';
+
 
 @Component({
   selector: 'app-indebted-scenes',
@@ -48,6 +51,7 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   progressPercentage = 0; // Initialize the progress percentage
   isRadioSelected: boolean = false; // initially setting the radio boxes to false(not selected)
   showIncorrectMessage = false; 
+  // modalRef: MdbModalRef<IndebtedResponseComponent> | null = null;
 
   
   // isFirstIteration = true; // Flag to track the first iteration
@@ -58,8 +62,8 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   }
 
   
-
-
+  
+  
   ngAfterViewInit(): void {
     this.initializeVanillaJSLogic();
   }
@@ -170,5 +174,11 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     });
 
     }
+
+    // openModal() {
+    //   this.modalRef = this.modalService.open(IndebtedResponseComponent, {
+    //     modalClass: 'modal-dialog-centered'
+    //   });
+    // }
 
 }
