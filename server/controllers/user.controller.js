@@ -70,12 +70,12 @@ const createUser = async (request, response) => {
         console.log("newUser", newUser);
 
         response.status(201).send({
-            message: `User added with ID: ${newUser.id}`,
-            user: {
+            // message: `User added with ID: ${newUser.id}`,
+            // user: {
                 id: newUser.id,
                 fullName: fullName,
                 email: email
-            }
+            // }
         });
         
 

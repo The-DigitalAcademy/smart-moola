@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UsersService } from '../../services/users.service';
 import Swal from 'sweetalert2';
-import { User } from '../../interface/users';
+import { CreateUserResponse, User } from '../../interface/users';
 import { Router } from '@angular/router';
 
 @Component({
@@ -42,23 +42,31 @@ export class RegisterComponent {
   
   submitForm() {
     if (this.form.valid) {
-      const fullName = this.form.value.fullName;
-      const email = this.form.value.email;
+      // const fullName = this.form.value.fullName;
+      // const email = this.form.value.email;
   
       this.userService.createUser(this.form.value).subscribe(
-        (data: any) => {
+        (data: CreateUserResponse) => {
           // Assuming the registration was successful
           
           console.log("Data", data);
   
           // Extract the 'id' from the 'message' property
-          const id = parseInt(data.message.match(/\d+/)[0]);
+          // const id = parseInt(data.message.match(/\d+/)[0]);
   
-          console.log("Extracted ID:", id);
+          // console.log("Extracted ID:", id);
   
-          localStorage.setItem('ID', id.toString());
+          // localStorage.setItem('ID', id.toString());
+          // localStorage.setItem('FullName', fullName);
+          // localStorage.setItem('Email', email);
+
+          const loggedInUserEmail = data.email;
+          const fullName = data.fullName;
+          const id = data.id.toString();
+      
+          localStorage.setItem('Email', loggedInUserEmail);
           localStorage.setItem('FullName', fullName);
-          localStorage.setItem('Email', email);
+          localStorage.setItem('id', id);      
   
           Swal.fire({
             icon: 'success',

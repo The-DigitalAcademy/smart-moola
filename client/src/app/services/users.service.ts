@@ -200,9 +200,25 @@ export class UsersService {
     private location: Location
   ) { }
 
-  createUser(user: User): Observable<User> {
-    return this.http.post<User>(`${this.usersURL}/postUser`, user, this.options);
-  }
+
+  // createUser(user: User) {
+  //   this.http.post<CreateUserResponse>(`${this.usersURL}/postUser`, user, this.options).subscribe(data => {
+  //     console.log("data", data);
+
+  //     const loggedInUserEmail = data.email;
+  //     const fullName = data.fullName;
+  //     const id = data.id.toString();
+
+  //     localStorage.setItem('Email', loggedInUserEmail);
+  //     localStorage.setItem('FullName', fullName);
+  //     localStorage.setItem('id', id);
+  //   })
+  //   this.router.navigate(['/home']);
+  // }
+
+  createUser(user: User): Observable<CreateUserResponse> {
+    return this.http.post<CreateUserResponse>(`${this.usersURL}/postUser`, user, this.options);
+  }  
 
   userLogin(userLogin: UserLogin): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(`${this.usersURL}/login`, userLogin, this.options);

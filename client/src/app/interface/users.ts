@@ -1,14 +1,14 @@
 export interface User {
-    id: Number,
-    fullName: String,
-    email: String,
-    password: String,
-    confirmPassword: String
+    id: number,
+    fullName: string,
+    email: string,
+    password: string,
+    confirmPassword: string
 }
 
 export interface UserLogin {
-    email: String,
-    password: String
+    email: string,
+    password: string
 }
 
 export interface CreateUserResponse {
