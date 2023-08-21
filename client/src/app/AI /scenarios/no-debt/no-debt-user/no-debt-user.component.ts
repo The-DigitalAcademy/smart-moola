@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../../../services/users.service';
 import { SessionsService } from 'src/app/services/sessions.service';
 import { QuestionService } from 'src/app/services/question.service';
-import { SessionsService } from 'src/app/services/sessions.service';
 import { LoaderService } from 'src/app/services/Loader';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-no-debt-user',
@@ -14,8 +14,9 @@ export class NoDebtUserComponent implements OnInit {
   constructor(
     private router: Router,
     private questionsService: QuestionService,
-    private session: SessionsService,public loaderService: LoaderService
-  ) {}
+    private usersServices: UsersService,
+    private session: SessionsService, public loaderService: LoaderService
+  ) { }
 
   question = '';
   active = 'q1';
@@ -23,7 +24,7 @@ export class NoDebtUserComponent implements OnInit {
   mandlaResponse = "";
   tumiResponse = "";
   prompt = ''
-  explanation= ''
+  explanation = ''
 
 
 
@@ -33,22 +34,22 @@ export class NoDebtUserComponent implements OnInit {
   verifyAnswer() {
     this.router.navigate(['/answers']);
     // this.router.navigate(['/response']);
-   
+
   }
 
   submitMandla() {
     this.getMeaning();
     this.router.navigate(['/answers']);
- 
-    
+
+
   }
 
   submitTumi() {
     this.getMeaning();
     this.router.navigate(['/wrong-answers']);
- 
+
   }
-  
+
 
   getQuestions() {
     this.questionsService.getAllQuestions().subscribe((data) => {
@@ -196,14 +197,14 @@ export class NoDebtUserComponent implements OnInit {
   }
   ngOnInit(): void {
     this.verify();
-   this.getQuestions();
+    this.getQuestions();
 
-   
-  //  setTimeout(() => {
-  //     this.loaderService.startLoader()
-  //     this.router.navigate(['/wrong-answers'])
-  //     this.loaderService.stopLoader();
-  //   }, 5000)
+
+    //  setTimeout(() => {
+    //     this.loaderService.startLoader()
+    //     this.router.navigate(['/wrong-answers'])
+    //     this.loaderService.stopLoader();
+    //   }, 5000)
   }
   goBack() {
     this.usersServices.previousPage();
