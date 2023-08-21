@@ -29,7 +29,7 @@ export class NoDebtUserComponent implements OnInit {
 
 
   questions: any;
-  progressValue: number = 0;
+ 
 
   verifyAnswer() {
     this.router.navigate(['/answers']);
@@ -40,7 +40,6 @@ export class NoDebtUserComponent implements OnInit {
   submitMandla() {
     this.getMeaning();
     this.router.navigate(['/answers']);
- 
     
   }
 
@@ -58,6 +57,8 @@ export class NoDebtUserComponent implements OnInit {
       }
     });
   }
+
+  
   getMeaning(){
     this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
       console.log(data.explanation)
@@ -68,6 +69,7 @@ export class NoDebtUserComponent implements OnInit {
 
   verify() {
         this.active = this.session.getActiveQuestion();
+
         switch (this.active) {
         case 'q1':
         this.question = 'Why is credit important?';
@@ -97,9 +99,12 @@ export class NoDebtUserComponent implements OnInit {
         'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
 
         this.mandlaResponse =
-        'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
+        'Drivers License and proof of residence.';
+
+        this.tumiResponse =
+        'Tumi has proof of residence, Identity document';
          //sending this quiz to AI
-        this.prompt = 'what documents do you need to apply for credit?'
+        this.prompt = 'To apply for credit what documents are requiedd?'
         this.session.saveActiveQuestion('q4');
         break;
 
@@ -198,14 +203,6 @@ export class NoDebtUserComponent implements OnInit {
   ngOnInit(): void {
     this.verify();
    this.getQuestions();
-
-   
-  //  setTimeout(() => {
-  //     this.loaderService.startLoader()
-  //     this.router.navigate(['/wrong-answers'])
-  //     this.loaderService.stopLoader();
-  //   }, 5000)
   }
-  
 }
 
