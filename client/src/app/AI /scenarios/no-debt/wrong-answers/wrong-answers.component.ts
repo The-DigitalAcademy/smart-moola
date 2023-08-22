@@ -5,7 +5,7 @@ import { LoaderService } from 'src/app/services/Loader';
 @Component({
   selector: 'app-wrong-answers',
   templateUrl: './wrong-answers.component.html',
-  styleUrls: ['./wrong-answers.component.css']
+  styleUrls: ['./wrong-answers.component.scss']
 })
 export class WrongAnswersComponent implements OnInit {
 

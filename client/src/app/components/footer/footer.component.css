@@ -1,11 +1,12 @@
 .Nav-icons{
     background-color: #F6F6F6;
     margin-left: 0rem;
-    width: 23rem;
+  
     height: 3rem;
     border-radius: 5%;
     padding-top: 2%;
-    top: 20%;
+    top: 6%;
+   
     
     #clickable-icon {
         transition: transform 0.3s; /* Add a smooth transition effect */

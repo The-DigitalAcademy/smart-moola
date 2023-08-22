@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import { SessionsService } from 'src/app/services/sessions.service';
 import { LoaderService } from 'src/app/services/Loader';
-
+import { FooterComponent } from 'src/app/components/footer/footer.component';
 @Component({
   selector: 'app-no-debt-user',
   templateUrl: './no-debt-user.component.html',
@@ -25,7 +25,7 @@ export class NoDebtUserComponent implements OnInit {
   tumiResponse = "";
   prompt = ''
   explanation= ''
-
+  progressPercentage = 0;
 
 
   questions: any;
@@ -80,6 +80,7 @@ export class NoDebtUserComponent implements OnInit {
         this.prompt = 'Why is credit important?'
 
         this.session.saveActiveQuestion('q2');
+        this.progressPercentage =  this.progressPercentage + 10;
         break;
 
         case 'q2':
@@ -92,6 +93,7 @@ export class NoDebtUserComponent implements OnInit {
            //sending this quiz to AI
         this.prompt = 'Credit defination'
         this.session.saveActiveQuestion('q3');
+        this.progressPercentage =  20;
         break;
 
         case 'q3':
@@ -106,6 +108,7 @@ export class NoDebtUserComponent implements OnInit {
          //sending this quiz to AI
         this.prompt = 'To apply for credit what documents are requiedd?'
         this.session.saveActiveQuestion('q4');
+        this.progressPercentage =  30;
         break;
 
         case 'q4':
@@ -118,6 +121,7 @@ export class NoDebtUserComponent implements OnInit {
          //sending this quiz to AI
         this.prompt = 'What is credit score?'
         this.session.saveActiveQuestion('q5');
+        this.progressPercentage =  40;
         break;
 
         case 'q5':
@@ -130,6 +134,7 @@ export class NoDebtUserComponent implements OnInit {
          //sending this quiz to AI
         this.prompt = 'How to use credit in a good way?'
         this.session.saveActiveQuestion('q6');
+        this.progressPercentage =  50;
         break;
 
         case 'q6':
@@ -142,6 +147,7 @@ export class NoDebtUserComponent implements OnInit {
          //sending this quiz to AI
         this.prompt = 'What is debt?'
         this.session.saveActiveQuestion('q7');
+        this.progressPercentage =  60;
         break;
 
 
@@ -156,6 +162,7 @@ export class NoDebtUserComponent implements OnInit {
          //sending this quiz to AI
         this.prompt = 'What is a debtor?'
         this.session.saveActiveQuestion('q8');
+        this.progressPercentage =  70;
         break;
 
         case 'q8':
@@ -168,6 +175,7 @@ export class NoDebtUserComponent implements OnInit {
          //sending this quiz to AI
         this.prompt = 'What is a good debtor?'
         this.session.saveActiveQuestion('q9');
+        this.progressPercentage =  80;
         break;
 
         case 'q9':
@@ -182,6 +190,7 @@ export class NoDebtUserComponent implements OnInit {
         this.prompt = 'What is a bad debtor?'
         this.session.saveActiveQuestion('10');
         this.router.navigate(['/summary']);
+        this.progressPercentage =  90;
         break;
 
         default:
@@ -196,6 +205,7 @@ export class NoDebtUserComponent implements OnInit {
            //sending this quiz to AI
           this.prompt = 'Why is credit important?'
           this.session.saveActiveQuestion('q2');
+          this.progressPercentage =  10;
       
         break;
     }

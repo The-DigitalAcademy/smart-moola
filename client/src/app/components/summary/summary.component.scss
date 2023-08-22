@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 5px;
+  padding: 2px;
   box-sizing: border-box;
 }
 
@@ -25,11 +25,15 @@
     .progress-bar {
       // width: 100%;
       background-color: #669BBC;
-      // padding: 10px 5px;
+
+
     }
 
     .progress {
       width: 100%;
+      height:auto;
+      margin-right: 1.5rem;
+      border-radius: 50px;
     }
 
     .backBtn {
@@ -42,6 +46,11 @@
       border-radius: 4px;
       cursor: pointer;
       text-align: center;
+    }
+
+    .bi {
+      margin-bottom: 10rem;
+
     }
   }
 
@@ -87,22 +96,9 @@
 
   }
 
-    button {
-      padding: 10px;
-      background-color: #669BBC;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-bottom: 2rem;
-      top: 13em;
-      width: 100%;
-    }
-
-  }
   .submit-1 {
     display: block;
-    width: 90%;
+    width: 100%;
     padding: 10px 0;
     background-color: var(--main-color);
     color: white;
@@ -110,48 +106,7 @@
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    position: absolute;
-    bottom: 10em;
-   left:1.5em;
-
+    position: flex;
+    margin-top: 8em;
+  }
 }
-}
-
-// .card {
-//   display: flex;
-//   flex-direction: column;
-//   background-color: #669BBC;
-//   text-align: center;
-//   color: #FFFFFF;
-//   padding: 10px;
-//   ;
-//   margin-top: 3rem;
-//   padding: 15px 20px;
-//   width: 90vw;
-//   border-radius: 20px;
-//   border: 1px solid black;
-
-//   p {
-//     font-size: large;
-//     margin-bottom: 20px;
-//   }
-
-//   a {
-//     background-color: #FFFFFF;
-//     width: 100%;
-//     color: #669BBC;
-//   }
-
-// }
-
-// button {
-//   padding: 10px;
-//   background-color: #669BBC;
-//   color: white;
-//   border: none;
-//   border-radius: 4px;
-//   cursor: pointer;
-//   margin-bottom: 2rem;
-//   top: 13em;
-//   width: 100%;
-// }

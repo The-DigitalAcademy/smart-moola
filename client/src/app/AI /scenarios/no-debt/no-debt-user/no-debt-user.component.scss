@@ -3,13 +3,14 @@
   position: fixed;
   margin-bottom: 10px;
 
+
   .questions {
     padding: 3px;
-    margin-bottom: 2em;
-    border: 1px solid black;
+    // margin-bottom: 2em;
+    
     border-radius: 10px;
-    background-color: #f1f1f1;
-    height: 65%;
+    background-color: #f6f6f6;
+    height: 64vh;
 
     .column {
       float: left;
@@ -23,17 +24,24 @@
         background-color: #f1f1f1;
         color: #669bbc;
         border: 1px solid;
+        font-size: 18x;
       }
     }
   }
 
-  .header {
-    h1 {
-      margin-top: 5vh;
-      text-align: center;
-      color: #669bbc;
-      font-weight: 700;
-    }
+  // .header {
+  //   // h1 {
+  //   //   margin-top: 5vh;
+  //   //   text-align: center;
+  //   //   color: #669bbc;
+  //   //   font-weight: 500;
+  //   // }
+  // }
+
+  .textStyle{
+    text-align: center;
+    color: #669bbc;
+    font-weight: 600;
   }
 
   h5 {
@@ -72,7 +80,7 @@
 
   .footer {
     position: absolute;
-    bottom: 1em;
+    bottom: 14px;
   }
 
   .btns {
@@ -86,6 +94,8 @@
     color: #669bbc;
     font-weight: 400;
   }
+
+
 }
 
 
