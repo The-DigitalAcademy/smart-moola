@@ -23,6 +23,7 @@ import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/in
 import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
+import { Summary2Component } from './components/summary2/summary2.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
