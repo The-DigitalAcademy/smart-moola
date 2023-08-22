@@ -154,26 +154,30 @@ const isOtpValid = (req, res) => {
 }
 
 const updatePassword = async (req, res) => {
-
     try {
         const { email, password, confirmPassword } = req.body;
-        let id;
 
-        const User = await findOne(email);
+        const user = await findOne(email);
 
-        id = User.dataValues.id
+        if (!user) {
+            return res.status(404).send({ message: "User not found" });
+        }
 
-        User.password = password;
-        User.confirmPassword = confirmPassword;
+        // Hash the new password
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-        console.log(User, "2")
-        await User.save();
+        // Update the user's password and confirmPassword
+        user.password = hashedPassword;
+        user.confirmPassword = confirmPassword;
+
+        await user.save();
+
         res.status(200).send({ message: "Password updated!" });
-
     } catch (err) {
         res.status(500).send({ message: err.message + "Testing" });
     }
-}
+};
+
 
 const deleteUser = async (request, response) => {
     const id = parseInt(request.params.id);
