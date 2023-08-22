@@ -48,6 +48,7 @@
     background-color: #F6F6F6;
   }
 
+ 
   .column {
     display: flex;
     border: 1px solid black;
@@ -72,9 +73,11 @@
     }
   }
 
+ 
+
   .submit {
     display: block;
-    width: 96%;
+    width: 100%;
     padding: 10px;
     background-color: #669BBC;
     color: white;
@@ -83,8 +86,14 @@
     cursor: pointer;
     text-align: center;
     margin-top: -50em;
-    left: -1.6em;
+   left: -1.6em;
 
+  }
+  
+  .footer
+  {
+      position: absolute;
+      bottom: 2em;    
   }
 }
 
@@ -124,4 +133,5 @@
 
 .submit:hover {
   background-color: #669BBC;
+ 
 }

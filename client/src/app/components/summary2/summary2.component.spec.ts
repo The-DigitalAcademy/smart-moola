@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NoDebtUserComponent } from './no-debt-user.component';
+import { Summary2Component } from './summary2.component';
 
-describe('NoDebtUserComponent', () => {
-  let component: NoDebtUserComponent;
-  let fixture: ComponentFixture<NoDebtUserComponent>;
+describe('Summary2Component', () => {
+  let component: Summary2Component;
+  let fixture: ComponentFixture<Summary2Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NoDebtUserComponent ]
+      declarations: [ Summary2Component ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NoDebtUserComponent);
+    fixture = TestBed.createComponent(Summary2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

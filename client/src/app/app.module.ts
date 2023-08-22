@@ -26,13 +26,13 @@ import { NavigationMenuComponent } from './components/navigation-menu/navigation
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
 import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component'; 
-import { SummaryComponent } from './components/summary/summary.component';
-
 import { FooterComponent } from './components/footer/footer.component';
 // import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
 import { indebtedScenesComponent } from './AI /scenarios/indebted-scenes/indebted-scenes.component'; 
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component'; 
 import { HomeComponent } from './Pages/home/home.component';
+import { SummaryComponent } from './components/summary/summary.component';
+import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 
 
 // import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
@@ -66,8 +66,9 @@ import { HomeComponent } from './Pages/home/home.component';
     FooterComponent,
     indebtedScenesComponent,
     IndebtedUserComponent,
-    NoDebtComponent
-    
+    NoDebtComponent,
+    WrongAnswersComponent
+  
   ],
 
   imports: [

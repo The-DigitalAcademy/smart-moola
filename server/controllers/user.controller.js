@@ -2,8 +2,7 @@ const bcrypt = require("bcrypt");
 let jwt = require("jsonwebtoken");
 const JwtSecret = require('../config/JwtSecret.config');
 const nodemailer = require("nodemailer");
-
-const db = require('../config/db.config');
+var currentOtp = "";
 
 const User = require("../models/user.model"); // Import the Sequelize model for "User"
 
@@ -32,6 +31,7 @@ const sendEmail = async (req, res) => {
     console.log('Request Body:', req.body);
 
     const otp = Math.floor(1000 + Math.random() * 9000).toString();
+    currentOtp = otp;
 
     console.log("Otp", otp);
 
@@ -77,7 +77,6 @@ const createUser = async (request, response) => {
                 email: email
             }
         });
-        
 
     } catch (error) {
         console.error("Error creating user", error);
@@ -117,92 +116,22 @@ const getUserById = async (request, response) => {
     }
 };
 
-const updateByOTP = (req, res) => {
-    const id = parseInt(request.params.id);
-
-    console.log(id, "i-ID");
-
-    res.render('password-update', { userId: id });
-
-}
-
-// const updateUser = async (request, response) => {
-//     const id = parseInt(request.params.id);
-//     const { fullName, email, password } = request.body;
-
-//     try {
-//         // Find the user by ID using Sequelize's 'findByPk' method
-//         const user = await User.findByPk(id);
-
-//         if (!user) {
-//             return response.status(404).send({ message: "User not found" });
-//         }
-
-//         // Update the user properties
-//         user.fullName = fullName;
-//         user.email = email;
-//         user.password = password; // Assuming the password is already hashed
-
-//         // Save the updated user to the database
-//         await user.save();
-
-//         response.status(200).send(`User modified with ID: ${id}`);
-//     } catch (error) {
-//         console.error("Error updating user", error);
-//         response.status(500).send({ error: "Internal server error" });
-//     }
-// };
-
-const isOtpValid = (enteredOtp, expectedOtp) => {
-    // Implement your OTP validation logic here
-    // Compare the enteredOtp with the expectedOtp and return true if they match, otherwise return false
-
-    return enteredOtp === expectedOtp;
-};
-
-// Copy code
-const updatePasswordWithOtp = async (user, newPassword, otp) => {
-
-
-    // Retrieve the expected OTP from where you stored it (e.g., a database)
-    const expectedOtp = await retrieveExpectedOtp(user.email); // Implement this function
-
-    // Check if the entered OTP matches the expected OTP
-    if (!isOtpValid(otp, expectedOtp)) {
-        throw new Error("Invalid OTP");
-    }
-
-    // Hash the new password before updating
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-
-    // Update the user's password
-    user.password = hashedPassword;
-
-    // Save the updated user to the database
-    await user.save();
-};
-
 const updateUser = async (request, response) => {
     const id = parseInt(request.params.id);
-
-    const { fullName, email, newPassword, otp } = request.body;
+    const { fullName, email, password } = request.body;
 
     try {
         // Find the user by ID using Sequelize's 'findByPk' method
         const user = await User.findByPk(id);
 
-        console.log(user, "this the user we dealing with")
-
         if (!user) {
             return response.status(404).send({ message: "User not found" });
         }
 
-        // Validate OTP and update password
-        await updatePasswordWithOtp(user, newPassword, otp);
-
-        // Update the other user properties
+        // Update the user properties
         user.fullName = fullName;
         user.email = email;
+        user.password = password; // Assuming the password is already hashed
 
         // Save the updated user to the database
         await user.save();
@@ -214,14 +143,40 @@ const updateUser = async (request, response) => {
     }
 };
 
+const isOtpValid = (req, res) => {
+    const { otp } = req.body;
 
-// Function to retrieve the expected OTP based on the user's email
-const retrieveExpectedOtp = async (email) => {
-    // Implement your logic to fetch the expected OTP from your storage (e.g., database)
-    // Return the expected OTP
+    if (otp === currentOtp) {
+        return res.status(200).json({ otpIsVerified: true })
+    } else {
+        return res.status(404).json({ otpIsVerified: false })
+    }
+}
+
+const updatePassword = async (req, res) => {
+    try {
+        const { email, password, confirmPassword } = req.body;
+
+        const user = await findOne(email);
+
+        if (!user) {
+            return res.status(404).send({ message: "User not found" });
+        }
+
+        // Hash the new password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Update the user's password and confirmPassword
+        user.password = hashedPassword;
+        user.confirmPassword = confirmPassword;
+
+        await user.save();
+
+        res.status(200).send({ message: "Password updated!" });
+    } catch (err) {
+        res.status(500).send({ message: err.message + "Testing" });
+    }
 };
-
-
 
 
 const deleteUser = async (request, response) => {
@@ -320,6 +275,8 @@ module.exports = {
     deleteUser,
     login,
     sendEmail,
-    updateByOTP
+    isOtpValid,
+    updatePassword
+
     // deleteAll
 }

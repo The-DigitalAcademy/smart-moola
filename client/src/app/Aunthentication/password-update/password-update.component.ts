@@ -1,6 +1,7 @@
+// password-update.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -11,42 +12,41 @@ import { UsersService } from 'src/app/services/users.service';
 export class PasswordUpdateComponent implements OnInit {
 
   passwordUpdateForm: FormGroup;
-  userId: string = '';
+  email: string = ''; // Declare and initialize the email property
 
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private userService: UsersService
+    private userService: UsersService,
+    private router: Router
   ) {
     this.passwordUpdateForm = this.fb.group({
-      newPassword: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', [Validators.required]],
     }, { validators: this.passwordsMatchValidator });
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      const otp = params['otp'];
-      const newPassword = params['newPassword'];
-  
-      // Set the values in the form controls if needed
-      this.passwordUpdateForm.patchValue({
-        otp: otp,
-        newPassword: newPassword
-      });
-    });
+    // Retrieve the email from local storage
+    this.email = localStorage.getItem('Email') || '';
+    console.log(this.email, "email");
   }  
-
+  
   submitForm() {
     if (this.passwordUpdateForm.valid) {
-      const newPassword = this.passwordUpdateForm.value.newPassword;
-      const enteredOtp = this.passwordUpdateForm.value.otp;
-      const userId = this.userId; // Get the userId from wherever you're storing it
-  
-      this.userService.updateUserWithOtp(userId, newPassword, enteredOtp)
+      const password = this.passwordUpdateForm.value.password;
+      const confirmPassword = this.passwordUpdateForm.value.confirmPassword;
+
+      const passwordUpdate = {
+        email: this.email , // Use the stored email
+        password,
+        confirmPassword
+      };
+
+      this.userService.updatePassword(passwordUpdate)
         .subscribe(
           response => {
             console.log('Password updated successfully', response);
+            this.router.navigate(['/login']);
           },
           error => {
             console.error('Error updating password:', error);
@@ -54,7 +54,6 @@ export class PasswordUpdateComponent implements OnInit {
         );
     }
   }
-  
 
   passwordsMatchValidator(formGroup: FormGroup) {
     // ... validator logic ...
