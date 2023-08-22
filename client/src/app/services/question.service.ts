@@ -29,11 +29,8 @@ export class QuestionService {
     this.router.navigate(['/home']);
   }
   sendQuestionAndGetExplanation(question: string): Observable<any> {
-    const endpoint = this.backendUrl // Adjust the endpoint accordingly
-
+    const endpoint = this.backendUrl
     return this.http.post(endpoint, { question });
-
-    //  return this.http.post(endpoint, { question }, httpOptions);
   }
   getAllQuestions(): Observable<any> {
     return this.http.get(URL);

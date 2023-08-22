@@ -57,16 +57,7 @@ export class NoDebtUserComponent implements OnInit {
       }
     });
   }
-
-  // getMeaning() {
-  //   this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
-  //     console.log(data,"data")
-  //     console.log(data.explanation)
-  //     this.explanation = data.explanation
-  //     localStorage.setItem("explanation", this.explanation)
-  //   })
-  // }
-
+  
   getMeaning() {
     this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
       console.log(data); // Check the entire response object
