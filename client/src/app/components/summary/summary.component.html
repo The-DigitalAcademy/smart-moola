@@ -1,15 +1,32 @@
 <div class="container">
   <div class="header">
-    <div>
-      <img
-        src="https://res.cloudinary.com/dp4dd0gis/image/upload/v1692012504/left_t5lbyk.png"
-        class="backBtn"
-        (click)="goBack()"
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="25"
+      height="25"
+      fill="#669BBC"
+      class="bi bi-arrow-left"
+      viewBox="0 0 16 16"
+      (click)="goBack()"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
       />
+    </svg>
+
+    <div
+      class="progress py-1.8"
+      role="progressbar"
+      aria-label="Example with label"
+      aria-valuenow="10"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="progress-bar" style="width: 100%">100%</div>
     </div>
   </div>
-
-  <h5>Credit And Debt Summary</h5>
+  <h5>Credit and Debt Summary</h5>
 
   <ul class="card-container">
     <div class="card">

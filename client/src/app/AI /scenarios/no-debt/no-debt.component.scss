@@ -77,7 +77,7 @@
 
   .submit {
     display: block;
-    width: 96%;
+    width: 100%;
     padding: 10px;
     background-color: #669BBC;
     color: white;
@@ -93,7 +93,7 @@
   .footer
   {
       position: absolute;
-      bottom: 1em;    
+      bottom: 2em;    
   }
 }
 
@@ -133,10 +133,5 @@
 
 .submit:hover {
   background-color: #669BBC;
-  .footer
-      {
-          height: 10%;
-          padding-top: 5%;
-          
-      }
+ 
 }

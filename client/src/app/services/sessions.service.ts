@@ -23,13 +23,7 @@ export class SessionsService {
   public saveActiveQuestion(q: string) {
     window.sessionStorage.setItem(activeQ, JSON.stringify(q))
   }
-  //Answer
-
-  public saveConvo(q: any) {
-    window.sessionStorage.setItem(convo, JSON.stringify(q))
-  }
-
-
+ 
   public saveActiveAnswer(a: string) {
     window.sessionStorage.setItem(activeQ, JSON.stringify(a))
   }
@@ -49,15 +43,6 @@ export class SessionsService {
   ///quiz
   public getActiveQuestion() {
     const question1 = window.sessionStorage.getItem(activeQ)
-    if (question1) {
-      return JSON.parse(question1)
-    }
-
-  }
-
-
-  public getConvo() {
-    const question1 = window.sessionStorage.getItem(convo)
     if (question1) {
       return JSON.parse(question1)
     }

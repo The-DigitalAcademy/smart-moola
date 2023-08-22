@@ -2,9 +2,7 @@ const bcrypt = require("bcrypt");
 let jwt = require("jsonwebtoken");
 const JwtSecret = require('../config/JwtSecret.config');
 const nodemailer = require("nodemailer");
-var currentOtp = 9877;
-
-const db = require('../config/db.config');
+var currentOtp = "";
 
 const User = require("../models/user.model"); // Import the Sequelize model for "User"
 
@@ -80,7 +78,6 @@ const createUser = async (request, response) => {
             }
         });
 
-
     } catch (error) {
         console.error("Error creating user", error);
         response.status(500).send({ error: "Internal server error" });
@@ -119,32 +116,32 @@ const getUserById = async (request, response) => {
     }
 };
 
-// const updateUser = async (request, response) => {
-//     const id = parseInt(request.params.id);
-//     const { fullName, email, password } = request.body;
+const updateUser = async (request, response) => {
+    const id = parseInt(request.params.id);
+    const { fullName, email, password } = request.body;
 
-//     try {
-//         // Find the user by ID using Sequelize's 'findByPk' method
-//         const user = await User.findByPk(id);
+    try {
+        // Find the user by ID using Sequelize's 'findByPk' method
+        const user = await User.findByPk(id);
 
-//         if (!user) {
-//             return response.status(404).send({ message: "User not found" });
-//         }
+        if (!user) {
+            return response.status(404).send({ message: "User not found" });
+        }
 
-//         // Update the user properties
-//         user.fullName = fullName;
-//         user.email = email;
-//         user.password = password; // Assuming the password is already hashed
+        // Update the user properties
+        user.fullName = fullName;
+        user.email = email;
+        user.password = password; // Assuming the password is already hashed
 
-//         // Save the updated user to the database
-//         await user.save();
+        // Save the updated user to the database
+        await user.save();
 
-//         response.status(200).send(`User modified with ID: ${id}`);
-//     } catch (error) {
-//         console.error("Error updating user", error);
-//         response.status(500).send({ error: "Internal server error" });
-//     }
-// };
+        response.status(200).send(`User modified with ID: ${id}`);
+    } catch (error) {
+        console.error("Error updating user", error);
+        response.status(500).send({ error: "Internal server error" });
+    }
+};
 
 const isOtpValid = (req, res) => {
     const { otp } = req.body;
@@ -157,60 +154,27 @@ const isOtpValid = (req, res) => {
 }
 
 const updatePassword = async (req, res) => {
-
     try {
         const { email, password, confirmPassword } = req.body;
-        let id;
 
-        const User = await findOne(email);
-
-        id = User.dataValues.id
-
-        User.password = password;
-        User.confirmPassword = confirmPassword;
-        {
-            res.status(200).send({
-                message: "Password updated!"
-            })
-        }
-
-        console.log(User, "2")
-        await User.save();
-
-    } catch (err) {
-        res.status(500).send({ message: err.message + "Testing" });
-    }
-}
-
-const updateUser = async (request, response) => {
-    const id = parseInt(request.params.id);
-
-    const { fullName, email, newPassword, otp } = request.body;
-
-    try {
-        // Find the user by ID using Sequelize's 'findByPk' method
-        const user = await User.findByPk(id);
-
-        console.log(user, "this the user we dealing with")
+        const user = await findOne(email);
 
         if (!user) {
-            return response.status(404).send({ message: "User not found" });
+            return res.status(404).send({ message: "User not found" });
         }
 
-        // Validate OTP and update password
-        await updatePasswordWithOtp(user, newPassword, otp);
+        // Hash the new password
+        const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Update the other user properties
-        user.fullName = fullName;
-        user.email = email;
+        // Update the user's password and confirmPassword
+        user.password = hashedPassword;
+        user.confirmPassword = confirmPassword;
 
-        // Save the updated user to the database
         await user.save();
 
-        response.status(200).send(`User modified with ID: ${id}`);
-    } catch (error) {
-        console.error("Error updating user", error);
-        response.status(500).send({ error: "Internal server error" });
+        res.status(200).send({ message: "Password updated!" });
+    } catch (err) {
+        res.status(500).send({ message: err.message + "Testing" });
     }
 };
 

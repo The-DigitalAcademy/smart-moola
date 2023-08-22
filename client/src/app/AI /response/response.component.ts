@@ -12,6 +12,7 @@ export class responseComponent implements OnInit {
   error!: string;
   word: any;
   router: any;
+  fullName: any = '';
 
   constructor(private questionService: QuestionService) { }
   reloadPage(): void {
@@ -20,13 +21,22 @@ export class responseComponent implements OnInit {
 
   ngOnInit(): void {
     this.explanation = localStorage.getItem("explanation")
+
+    this.getLoggedInUserName();
+    console.log(this.getLoggedInUserName())
   }
 
   getMeaning() {
     this.questionService.sendQuestionAndGetExplanation(this.question).subscribe(data => {
       console.log(data.explanation)
-      this.explanation = data.explanation
+     this.explanation = data.explanation
     })
+  }
+
+
+  getLoggedInUserName() {
+    this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName
+    console.log(this.fullName);
   }
 }
 

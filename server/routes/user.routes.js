@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const userController = require('../controllers/user.controller');
-// const { getMeaningOfWord } = require('./app/Controllers/gpt');
 
 router.post('/postUser', userController.createUser);
 router.get('/getUsers', userController.getUsers);
@@ -12,6 +11,5 @@ router.post('/login', userController.login);
 router.post('/send-email', userController.sendEmail);
 router.post('/otp-verification',userController.isOtpValid);
 router.post('/password-update', userController.updatePassword);
-// app.post('/api/meaning', getMeaningOfWord);
 
 module.exports = router;
