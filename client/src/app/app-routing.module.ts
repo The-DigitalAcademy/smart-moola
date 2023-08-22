@@ -22,6 +22,7 @@ import { indebtedScenesComponent } from './AI /scenarios/indebted-scenes/indebte
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component'; 
 import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 
 const routes: Routes = [
 
@@ -51,7 +52,9 @@ const routes: Routes = [
 
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
-  { path: 'indebtedscene', component: indebtedScenesComponent}
+  { path: 'indebtedscene', component: indebtedScenesComponent},
+  { path: 'summary', component: SummaryComponent},
+  { path: 'wrong-answers', component: WrongAnswersComponent}
 
 ];
 

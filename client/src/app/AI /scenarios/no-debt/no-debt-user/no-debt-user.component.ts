@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuestionService } from 'src/app/services/question.service';
 import { SessionsService } from 'src/app/services/sessions.service';
+import { LoaderService } from 'src/app/services/Loader';
 
 @Component({
   selector: 'app-no-debt-user',
@@ -14,7 +15,7 @@ export class NoDebtUserComponent implements OnInit {
   constructor(
     private router: Router,
     private questionsService: QuestionService,
-    private session: SessionsService
+    private session: SessionsService,public loaderService: LoaderService
   ) {}
 
   question = '';
@@ -25,22 +26,29 @@ export class NoDebtUserComponent implements OnInit {
   prompt = ''
   explanation= ''
 
+
+
   questions: any;
+ 
 
   verifyAnswer() {
     this.router.navigate(['/answers']);
     // this.router.navigate(['/response']);
+   
   }
 
   submitMandla() {
-    this.getMeaning()
+    this.getMeaning();
     this.router.navigate(['/answers']);
+    
   }
 
   submitTumi() {
-    this.getMeaning()
-    this.router.navigate(['/answers']);
+    this.getMeaning();
+    this.router.navigate(['/wrong-answers']);
+ 
   }
+  
 
   getQuestions() {
     this.questionsService.getAllQuestions().subscribe((data) => {
@@ -49,6 +57,8 @@ export class NoDebtUserComponent implements OnInit {
       }
     });
   }
+
+  
   getMeaning(){
     this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
       console.log(data.explanation)
@@ -59,6 +69,7 @@ export class NoDebtUserComponent implements OnInit {
 
   verify() {
         this.active = this.session.getActiveQuestion();
+
         switch (this.active) {
         case 'q1':
         this.question = 'Why is credit important?';
@@ -88,9 +99,12 @@ export class NoDebtUserComponent implements OnInit {
         'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
 
         this.mandlaResponse =
-        'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
+        'Drivers License and proof of residence.';
+
+        this.tumiResponse =
+        'Tumi has proof of residence, Identity document';
          //sending this quiz to AI
-        this.prompt = 'what documents do you need to apply for credit?'
+        this.prompt = 'To apply for credit what documents are requiedd?'
         this.session.saveActiveQuestion('q4');
         break;
 
@@ -167,7 +181,7 @@ export class NoDebtUserComponent implements OnInit {
          //sending this quiz to AI
         this.prompt = 'What is a bad debtor?'
         this.session.saveActiveQuestion('10');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/summary']);
         break;
 
         default:
@@ -188,7 +202,7 @@ export class NoDebtUserComponent implements OnInit {
   }
   ngOnInit(): void {
     this.verify();
-    this.getQuestions();
-
+   this.getQuestions();
   }
 }
+

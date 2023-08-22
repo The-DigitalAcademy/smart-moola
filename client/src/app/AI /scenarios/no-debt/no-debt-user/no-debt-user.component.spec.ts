@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AaComponent } from './no-debt-user.component';
+import { NoDebtUserComponent } from './no-debt-user.component';
 
-describe('AaComponent', () => {
-  let component: AaComponent;
-  let fixture: ComponentFixture<AaComponent>;
+describe('NoDebtUserComponent', () => {
+  let component: NoDebtUserComponent;
+  let fixture: ComponentFixture<NoDebtUserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AaComponent ]
+      declarations: [ NoDebtUserComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AaComponent);
+    fixture = TestBed.createComponent(NoDebtUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
