@@ -165,14 +165,10 @@ const updatePassword = async (req, res) => {
 
         User.password = password;
         User.confirmPassword = confirmPassword;
-        {
-            res.status(200).send({
-                message: "Password updated!"
-            })
-        }
 
         console.log(User, "2")
         await User.save();
+        res.status(200).send({ message: "Password updated!" });
 
     } catch (err) {
         res.status(500).send({ message: err.message + "Testing" });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class PasswordResetComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private usersService: UsersService,
-    private router: Router,
+    private router: Router
   ) {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]]
@@ -27,15 +27,20 @@ export class PasswordResetComponent implements OnInit {
       // Get the user's email from the form
       const email = this.form.value.email;
 
+     localStorage.setItem('Email', email);
+
       // Call the sendEmail method from the UsersService to trigger the email sending
       this.usersService.sendEmail(email);
 
       // Redirect the user to the OTP verification page (optional)
-      this.router.navigate(['/verify-otp']);
+      this.router.navigate(['/verify-otp'], { queryParams: { email: email } });
     }
   }
 
   ngOnInit(): void {
+   
   }
+  
+  
 
 }

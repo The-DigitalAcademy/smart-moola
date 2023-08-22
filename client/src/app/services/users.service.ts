@@ -12,6 +12,8 @@ import { Location } from '@angular/common';
 export class UsersService {
   //usersURL: any = usersAPI;
   usersURL = 'https://smart-9qg3.onrender.com/api/users';
+  usersLocalURL = 'http://localhost:4545/api/users';
+
   headers: any = new HttpHeaders({
     'Content-Type': 'application/json',
   });
@@ -44,7 +46,7 @@ export class UsersService {
   }
 
   updatePassword(passwordUpdate: PasswordUpdate): Observable<any> {
-    return this.http.post<any>(`${this.usersURL}/password-update`, passwordUpdate);
+    return this.http.post<any>(`${this.usersLocalURL}/password-update`, passwordUpdate);
   }
   // Method to trigger email sending
   sendEmail(email: string) {

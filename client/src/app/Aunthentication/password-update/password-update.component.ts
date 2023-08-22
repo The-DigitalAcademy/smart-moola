@@ -1,5 +1,7 @@
+// password-update.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -10,11 +12,12 @@ import { UsersService } from 'src/app/services/users.service';
 export class PasswordUpdateComponent implements OnInit {
 
   passwordUpdateForm: FormGroup;
-  userId: string = '';
+  email: string = ''; // Declare and initialize the email property
 
   constructor(
     private fb: FormBuilder,
-    private userService: UsersService
+    private userService: UsersService,
+    private router: Router
   ) {
     this.passwordUpdateForm = this.fb.group({
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -23,16 +26,18 @@ export class PasswordUpdateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
+    // Retrieve the email from local storage
+    this.email = localStorage.getItem('Email') || '';
+    console.log(this.email, "email");
+  }  
+  
   submitForm() {
     if (this.passwordUpdateForm.valid) {
       const password = this.passwordUpdateForm.value.password;
       const confirmPassword = this.passwordUpdateForm.value.confirmPassword;
-      const email = this.passwordUpdateForm.value.email;
 
       const passwordUpdate = {
-        email,
+        email: this.email , // Use the stored email
         password,
         confirmPassword
       };
@@ -41,6 +46,7 @@ export class PasswordUpdateComponent implements OnInit {
         .subscribe(
           response => {
             console.log('Password updated successfully', response);
+            this.router.navigate(['/login']);
           },
           error => {
             console.error('Error updating password:', error);
@@ -48,7 +54,6 @@ export class PasswordUpdateComponent implements OnInit {
         );
     }
   }
-
 
   passwordsMatchValidator(formGroup: FormGroup) {
     // ... validator logic ...
