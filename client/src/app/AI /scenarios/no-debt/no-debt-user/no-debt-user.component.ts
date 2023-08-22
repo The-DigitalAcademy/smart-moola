@@ -29,7 +29,7 @@ export class NoDebtUserComponent implements OnInit {
 
 
   questions: any;
- 
+
 
   verifyAnswer() {
     this.router.navigate(['/answers']);
@@ -40,7 +40,7 @@ export class NoDebtUserComponent implements OnInit {
   submitMandla() {
     this.getMeaning();
     this.router.navigate(['/answers']);
-    
+
   }
 
   submitTumi() {
@@ -58,20 +58,29 @@ export class NoDebtUserComponent implements OnInit {
     });
   }
 
-  
-  getMeaning(){
+  // getMeaning() {
+  //   this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
+  //     console.log(data,"data")
+  //     console.log(data.explanation)
+  //     this.explanation = data.explanation
+  //     localStorage.setItem("explanation", this.explanation)
+  //   })
+  // }
+
+  getMeaning() {
     this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
-      console.log(data.explanation)
-      this.explanation = data.explanation
-      localStorage.setItem("explanation", this.explanation)
-    })
+      console.log(data); // Check the entire response object
+      console.log(data.explanation); // Check the explanation property
+      this.explanation = data.explanation;
+      localStorage.setItem("explanation", this.explanation);
+    });
   }
 
   verify() {
-        this.active = this.session.getActiveQuestion();
+    this.active = this.session.getActiveQuestion();
 
-        switch (this.active) {
-        case 'q1':
+    switch (this.active) {
+      case 'q1':
         this.question = 'Why is credit important?';
 
         this.mandlaResponse = "Credit is when you owe money to someone else.";
@@ -99,11 +108,11 @@ export class NoDebtUserComponent implements OnInit {
           'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
 
         this.mandlaResponse =
-        'Drivers License and proof of residence.';
+          'Drivers License and proof of residence.';
 
         this.tumiResponse =
-        'Tumi has proof of residence, Identity document';
-         //sending this quiz to AI
+          'Tumi has proof of residence, Identity document';
+        //sending this quiz to AI
         this.prompt = 'To apply for credit what documents are requiedd?'
         this.session.saveActiveQuestion('q4');
         break;
@@ -202,7 +211,7 @@ export class NoDebtUserComponent implements OnInit {
   }
   ngOnInit(): void {
     this.verify();
-   this.getQuestions();
+    this.getQuestions();
   }
   goBack() {
     this.usersServices.previousPage();
