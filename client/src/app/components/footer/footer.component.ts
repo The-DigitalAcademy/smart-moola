@@ -5,7 +5,7 @@ import { UsersService } from 'src/app/services/users.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css'],
+  styleUrls: ['./footer.component.scss'],
   animations: [
     trigger('slideInOut', [
       state('open', style({ transform: 'translateX(0)' })),
