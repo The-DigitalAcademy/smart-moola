@@ -41,13 +41,13 @@
         </form>
       </div>
       <div class="btn-group">
-        <!-- <button class="btn" (click)="previousStatement()">Previous</button> -->
-        <!-- <button class="btn btn-primary" (click)="openModal()">Open modal</button>  -->
+
         <button class="btn" type="button" (click)="nextStatement()" [disabled]="!isRadioSelected">Submit</button>
       </div>
       <div *ngIf="showIncorrectMessage" class="incorrect-message">Incorrect Answer</div>
       
     </div>
+
     
     <div class="footer">
       <div class="menu">

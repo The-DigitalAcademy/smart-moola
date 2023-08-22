@@ -1,6 +1,10 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-// import { IndebtedResponseComponent } from '../../indebted-response/indebted-response.component';
-// import { MdbModalRef,MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { SessionsService } from 'src/app/services/sessions.service';
+import { QuestionService } from 'src/app/services/question.service';
+import { Router } from '@angular/router';
+
+
+
 
 
 @Component({
@@ -8,10 +12,20 @@ import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/co
   templateUrl: './indebted-scenes.component.html',
   styleUrls: ['./indebted-scenes.component.css']
 })
+
 export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
-  constructor(private cdRef: ChangeDetectorRef) {}
+   // Provide a default value // Use MdbModalRef<any> if you don't have a specific modal component
+// Provide the correct type argument
+  constructor(
+    private cdRef: ChangeDetectorRef, 
+    private questionService: QuestionService,
+    private session: SessionsService,
+    private router: Router
+    
+    ) {}
 
+  
   statements = [
     "Mbali overspent on his credit card, resulting in a large debt with added interest charges from the credit card company.",
     "Mbali asked for debt management help for medical bills and job loss, with a counselor creating a new repayment plan after negotiating with creditors.",
@@ -33,6 +47,44 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     'Debt Consolidation',
     'Debt Review'                  // Add correct answers for other statements
   ];
+
+   option1 ="";
+   option2 ="";
+   option3 ="";
+    
+   question = '';
+   active = 'q1'
+
+   prompt = '';
+   explanation = '';
+
+   submit1()
+   {
+     this.getMeaning();
+     this.router.navigate(['/indebtedresponse'])
+   }
+
+   submit2()
+   {
+     this.getMeaning();
+     this.router.navigate(['/indebtedresponse'])
+   }
+
+   submit3()
+   {
+     this.getMeaning();
+     this.router.navigate(['/indebtedresponse'])
+   }
+
+   getMeaning(){
+    this.questionService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
+      console.log(data.explanation)
+      this.explanation = data.explanation
+      localStorage.setItem("explanation",this.explanation)
+    })
+   }
+
+   
   
 
   labels = [
@@ -41,7 +93,7 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   ];
 
 
-
+  
 
  
   currentStatementIndex = 0;
@@ -51,7 +103,7 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   progressPercentage = 0; // Initialize the progress percentage
   isRadioSelected: boolean = false; // initially setting the radio boxes to false(not selected)
   showIncorrectMessage = false; 
-  // modalRef: MdbModalRef<IndebtedResponseComponent> | null = null;
+  
 
   
   // isFirstIteration = true; // Flag to track the first iteration
@@ -59,6 +111,8 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.updateTextScene();
+    this.verify();
+    this.getMeaning
   }
 
   
@@ -125,6 +179,10 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
       }, 2000); // Adjust the timeout duration as needed
     }
   }
+
+
+
+  
   
   // This method is added to handle the vanilla JavaScript logic
   initializeVanillaJSLogic() {
@@ -175,10 +233,71 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
     }
 
-    // openModal() {
-    //   this.modalRef = this.modalService.open(IndebtedResponseComponent, {
-    //     modalClass: 'modal-dialog-centered'
-    //   });
-    // }
+    
+    verify() {
+      this.active = this.session.getActiveQuestion();
+      switch (this.active) {
+        case 'q1':
+          this.question = this.currentQuestion;
+  
+          this.option1 = "Credit limits";
+          this.option2 = "Credit score";
+          this.option3 = "Debtor status"
+          //sending this quiz to AI
+          this.prompt = 'What is credit score'
+  
+          this.session.saveActiveQuestion('q2');
+          break;
+  
+        case 'q2':
+          this.question = this.currentQuestion;
+  
+          this.option1 = "Debt Review";
+          this.option2 = "Debt Counselling";
+          this.option3 = "Debt Consolidation"
+          //sending this quiz to AI
+          this.prompt = 'What is Debt Counselling'
 
+          this.session.saveActiveQuestion('q3');
+          break;
+  
+        case 'q3':
+          this.question = this.currentQuestion;
+  
+          this.option1 = "Debt Review";
+          this.option2 = "Debt Counselling";
+          this.option3 = "Debt Consolidation"
+          //sending this quiz to AI
+          this.prompt = 'What is Debt Consolidation'
+          this.session.saveActiveQuestion('q4');
+          break;
+  
+        case 'q4':
+          this.question = this.currentQuestion;
+  
+          this.option1 = "Debt Review";
+          this.option2 = "Debt Counselling";
+          this.option3 = "Debt Consolidation"
+          //sending this quiz to AI
+          this.prompt = 'What is Debt Review'
+
+          this.session.saveActiveQuestion('q5');
+          break;
+  
+        default:
+
+        this.active = 'q1';
+        this.question = this.currentQuestion;
+  
+        this.option1 = "Credit limits";
+        this.option2 = "Credit score";
+        this.option3 = "Debtor status"
+        //sending this quiz to AI
+        this.prompt = 'What is credit score'
+        this.session.saveActiveQuestion('q2');
+
+        break;
+      }
+   }
 }
+

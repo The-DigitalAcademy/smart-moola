@@ -35,6 +35,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
 import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
 import { IndebtedResponseComponent } from './components/indebted-response/indebted-response.component';
+import { ModalContentComponent } from './components/modal-content/modal-content.component';
+
+
 
 
 
@@ -75,6 +78,9 @@ import { IndebtedResponseComponent } from './components/indebted-response/indebt
     indebtedScenesComponent,
     IndebtedUserComponent,
     IndebtedResponseComponent,
+    ModalContentComponent,
+    
+    
     
     
   ],
@@ -85,6 +91,7 @@ import { IndebtedResponseComponent } from './components/indebted-response/indebt
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    
     FormsModule,
     JwtModule.forRoot({
       config: {
@@ -93,6 +100,7 @@ import { IndebtedResponseComponent } from './components/indebted-response/indebt
         },
       },
     }),
+   
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent],

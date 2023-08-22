@@ -26,6 +26,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
 import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
 import { IndebtedResponseComponent } from './components/indebted-response/indebted-response.component';
+import { ModalContentComponent } from './components/modal-content/modal-content.component';
 
 const routes: Routes = [
 
@@ -55,7 +56,8 @@ const routes: Routes = [
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
   { path: 'indebtedscene', component: indebtedScenesComponent},
-  { path: 'indebtedresponse', component: IndebtedResponseComponent}
+  { path: 'indebtedresponse', component: IndebtedResponseComponent},
+  { path: 'modalresponse', component: ModalContentComponent}
 
 ];
 
