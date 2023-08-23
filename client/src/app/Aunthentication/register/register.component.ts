@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
 import { UsersService } from '../../services/users.service';
 import Swal from 'sweetalert2';
 import { CreateUserResponse, User } from '../../interface/users';
@@ -39,28 +38,27 @@ export class RegisterComponent {
       confirmPassword.setErrors(null);
     }
   }
-  
+
   submitForm() {
     if (this.form.valid) {
       const fullName = this.form.value.fullName;
       const email = this.form.value.email;
-  
+
       this.userService.createUser(this.form.value).subscribe(
         (data: any) => {
           // Assuming the registration was successful
-          
           console.log("Data", data);
-  
+
           if (data.message && typeof data.message === 'string') {
             const matchResult = data.message.match(/\d+/);
             if (matchResult && matchResult[0]) {
               const id = parseInt(matchResult[0]);
               console.log("Extracted ID:", id);
-  
+
               localStorage.setItem('ID', id.toString());
               localStorage.setItem('FullName', fullName);
               localStorage.setItem('Email', email);
-  
+
               Swal.fire({
                 icon: 'success',
                 title: 'Registered Successful!',
@@ -87,6 +85,5 @@ export class RegisterComponent {
       );
     }
   }
-  
-  
+
 }

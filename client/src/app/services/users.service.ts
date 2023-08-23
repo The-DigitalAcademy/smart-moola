@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { LoginResponse, User, CreateUserResponse, UserLogin, PasswordUpdate } from '../interface/users';
 import { usersAPI } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 import { Observable } from 'rxjs/internal/Observable';
 import { Location } from '@angular/common';
 @Injectable({
@@ -20,7 +19,6 @@ export class UsersService {
 
   options = { headers: this.headers };
   user: any = "";
-  // discardProfileEdit: any;
 
   constructor(
     private http: HttpClient,

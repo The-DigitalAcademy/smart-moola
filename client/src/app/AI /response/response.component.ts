@@ -11,7 +11,6 @@ export class responseComponent implements OnInit {
   @Input() explanation: any;
   error!: string;
   word: any;
-  router: any;
   fullName: any = '';
 
   constructor(private questionService: QuestionService) { }
