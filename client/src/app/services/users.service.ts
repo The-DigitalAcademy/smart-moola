@@ -70,7 +70,7 @@ export class UsersService {
 
   isOtpValid(otp: string): Observable<any> {
     const otpData = { otp };
-    return this.http.post<any>(`http://localhost:4545/api/users/otp-verification`, otpData);
+    return this.http.post<any>(`${this.usersURL}/otp-verification`, otpData);
   }
 
   userLogout() {
