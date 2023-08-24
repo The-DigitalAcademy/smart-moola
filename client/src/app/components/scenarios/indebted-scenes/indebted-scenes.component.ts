@@ -16,14 +16,11 @@ import { Router } from '@angular/router';
 export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
    // Provide a default value // Use MdbModalRef<any> if you don't have a specific modal component
-// Provide the correct type argument
+  // Provide the correct type argument
   constructor(
     private cdRef: ChangeDetectorRef, 
-    private questionService: QuestionService,
-    private session: SessionsService,
-    private router: Router
-    
     ) {}
+
 
   
   statements = [
@@ -45,46 +42,9 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     'Credit Score',         // Answer for the first statement
     'Debt Counselling',     // Answer for the second statement
     'Debt Consolidation',
-    'Debt Review'                  // Add correct answers for other statements
+    'Debt Review' // Add correct answers for other statements
   ];
 
-   option1 ="";
-   option2 ="";
-   option3 ="";
-    
-   question = '';
-   active = 'q1'
-
-   prompt = '';
-   explanation = '';
-
-   submit1()
-   {
-     this.getMeaning();
-     this.router.navigate(['/indebtedresponse'])
-   }
-
-   submit2()
-   {
-     this.getMeaning();
-     this.router.navigate(['/indebtedresponse'])
-   }
-
-   submit3()
-   {
-     this.getMeaning();
-     this.router.navigate(['/indebtedresponse'])
-   }
-
-   getMeaning(){
-    this.questionService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
-      console.log(data.explanation)
-      this.explanation = data.explanation
-      localStorage.setItem("explanation",this.explanation)
-    })
-   }
-
-   
   
 
   labels = [
@@ -102,7 +62,7 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   currentQuestion: string = '';
   progressPercentage = 0; // Initialize the progress percentage
   isRadioSelected: boolean = false; // initially setting the radio boxes to false(not selected)
-  showIncorrectMessage = false; 
+  showIncorrectMessage: boolean = false;
   
 
   
@@ -111,12 +71,9 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.updateTextScene();
-    this.verify();
-    this.getMeaning
+    
   }
 
-  
-  
   
   ngAfterViewInit(): void {
     this.initializeVanillaJSLogic();
@@ -127,13 +84,6 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     this.currentQuestion = this.questions[this.currentStepIndex];
     this.progressPercentage = (this.currentStatementIndex + 1) * 25; // Update progress
   }
-
-  // updateLabels() {
-  //   if (this.isFirstIteration) {
-  //     this.labels[0].text2 = 'Credit Score'; // Update the label text for the first iteration
-  //     this.isFirstIteration = false; // Set the flag to false after the first iteration
-  //   }
-  // }
 
 
   previousStatement() {
@@ -146,6 +96,8 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
   getCorrectAnswer(): string {
     // Implement this function to return the correct answer for the current statement
+    console.log(this.correctAnswers[this.currentStatementIndex],"correct ans here");
+    
     return this.correctAnswers[this.currentStatementIndex];
 
   }
@@ -153,37 +105,49 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   getSelectedAnswer(): string {
   const selectedRadio = Array.from(document.getElementsByName('debt-manage'))
     .find(option => option instanceof HTMLInputElement && option.checked) as HTMLInputElement;
-  return selectedRadio ? selectedRadio.value : '';
-}
-
-
-  nextStatement() {
-    if (this.currentStatementIndex < this.statements.length - 1) {
-      const correctAnswer = this.getCorrectAnswer(); // Implement this function to get the correct answer
-      
-      if (this.isRadioSelected && this.getSelectedAnswer() === correctAnswer) {
-        this.showIncorrectMessage = false; // Hide the message if the answer is correct
-      } else {
-        this.showIncorrectMessage = true; // Show the message for an incorrect answer
-      }
-      
-      this.cdRef.detectChanges(); // Trigger change detection
-      
-      setTimeout(() => {
-        this.showIncorrectMessage = false; // Reset the message after a timeout
-        this.isRadioSelected = false; // Reset radio selection
-        this.currentStatementIndex++;
-        this.currentStepIndex++;
-        this.updateTextScene();
-        this.cdRef.detectChanges(); // Trigger change detection
-      }, 2000); // Adjust the timeout duration as needed
-    }
+    console.log(selectedRadio.value,"selected value in func ");
+   return selectedRadio.value;
+  // return selectedRadio ? selectedRadio.value : '';
   }
 
 
+ 
 
-  
-  
+ nextStatement() {
+  if (this.currentStatementIndex < this.statements.length - 1) {
+    const correctAnswer = this.getCorrectAnswer(); // Implement this function to get the correct answer
+    const selectedAnswer = this.getSelectedAnswer(); // Get the selected answer
+    console.log(this.getSelectedAnswer(),"selected answer");
+    console.log(correctAnswer,"correct ans");
+
+
+    if(this.getSelectedAnswer()==correctAnswer){
+      console.log("ans is correct");
+      console.log(this.getSelectedAnswer(),"selected answer");
+      console.log(correctAnswer,"correct ans");
+    }else{
+      console.log("ans is incorrect");
+
+    }
+
+    if (this.isRadioSelected) {
+      this.showIncorrectMessage = selectedAnswer !== correctAnswer; // Set incorrect message condition
+    } else {
+      this.showIncorrectMessage = true; // Show the message for not selecting an answer
+    }
+    
+    setTimeout(() => {
+      this.showIncorrectMessage = false; // Reset the message after a timeout
+      this.isRadioSelected = false; // Reset radio selection
+      this.currentStatementIndex++;
+      this.currentStepIndex++;
+      this.updateTextScene();
+      this.cdRef.detectChanges(); // Trigger change detection
+    }, 2000); // Adjust the timeout duration as needed
+  }
+ }
+
+
   // This method is added to handle the vanilla JavaScript logic
   initializeVanillaJSLogic() {
     const textSceneElement = document.querySelector('.textScene') as HTMLParagraphElement;
@@ -232,72 +196,39 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     });
 
     }
-
     
-    verify() {
-      this.active = this.session.getActiveQuestion();
-      switch (this.active) {
-        case 'q1':
-          this.question = this.currentQuestion;
-  
-          this.option1 = "Credit limits";
-          this.option2 = "Credit score";
-          this.option3 = "Debtor status"
-          //sending this quiz to AI
-          this.prompt = 'What is credit score'
-  
-          this.session.saveActiveQuestion('q2');
-          break;
-  
-        case 'q2':
-          this.question = this.currentQuestion;
-  
-          this.option1 = "Debt Review";
-          this.option2 = "Debt Counselling";
-          this.option3 = "Debt Consolidation"
-          //sending this quiz to AI
-          this.prompt = 'What is Debt Counselling'
-
-          this.session.saveActiveQuestion('q3');
-          break;
-  
-        case 'q3':
-          this.question = this.currentQuestion;
-  
-          this.option1 = "Debt Review";
-          this.option2 = "Debt Counselling";
-          this.option3 = "Debt Consolidation"
-          //sending this quiz to AI
-          this.prompt = 'What is Debt Consolidation'
-          this.session.saveActiveQuestion('q4');
-          break;
-  
-        case 'q4':
-          this.question = this.currentQuestion;
-  
-          this.option1 = "Debt Review";
-          this.option2 = "Debt Counselling";
-          this.option3 = "Debt Consolidation"
-          //sending this quiz to AI
-          this.prompt = 'What is Debt Review'
-
-          this.session.saveActiveQuestion('q5');
-          break;
-  
-        default:
-
-        this.active = 'q1';
-        this.question = this.currentQuestion;
-  
-        this.option1 = "Credit limits";
-        this.option2 = "Credit score";
-        this.option3 = "Debtor status"
-        //sending this quiz to AI
-        this.prompt = 'What is credit score'
-        this.session.saveActiveQuestion('q2');
-
-        break;
-      }
-   }
 }
+
+
+
+
+
+
+
+
+
+ // nextStatement() {
+  //   if (this.currentStatementIndex < this.statements.length - 1) {
+  //     const correctAnswer = this.getCorrectAnswer(); // Implement this function to get the correct answer
+  //     const selectedAnswer = this.getSelectedAnswer(); // Get the selected answer
+
+  //     if (this.isRadioSelected && this.getSelectedAnswer() === correctAnswer) {
+  //       this.showIncorrectMessage = false; // Hide the message if the answer is correct
+  //     } else {
+  //       this.showIncorrectMessage = true; // Show the message for an incorrect answer
+  //     }
+      
+  //     this.cdRef.detectChanges(); // Trigger change detection
+      
+  //     setTimeout(() => {
+  //       this.showIncorrectMessage = false; // Reset the message after a timeout
+  //       this.isRadioSelected = false; // Reset radio selection
+  //       this.currentStatementIndex++;
+  //       this.currentStepIndex++;
+  //       this.updateTextScene();
+  //       this.cdRef.detectChanges(); // Trigger change detection
+  //     }, 2000); // Adjust the timeout duration as needed
+  //   }
+  // }
+
 
