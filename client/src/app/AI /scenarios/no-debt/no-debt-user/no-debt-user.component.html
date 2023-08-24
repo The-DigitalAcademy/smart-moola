@@ -1,37 +1,36 @@
 <div class="container">
   <!-- <div class="header"> -->
-    <div class="header">
-      <div class="back-button">
-      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left" viewBox="0 0 16 16" >
-        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+  <div class="header">
+    <div class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
       </svg>
     </div>
-       <h2 class="textStyle ">
-        Basics of <br />
-        Credit & Debt
-      </h2>
-      
-      <div class="pgbar p-4 ">
-        <div class="progress" role="progressbar"  aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
-          aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" style="background-color:#669BBC" [style.width.%]="progressPercentage">{{ progressPercentage }}%</div>
-        </div>
-      </div>
-    <!-- <h1>
+    <br />
+    <h2 class="textStyle">
       Basics of <br />
       Credit & Debt
-    </h1> -->
+    </h2>
+
+    <div class="pgbar p-4">
+      <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
+        aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="background-color: #669bbc" [style.width.%]="progressPercentage">
+          {{ progressPercentage }}%
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="questions card p-2" >
+  <div class="questions card p-2">
     <h5>{{ question }}</h5>
     <div class="twoColumns">
       <div class="column">
         <div class="card">
-          <img
-            style="width: 100%; height: 100%" class="p-1"
-            src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1691071057/mandla_bt5ydf.jpg"
-          />
+          <img style="width: 100%; height: 100%" class="p-1"
+            src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1691071057/mandla_bt5ydf.jpg" />
         </div>
         <div style="height: 60px">
           <span>{{ mandlaResponse }}</span>
@@ -41,18 +40,13 @@
       </div>
       <div class="column">
         <div class="card p-1">
-          <img
-          style="width: 100%; height: 104px" class="p-1"
-
-            src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1691071065/Tumi_eel2ma.jpg"
-          />
+          <img style="width: 100%; height: 104px" class="p-1"
+            src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1691071065/Tumi_eel2ma.jpg" />
         </div>
         <div style="height: 60px">
           <span>{{ tumiResponse }}</span>
-       </div>
+        </div>
         <button (click)="submitTumi()" class="submit btn">Tumi</button>
-
-      
       </div>
     </div>
   </div>
@@ -60,7 +54,6 @@
     <app-footer></app-footer>
   </div>
 </div>
-
 
 <!-- <div class="container">
 
@@ -127,6 +120,3 @@
 
   </div>
 </div> -->
-
-
-

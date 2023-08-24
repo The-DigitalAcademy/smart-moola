@@ -3,11 +3,14 @@
   position: fixed;
   margin-bottom: 10px;
 
+  .back-button
+  {
+    margin-top: 5em;
+    margin-left: 1em;
+  }
 
   .questions {
     padding: 3px;
-    // margin-bottom: 2em;
-    
     border-radius: 10px;
     background-color: #f6f6f6;
     height: 64vh;
@@ -28,20 +31,12 @@
       }
     }
   }
-
-  // .header {
-  //   // h1 {
-  //   //   margin-top: 5vh;
-  //   //   text-align: center;
-  //   //   color: #669bbc;
-  //   //   font-weight: 500;
-  //   // }
-  // }
-
+ 
   .textStyle{
     text-align: center;
     color: #669bbc;
     font-weight: 600;
+    margin-top: -2em;
   }
 
   h5 {
@@ -64,18 +59,6 @@
     margin-left: 4px;
     text-align: center;
     margin-top: -45em;
-  }
-
-  .backBtn {
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    padding: 10px;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
   }
 
   .footer {
