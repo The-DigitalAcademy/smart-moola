@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
-
 @Component({
   selector: 'app-password-update',
   templateUrl: './password-update.component.html',
@@ -12,7 +11,7 @@ import { UsersService } from 'src/app/services/users.service';
 export class PasswordUpdateComponent implements OnInit {
 
   passwordUpdateForm: FormGroup;
-  email: string = ''; // Declare and initialize the email property
+  email: string = '';
 
   constructor(
     private fb: FormBuilder,
@@ -25,19 +24,30 @@ export class PasswordUpdateComponent implements OnInit {
     }, { validators: this.passwordsMatchValidator });
   }
 
+  passwordsMatchValidator(formGroup: FormGroup) {
+    const password = formGroup.get('password');
+    const confirmPassword = formGroup.get('confirmPassword');
+
+    if (password && confirmPassword && password.value !== confirmPassword.value) {
+      confirmPassword.setErrors({ mismatch: true });
+    } else if (confirmPassword) {
+      confirmPassword.setErrors(null);
+    }
+  }
+
   ngOnInit(): void {
     // Retrieve the email from local storage
     this.email = localStorage.getItem('Email') || '';
     console.log(this.email, "email");
-  }  
-  
+  }
+
   submitForm() {
     if (this.passwordUpdateForm.valid) {
       const password = this.passwordUpdateForm.value.password;
       const confirmPassword = this.passwordUpdateForm.value.confirmPassword;
 
       const passwordUpdate = {
-        email: this.email , // Use the stored email
+        email: this.email,
         password,
         confirmPassword
       };
@@ -55,7 +65,4 @@ export class PasswordUpdateComponent implements OnInit {
     }
   }
 
-  passwordsMatchValidator(formGroup: FormGroup) {
-    // ... validator logic ...
-  }
 }

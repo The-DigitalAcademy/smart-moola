@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { LoginResponse, User, CreateUserResponse, UserLogin, PasswordUpdate } from '../interface/users';
 import { usersAPI } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
 import { Observable } from 'rxjs/internal/Observable';
 import { Location } from '@angular/common';
 @Injectable({
@@ -20,7 +19,6 @@ export class UsersService {
 
   options = { headers: this.headers };
   user: any = "";
-  // discardProfileEdit: any;
 
   constructor(
     private http: HttpClient,
@@ -72,7 +70,7 @@ export class UsersService {
 
   isOtpValid(otp: string): Observable<any> {
     const otpData = { otp };
-    return this.http.post<any>(`http://localhost:4545/api/users/otp-verification`, otpData);
+    return this.http.post<any>(`${this.usersURL}/otp-verification`, otpData);
   }
 
   userLogout() {
