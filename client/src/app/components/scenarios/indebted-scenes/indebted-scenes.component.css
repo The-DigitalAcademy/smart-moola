@@ -130,9 +130,8 @@
 
 @media (min-width: 768px) {
 
-    .container
-{
-    width: 100%;
+    .container{
+    width: 100vh;
     height: 100vh;
     background-color: var(--WHITE);
 
@@ -143,8 +142,12 @@
         height: 15%;
         padding-top: 4%;
         padding-bottom: 4%;
+        margin-left: 32rem;
+        margin-right: 32rem;
+        
         
         .back-button{
+
             margin-top: 1rem;
             margin-left: 0.5rem;
             width: 22rem;
@@ -174,6 +177,8 @@
         font-size: 12px;
         padding-top: 4%;
         padding-bottom: 4%;
+        margin-left: 32rem;
+        margin-right: 32rem;
         .imagebox{
             width: 20rem;
             height: 15rem;
@@ -182,6 +187,7 @@
         .textScene
         {
             font-weight: bold;
+            width: 35%;
             margin-top: 0.1rem;
             margin-bottom: 0.5rem;
             padding-left: 0.2rem;
@@ -189,12 +195,17 @@
             background-color: #F6F6F6;
             border-radius: 2%;
             height: 17%;
+            margin-right: 60rem;
+            
         }
 
         .QandA{
             background-color: #F6F6F6;
             border-radius: 2%;
             height: 32%;
+            width: 35%;
+            margin-left: 6rem;
+            
             .question{
                 font-weight: bold;
                 margin-left: 0.2rem;
@@ -228,7 +239,6 @@
         }
 
         .btn-group{
-          
             align-content: center;
             margin-top: 1rem;
             margin-left: 5rem;
