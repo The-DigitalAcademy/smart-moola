@@ -10,16 +10,15 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class ProfileComponent implements OnInit {
   form!: FormGroup;
+  fullName: any = '';
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService,) 
-  
-  {
+  constructor(private router: Router, private formBuilder: FormBuilder, private usersService: UsersService,) {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]]
     });
-   }
+  }
 
-   submitForm() {
+  submitForm() {
     if (this.form.valid) {
       // Get the user's email from the form
       const email = this.form.value.email;
@@ -34,15 +33,18 @@ export class ProfileComponent implements OnInit {
     }
   }
 
-
-
-
-  ngOnInit(): void {
+  getLoggedInUserName() {
+    this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName
+    console.log(this.fullName);
   }
 
-  clear(){
-    localStorage.clear();
-    this.router.navigate(['/landing'])
+  ngOnInit() {
+    this.getLoggedInUserName();
+    console.log(this.getLoggedInUserName())
+  }
+
+  logout() {
+    this.usersService.userLogout();
   }
 
 }
