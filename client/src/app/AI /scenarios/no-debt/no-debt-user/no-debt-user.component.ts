@@ -18,6 +18,8 @@ export class NoDebtUserComponent implements OnInit {
     private session: SessionsService,public loaderService: LoaderService
   ) {}
 
+  //Declarations
+  
   question = '';
   active = 'q1';
 
@@ -26,8 +28,6 @@ export class NoDebtUserComponent implements OnInit {
   prompt = ''
   explanation= ''
   progressPercentage = 0;
-
-
   questions: any;
  
 
@@ -37,19 +37,20 @@ export class NoDebtUserComponent implements OnInit {
    
   }
 
+  //Method which nevigate to answers component
   submitMandla() {
     this.getMeaning();
     this.router.navigate(['/answers']);
     
   }
 
+  //Method which nevigate to wrong-answers component
   submitTumi() {
     this.getMeaning();
     this.router.navigate(['/wrong-answers']);
  
   }
   
-
   getQuestions() {
     this.questionsService.getAllQuestions().subscribe((data) => {
       for(const item of data) {
@@ -58,7 +59,7 @@ export class NoDebtUserComponent implements OnInit {
     });
   }
 
-  
+  //Send prompt to AI and display explaination from the AI 
   getMeaning(){
     this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
       console.log(data.explanation)
@@ -67,18 +68,16 @@ export class NoDebtUserComponent implements OnInit {
     })
   }
 
+  //Check if the question is read then move to the next question
   verify() {
         this.active = this.session.getActiveQuestion();
-
         switch (this.active) {
         case 'q1':
         this.question = 'Why is credit important?';
-
         this.mandlaResponse = "Credit is when you owe money to someone else.";
-       this.tumiResponse = "Credit allows you to make large purchases...";
+        this.tumiResponse = "Credit allows you to make large purchases...";
        //sending this quiz to AI
         this.prompt = 'Why is credit important?'
-
         this.session.saveActiveQuestion('q2');
         this.progressPercentage =  this.progressPercentage + 10;
         break;
@@ -99,10 +98,8 @@ export class NoDebtUserComponent implements OnInit {
         case 'q3':
         this.question =
         'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
-
         this.mandlaResponse =
         'Drivers License and proof of residence.';
-
         this.tumiResponse =
         'Tumi has proof of residence, Identity document';
          //sending this quiz to AI
@@ -150,7 +147,6 @@ export class NoDebtUserComponent implements OnInit {
         this.progressPercentage =  60;
         break;
 
-
          case 'q7':
         this.question =
         'Between Mandla and tumi who is correct about a debtor';
@@ -181,7 +177,6 @@ export class NoDebtUserComponent implements OnInit {
         case 'q9':
         this.question =
         'Between Mandla and tumi who is correct in terms of explaining bad debt';
-
         this.mandlaResponse =
         'Debt is bad when it used for for things that do not bring you money.';
         this.tumiResponse =
@@ -194,18 +189,16 @@ export class NoDebtUserComponent implements OnInit {
         break;
 
         default:
-
         this.active = 'q1';
         this.question = 'Why is credit important?';
-
         this.mandlaResponse =
-          'Credit allows you to get into debt that you might fail to to repay ';
+        'Credit allows you to get into debt that you might fail to to repay ';
         this.tumiResponse =
-          'Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ';
+        'Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ';
            //sending this quiz to AI
-          this.prompt = 'Why is credit important?'
-          this.session.saveActiveQuestion('q2');
-          this.progressPercentage =  10;
+        this.prompt = 'Why is credit important?'
+        this.session.saveActiveQuestion('q2');
+        this.progressPercentage =  10;
       
         break;
     }

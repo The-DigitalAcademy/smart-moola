@@ -9,16 +9,13 @@
 }
 
 .headerTopMargins{
-    margin-top:100px;
-
+    margin-top:50px;
 }
-
 .imageContainer{
     width:182px;
-    height:203px;
-    margin-top:64px;
-   margin-bottom: 64px;
-
+    height:200px;
+    margin-top:50px;
+   margin-bottom: 50px;
 }
 
 

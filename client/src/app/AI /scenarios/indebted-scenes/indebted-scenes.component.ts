@@ -112,5 +112,5 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
       }
     });
     }
-
+  
 }

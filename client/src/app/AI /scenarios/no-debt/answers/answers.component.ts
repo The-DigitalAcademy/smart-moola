@@ -13,8 +13,7 @@ export class AnswersComponent implements OnInit {
   constructor(private router : Router, public loaderService: LoaderService) { }
 
   ngOnInit(): void {
-
-    
+ 
     setTimeout(() => {
         this.loaderService.startLoader()
         this.router.navigate(['/response'])
