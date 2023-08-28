@@ -52,10 +52,10 @@ const routes: Routes = [
   { path: 'summary2', component: Summary2Component },
 
   { path: 'response', component: responseComponent },
-  { path: 'footer', component: FooterComponent},
-  { path: 'indebtedscene', component: indebtedScenesComponent},
-  { path: 'summary', component: SummaryComponent},
-  { path: 'wrong-answers', component: WrongAnswersComponent}
+  { path: 'footer', component: FooterComponent },
+  { path: 'indebtedscene', component: indebtedScenesComponent },
+  { path: 'summary', component: SummaryComponent },
+  { path: 'wrong-answers', component: WrongAnswersComponent }
 
 ];
 
