@@ -1,7 +1,11 @@
 import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+// import { radioService} from 'src/app/services/radio.service';
 import { SessionsService } from 'src/app/services/sessions.service';
 import { QuestionService } from 'src/app/services/question.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
+
 
 
 
@@ -10,16 +14,26 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-indebted-scenes',
   templateUrl: './indebted-scenes.component.html',
-  styleUrls: ['./indebted-scenes.component.css']
+  styleUrls: ['./indebted-scenes.component.scss']
 })
 
 export class indebtedScenesComponent implements OnInit, AfterViewInit{
+
+  indebtedForm = new FormGroup({
+    selection1: new FormControl(),
+    selection2: new FormControl(),
+    selection3: new FormControl(),
+  })
+
 
    // Provide a default value // Use MdbModalRef<any> if you don't have a specific modal component
   // Provide the correct type argument
   constructor(
     private cdRef: ChangeDetectorRef, 
-    ) {}
+    // private RadioService: radioService
+  ) {}
+
+
 
 
   
@@ -60,6 +74,7 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
   currentStepIndex = 0;
   currentStatement: string = ''; // Declare the property here
   currentQuestion: string = '';
+  // currentSelectedRadio = '';
   progressPercentage = 0; // Initialize the progress percentage
   isRadioSelected: boolean = false; // initially setting the radio boxes to false(not selected)
   showIncorrectMessage: boolean = false;
@@ -71,7 +86,9 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
   ngOnInit(): void {
     this.updateTextScene();
-    
+    // this.RadioService.radioSelection.subscribe((counterValue) => {
+    //   this.currentSelectedRadio = counterValue;
+    // });
   }
 
   
@@ -102,6 +119,27 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
   }
   
+  // selection1() {
+  //   this.RadioService.selection1();
+  // }
+
+  // selection2() {
+  //   this.RadioService.selection2();
+  // }
+
+  // selection3() {
+  //   this.RadioService.selection3();
+  // }
+
+
+
+
+
+
+
+
+
+
   getSelectedAnswer(): string {
   const selectedRadio = Array.from(document.getElementsByName('debt-manage'))
     .find(option => option instanceof HTMLInputElement && option.checked) as HTMLInputElement;
@@ -119,12 +157,12 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     const selectedAnswer = this.getSelectedAnswer(); // Get the selected answer
     console.log(this.getSelectedAnswer(),"selected answer");
     console.log(correctAnswer,"correct ans");
-
-
+    
     if(this.getSelectedAnswer()==correctAnswer){
       console.log("ans is correct");
       console.log(this.getSelectedAnswer(),"selected answer");
       console.log(correctAnswer,"correct ans");
+      
     }else{
       console.log("ans is incorrect");
 
@@ -196,8 +234,34 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
     });
 
     }
+
+
+    onSubmit() {
+      console.log(this.indebtedForm.value);
+      /*
+          ngOnInit() {
+    this.counterService.currentSelection.subscribe((counterValue) => {
+      this.currentSelectionValue = counterValue;
+    });
+  }
+
+  selection1() {
+    this.counterService.selection1();
+  }
+
+  selection2() {
+    this.counterService.selection2();
+  }
+  
+  selection3() {
+    this.counterService.selection3();
+  }
+      */
+      
+    }
     
 }
+
 
 
 

@@ -30,6 +30,7 @@ import { HomeComponent } from './Pages/home/home.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
+import { MycomponentComponent } from './mycomponent/mycomponent.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ModalContentComponent } from './components/modal-content/modal-content.
     ModalContentComponent,
     NoDebtUserComponent,
     NoDebtComponent,
-    WrongAnswersComponent
+    WrongAnswersComponent,
+    MycomponentComponent
   ],
 
   imports: [

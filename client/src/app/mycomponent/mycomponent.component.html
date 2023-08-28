@@ -1,0 +1,63 @@
+<div class="container">
+  
+    <div class="header">
+    
+        <div class="back-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left" viewBox="0 0 16 16"  (click)="previousStatement()">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+        </div>
+        <div class="pgbar">
+        <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
+          aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="background-color: #669bbc;" [style.width.%]="progressPercentage">{{ progressPercentage }}%</div>
+        </div>
+      </div>
+       
+    </div>
+    
+   <div class="body">
+
+    <div>
+        <h2>Selected: {{ currentSelectionValue }}</h2>
+    </div>
+
+    <form>
+        <div>
+        <label>
+            <input type="radio" name="selection" value="selection1" (change)="onSelectionChange($event)">
+            Selection 1
+        </label>
+        <label>
+            <input type="radio" name="selection" value="selection2" (change)="onSelectionChange($event)">
+            Selection 2
+        </label>
+        <label>
+            <input type="radio" name="selection" value="selection3" (change)="onSelectionChange($event)">
+            Selection 3
+        </label>
+        </div>
+    </form>
+
+   </div>
+
+    <!-- <form>
+        <div>
+        <label>
+            <input type="radio" name="selection" value="selection1" (change)="onSelectionChange($event)">
+            Selection 1
+        </label>
+        <label>
+            <input type="radio" name="selection" value="selection2" (change)="onSelectionChange($event)">
+            Selection 2
+        </label>
+        <label>
+            <input type="radio" name="selection" value="selection3" (change)="onSelectionChange($event)">
+            Selection 3
+        </label>
+        </div>
+    </form> -->
+    
+
+    
+</div>

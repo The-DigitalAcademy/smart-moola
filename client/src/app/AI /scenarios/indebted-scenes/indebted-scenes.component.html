@@ -22,10 +22,8 @@
     <p class="textScene">{{ currentStatement }}</p>
   
     <div class="QandA">
-      <form>
-          <!-- <p class="question">
-              What will be affected below based on Mbali’s scenario? Select One answer
-          </p> -->
+      <!-- <form>
+         
           <p class="question">{{ currentQuestion }}</p>
           
           <input class="option1" type="radio" id="Answe1" name="debt-manage" value="Credit limit" [(ngModel)]="isRadioSelected">
@@ -38,22 +36,40 @@
           <label class="lbl3" for="Answe3">{{ labels[currentStepIndex].text3 }}</label><br>
 
           
-      </form>
+      </form> -->
+
+      <form [formGroup]="indebtedForm" (ngSubmit)="onSubmit()">
+        <!-- <p class="question">
+            What will be affected below based on Mbali’s scenario? Select One answer
+        </p> -->
+        <p class="question">{{ currentQuestion }}</p>
+        
+        <input class="option1" type="radio" id="Answe1" name="debt-manage" value="Credit limit" [(ngModel)]="isRadioSelected" formControlName="selection1">
+        <label class="lbl1" for="Answe1">{{ labels[currentStepIndex].text }}</label><br>
+
+        <input class="option2" type="radio" id="Answe2" name="debt-manage" value="Credit Score" [(ngModel)]="isRadioSelected" formControlName="selection2">
+        <label class="lbl2" for="Answe2">{{ labels[currentStepIndex].text2 }}</label><br>
+
+        <input class="option3" type="radio" id="Answe3" name="debt-manage" value="Debtor status" [(ngModel)]="isRadioSelected" formControlName="selection3">
+        <label class="lbl3" for="Answe3">{{ labels[currentStepIndex].text3 }}</label><br>
+
+        <div class="btn-group">
+
+          <!-- <button class="btn" type="button" (click)="nextStatement()" [disabled]="!isRadioSelected">Submit</button> -->
+          <!-- Button trigger modal -->
+          <button type="submit" class="btn btn-primary" data-bs-toggle="modal" style="height: 80%;" data-bs-target="#staticBackdrop"  [disabled]="!isRadioSelected" >
+            Submit
+          </button>
+    
+        </div>
+
+        
+    </form>
+
+
     </div>
 
-    <div class="btn-group">
-
-      <!-- <button class="btn" type="button" (click)="nextStatement()" [disabled]="!isRadioSelected">Submit</button> -->
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="height: 80%;" data-bs-target="#staticBackdrop"  [disabled]="!isRadioSelected">
-        Submit
-      </button>
-
-      <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="height: 80%;" data-bs-target="#staticBackdrop" [disabled]="!isRadioSelected">
-             Submit
-</button>
--->
-    </div>
+    
     
    
     
