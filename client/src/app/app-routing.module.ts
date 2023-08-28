@@ -1,31 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RegisterComponent } from './components/register/register.component';
-import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { GetstartedPageComponent } from './components/getstarted-page/getstarted-page.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { PasswordResetComponent } from './components/password-reset/password-reset.component';
-import { VerifyOtpComponent } from './components/verify-otp/verify-otp.component';
+import { RegisterComponent } from './Aunthentication/register/register.component';
+import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { LoginComponent } from './Aunthentication/login/login.component';
+import { GetstartedPageComponent } from './Pages/getstarted-page/getstarted-page.component';
+import { ProfileComponent } from './Pages/profile/profile.component';
+import { PasswordResetComponent } from './Aunthentication/password-reset/password-reset.component';
+import { VerifyOtpComponent } from './Aunthentication/verify-otp/verify-otp.component';
 
-// import { IndebtedScenariosComponent } from './components/scenarios/indebted/indebted.component';
-
-
-import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
-
-// import { AnswersComponent } from './components/scenarios/scenario-a/answers/answers.component';
-
-import { PasswordUpdateComponent } from './components/password-update/password-update.component';
+import { ProfileEditorComponent } from './Pages/profile-editor/profile-editor.component';
+import { PasswordUpdateComponent } from './Aunthentication/password-update/password-update.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
-import { responseComponent } from './components/response/response.component';
-import { NoDebtComponent } from './components/scenarios/no-debt/no-debt.component';
-import { NoDebtUserComponent } from './components/scenarios/no-debt/no-debt-user/no-debt-user.component';
+import { responseComponent } from './AI /response/response.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component';
+import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { indebtedScenesComponent } from './components/scenarios/indebted-scenes/indebted-scenes.component';
-import { IndebtedUserComponent } from './components/scenarios/indebted/indebted-user/indebted-user.component';
-import { IndebtedResponseComponent } from './components/indebted-response/indebted-response.component';
+import { indebtedScenesComponent } from './AI /scenarios/indebted-scenes/indebted-scenes.component';
+import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component';
+import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
+import { SummaryComponent } from './components/summary/summary.component';
+import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 
 const routes: Routes = [
@@ -47,16 +44,17 @@ const routes: Routes = [
 
   { path: 'verify-otp', component: VerifyOtpComponent },
 
-  // { path: 'answers', component: AnswersComponent },
+  { path: 'answers', component: AnswersComponent },
 
   { path: 'indebted', component: IndebtedUserComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
+  { path: 'summary', component: SummaryComponent },
 
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
   { path: 'indebtedscene', component: indebtedScenesComponent},
-  { path: 'indebtedresponse', component: IndebtedResponseComponent},
+
   { path: 'modalresponse', component: ModalContentComponent}
 
 ];
