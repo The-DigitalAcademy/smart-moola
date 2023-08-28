@@ -7,11 +7,11 @@
       <div class="overlap-group">
         <div class="rectangle"></div>
         <div class="rectangle-2"></div>
-        <div class="text-wrapper">Mbali Chauke</div>
+        <div class="text-wrapper">{{fullName}}</div>
         <div routerLink="/profile-editor" class="text-wrapper-3">Account</div>
         <a class="text-wrapper-4" routerLink="/home">Home</a>
         <a class="text-wrapper-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Share with friend</a>
-        <div (click)="clear()" class="text-wrapper-6">
+        <div (click)="logout()" class="text-wrapper-6">
           Logout
         </div>
 
