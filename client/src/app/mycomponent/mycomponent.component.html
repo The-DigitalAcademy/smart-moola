@@ -1,47 +1,87 @@
+
 <div class="container">
-    <div class="header">
-      <!-- Header content -->
-    </div>
-  
-    <div class="body">
-      <div>
-        <h2>Selected: {{ currentSelectionValue }}</h2>
-      </div>
-  
-      <form>
-        <div>
-          <ng-container *ngIf="i === 0; else otherOptions">
-            <!-- Display options for i = 0 -->
-            <label>
-              <input type="radio" name="selection" value="selection1" (change)="onSelectionChange($event)">
-              Selection 1
-            </label>
-            <label>
-              <input type="radio" name="selection" value="selection2" (change)="onSelectionChange($event)">
-              Selection 2
-            </label>
-            <label>
-              <input type="radio" name="selection" value="selection3" (change)="onSelectionChange($event)">
-              Selection 3
-            </label>
-          </ng-container>
-          <ng-template #otherOptions>
-            <!-- Display options for i ≠ 0 -->
-            <label>
-              <input type="radio" name="selection" value="selectionA" (change)="onSelectionChange($event)">
-              Selection A
-            </label>
-            <label>
-              <input type="radio" name="selection" value="selectionB" (change)="onSelectionChange($event)">
-              Selection B
-            </label>
-            <label>
-              <input type="radio" name="selection" value="selectionC" (change)="onSelectionChange($event)">
-              Selection C
-            </label>
-          </ng-template>
+
+      <div class="header">
+        <div class="back-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
         </div>
-      </form>
-    </div>
-  </div>
+        <div class="pgbar">
+          <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="background-color: #669bbc;" [style.width.%]="progressPercentage">{{ progressPercentage }}%</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="body">
+
+        <div class="statementdiv">
+            {{ getCurrentStatement() }}
+        </div>
+        
+        <div class="questiondiv">
+            {{ getCurrentQuestion() }}
+        </div>
+
+        <div>
+          <h2>Selected: {{ currentSelectionValue }}</h2>
+        </div>
+        
+        <form class="myForm">
+          <div>
+            <div class="firstSelect">
+              <label>
+                <input type="radio" name="selection" value="selection1" (change)="onSelectionChange($event)">
+                Debt Review
+              </label>
+            </div>
+           
+            <div class="secondSelect">
+              <label>
+                <input type="radio" name="selection" value="selection2" (change)="onSelectionChange($event)">
+                Debt Counselling
+              </label>
+            </div>
   
+            <div class="thirdSelect">
+              <label>
+                <input type="radio" name="selection" value="selection3" (change)="onSelectionChange($event)">
+                Debt Consolidation
+              </label>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="height: 80%;" data-bs-target="#staticBackdrop"  (click)="submitForm()">Submit</button>
+        </form>
+      </div>
+
+      <div class="response">
+        <!-- <ng-container *ngIf="isResponseCorrect; else incorrectResponse">
+            Correct!
+          </ng-container>
+          <ng-template #incorrectResponse>
+            Incorrect!
+          </ng-template> -->
+      </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" style="margin-top: 6rem;" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+            <div class="creditHeading" style="padding-top: 1rem; height: 20%;">
+                <h2>Heading</h2> 
+            </div>
+            <ng-container *ngIf="isResponseCorrect; else incorrectResponse">
+                Correct!
+              </ng-container>
+              <ng-template #incorrectResponse>
+                Incorrect!
+              </ng-template>
+              <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" >Continue</button>
+      </div>
+
+    
+    </div>
+</div>

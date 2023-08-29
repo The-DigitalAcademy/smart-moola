@@ -9,9 +9,31 @@ import { CounterService } from '../services/counter.service';
 export class MycomponentComponent implements OnInit {
 
   currentSelectionValue = '';
+  statementIndex = 0;
+  progressPercentage = 33.33;
+  isResponseCorrect = false;
   
 
+
   constructor(private counterService: CounterService) {}
+
+  statement = [
+    "Statement1",
+    "Statement2",
+    "Statement3"
+  ];
+
+  questions = [
+    "Questioin1",
+    "Questioin2",
+    "Questioin3"
+  ];
+
+  correct = [
+    "Debt Counselling",
+    "Debt Consolidation",
+    "Debt Review"
+  ]
 
   ngOnInit() {
     this.counterService.currentSelection.subscribe((selectionValue) => {
@@ -19,15 +41,21 @@ export class MycomponentComponent implements OnInit {
     });
   }
 
-  progressPercentage = 25;
-
   updateTextScene() {
-    this.progressPercentage = 25; // Update progress
+    this.progressPercentage += 33.33; // Increase progress by one-third (33.33%)
   }
 
   previousStatement() {
-    this.updateTextScene();
+    if (this.statementIndex > 0) {
+      this.statementIndex--;
+      this.updateTextScene();
+    }
   }
+
+
+  //progressPercentage = 25;
+
+
 
   onSelectionChange(event: Event) {
     const selectedValue = (event.target as HTMLInputElement).value;
@@ -42,18 +70,10 @@ export class MycomponentComponent implements OnInit {
       case 'selection3':
         this.selection3();
         break;
-      case 'selectionA':
-        this.selectionA();
-        break;
-      case 'selectionB':
-        this.selectionB();
-        break;
-      case 'selectionC':
-        this.selectionC();
-        break;
       default:
         break;
     }
+
   }
 
   selection1() {
@@ -68,34 +88,53 @@ export class MycomponentComponent implements OnInit {
     this.counterService.selection3();
   }
    
-  selectionA() {
-    this.counterService.selectionA();
+  
+
+  getCurrentStatement(): string {
+    return this.statement[this.statementIndex];
   }
 
-  selectionB() {
-    this.counterService.selectionB();
+  getCurrentQuestion(): string {
+    return this.questions[this.statementIndex];
   }
+ 
+  
 
-  selectionC() {
-    this.counterService.selectionC();
-  }
+  submitForm() {
+    // this.statementIndex++; // Move to the next loop
+    // if (this.statementIndex < this.statement.length) {
+    //   this.updateTextScene();
+    // } else {
+    //   this.statementIndex = 0; // Reset back to the first loop
+    //   this.progressPercentage = 0; // Reset progress
+    // } 
 
-  // Loop statement to iterate 4 times
-  i: number = 0;
-  loopWithIfStatement() {
-    for ( this.i ; this.i < 4; this.i++) {
+    
 
-      if (this.i === 0) {
+    const selectedAnswer = this.currentSelectionValue;
+    const correctAnswer = this.correct[this.statementIndex];
 
-        console.log(`Iteration ${this.i + 1} - Doing something for i = 0`);
-        
+    
 
-      } else {
-
-        console.log(`Iteration ${this.i + 1} - Doing something for i ≠ 0`);
-
-      }
-
+    if (selectedAnswer === correctAnswer) {
+      this.isResponseCorrect = true; // Set response to correct
+    } else {
+      this.isResponseCorrect = false; // Set response to incorrect
     }
+
+    this.statementIndex++; // Move to the next loop
+
+    // if (this.statementIndex < this.statement.length) {
+    //   this.updateTextScene();
+    // } else {
+    //   this.statementIndex = 0; // Reset back to the first loop
+    //   this.progressPercentage = 0; // Reset progress
+    //   this.isResponseCorrect = false; // Reset response status
+    // }
+
   }
+
+  
+
+  
 }
