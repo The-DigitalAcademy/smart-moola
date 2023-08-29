@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="header">
+      <!-- Header content -->
+    </div>
+  
+    <div class="body">
+      <div>
+        <h2>Selected: {{ currentSelectionValue }}</h2>
+      </div>
+  
+      <form>
+        <div>
+          <ng-container *ngIf="i === 0; else otherOptions">
+            <!-- Display options for i = 0 -->
+            <label>
+              <input type="radio" name="selection" value="selection1" (change)="onSelectionChange($event)">
+              Selection 1
+            </label>
+            <label>
+              <input type="radio" name="selection" value="selection2" (change)="onSelectionChange($event)">
+              Selection 2
+            </label>
+            <label>
+              <input type="radio" name="selection" value="selection3" (change)="onSelectionChange($event)">
+              Selection 3
+            </label>
+          </ng-container>
+          <ng-template #otherOptions>
+            <!-- Display options for i ≠ 0 -->
+            <label>
+              <input type="radio" name="selection" value="selectionA" (change)="onSelectionChange($event)">
+              Selection A
+            </label>
+            <label>
+              <input type="radio" name="selection" value="selectionB" (change)="onSelectionChange($event)">
+              Selection B
+            </label>
+            <label>
+              <input type="radio" name="selection" value="selectionC" (change)="onSelectionChange($event)">
+              Selection C
+            </label>
+          </ng-template>
+        </div>
+      </form>
+    </div>
+  </div>
+  

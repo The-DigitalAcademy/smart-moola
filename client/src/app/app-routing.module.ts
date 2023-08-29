@@ -23,6 +23,8 @@ import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/in
 import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
+import { ModalContentComponent } from './components/modal-content/modal-content.component';
+import { MycomponentComponent } from './mycomponent/mycomponent.component';
 
 const routes: Routes = [
 
@@ -51,10 +53,11 @@ const routes: Routes = [
   { path: 'summary', component: SummaryComponent },
 
   { path: 'response', component: responseComponent },
-  { path: 'footer', component: FooterComponent },
-  { path: 'indebtedscene', component: indebtedScenesComponent },
-  { path: 'summary', component: SummaryComponent },
-  { path: 'wrong-answers', component: WrongAnswersComponent }
+  { path: 'footer', component: FooterComponent},
+  { path: 'indebtedscene', component: indebtedScenesComponent},
+
+  { path: 'modalresponse', component: ModalContentComponent},
+  { path : 'mycompo', component: MycomponentComponent}
 
 ];
 

@@ -18,3 +18,29 @@
     
     
 }
+
+@media (min-width: 768px) {
+
+    .Nav-icons{
+    background-color: #F6F6F6;
+    margin-left: 0rem;
+    padding-left: 4rem;
+    width: 29.5rem;
+    height: 3rem;
+    border-radius: 5%;
+    padding-top: 2%;
+    top: 20%;
+    
+    #clickable-icon {
+        transition: transform 0.3s; /* Add a smooth transition effect */
+    }
+    
+    #clickable-icon.clicked {
+        transform: scale(1.2); /* Increase the size of the icon when clicked */
+    }
+   
+    
+    
+}
+
+}
