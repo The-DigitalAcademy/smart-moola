@@ -1,4 +1,4 @@
-.Nav-icons{
+.Nav-icons {
     background-color: #F6F6F6;
     margin-left: 0rem;
     width: 23rem;
@@ -6,15 +6,15 @@
     border-radius: 5%;
     padding-top: 2%;
     top: 20%;
-    
+
     #clickable-icon {
-        transition: transform 0.3s; /* Add a smooth transition effect */
+        transition: transform 0.3s;
+        /* Add a smooth transition effect */
     }
-    
+
     #clickable-icon.clicked {
-        transform: scale(1.2); /* Increase the size of the icon when clicked */
+        transform: scale(1.2);
+        /* Increase the size of the icon when clicked */
     }
-   
-    
-    
+
 }
