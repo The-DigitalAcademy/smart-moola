@@ -14,11 +14,11 @@ export class WrongAnswersComponent implements OnInit {
   ngOnInit() {
 
     
-    setTimeout(() => {
+  setTimeout(() => {
       this.loaderService.startLoader()
       this.router.navigate(['/response'])
       this.loaderService.stopLoader();
-    }, 3000)
+    }, 3000)  
 
   }
 

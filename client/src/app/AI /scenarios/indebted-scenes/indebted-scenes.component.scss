@@ -52,57 +52,69 @@
       height: 17%;
     }
 
-    .QandA {
-      background-color: #f6f6f6;
-      border-radius: 2%;
-      height: 32%;
-      .question {
-        font-weight: bold;
-        margin-left: 0.2rem;
-      }
-      .option1 {
-        margin-left: 1rem;
-        margin-right: 0.5rem;
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
-      }
+        .QandA {
+            background-color: #F6F6F6;
+            border-radius: 2%;
+            height: 32%;
 
-      .option2 {
-        margin-left: 1rem;
-        margin-right: 0.5rem;
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
-      }
+            .question {
+                font-weight: bold;
+                margin-left: 0.2rem;
+            }
 
-      .option3 {
-        margin-left: 1rem;
-        margin-right: 0.5rem;
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
-      }
-    }
+            .option1 {
+                margin-left: 1rem;
+                margin-right: 0.5rem;
+                margin-top: 0.8rem;
+                margin-bottom: 0.8rem;
 
-    .btn-group {
-      align-content: center;
-      margin-top: 1.5rem;
-      margin-left: 5rem;
-      gap: 2rem;
-      width: 50%;
-      .btn {
-        text-align: center;
-        color: var(--WHITE);
-        cursor: pointer;
-        border: none;
-        background-color: var(--main-color);
-        &:hover {
-          background-color: #175175;
+            }
+
+            .option2 {
+                margin-left: 1rem;
+                margin-right: 0.5rem;
+                margin-top: 0.8rem;
+                margin-bottom: 0.8rem;
+
+            }
+
+            .option3 {
+                margin-left: 1rem;
+                margin-right: 0.5rem;
+                margin-top: 0.8rem;
+                margin-bottom: 0.8rem;
+
+            }
         }
-      }
-    }
-  }
 
-  .footer {
-    height: 10%;
-    padding-top: 5%;
-  }
+        .btn-group {
+
+            align-content: center;
+            margin-top: 1.5rem;
+            margin-left: 5rem;
+            gap: 2rem;
+            width: 50%;
+
+            .btn {
+
+                text-align: center;
+                color: var(--WHITE);
+                cursor: pointer;
+                border: none;
+                background-color: var(--main-color);
+
+                &:hover {
+                    background-color: #175175;
+                }
+            }
+
+        }
+    }
+
+    .footer {
+        height: 10%;
+        padding-top: 5%;
+
+    }
+
 }

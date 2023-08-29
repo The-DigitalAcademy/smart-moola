@@ -1,21 +1,18 @@
-.contentContainer{
-    display: flex;
-    flex-direction: column;
-    width:100%;
-    height:auto;
-    /* justify-content: center; */
-    align-items: center;
-
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-.headerTopMargins{
-    margin-top:50px;
+.headerTopMargins {
+  margin-top: 50px;
 }
-.imageContainer{
-    width:182px;
-    height:200px;
-    margin-top:50px;
-   margin-bottom: 50px;
+.imageContainer {
+  width: 182px;
+  height: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
-
-
