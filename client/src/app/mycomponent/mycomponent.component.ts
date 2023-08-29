@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CounterService } from '../services/counter.service';
+import { SessionsService } from 'src/app/services/sessions.service';
+import { QuestionService } from 'src/app/services/question.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mycomponent',
@@ -12,10 +15,19 @@ export class MycomponentComponent implements OnInit {
   statementIndex = 0;
   progressPercentage = 33.33;
   isResponseCorrect = false;
+
+  //FROM NO DEBT USER
+  question = '';
+  selectedValue = 'selection1';
+  prompt = ''
+  explanation = ''
   
 
 
-  constructor(private counterService: CounterService) {}
+  constructor(private counterService: CounterService,
+    private router: Router,
+    private questionsService: QuestionService,
+    private session: SessionsService) {}
 
   statement = [
     "Statement1",
@@ -41,6 +53,27 @@ export class MycomponentComponent implements OnInit {
     });
   }
 
+  //AI Method
+  getMeaning() {
+    this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
+      console.log(data); // Check the entire response object
+      console.log(data.explanation); // Check the explanation property
+      this.explanation = data.explanation;
+      localStorage.setItem("explanation", this.explanation);
+    });
+  }
+
+  //Is connection to the ai
+  getQuestions() {
+    this.questionsService.getAllQuestions().subscribe((data) => {
+      for (const item of data) {
+        console.log(item.id)
+      }
+    });
+  }
+
+
+
   updateTextScene() {
     this.progressPercentage += 33.33; // Increase progress by one-third (33.33%)
   }
@@ -60,17 +93,35 @@ export class MycomponentComponent implements OnInit {
   onSelectionChange(event: Event) {
     const selectedValue = (event.target as HTMLInputElement).value;
     
+   
     switch (selectedValue) {
       case 'selection1':
         this.selection1();
+
+        this.prompt = 'What is Debt Counselling?'
+        this.session.saveActiveQuestion('selection2');
+
         break;
       case 'selection2':
         this.selection2();
+
+        this.prompt = 'What is Debt Consolidation?'
+        this.session.saveActiveQuestion('selection3');
+
         break;
       case 'selection3':
         this.selection3();
+
+        this.prompt = 'What is Debt Review?'
+        this.session.saveActiveQuestion('selection3');
+        // this.router.navigate(['/summary2']);
         break;
       default:
+
+       this.selection1();
+
+        this.prompt = 'What is Debt Counselling?'
+        this.session.saveActiveQuestion('selection2');
         break;
     }
 
@@ -101,19 +152,10 @@ export class MycomponentComponent implements OnInit {
   
 
   submitForm() {
-    // this.statementIndex++; // Move to the next loop
-    // if (this.statementIndex < this.statement.length) {
-    //   this.updateTextScene();
-    // } else {
-    //   this.statementIndex = 0; // Reset back to the first loop
-    //   this.progressPercentage = 0; // Reset progress
-    // } 
-
     
-
     const selectedAnswer = this.currentSelectionValue;
     const correctAnswer = this.correct[this.statementIndex];
-
+    this.getMeaning();
     
 
     if (selectedAnswer === correctAnswer) {
@@ -124,13 +166,6 @@ export class MycomponentComponent implements OnInit {
 
     this.statementIndex++; // Move to the next loop
 
-    // if (this.statementIndex < this.statement.length) {
-    //   this.updateTextScene();
-    // } else {
-    //   this.statementIndex = 0; // Reset back to the first loop
-    //   this.progressPercentage = 0; // Reset progress
-    //   this.isResponseCorrect = false; // Reset response status
-    // }
 
   }
 

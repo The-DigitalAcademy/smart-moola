@@ -73,12 +73,22 @@
             <div class="creditHeading" style="padding-top: 1rem; height: 20%;">
                 <h2>Heading</h2> 
             </div>
+
             <ng-container *ngIf="isResponseCorrect; else incorrectResponse">
                 Correct!
+                <div class="airesponse">
+                    {{explanation}}
+                 </div>
               </ng-container>
               <ng-template #incorrectResponse>
                 Incorrect!
+                <div class="airesponse">
+                    {{explanation}}
+                 </div>
               </ng-template>
+
+              
+
               <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" >Continue</button>
       </div>
 
