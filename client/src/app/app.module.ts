@@ -21,6 +21,9 @@ import { PasswordUpdateComponent } from './Aunthentication/password-update/passw
 import { responseComponent } from './AI /response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+
+
+import { Summary2Component } from './components/summary2/summary2.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component';
@@ -53,6 +56,7 @@ import { MycomponentComponent } from './mycomponent/mycomponent.component';
     PasswordUpdateComponent,
     NavigationMenuComponent,
     SummaryComponent,
+    NoDebtUserComponent,
     FooterComponent,
     indebtedScenesComponent,
     IndebtedUserComponent,

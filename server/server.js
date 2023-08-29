@@ -5,11 +5,6 @@ const cors = require("cors");
 require("./config/db.config")
 const sequelize = require("./config/db.config");
 
-// import qnaRoutes from "./routes/QnA.routes"
-
-
-
-
 // Running Express Application 
 const app = express();
 
@@ -20,7 +15,6 @@ var corsOptions = {
 app.use(cors(corsOptions))
 
 app.use(express.json());
-
 
 app.use(express.urlencoded({ extended: false }));
 
@@ -35,22 +29,16 @@ app.use("api/IndebtQ",IndebtQ);
 
 const PORT = 4545;
 
-app.get('/', (req, res) => {
-  res.json({"name": "Smart Moola"})
-})
-
 sequelize
-.sync({
-  force: false, logging: true
-})
-.then(() => {
-  app.listen(PORT, () => {
-    console.log(`App running on port: ${PORT}`);
+  .sync({
+    force: false, logging: true
+  })
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`App running on port: ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Error synchronizing the database:', err);
   });
-})
-.catch((err) => {
-  console.error('Error synchronizing the database:', err);
-});
 
-const { getMeaningOfWord } = require('./controllers/ai.controller');
-app.post('/api/meaning', getMeaningOfWord);

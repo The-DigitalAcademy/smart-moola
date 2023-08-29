@@ -1,273 +1,120 @@
-.container
-{
-    width: 100%;
-    height: 100vh;
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--WHITE);
+
+  .header {
     background-color: var(--WHITE);
+    height: 15%;
+    padding-top: 4%;
+    padding-bottom: 4%;
 
-
-    .header{
-        
-        background-color: var(--WHITE);
-        height: 15%;
-        padding-top: 4%;
-        padding-bottom: 4%;
-        
-        .back-button{
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-            width: 22rem;
-            padding-left: 1%;
-            padding-right: 4%;
-            color: var(--main-color);
-
-        }
-
-       .pgbar{
-         margin-top: 1%;
-         width: 22rem;
-         height: 1rem;
-         margin-left: 2%;
-         margin-right: 2%;
-         margin-bottom: 1%;
-         padding-top: 5%;
-        
-       } 
-        
+    .back-button {
+      margin-top: 1rem;
+      margin-left: 0.5rem;
+      width: 22rem;
+      padding-left: 1%;
+      padding-right: 4%;
+      color: var(--main-color);
     }
-    
-    .body{
-        height: 75%;
-        width: 100%;
-        color: var(--main-color);
-        font-size: 12px;
-        padding-top: 4%;
-        padding-bottom: 4%;
-        .imagebox{
-            width: 20rem;
-            height: 15rem;
-        }
 
-        .textScene
-        {
-            font-weight: bold;
-            margin-top: 0.1rem;
-            margin-bottom: 0.5rem;
-            padding-left: 0.2rem;
-            padding-right: 0.1rem;
-            background-color: #F6F6F6;
-            border-radius: 2%;
-            height: 17%;
-        }
+    .pgbar {
+      margin-top: 1%;
+      width: 22rem;
+      height: 1rem;
+      margin-left: 2%;
+      margin-right: 2%;
+      margin-bottom: 1%;
+      padding-top: 5%;
+    }
+  }
 
-        .QandA{
+  .body {
+    height: 75%;
+    width: 100%;
+    color: var(--main-color);
+    font-size: 12px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    .imagebox {
+      width: 20rem;
+      height: 15rem;
+    }
+
+    .textScene {
+      font-weight: bold;
+      margin-top: 0.1rem;
+      margin-bottom: 0.5rem;
+      padding-left: 0.2rem;
+      padding-right: 0.1rem;
+      background-color: #f6f6f6;
+      border-radius: 2%;
+      height: 17%;
+    }
+
+        .QandA {
             background-color: #F6F6F6;
             border-radius: 2%;
             height: 32%;
-            .question{
+
+            .question {
                 font-weight: bold;
                 margin-left: 0.2rem;
             }
-            .option1
-            {
+
+            .option1 {
                 margin-left: 1rem;
                 margin-right: 0.5rem;
                 margin-top: 0.8rem;
                 margin-bottom: 0.8rem;
-               
+
             }
 
-            .option2
-            {
+            .option2 {
                 margin-left: 1rem;
                 margin-right: 0.5rem;
                 margin-top: 0.8rem;
                 margin-bottom: 0.8rem;
-               
+
             }
 
-            .option3
-            {
+            .option3 {
                 margin-left: 1rem;
                 margin-right: 0.5rem;
                 margin-top: 0.8rem;
                 margin-bottom: 0.8rem;
-               
+
             }
         }
 
-        .btn-group{
-          
+        .btn-group {
+
             align-content: center;
             margin-top: 1.5rem;
             margin-left: 5rem;
             gap: 2rem;
             width: 50%;
-            .btn{
-               
+
+            .btn {
+
                 text-align: center;
                 color: var(--WHITE);
-                cursor: pointer; 
+                cursor: pointer;
                 border: none;
                 background-color: var(--main-color);
+
                 &:hover {
                     background-color: #175175;
                 }
             }
-           
+
         }
     }
-    
-    .footer
-    {
+
+    .footer {
         height: 10%;
         padding-top: 5%;
-        
+
     }
-
-}
-
-
-
-@media (min-width: 768px) {
-
-    .container{
-    width: 100vh;
-    height: 100vh;
-    background-color: var(--WHITE);
-
-
-    .header{
-        
-        background-color: var(--WHITE);
-        height: 15%;
-        padding-top: 4%;
-        padding-bottom: 4%;
-        margin-left: 32rem;
-        margin-right: 32rem;
-        
-        
-        .back-button{
-
-            margin-top: 1rem;
-            margin-left: 0.5rem;
-            width: 22rem;
-            padding-left: 1%;
-            padding-right: 4%;
-            color: var(--main-color);
-
-        }
-
-       .pgbar{
-         margin-top: 1%;
-         width: 22rem;
-         height: 1rem;
-         margin-left: 2%;
-         margin-right: 2%;
-         margin-bottom: 1%;
-         padding-top: 5%;
-        
-       } 
-        
-    }
-    
-    .body{
-        height: 75%;
-        width: 100%;
-        color: var(--main-color);
-        font-size: 12px;
-        padding-top: 4%;
-        padding-bottom: 4%;
-        margin-left: 32rem;
-        margin-right: 32rem;
-        .imagebox{
-            width: 20rem;
-            height: 15rem;
-        }
-
-        .textScene
-        {
-            font-weight: bold;
-            width: 35%;
-            margin-top: 0.1rem;
-            margin-bottom: 0.5rem;
-            padding-left: 0.2rem;
-            padding-right: 0.1rem;
-            background-color: #F6F6F6;
-            border-radius: 2%;
-            height: 17%;
-            margin-right: 60rem;
-            
-        }
-
-        .QandA{
-            background-color: #F6F6F6;
-            border-radius: 2%;
-            height: 32%;
-            width: 35%;
-            margin-left: 6rem;
-            
-            .question{
-                font-weight: bold;
-                margin-left: 0.2rem;
-            }
-            .option1
-            {
-                margin-left: 1rem;
-                margin-right: 0.5rem;
-                margin-top: 0.8rem;
-                margin-bottom: 0.8rem;
-               
-            }
-
-            .option2
-            {
-                margin-left: 1rem;
-                margin-right: 0.5rem;
-                margin-top: 0.8rem;
-                margin-bottom: 0.8rem;
-               
-            }
-
-            .option3
-            {
-                margin-left: 1rem;
-                margin-right: 0.5rem;
-                margin-top: 0.8rem;
-                margin-bottom: 0.8rem;
-               
-            }
-        }
-
-        .btn-group{
-            align-content: center;
-            margin-top: 1rem;
-            margin-left: 5rem;
-            gap: 2rem;
-            width: 50%;
-            .btn{
-               
-                text-align: center;
-                color: var(--WHITE);
-                cursor: pointer; 
-                border: none;
-                width: 1000%;
-                background-color: var(--main-color);
-                &:hover {
-                    background-color: #175175;
-                }
-            }
-           
-        }
-    }
-    
-    .footer
-    {
-        height: 10%;
-        padding-top: 5%;
-        
-    }
-
-}
-
 
 }

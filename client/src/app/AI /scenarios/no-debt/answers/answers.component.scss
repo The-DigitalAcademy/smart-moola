@@ -12,16 +12,30 @@
         border: 1px solid var(--main-color);
         background-color: #f1f1f1;
         border-radius: 10px;
+        align-items: center;
 
         .headerTopMargins {
             margin-top: 100px;
         }
 
         .imageContainer {
-            width: 182px;
-            height: 203px;
-            margin-top: 64px;
-            margin-bottom: 64px;
+        width: 192px;
+        height: 209px;
+        margin-top: 2em;
+        margin-bottom: 3em;
+        border-radius: 3em;
+        }
+
+        .textColor
+        {
+            align-content: center;
+            margin-bottom: 2em;
+            width: 100%;
+        }
+        .p-1
+        {
+            border-radius: 15px;
+            margin-bottom: 2em;
         }
 
     }
