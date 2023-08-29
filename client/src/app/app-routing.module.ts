@@ -25,6 +25,7 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { MycomponentComponent } from './mycomponent/mycomponent.component';
+import { Summary2Component } from './components/summary2/summary2.component';
 
 const routes: Routes = [
 
@@ -51,7 +52,7 @@ const routes: Routes = [
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
   { path: 'summary', component: SummaryComponent },
-
+  { path: 'summary2', component: Summary2Component },
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
   { path: 'indebtedscene', component: indebtedScenesComponent},
