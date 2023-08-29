@@ -119,17 +119,7 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
   }
   
-  // selection1() {
-  //   this.RadioService.selection1();
-  // }
-
-  // selection2() {
-  //   this.RadioService.selection2();
-  // }
-
-  // selection3() {
-  //   this.RadioService.selection3();
-  // }
+ 
 
 
 
@@ -238,25 +228,6 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit{
 
     onSubmit() {
       console.log(this.indebtedForm.value);
-      /*
-          ngOnInit() {
-    this.counterService.currentSelection.subscribe((counterValue) => {
-      this.currentSelectionValue = counterValue;
-    });
-  }
-
-  selection1() {
-    this.counterService.selection1();
-  }
-
-  selection2() {
-    this.counterService.selection2();
-  }
-  
-  selection3() {
-    this.counterService.selection3();
-  }
-      */
       
     }
     

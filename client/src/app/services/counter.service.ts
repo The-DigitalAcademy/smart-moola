@@ -24,4 +24,16 @@ export class CounterService {
   selection3() {
     this.selection.next('Debt Consolidation');
   }
+
+  selectionA() {
+    this.selection.next('Credit Limit');
+  }
+
+  selectionB() {
+    this.selection.next('Credit Score');
+  }
+
+  selectionC() {
+    this.selection.next('Debtor Status');
+  }
 }

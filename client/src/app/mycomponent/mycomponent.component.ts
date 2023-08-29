@@ -9,6 +9,7 @@ import { CounterService } from '../services/counter.service';
 export class MycomponentComponent implements OnInit {
 
   currentSelectionValue = '';
+  
 
   constructor(private counterService: CounterService) {}
 
@@ -18,24 +19,19 @@ export class MycomponentComponent implements OnInit {
     });
   }
 
-
   progressPercentage = 25;
 
   updateTextScene() {
-    
-    this.progressPercentage =  25; // Update progress
+    this.progressPercentage = 25; // Update progress
   }
 
-
   previousStatement() {
-    
-      this.updateTextScene();
-    
+    this.updateTextScene();
   }
 
   onSelectionChange(event: Event) {
     const selectedValue = (event.target as HTMLInputElement).value;
-
+    
     switch (selectedValue) {
       case 'selection1':
         this.selection1();
@@ -45,6 +41,15 @@ export class MycomponentComponent implements OnInit {
         break;
       case 'selection3':
         this.selection3();
+        break;
+      case 'selectionA':
+        this.selectionA();
+        break;
+      case 'selectionB':
+        this.selectionB();
+        break;
+      case 'selectionC':
+        this.selectionC();
         break;
       default:
         break;
@@ -62,6 +67,35 @@ export class MycomponentComponent implements OnInit {
   selection3() {
     this.counterService.selection3();
   }
+   
+  selectionA() {
+    this.counterService.selectionA();
+  }
 
-  
+  selectionB() {
+    this.counterService.selectionB();
+  }
+
+  selectionC() {
+    this.counterService.selectionC();
+  }
+
+  // Loop statement to iterate 4 times
+  i: number = 0;
+  loopWithIfStatement() {
+    for ( this.i ; this.i < 4; this.i++) {
+
+      if (this.i === 0) {
+
+        console.log(`Iteration ${this.i + 1} - Doing something for i = 0`);
+        
+
+      } else {
+
+        console.log(`Iteration ${this.i + 1} - Doing something for i ≠ 0`);
+
+      }
+
+    }
+  }
 }

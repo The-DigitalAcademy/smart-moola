@@ -22,4 +22,15 @@
 
         }
     }
+
+    .body{
+        height: 80%;
+        width: 100%;
+        background-color: aquamarine;
+        .radio-group label {
+            display: block;
+            margin-bottom: 10px; /* Adjust the spacing as needed */
+          }
+          
+    }
 }
