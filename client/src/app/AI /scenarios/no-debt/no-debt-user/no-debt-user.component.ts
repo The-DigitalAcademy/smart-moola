@@ -18,8 +18,6 @@ export class NoDebtUserComponent implements OnInit {
     private session: SessionsService,public loaderService: LoaderService
   ) {}
 
-  //Declarations
-  
   question = '';
   active = 'q1';
 
