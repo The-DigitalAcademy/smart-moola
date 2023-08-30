@@ -12,7 +12,7 @@
       <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
         aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar" style="background-color: #669bbc;" [style.width.%]="progressPercentage">{{
-          progressPercentage }}%</div>
+          progressPercentage.toFixed(0) }}%</div>
       </div>
     </div>
 
@@ -85,9 +85,6 @@
 
         <ng-container *ngIf="isResponseCorrect; else incorrectResponse">
           Correct!
-          <div class="airesponse">
-            <!-- {{explanation}} -->
-          </div>
         </ng-container>
         <ng-template #incorrectResponse>
           Incorrect!
