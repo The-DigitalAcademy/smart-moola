@@ -20,7 +20,7 @@ import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-deb
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component';
 import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
 import { SummaryComponent } from './components/summary/summary.component';
-import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component'; 
+import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { IndebtedScenesComponent } from './AI /scenarios/indebtedscenes/indebtedscene.component';
 import { Summary2Component } from './components/summary2/summary2.component';
@@ -47,6 +47,7 @@ const routes: Routes = [
 
   { path: 'response', component: responseComponent },
   { path: 'answers', component: AnswersComponent },
+  { path: 'wrong-answers', component: WrongAnswersComponent },
 
   { path: 'indebted', component: IndebtedUserComponent },
   { path: 'indebtedscenes', component: IndebtedScenesComponent },
