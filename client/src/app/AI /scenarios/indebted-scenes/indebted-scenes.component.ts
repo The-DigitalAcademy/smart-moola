@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-indebted-scenes',
@@ -7,6 +8,11 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 })
 export class indebtedScenesComponent implements OnInit, AfterViewInit {
 
+  constructor(
+    private router: Router
+  ) {
+
+  }
   statements = [
     "Mbali overspent on his credit card, resulting in a large debt with added interest charges from the credit card company.",
     "Mbali asked for debt management help for medical bills and job loss, with a counselor creating a new repayment plan after negotiating with creditors.",
@@ -60,6 +66,11 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit {
       this.currentStepIndex++;
       this.updateTextScene();
     }
+    // this.updateTextScene();
+    else {
+      // If it's the last scenario, navigate to the home page
+      this.router.navigate(['/summary2']); // Replace '/home' with your actual home page route
+    }
   }
 
   // This method is added to handle the vanilla JavaScript logic
@@ -107,6 +118,6 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit {
         return;
       }
     });
-    }
-  
+  }
+
 }
