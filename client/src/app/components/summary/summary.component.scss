@@ -5,12 +5,11 @@
   box-sizing: border-box;
 }
 
-.container1 {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #ffffff;
   height: 100vh;
 
@@ -19,17 +18,22 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    margin-top: -30em;
 
     .progress-bar {
       background-color: #669bbc;
     }
 
+    .bi {
+      // margin-bottom: 10rem;
+    }
+    
     .progress {
       width: 100%;
       height: auto;
       margin-right: 1.5rem;
       border-radius: 50px;
-      margin-top: -15em;
+      // margin-top: -55em;
       margin-left: 1.5em;
     }
 
@@ -43,22 +47,22 @@
       border-radius: 4px;
       cursor: pointer;
       text-align: center;
+      // margin-top: 30em;
     }
 
-    .bi {
-      margin-bottom: 10rem;
-    }
   }
 
   h5 {
     color: #669bbc;
     font-weight: 800;
+    // margin-top: -35em;
   }
 
   .card-container {
     flex-direction: row;
     justify-content: space-between;
     gap: 1em;
+    // margin-top: -15em;
   }
 
   .card {
