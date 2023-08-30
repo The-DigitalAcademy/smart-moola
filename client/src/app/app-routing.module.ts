@@ -9,6 +9,7 @@ import { GetstartedPageComponent } from './Pages/getstarted-page/getstarted-page
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { PasswordResetComponent } from './Aunthentication/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './Aunthentication/verify-otp/verify-otp.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 import { ProfileEditorComponent } from './Pages/profile-editor/profile-editor.component';
 import { PasswordUpdateComponent } from './Aunthentication/password-update/password-update.component';
@@ -17,12 +18,13 @@ import { responseComponent } from './AI /response/response.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { indebtedScenesComponent } from './AI /scenarios/indebted-scenes/indebted-scenes.component';
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component';
 import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
+import { ModalContentComponent } from './components/modal-content/modal-content.component';
+import { MycomponentComponent } from './mycomponent/mycomponent.component';
 import { Summary2Component } from './components/summary2/summary2.component';
 
 const routes: Routes = [
@@ -54,8 +56,9 @@ const routes: Routes = [
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'indebtedscene', component: indebtedScenesComponent },
-  { path: 'summary', component: SummaryComponent },
-  { path: 'wrong-answers', component: WrongAnswersComponent }
+
+  { path: 'modalresponse', component: ModalContentComponent },
+  { path: 'mycompo', component: MycomponentComponent }
 
 ];
 
@@ -63,4 +66,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

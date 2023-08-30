@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
+
+
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Aunthentication/login/login.component';
 import { RegisterComponent } from './Aunthentication/register/register.component';
@@ -30,12 +32,8 @@ import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/in
 import { HomeComponent } from './Pages/home/home.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
-
-
-
-// import { NoDebtUserScenarioComponent } from './components/scenarios/no-debt/no-debt.component';
-
-// import { AaComponent } from './components/scenarios/scenario-a/aa/aa.component';
+import { ModalContentComponent } from './components/modal-content/modal-content.component';
+import { MycomponentComponent } from './mycomponent/mycomponent.component';
 
 @NgModule({
   declarations: [
@@ -56,18 +54,18 @@ import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wro
     ProfileEditorComponent,
     ProfileEditorComponent,
     PasswordUpdateComponent,
-    responseComponent,
     NavigationMenuComponent,
     SummaryComponent,
     NoDebtUserComponent,
     FooterComponent,
     indebtedScenesComponent,
     IndebtedUserComponent,
+    
+    ModalContentComponent,
     NoDebtUserComponent,
     NoDebtComponent,
-    Summary2Component,
-
-    WrongAnswersComponent
+    WrongAnswersComponent,
+    MycomponentComponent
   ],
 
   imports: [
@@ -76,6 +74,7 @@ import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wro
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    
     FormsModule,
     JwtModule.forRoot({
       config: {
@@ -84,6 +83,7 @@ import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wro
         },
       },
     }),
+   
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent],

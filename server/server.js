@@ -24,8 +24,8 @@ app.use("/api/users", users);
 const qna = require("./routes/QnA.routes");
 app.use("/api/qna", qna);
 
-const { getMeaningOfWord } = require('./controllers/ai.controller');
-app.post('/api/meaning', getMeaningOfWord);
+const IndebtQ = require("./routes/IndebtQ.routes");
+app.use("api/IndebtQ",IndebtQ);
 
 const PORT = 4545;
 

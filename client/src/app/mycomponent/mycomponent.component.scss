@@ -1,0 +1,98 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--WHITE);
+
+
+    .header {
+
+        background-color: var(--WHITE);
+        height: 15%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+
+        .back-button {
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            width: 22rem;
+            padding-left: 1%;
+            padding-right: 4%;
+            color: var(--main-color);
+
+        }
+    }
+
+    .body {
+        height: 75%;
+        width: 100%;
+        color: var(--main-color);
+        font-size: 12px;
+        padding-top: 4%;
+        padding-bottom: 4%;
+
+        .imagebox {
+            width: 20rem;
+            height: 15rem;
+        }
+
+        .statementdiv {
+            font-weight: bold;
+            margin-top: 0.1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 0.2rem;
+            padding-right: 0.1rem;
+            background-color: #F6F6F6;
+            border-radius: 2%;
+            height: 17%;
+        }
+
+        .questiondiv {
+            background-color: #F6F6F6;
+            border-radius: 2%;
+            height: 32%;
+        }
+
+
+        .myForm {
+            padding-top: 0.5rem;
+            background-color: #F6F6F6;
+        }
+
+        .btn-group {
+
+            align-content: center;
+            margin-top: 1rem;
+            margin-left: 5rem;
+
+            gap: 2rem;
+            width: 50%;
+
+            .btn {
+
+                text-align: center;
+                color: var(--WHITE);
+                cursor: pointer;
+                border: none;
+                background-color: var(--main-color);
+
+                &:hover {
+                    background-color: #175175;
+                }
+            }
+
+        }
+
+
+    }
+
+    .footer {
+        height: 10%;
+        padding-top: 5%;
+
+    }
+
+    .modal{
+        padding: 20px;
+        background-color: pink;
+    }
+}

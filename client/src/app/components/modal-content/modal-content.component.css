@@ -1,0 +1,80 @@
+.container{
+    width: 100%;
+    height: 98vh;
+    /* gap: 2rem; */
+
+    .header{
+       height: 15%;
+
+
+       .back-button{
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+        width: 22rem;
+        padding-left: 1%;
+        padding-right: 4%;
+       }
+    }
+
+    .body{
+
+        height: 65%;
+        align-items: center;
+        background-color: #F6F6F6;
+
+        .response{ 
+           height: 16.25%;
+           padding-left: 2.5rem;
+           padding-right: 2.5rem;
+           padding-top: 1rem;
+           font-weight: bold;
+           color: var(--main-color);
+        }
+
+        .imagebox{
+            height: 32.5%;
+            .imagebox1{
+                width: 100%;
+                 height: 100%;
+            }
+        }
+
+        .AIdefinition{
+           height: 16.25%;
+           padding-left: 2rem;
+           padding-right: 2rem;
+           padding-top: 7rem;
+           text-align: center;
+           font-weight: bold;
+           color: var(--main-color);
+        }
+    }
+
+    .continueBtn{
+        height: 10%;
+
+        .submitBtn{
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        background-color: var(--main-color);
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+        position: absolute;
+        margin-top: 1.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        left: 0;
+        }
+    }
+
+    .footer{
+
+        height: 10%;
+        padding-top: 5%;
+
+    }
+}
