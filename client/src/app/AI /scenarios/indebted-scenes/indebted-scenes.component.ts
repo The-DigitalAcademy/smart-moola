@@ -66,8 +66,7 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit {
       text3: 'Debt Consolidation',
     },
   ];
-  question!: '';
-  explanation: any;
+
   currentStatementIndex = 0;
   currentStepIndex = 0;
   currentStatement: string = ''; // Declare the property here

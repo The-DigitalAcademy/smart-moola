@@ -20,8 +20,9 @@ export class responseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.explanation = localStorage.getItem("explanation")
+    this.explanation = localStorage.getItem("explanation");
 
+    // this.explanation = this.explanation;
     this.getLoggedInUserName();
     console.log(this.getLoggedInUserName())
   }

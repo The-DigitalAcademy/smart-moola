@@ -60,6 +60,7 @@
     justify-content: space-between;
     gap: 1em;
   }
+
   .card {
     display: flex;
     flex-direction: column;
@@ -73,7 +74,7 @@
     border-radius: 20px;
     border: 1px solid black;
 
-//Absa credit package component
+    //Absa credit package component
     a {
       background-color: #ffffff;
       width: 100%;
@@ -92,8 +93,9 @@
     text-decoration: none;
     text-align: center;
     position: flex;
-    margin-top: 2em; 
+    margin-top: 2em;
+    border-radius: 4px;
   }
-  
+
 
 }
