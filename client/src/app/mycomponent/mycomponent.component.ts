@@ -13,8 +13,6 @@ export class MycomponentComponent implements OnInit {
   progressPercentage = 33.33;
   isResponseCorrect = false;
   
-
-
   constructor(private counterService: CounterService) {}
 
   statement = [
@@ -51,12 +49,7 @@ export class MycomponentComponent implements OnInit {
       this.updateTextScene();
     }
   }
-
-
   //progressPercentage = 25;
-
-
-
   onSelectionChange(event: Event) {
     const selectedValue = (event.target as HTMLInputElement).value;
     
@@ -88,8 +81,6 @@ export class MycomponentComponent implements OnInit {
     this.counterService.selection3();
   }
    
-  
-
   getCurrentStatement(): string {
     return this.statement[this.statementIndex];
   }
@@ -98,24 +89,10 @@ export class MycomponentComponent implements OnInit {
     return this.questions[this.statementIndex];
   }
  
-  
-
   submitForm() {
-    // this.statementIndex++; // Move to the next loop
-    // if (this.statementIndex < this.statement.length) {
-    //   this.updateTextScene();
-    // } else {
-    //   this.statementIndex = 0; // Reset back to the first loop
-    //   this.progressPercentage = 0; // Reset progress
-    // } 
-
-    
 
     const selectedAnswer = this.currentSelectionValue;
     const correctAnswer = this.correct[this.statementIndex];
-
-    
-
     if (selectedAnswer === correctAnswer) {
       this.isResponseCorrect = true; // Set response to correct
     } else {
@@ -123,15 +100,6 @@ export class MycomponentComponent implements OnInit {
     }
 
     this.statementIndex++; // Move to the next loop
-
-    // if (this.statementIndex < this.statement.length) {
-    //   this.updateTextScene();
-    // } else {
-    //   this.statementIndex = 0; // Reset back to the first loop
-    //   this.progressPercentage = 0; // Reset progress
-    //   this.isResponseCorrect = false; // Reset response status
-    // }
-
   }
 
   

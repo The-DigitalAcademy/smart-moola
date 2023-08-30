@@ -113,15 +113,6 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit {
     return this.correctAnswers[this.currentStatementIndex];
   }
 
-  getMeaning() {
-    this.questionService
-      .sendQuestionAndGetExplanation(this.question)
-      .subscribe((data) => {
-        console.log(data.explanation);
-        this.explanation = data.explanation;
-      });
-  }
-
   getSelectedAnswer(): string {
     const selectedRadio = Array.from(
       document.getElementsByName('debt-manage')

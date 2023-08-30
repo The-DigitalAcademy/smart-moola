@@ -26,19 +26,6 @@
     <p class="textScene">{{ currentStatement }}</p>
 
     <div class="QandA">
-      <!-- <form>
-         
-          <p class="question">{{ currentQuestion }}</p>
-          
-          <input class="option1" type="radio" id="Answe1" name="debt-manage" value="Credit limit" [(ngModel)]="isRadioSelected">
-          <label class="lbl1" for="Answe1">{{ labels[currentStepIndex].text }}</label><br>
-  
-          <input class="option2" type="radio" id="Answe2" name="debt-manage" value="Credit Score" [(ngModel)]="isRadioSelected">
-          <label class="lbl2" for="Answe2">{{ labels[currentStepIndex].text2 }}</label><br>
-  
-          <input class="option3" type="radio" id="Answe3" name="debt-manage" value="Debtor status" [(ngModel)]="isRadioSelected">
-          <label class="lbl3" for="Answe3">{{ labels[currentStepIndex].text3 }}</label><br>    
-      </form> -->
 
       <form [formGroup]="indebtedForm" (ngSubmit)="onSubmit()">
         <!-- <p class="question">
@@ -59,11 +46,12 @@
     </div>
 
     <div class="btn-group">
-      <!-- <button class="btn" (click)="previousStatement()">Previous</button> -->
       <button class="btn" (click)="nextStatement()" [disabled]="isRadioSelected">Submit</button>
+      <button class="btn" routerLink="/summary2">Done</button>
+      <!-- <a routerLink="/register" class="submit">Register</a>
+      <a routerLink="/login" class="submit submit-inline">Login</a> -->
     </div>
   </div>
-
   <div class="footer">
     <div class="menu">
       <app-footer></app-footer>

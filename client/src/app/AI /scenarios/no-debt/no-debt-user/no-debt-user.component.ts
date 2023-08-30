@@ -20,7 +20,6 @@ export class NoDebtUserComponent implements OnInit {
 
   question = '';
   active = 'q1';
-
   mandlaResponse = "";
   tumiResponse = "";
   prompt = ''
@@ -32,14 +31,12 @@ export class NoDebtUserComponent implements OnInit {
   verifyAnswer() {
     this.router.navigate(['/answers']);
     // this.router.navigate(['/response']);
-
   }
 
   //Method which nevigate to answers component
   submitMandla() {
     this.getMeaning();
     this.router.navigate(['/answers']);
-
   }
 
   //Method which nevigate to wrong-answers component
@@ -56,6 +53,7 @@ export class NoDebtUserComponent implements OnInit {
       }
     });
   }
+  
 
   //Send prompt to AI and display explaination from the AI 
   getMeaning(){
@@ -81,19 +79,6 @@ export class NoDebtUserComponent implements OnInit {
         this.progressPercentage =  this.progressPercentage + 15;
         break;
 
-      // case 'q2':
-      //   this.question =
-      //     'Between Mandla and Tumi who is correct with credit definition';
-      //   this.mandlaResponse =
-      //     'Credit allows you to get into debt that you might fail to to repay ';
-      //   this.tumiResponse =
-      //     'Credit is the ability to borrow money to obtaingood or services. ';
-      //   //sending this quiz to AI
-      //   this.prompt = 'Credit defination'
-      //   this.session.saveActiveQuestion('q3');
-      //   this.progressPercentage =  20;
-      //   break;
-
       case 'q2':
         this.question =
         'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
@@ -106,7 +91,6 @@ export class NoDebtUserComponent implements OnInit {
         this.session.saveActiveQuestion('q3');
         this.progressPercentage =  30;
         break;
-
       case 'q3':
         this.question =
           'Between Mandla and Tumi is correct about credit score ';
@@ -120,18 +104,6 @@ export class NoDebtUserComponent implements OnInit {
         this.progressPercentage =  45;
         break;
 
-      // case 'q5':
-      //   this.question =
-      //     'Between Mandla and Tumi who is using their credit card in a good way?';
-      //   this.mandlaResponse =
-      //     'Mandla usually uses 75% of his credit balance on clothes, vacations and entertainment.';
-      //   this.tumiResponse =
-      //     'Tumi usually uses 30% of her credit balance on clothes and food.';
-      //   //sending this quiz to AI
-      //   this.prompt = 'How to use credit in a good way?'
-      //   this.session.saveActiveQuestion('q6');
-      //   this.progressPercentage =  50;
-      //   break;
 
       case 'q4':
         this.question =
