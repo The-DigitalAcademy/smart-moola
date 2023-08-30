@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../../services/users.service';
 import Swal from 'sweetalert2';
-import { CreateUserResponse, User } from '../../interface/users';
 import { Router } from '@angular/router';
 
 @Component({
