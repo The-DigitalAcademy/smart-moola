@@ -31,29 +31,30 @@ const routes: Routes = [
   { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+
   { path: 'home', component: HomeComponent },
+  { path: 'menu', component: NavigationMenuComponent },
 
   { path: 'resetpassword', component: PasswordResetComponent },
+  { path: 'verify-otp', component: VerifyOtpComponent },
+  { path: 'password-update', component: PasswordUpdateComponent },
 
-  // { path: 'no-debt', component: NoDebtComponent },
+  { path: 'no-debt', component: NoDebtComponent },
   { path: 'no-debt-user', component: NoDebtUserComponent },
 
   { path: 'profile', component: ProfileComponent },
   { path: 'profile-editor', component: ProfileEditorComponent },
 
-  { path: 'verify-otp', component: VerifyOtpComponent },
-
+  { path: 'response', component: responseComponent },
   { path: 'answers', component: AnswersComponent },
 
   { path: 'indebted', component: IndebtedUserComponent },
-  { path: 'password-update', component: PasswordUpdateComponent },
-  { path: 'menu', component: NavigationMenuComponent },
+  { path: 'indebtedscenes', component: IndebtedScenesComponent },
+
   { path: 'summary', component: SummaryComponent },
   { path: 'summary2', component: Summary2Component },
 
-  { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent },
-  { path: 'indebtedscenes', component: IndebtedScenesComponent },
 
   { path: 'modalresponse', component: ModalContentComponent },
 

@@ -28,7 +28,6 @@ export class NoDebtUserComponent implements OnInit {
   progressPercentage = 0;
   questions: any;
 
-
   verifyAnswer() {
     this.router.navigate(['/answers']);
   }
@@ -37,14 +36,12 @@ export class NoDebtUserComponent implements OnInit {
   submitMandla() {
     this.getMeaning();
     this.router.navigate(['/answers']);
-
   }
 
   //Method which nevigate to wrong-answers component
   submitTumi() {
     this.getMeaning();
     this.router.navigate(['/wrong-answers']);
-
   }
 
   getQuestions() {
@@ -160,7 +157,7 @@ export class NoDebtUserComponent implements OnInit {
         break;
     }
   }
-  
+
   ngOnInit(): void {
     this.verify();
     this.getQuestions();
