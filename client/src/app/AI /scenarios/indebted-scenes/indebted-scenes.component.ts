@@ -11,9 +11,8 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit {
     "Mbali overspent on his credit card, resulting in a large debt with added interest charges from the credit card company.",
     "Mbali asked for debt management help for medical bills and job loss, with a counselor creating a new repayment plan after negotiating with creditors.",
     "Meet Nandi, who has multiple debts from student loans, credit cards, and a car loan. It is hard for her to keep track of payments and interest rates.",
-    "what helps people in debt by creating a manageable repayment plan through a formal program with the assistance of a debt counselor?The goal is to negotiate with creditors and protect them from legal action."
+    "What helps people in debt by creating a manageable repayment plan through a formal program with the assistance of a debt counselor?The goal is to negotiate with creditors and protect them from legal action."
   ];
-
 
   questions = [
     "What will be affected below based on Mbali’s scenario? Select One answer",
@@ -26,8 +25,6 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit {
     { for: 'second Answers', text: 'Debt Review', text2: 'Debt Counselling', text3: 'Debt Consolidation' },
   ];
 
-
-
   currentStatementIndex = 0;
   currentStepIndex = 0;
   currentStatement: string = ''; // Declare the property here
@@ -38,9 +35,6 @@ export class indebtedScenesComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.updateTextScene();
   }
-
-
-
 
   ngAfterViewInit(): void {
     this.initializeVanillaJSLogic();
