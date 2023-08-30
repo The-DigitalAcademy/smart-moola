@@ -1,5 +1,4 @@
 <div class="container">
-  <!-- <div class="header"> -->
   <div class="header">
     <div class="back-button" (click)="goBack()">
       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left"
@@ -30,7 +29,7 @@
       <div class="column">
         <div class="card">
           <img style="width: 100%; height: 14em; object-fit: cover" class="p-1"
-           src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1691071057/mandla_bt5ydf.jpg" />
+            src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1691071057/mandla_bt5ydf.jpg" />
         </div>
         <div style="height: 30px">
           <span>{{ mandlaResponse }}</span>
@@ -50,69 +49,5 @@
       </div>
     </div>
   </div>
-  <!-- <div class="footer"> -->
-    <app-footer></app-footer>
-  <!-- </div> -->
-</div>
-
-<!-- <div class="container">
-
-  
-  <div class="header">
-    <div class="back-button">
-    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left" viewBox="0 0 16 16" >
-      <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-    </svg>
-  </div>
-     <h1>
-      Basics of <br />
-      Credit & Debt
-    </h1>
-    
-    <div class="pgbar">
-      <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
-        aria-valuemin="0" aria-valuemax="100">
-          <div class="progress-bar" [style.width.%]="progressPercentage">{{ progressPercentage }}%</div>
-      </div>
-    </div>
-     
-  </div>
-
-  <div class="body">
-    <div class="questions">
-
-      <h5>{{ question }}</h5>
-
-      <div class="twoColumns">
-        <div class="column">
-          <div class="card">
-            <img
-              style="width: 162px; height: 124px"
-              src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1691071057/mandla_bt5ydf.jpg"
-            />
-          </div>
-          <div style="height: 60px">
-            <span>{{ mandlaResponse }}</span>
-          </div>
-  
-          <button (click)="submitMandla()" class="submit btn">Mandla</button>
-        </div>
-        <div class="column">
-          <div class="card">
-            <img
-              style="width: 162px; height: 124px"
-              src="https://res.cloudinary.com/dgj1ebngq/image/upload/v1691071065/Tumi_eel2ma.jpg"
-            />
-          </div>
-          <div style="height: 60px">
-            <span>{{ tumiResponse }}</span>
-         </div>
-          <button (click)="submitTumi()" class="submit btn">Tumi</button>
-  
-        
-        </div>
-      </div>
-
-  </div>
   <app-footer></app-footer>
-</div> -->
+</div>

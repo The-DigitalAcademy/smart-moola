@@ -22,8 +22,6 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      // margin-left: 2.4em;
-      // left: 60em;
       text-align: center;
     }
 
@@ -32,7 +30,6 @@
       width: 70%;
       left: 7em;
     }
-
   }
 
   h5 {
@@ -48,7 +45,6 @@
     background-color: #F6F6F6;
   }
 
- 
   .column {
     display: flex;
     border: 1px solid black;
@@ -73,8 +69,6 @@
     }
   }
 
- 
-
   .submit {
     display: block;
     width: 100%;
@@ -86,15 +80,10 @@
     cursor: pointer;
     text-align: center;
     margin-top: -50em;
-   left: -1.6em;
+    left: -1.6em;
 
   }
-  
-  .footer
-  {
-      position: absolute;
-      bottom: 2em;    
-  }
+
 }
 
 /* Responsive columns - one column layout (vertical) on small screens */
@@ -133,5 +122,5 @@
 
 .submit:hover {
   background-color: #669BBC;
- 
+
 }
