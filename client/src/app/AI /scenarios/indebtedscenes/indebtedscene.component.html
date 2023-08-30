@@ -1,0 +1,105 @@
+<div class="container">
+
+  <div class="header">
+    <div class="back-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left"
+        viewBox="0 0 16 16" (click)="previousStatement()">
+        <path fill-rule="evenodd"
+          d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+      </svg>
+    </div>
+    <div class="pgbar">
+      <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
+        aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="background-color: #669bbc;" [style.width.%]="progressPercentage">{{
+          progressPercentage }}%</div>
+      </div>
+    </div>
+
+    <div class="body">
+
+      <img class="imagebox"
+        src="https://cdn.discordapp.com/attachments/1093145057919520828/1138459034161270844/Free_Vector___Calculator_concept_illustration-removebg-preview.png"
+        alt="">
+
+      <div class="statementdiv">
+        {{ getCurrentStatement() }}
+      </div>
+
+      <div class="questiondiv">
+        {{ getCurrentQuestion() }}
+        <form class="myForm">
+          <div>
+            <div class="firstSelect">
+              <label>
+                <input type="radio" name="selection" value="selection1" (change)="onSelectionChange($event)">
+                Debt Review
+              </label>
+            </div>
+
+            <div class="secondSelect">
+              <label>
+                <input type="radio" name="selection" value="selection2" (change)="onSelectionChange($event)">
+                Debt Counselling
+              </label>
+            </div>
+
+            <div class="thirdSelect">
+              <label>
+                <input type="radio" name="selection" value="selection3" (change)="onSelectionChange($event)">
+                Debt Consolidation
+              </label>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="height: 80%;"
+          data-bs-target="#staticBackdrop" (click)="submitForm()">Submit</button>
+      </div>
+
+    </div>
+
+    <div>
+      <!-- <h2>Selected: {{ currentSelectionValue }}</h2> -->
+    </div>
+
+    <div class="footer">
+      <div class="menu">
+        <app-footer></app-footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" style="margin-top: 6rem;" id="staticBackdrop" data-bs-backdrop="static"
+    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="creditHeading" style="padding-top: 1rem; height: 20%;">
+          <!-- <h2>Heading</h2> -->
+        </div>
+
+        <ng-container *ngIf="isResponseCorrect; else incorrectResponse">
+          Correct!
+          <div class="airesponse">
+            <!-- {{explanation}} -->
+          </div>
+        </ng-container>
+        <ng-template #incorrectResponse>
+          Incorrect!
+          <div class="airesponse">
+            {{explanation}}
+          </div>
+        </ng-template>
+
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+          (click)="updateTextScene()">Continue</button>
+      </div>
+
+    </div>
+  </div>
+</div>

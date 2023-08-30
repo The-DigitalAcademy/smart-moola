@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { CounterService } from '../services/counter.service';
+import { CounterService } from '../../../services/counter.service';
 import { SessionsService } from 'src/app/services/sessions.service';
 import { QuestionService } from 'src/app/services/question.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-mycomponent',
-  templateUrl: './mycomponent.component.html',
-  styleUrls: ['./mycomponent.component.scss']
+  selector: 'app-indebtedscene',
+  templateUrl: './indebtedscene.component.html',
+  styleUrls: ['./indebtedscene.component.scss']
 })
-export class MycomponentComponent implements OnInit {
+export class IndebtedScenesComponent implements OnInit {
 
   currentSelectionValue = '';
   statementIndex = 0;
@@ -21,8 +21,6 @@ export class MycomponentComponent implements OnInit {
   selectedValue = 'selection1';
   prompt = ''
   explanation = ''
-
-
 
   constructor(private counterService: CounterService,
     private router: Router,
@@ -72,8 +70,6 @@ export class MycomponentComponent implements OnInit {
     });
   }
 
-
-
   // updateTextScene() {
   //   this.progressPercentage =  (this.progressPercentage + 1)+ 33.33; // Increase progress by one-third (33.33%) 
   //   // if (increase) {
@@ -89,7 +85,6 @@ export class MycomponentComponent implements OnInit {
     this.progressPercentage = (this.progressPercentage + 1) * 33.33; // Update progress
   }
 
-
   previousStatement() {
     if (this.statementIndex > 0) {
       this.statementIndex--;
@@ -100,7 +95,6 @@ export class MycomponentComponent implements OnInit {
     }
 
   }
-
 
   // previousStatement() {
   //   if (this.statementIndex > 0) {
@@ -117,7 +111,6 @@ export class MycomponentComponent implements OnInit {
 
   onSelectionChange(event: Event) {
     const selectedValue = (event.target as HTMLInputElement).value;
-
 
     switch (selectedValue) {
       case 'selection1':
@@ -197,7 +190,4 @@ export class MycomponentComponent implements OnInit {
   //     this.progressPercentage = 0; // Reset progress
   //   }
   // }
-
-
-
 }
