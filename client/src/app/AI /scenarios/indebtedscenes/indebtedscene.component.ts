@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { CounterService } from '../services/counter.service';
+import { CounterService } from '../../../services/counter.service';
 import { SessionsService } from 'src/app/services/sessions.service';
 import { QuestionService } from 'src/app/services/question.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-mycomponent',
-  templateUrl: './mycomponent.component.html',
-  styleUrls: ['./mycomponent.component.css']
+  selector: 'app-indebtedscene',
+  templateUrl: './indebtedscene.component.html',
+  styleUrls: ['./indebtedscene.component.scss']
 })
-export class MycomponentComponent implements OnInit {
+export class IndebtedScenesComponent implements OnInit {
 
   currentSelectionValue = '';
   statementIndex = 0;
@@ -21,18 +21,16 @@ export class MycomponentComponent implements OnInit {
   selectedValue = 'selection1';
   prompt = ''
   explanation = ''
-  
-
 
   constructor(private counterService: CounterService,
     private router: Router,
     private questionsService: QuestionService,
-    private session: SessionsService) {}
+    private session: SessionsService) { }
 
   statement = [
     "Mbali asked for debt management help for medical bills and job loss, with a counselor creating a new repayment plan after negotiating with creditors.",
     "Meet Nandi, who has multiple debts from student loans, credit cards, and a car loan. It is hard for her to keep track of payments and interest rates.",
-    "what helps people in debt by creating a manageable repayment plan through a formal program with the assistance of a debt counselor?The goal is to negotiate with creditors and protect them from legal action."
+    "What helps people in debt by creating a manageable repayment plan through a formal program with the assistance of a debt counselor?The goal is to negotiate with creditors and protect them from legal action."
   ];
 
   questions = [
@@ -48,7 +46,7 @@ export class MycomponentComponent implements OnInit {
   ]
 
   ngOnInit() {
-    this.counterService.currentSelection.subscribe((selectionValue) => {
+    this.counterService.currentSelection.subscribe((selectionValue: any) => {
       this.currentSelectionValue = selectionValue;
     });
   }
@@ -72,8 +70,6 @@ export class MycomponentComponent implements OnInit {
     });
   }
 
-
-
   // updateTextScene() {
   //   this.progressPercentage =  (this.progressPercentage + 1)+ 33.33; // Increase progress by one-third (33.33%) 
   //   // if (increase) {
@@ -89,14 +85,16 @@ export class MycomponentComponent implements OnInit {
     this.progressPercentage = (this.progressPercentage + 1) * 33.33; // Update progress
   }
 
-
   previousStatement() {
     if (this.statementIndex > 0) {
       this.statementIndex--;
       this.updateTextScene();
+    } else {
+      // If it's the last scenario, navigate to the home page
+      this.router.navigate(['/summary2']); // Replace '/home' with your actual home page route
     }
-  }
 
+  }
 
   // previousStatement() {
   //   if (this.statementIndex > 0) {
@@ -104,22 +102,16 @@ export class MycomponentComponent implements OnInit {
   //     this.updateTextScene();
   //   }
 
-    
+
   //   // if (this.statementIndex > 0) {
   //   // this.statementIndex--;
   //   // this.updateTextScene(false); // Decrease progress
   //   // }
   // }
 
-
-  
-
-
-
   onSelectionChange(event: Event) {
     const selectedValue = (event.target as HTMLInputElement).value;
-    
-   
+
     switch (selectedValue) {
       case 'selection1':
         this.selection1();
@@ -144,7 +136,7 @@ export class MycomponentComponent implements OnInit {
         break;
       default:
 
-       this.selection1();
+        this.selection1();
 
         this.prompt = 'What is Debt Counselling?'
         this.session.saveActiveQuestion('selection2');
@@ -164,8 +156,6 @@ export class MycomponentComponent implements OnInit {
   selection3() {
     this.counterService.selection3();
   }
-   
-  
 
   getCurrentStatement(): string {
     return this.statement[this.statementIndex];
@@ -174,15 +164,12 @@ export class MycomponentComponent implements OnInit {
   getCurrentQuestion(): string {
     return this.questions[this.statementIndex];
   }
- 
-  
 
   submitForm() {
-    
+
     const selectedAnswer = this.currentSelectionValue;
     const correctAnswer = this.correct[this.statementIndex];
     this.getMeaning();
-    
 
     if (selectedAnswer === correctAnswer) {
       this.isResponseCorrect = true; // Set response to correct
@@ -192,9 +179,8 @@ export class MycomponentComponent implements OnInit {
 
     this.statementIndex++; // Move to the next loop
 
-
   }
-  
+
   // continueModal() {
   //   this.statementIndex++; // Move to the next loop
   //   if (this.statementIndex < this.statement.length) {
@@ -204,7 +190,4 @@ export class MycomponentComponent implements OnInit {
   //     this.progressPercentage = 0; // Reset progress
   //   }
   // }
-  
-
-  
 }

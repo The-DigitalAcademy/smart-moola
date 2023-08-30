@@ -1,12 +1,8 @@
-.container
-{
+.container {
     width: 100%;
-    // height: 100vh;
     background-color: var(--WHITE);
 
-
-    .header{
-        
+    .header {
 
         h2 {
             color: var(--main-color);
@@ -14,27 +10,25 @@
             text-align: center;
             font-weight: bolder;
 
-            
         }
+
         background-color: var(--WHITE);
         height: 15%;
         padding-top: 4%;
         padding-bottom: 4%;
 
-       .pgbar{
-         margin-top: 1%;
-         width: 22rem;
-         height: 1rem;
-         margin-left: 2%;
-         margin-right: 2%;
-         margin-bottom: 1%;
-         padding-top: 5%;
-        
-       } 
-        
+        .pgbar {
+            margin-top: 1%;
+            width: 22rem;
+            height: 1rem;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 1%;
+            padding-top: 5%;
+        }
     }
-    
-    .body{
+
+    .body {
         height: 65%;
         width: 100%;
         color: var(--main-color);
@@ -44,70 +38,66 @@
         background: #F6F6F6;
         border-radius: 0.5rem;
 
-        .topStatement{
+        .topStatement {
             height: 25%;
             padding-left: 1rem;
             padding-right: 1rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
-           
-            .statement{
+
+            .statement {
                 text-align: center;
                 font-size: 14px;
                 font-weight: bolder;
             }
-           
         }
 
-        .TheImage{
+        .TheImage {
 
             height: 50%;
-            .imagebox1{
-                width: 100%;
-                 height: 100%;
-            }
 
+            .imagebox1 {
+                width: 100%;
+                height: 100%;
+            }
         }
 
-        .BottomStatement{
+        .BottomStatement {
             height: 25%;
             padding-left: 1rem;
             padding-right: 1rem;
             margin-top: 1rem;
             padding-top: 2rem;
             padding-bottom: 2rem;
-           
-            .statement2{
+
+            .statement2 {
                 text-align: center;
                 font-size: 14px;
                 font-weight: bolder;
             }
-           
         }
- 
-
     }
 
-    .btnNext
-    {
+    .btnNext {
         height: 10%;
         background-color: var(--WHITE);
         padding-top: 2rem;
         padding-top: 2rem;
-        padding-left: 3rem;
-        .btn{
-            width: 80%;  
+        // padding-left: 3rem;
+
+        .btn {
+            width: 100%;
             text-align: center;
             color: var(--WHITE);
-            cursor: pointer; 
+            cursor: pointer;
             border: none;
             background-color: var(--main-color);
+
             &:hover {
                 background-color: #175175;
             }
         }
     }
-    
-  
-}
 
+
+}

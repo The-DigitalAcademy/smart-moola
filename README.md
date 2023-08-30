@@ -1,1 +1,1 @@
-# smart-moola
+# Smart-moola

@@ -6,7 +6,6 @@ export interface User {
     password: String,
     confirmPassword: String
 }
-
 // User login model 
 export interface UserLogin {
     email: String,
@@ -17,7 +16,6 @@ export interface PasswordUpdate {
     password: string,
     confirmPassword: string
 }
-
 // Registering a user model
 export interface CreateUserResponse {
     message: string;
@@ -25,7 +23,6 @@ export interface CreateUserResponse {
     fullName: string;
     email: string;
 }
-
 // Loggin in response model
 export interface LoginResponse {
     id: string;
