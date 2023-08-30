@@ -13,7 +13,7 @@ export class MycomponentComponent implements OnInit {
 
   currentSelectionValue = '';
   statementIndex = 0;
-  progressPercentage = 33.33;
+  progressPercentage = 0;
   isResponseCorrect = false;
 
   //FROM NO DEBT USER
@@ -30,15 +30,15 @@ export class MycomponentComponent implements OnInit {
     private session: SessionsService) {}
 
   statement = [
-    "Statement1",
-    "Statement2",
-    "Statement3"
+    "Mbali asked for debt management help for medical bills and job loss, with a counselor creating a new repayment plan after negotiating with creditors.",
+    "Meet Nandi, who has multiple debts from student loans, credit cards, and a car loan. It is hard for her to keep track of payments and interest rates.",
+    "what helps people in debt by creating a manageable repayment plan through a formal program with the assistance of a debt counselor?The goal is to negotiate with creditors and protect them from legal action."
   ];
 
   questions = [
-    "Questioin1",
-    "Questioin2",
-    "Questioin3"
+    "Which debt management program helped Mbali? Select One answer",
+    "Which debt management do you think Nandi needs? Select One answer",
+    "what helps people in debt by creating a manageable repayment plan"
   ];
 
   correct = [
@@ -74,9 +74,21 @@ export class MycomponentComponent implements OnInit {
 
 
 
+  // updateTextScene() {
+  //   this.progressPercentage =  (this.progressPercentage + 1)+ 33.33; // Increase progress by one-third (33.33%) 
+  //   // if (increase) {
+  //   //   this.progressPercentage += 33.33; // Increase progress by one-third (33.33%)
+  //   // } else {
+  //   //   this.progressPercentage -= 33.33; // Decrease progress by one-third (33.33%)
+  //   // }
+  // }
+
   updateTextScene() {
-    this.progressPercentage += 33.33; // Increase progress by one-third (33.33%)
+    // this.currentStatement = this.statements[this.currentStatementIndex];
+    // this.currentQuestion = this.questions[this.currentStepIndex];
+    this.progressPercentage = (this.progressPercentage + 1) * 33.33; // Update progress
   }
+
 
   previousStatement() {
     if (this.statementIndex > 0) {
@@ -86,7 +98,21 @@ export class MycomponentComponent implements OnInit {
   }
 
 
-  //progressPercentage = 25;
+  // previousStatement() {
+  //   if (this.statementIndex > 0) {
+  //     this.statementIndex--;
+  //     this.updateTextScene();
+  //   }
+
+    
+  //   // if (this.statementIndex > 0) {
+  //   // this.statementIndex--;
+  //   // this.updateTextScene(false); // Decrease progress
+  //   // }
+  // }
+
+
+  
 
 
 
@@ -168,7 +194,16 @@ export class MycomponentComponent implements OnInit {
 
 
   }
-
+  
+  // continueModal() {
+  //   this.statementIndex++; // Move to the next loop
+  //   if (this.statementIndex < this.statement.length) {
+  //     this.updateTextScene(true); // Increase progress
+  //   } else {
+  //     this.statementIndex = 0; // Reset back to the first loop
+  //     this.progressPercentage = 0; // Reset progress
+  //   }
+  // }
   
 
   
