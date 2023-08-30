@@ -12,7 +12,14 @@ progressPercentage: any;
   constructor( 
   private usersServices: UsersService
   ){}
-  ngOnInit(): void {
+
+  fullName: any = '';
+
+  getLoggedInUserName() {
+    this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName
+    console.log(this.fullName);
+  }
+ ngOnInit(): void {
   }
   goBack(){
     this.usersServices.previousPage();

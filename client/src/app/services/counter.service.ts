@@ -37,4 +37,4 @@ export class CounterService {
   selectionC() {
     this.selection.next('Debtor Status');
   }
-};
+}

@@ -1,0 +1,105 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--WHITE);
+
+    .header {
+        background-color: var(--WHITE);
+        height: 15%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+
+        .back-button {
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            width: 22rem;
+            padding-left: 1%;
+            padding-right: 4%;
+            color: var(--main-color);
+        }
+
+        .pgbar {
+            margin-top: 1%;
+            width: 22rem;
+            height: 1rem;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 1%;
+            padding-top: 5%;
+        }
+    }
+
+    .body {
+        height: 75%;
+        width: 100%;
+        color: var(--main-color);
+        font-size: 12px;
+        padding-top: 4%;
+        padding-bottom: 4%;
+
+        .imagebox {
+            width: 20rem;
+            height: 15rem;
+        }
+
+        .statementdiv {
+            font-weight: bold;
+            margin-top: 0.1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 0.2rem;
+            padding-right: 0.1rem;
+            background-color: #F6F6F6;
+            border-radius: 2%;
+            height: 17%;
+        }
+
+        .statementdiv {
+            background-color: #F6F6F6;
+            margin-bottom: 5em;
+            padding: 10px;
+        }
+
+        .questiondiv {
+            background-color: #F6F6F6;
+            border-radius: 2%;
+            padding: 10px;
+            margin-bottom: 5em;
+
+        }
+
+        .btn-group {
+            align-content: center;
+            margin-top: 1rem;
+            gap: 2rem;
+            width: 100%;
+
+            .btn {
+                text-align: center;
+                color: var(--WHITE);
+                cursor: pointer;
+                border: none;
+                background-color: var(--main-color);
+
+                width: 100%;
+
+                &:hover {
+                    background-color: #175175;
+                }
+            }
+
+        }
+
+    }
+
+    .modal {
+        padding: 20px;
+        background-color: pink;
+
+        .modal-content {
+            background-color: green;
+        }
+    }
+}
