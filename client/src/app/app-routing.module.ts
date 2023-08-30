@@ -58,7 +58,6 @@ const routes: Routes = [
   { path: 'footer', component: FooterComponent },
 
   { path: 'modalresponse', component: ModalContentComponent },
-
 ];
 
 @NgModule({
