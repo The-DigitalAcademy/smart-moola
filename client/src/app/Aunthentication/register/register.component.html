@@ -46,10 +46,12 @@
       </div>
     </div>
 
-    <div class="box">
+    <!-- <div class="box">
       <label for="userImage">Image</label>
-      <input type="image" id="userImage"/>
-    </div>
+      <input type="file" id="userImage" formControlName="userImage"/>
+      <div *ngIf="form.get('userImage')?.errors?.['required']" class="error">Image is
+        required.</div>
+    </div> -->
 
     <button type="submit" class="submit" [disabled]="form.invalid"><a>Submit</a></button>
     <p>Already have an account? <a href="login" class="anchor">Login</a></p>

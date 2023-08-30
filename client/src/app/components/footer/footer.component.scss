@@ -1,20 +1,27 @@
-.Nav-icons {
-    background-color: #F6F6F6;
-    margin-left: 0rem;
-    width: 23rem;
-    height: 3rem;
-    border-radius: 5%;
-    padding-top: 2%;
-    top: 20%;
+.container{
+    display: flex;
+    justify-content: center;
+    .Nav-icons {
+        background-color: #F6F6F6;
+        // margin-left: 0rem;
+        // width: 23rem;
+        height: 3rem;
+        border-radius: 5%;
+        // padding-top: 2%;
+        // top: 20%;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     
-    #clickable-icon {
-        transition: transform 0.3s;
-        /* Add a smooth transition effect */
+        #clickable-icon {
+            transition: transform 0.3s;
+            /* Add a smooth transition effect */
+        }
+    
+        #clickable-icon.clicked {
+            transform: scale(1.2);
+            /* Increase the size of the icon when clicked */
+        }
+    
     }
-
-    #clickable-icon.clicked {
-        transform: scale(1.2);
-        /* Increase the size of the icon when clicked */
-    }
-
 }

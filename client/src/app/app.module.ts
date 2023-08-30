@@ -7,8 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
 
-
 import { AppComponent } from './app.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './Aunthentication/login/login.component';
 import { RegisterComponent } from './Aunthentication/register/register.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
@@ -21,23 +21,20 @@ import { PasswordUpdateComponent } from './Aunthentication/password-update/passw
 import { responseComponent } from './AI /response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
-
-
 import { Summary2Component } from './components/summary2/summary2.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component';
-import { indebtedScenesComponent } from './AI /scenarios/indebted-scenes/indebted-scenes.component';
+import { IndebtedScenesComponent } from './AI /scenarios/indebtedscenes/indebtedscene.component';
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
-import { MycomponentComponent } from './mycomponent/mycomponent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
     LoginComponent,
     RegisterComponent,
     LandingPageComponent,
@@ -56,16 +53,14 @@ import { MycomponentComponent } from './mycomponent/mycomponent.component';
     PasswordUpdateComponent,
     NavigationMenuComponent,
     SummaryComponent,
+    Summary2Component,
     NoDebtUserComponent,
-    FooterComponent,
-    indebtedScenesComponent,
+    IndebtedScenesComponent,
     IndebtedUserComponent,
-    
     ModalContentComponent,
     NoDebtUserComponent,
     NoDebtComponent,
     WrongAnswersComponent,
-    MycomponentComponent
   ],
 
   imports: [
@@ -74,7 +69,6 @@ import { MycomponentComponent } from './mycomponent/mycomponent.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    
     FormsModule,
     JwtModule.forRoot({
       config: {
@@ -83,7 +77,6 @@ import { MycomponentComponent } from './mycomponent/mycomponent.component';
         },
       },
     }),
-   
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent],

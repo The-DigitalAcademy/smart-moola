@@ -24,7 +24,8 @@ export class RegisterComponent {
       fullName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
+      userImage: ['', Validators.required]
     }, { validators: this.passwordMatchValidator });
   }
 
@@ -43,6 +44,7 @@ export class RegisterComponent {
     if (this.form.valid) {
       const fullName = this.form.value.fullName;
       const email = this.form.value.email;
+      // const userImage = this.form.userImage;
 
       this.userService.createUser(this.form.value).subscribe(
         (data: any) => {
@@ -58,6 +60,7 @@ export class RegisterComponent {
               localStorage.setItem('ID', id.toString());
               localStorage.setItem('FullName', fullName);
               localStorage.setItem('Email', email);
+              // localStorage.setItem('Image', userImage);
 
               Swal.fire({
                 icon: 'success',

@@ -20,12 +20,9 @@ export class responseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.explanation = localStorage.getItem("explanation");
+    this.explanation = localStorage.getItem("explanation");
 
-    this.explanation = "Credit is an agreement between two parties where one party provides money, goods, or services to another party and the other party agrees to repay the amount received in the future, usually with interest. In other words, credit is a type of loan or debt. It is a way of purchasing goods"
-
-
-
+    // this.explanation = this.explanation;
     this.getLoggedInUserName();
     console.log(this.getLoggedInUserName())
   }
