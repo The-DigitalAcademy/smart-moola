@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
+
   .profile {
     background-color: #ffffff;
     display: flex;
@@ -72,6 +73,7 @@
           position: absolute;
           top: 330px;
           width: 155px;
+          text-decoration: none;
         }
 
         .text-wrapper-4 {

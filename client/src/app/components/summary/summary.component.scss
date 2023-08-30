@@ -1,17 +1,17 @@
 * {
   margin: 0;
   padding: 2px;
+  padding: 2px;
   box-sizing: border-box;
 }
 
 .container1 {
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   height: 100vh;
 
   .header {
@@ -20,9 +20,8 @@
     align-items: center;
     width: 100%;
 
-
     .progress-bar {
-      background-color: #669BBC;
+      background-color: #669bbc;
     }
 
     .progress {
@@ -48,12 +47,11 @@
 
     .bi {
       margin-bottom: 10rem;
-
     }
   }
 
   h5 {
-    color: #669BBC;
+    color: #669bbc;
     font-weight: 800;
   }
 
@@ -61,36 +59,26 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 1em;
-
   }
-
   .card {
     display: flex;
     flex-direction: column;
-    background-color: #669BBC;
+    background-color: #669bbc;
     text-align: center;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 10px;
-    ;
     margin-top: 3rem;
     padding: 15px 20px;
     width: 90vw;
     border-radius: 20px;
     border: 1px solid black;
 
-    p {
-      font-size: large;
-      margin-bottom: 20px;
-    }
-
+//Absa credit package component
     a {
-      background-color: #FFFFFF;
+      background-color: #ffffff;
       width: 100%;
-      color: #669BBC;
-
-
+      color: #669bbc;
     }
-
   }
 
   .submit-1 {
@@ -104,6 +92,8 @@
     text-decoration: none;
     text-align: center;
     position: flex;
-    margin-top: 8em;
+    margin-top: 2em; 
   }
+  
+
 }

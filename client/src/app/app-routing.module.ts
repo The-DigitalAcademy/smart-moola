@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { RegisterComponent } from './Aunthentication/register/register.component';
@@ -25,9 +25,9 @@ import { SummaryComponent } from './components/summary/summary.component';
 import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { MycomponentComponent } from './mycomponent/mycomponent.component';
+import { Summary2Component } from './components/summary2/summary2.component';
 
 const routes: Routes = [
-
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'landing', component: LandingPageComponent },
   { path: 'getstarted', component: GetstartedPageComponent },
@@ -37,7 +37,7 @@ const routes: Routes = [
 
   { path: 'resetpassword', component: PasswordResetComponent },
 
-  { path: 'no-debt', component: NoDebtComponent },
+  // { path: 'no-debt', component: NoDebtComponent },
   { path: 'no-debt-user', component: NoDebtUserComponent },
 
   { path: 'profile', component: ProfileComponent },
@@ -51,6 +51,7 @@ const routes: Routes = [
   { path: 'password-update', component: PasswordUpdateComponent },
   { path: 'menu', component: NavigationMenuComponent },
   { path: 'summary', component: SummaryComponent },
+  { path: 'summary2', component: Summary2Component },
 
   { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent},
@@ -63,6 +64,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

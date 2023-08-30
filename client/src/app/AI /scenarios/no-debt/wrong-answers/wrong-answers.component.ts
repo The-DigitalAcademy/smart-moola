@@ -9,13 +9,17 @@ import { LoaderService } from 'src/app/services/Loader';
 })
 export class WrongAnswersComponent implements OnInit {
 
-  constructor(private router: Router, public loaderService: LoaderService) { }
+  constructor(private router : Router, public loaderService: LoaderService) { }
 
   ngOnInit() {
-    setTimeout(() => {
+
+    
+  setTimeout(() => {
       this.loaderService.startLoader()
       this.router.navigate(['/response'])
       this.loaderService.stopLoader();
-    }, 3000)
+    }, 3000)  
+
   }
+
 }

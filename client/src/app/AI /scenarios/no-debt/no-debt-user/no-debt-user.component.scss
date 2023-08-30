@@ -3,13 +3,17 @@
   position: fixed;
   margin-bottom: 10px;
 
+  .back-button
+  {
+    margin-top: 5em;
+    margin-left: 1em;
+  }
+
   .questions {
     padding: 3px;
-    margin-bottom: 2em;
-    border: 1px solid black;
     border-radius: 10px;
-    background-color: #f1f1f1;
-    height: 65%;
+    background-color: #f6f6f6;
+    height: 64vh;
 
     .column {
       float: left;
@@ -23,17 +27,16 @@
         background-color: #f1f1f1;
         color: #669bbc;
         border: 1px solid;
+        font-size: 18x;
       }
     }
   }
-
-  .header {
-    h1 {
-      margin-top: 5vh;
-      text-align: center;
-      color: #669bbc;
-      font-weight: 700;
-    }
+ 
+  .textStyle{
+    text-align: center;
+    color: #669bbc;
+    font-weight: 600;
+    margin-top: -2em;
   }
 
   h5 {
@@ -58,21 +61,9 @@
     margin-top: -45em;
   }
 
-  .backBtn {
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    padding: 10px;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-  }
-
   .footer {
     position: absolute;
-    bottom: 1em;
+    bottom: 14px;
   }
 
   .btns {
@@ -86,6 +77,8 @@
     color: #669bbc;
     font-weight: 400;
   }
+
+
 }
 
 

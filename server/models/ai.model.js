@@ -6,7 +6,7 @@ async function getExplanationForQuestion(req, res) {
 
   try {
     const explanation = await getExplanationForWord(question);
-    res.json({ explanation });
+    res.json({ explanation});
   } catch (error) {
     console.error('Error fetching explanation:', error.message);
     res.status(500).json({ error: 'Error fetching explanation' });

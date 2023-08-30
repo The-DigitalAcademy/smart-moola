@@ -24,13 +24,70 @@
     }
 
     .body{
-        height: 80%;
+        height: 75%;
         width: 100%;
-        background-color: aquamarine;
-        .radio-group label {
-            display: block;
-            margin-bottom: 10px; /* Adjust the spacing as needed */
-          }
+        color: var(--main-color);
+        font-size: 12px;
+        padding-top: 4%;
+        padding-bottom: 4%;
+
+        .imagebox{
+            width: 20rem;
+            height: 15rem;
+        }
+
+        .statementdiv{
+            font-weight: bold;
+            margin-top: 0.1rem;
+            margin-bottom: 0.5rem;
+            padding-left: 0.2rem;
+            padding-right: 0.1rem;
+            background-color: #F6F6F6;
+            border-radius: 2%;
+            height: 17%;
+        }
+
+        .questiondiv{
+            background-color: #F6F6F6;
+            border-radius: 2%;
+            height: 32%;
+        }
+
+
+        .myForm{
+            padding-top: 0.5rem;
+            background-color:#F6F6F6;
+        }
+
+        .btn-group{
           
+            align-content: center;
+            margin-top: 1rem;
+            margin-left: 5rem;
+
+            gap: 2rem;
+            width: 50%;
+            .btn{
+               
+                text-align: center;
+                color: var(--WHITE);
+                cursor: pointer; 
+                border: none;
+                background-color: var(--main-color);
+                &:hover {
+                    background-color: #175175;
+                }
+            }
+           
+        }
+       
+          
+    }
+
+    .footer
+    {
+        height: 10%;
+        padding-top: 5%;
+        
     }
 }

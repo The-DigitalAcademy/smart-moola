@@ -3,9 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
-
 export class HomeComponent {
   userTypes = ['debt-free-user', 'indebted'];
   selectedUserType: string = '';
@@ -18,6 +17,6 @@ export class HomeComponent {
 
   ngOnInit() {
     this.getLoggedInUserName();
-    console.log(this.getLoggedInUserName())
+    console.log(this.getLoggedInUserName());
   }
 }
