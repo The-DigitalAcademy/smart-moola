@@ -18,7 +18,6 @@
 
   </div>
 
-
   <div class="body">
     <img class="imagebox"
       src="https://cdn.discordapp.com/attachments/1093145057919520828/1138459034161270844/Free_Vector___Calculator_concept_illustration-removebg-preview.png"
@@ -30,30 +29,30 @@
         <!-- <p class="question">
                 What will be affected below based on Mbali’s scenario? Select One answer
             </p> -->
-            <p class="question">{{ currentQuestion }}</p>
-            
-            <input class="option1" type="radio" id="Credit limit" name="debt-manage" value="Credit limit">
-            <label class="lbl1" for="dog">{{ labels[currentStepIndex].text }}</label><br>
-    
-            <input class="option2" type="radio" id="Credit Score" name="debt-manage" value="Credit Score">
-            <label class="lbl2" for="monkey">{{ labels[currentStepIndex].text2 }}</label><br>
-    
-            <input class="option3" type="radio" id="Debtor status" name="debt-manage" value="Debtor status">
-            <label class="lbl3" for="cat">{{ labels[currentStepIndex].text3 }}</label><br>
-    
-        </form>
-      </div>
-    
-      <div class="btn-group">
-       <!-- <button class="btn" (click)="previousStatement()">Previous</button> -->
-        <button class="btn" (click)="nextStatement()" [disabled]="isRadioSelected">Submit</button>
-      </div>
+        <p class="question">{{ currentQuestion }}</p>
+
+        <input class="option1" type="radio" id="Credit limit" name="debt-manage" value="Credit limit">
+        <label class="lbl1" for="dog">{{ labels[currentStepIndex].text }}</label><br>
+
+        <input class="option2" type="radio" id="Credit Score" name="debt-manage" value="Credit Score">
+        <label class="lbl2" for="monkey">{{ labels[currentStepIndex].text2 }}</label><br>
+
+        <input class="option3" type="radio" id="Debtor status" name="debt-manage" value="Debtor status">
+        <label class="lbl3" for="cat">{{ labels[currentStepIndex].text3 }}</label><br>
+
+      </form>
     </div>
-    
-    <div class="footer">
-      <div class="menu">
-        <app-footer></app-footer>
-      </div>
+
+    <div class="btn-group">
+      <!-- <button class="btn" (click)="previousStatement()">Previous</button> -->
+      <button class="btn" (click)="nextStatement()" [disabled]="isRadioSelected">Submit</button>
     </div>
-    
+  </div>
+
+  <div class="footer">
+    <div class="menu">
+      <app-footer></app-footer>
     </div>
+  </div>
+
+</div>
