@@ -6,12 +6,12 @@ import { QuestionService } from '../../services/question.service';
   templateUrl: './response.component.html',
   styleUrls: ['./response.component.scss']
 })
-
 export class responseComponent implements OnInit {
   question!: '';
-  explanation: any;
+  @Input() explanation: any;
   error!: string;
   word: any;
+  router: any;
   fullName: any = '';
 
   constructor(private questionService: QuestionService) { }
@@ -30,9 +30,10 @@ export class responseComponent implements OnInit {
   getMeaning() {
     this.questionService.sendQuestionAndGetExplanation(this.question).subscribe(data => {
       console.log(data.explanation)
-      this.explanation = data.explanation
+     this.explanation = data.explanation
     })
   }
+
 
   getLoggedInUserName() {
     this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName

@@ -20,7 +20,6 @@ export class NoDebtUserComponent implements OnInit {
 
   question = '';
   active = 'q1';
-
   mandlaResponse = "";
   tumiResponse = "";
   prompt = ''
@@ -51,6 +50,7 @@ export class NoDebtUserComponent implements OnInit {
       }
     });
   }
+  
 
   //Send prompt to AI and display explaination from the AI 
   getMeaning() {
@@ -88,7 +88,6 @@ export class NoDebtUserComponent implements OnInit {
         this.session.saveActiveQuestion('q3');
         this.progressPercentage = 30;
         break;
-
       case 'q3':
         this.question =
           'Between Mandla and Tumi is correct about credit score ';

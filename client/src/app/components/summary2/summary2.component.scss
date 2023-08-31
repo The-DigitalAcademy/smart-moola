@@ -10,32 +10,20 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: -12em;
-
-    .backBtn {
-      display: block;
-      width: 4rem;
-      height: 4rem;
-      padding: 10px;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
-
-    }
+    // margin-top: 2em;
 
     .bi-arrow-left {
       position: absolute;
-      /* Position the SVG absolutely */
       left: 8;
-      /* Place it at the left edge of the container */
-      margin-bottom: 6em;
       margin-top: -2em;
     }
 
-    .progress{
-      width: 100%;;
+    .progress {
+      width: 100%;
+      height: 1.8em;
+      border-radius: 50px;
+      margin-bottom: 2em;
+      margin-top: 1em; 
     }
     .progress-bar {
       background-color: #669BBC;
@@ -43,11 +31,11 @@
   }
 
   h5 {
-    color: #669BBC;
-    font-weight: 800;
+    color: #669bbc;
+    font-weight: 500;
     text-align: center;
-    margin-bottom: 1em;
-    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-top: -10em;
 
   }
 
@@ -56,12 +44,23 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
+
+
+
+.contentCard{
+  
+  padding: 2px;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  width: 95%;
   .card-container {
+
     flex-direction: row;
     justify-content: space-between;
     gap: 1em;
+    margin-top: 1em;
 
 
     .card {
@@ -70,35 +69,15 @@
       background-color: #669BBC;
       text-align: center;
       color: #FFFFFF;
-      padding: 10px;
+      padding: 20px;
       border-radius: 20px;
-      margin-top: 3rem;
-      padding: 15px 20px;
+      margin-top: 2em;
+      padding: 25px 20px;
       width: 90vw;
-      border: 1px solid black;
+      border: 1px solid #f6f6f6;
 
-
-      p {
-        font-size: largef;
-        margin-bottom: 20px;
-        color: #669BBC;
-        text-align: center;
-        padding: 10px;
-        // background-color: pink;
-      }
-
-      .a {
-        background-color: #FFFFFF;
-        color: #669BBC;
-
-      }
-
-      .amdBtn {
-        background-color: #FFFFFF;
-        color: #669BBC;
-        font-weight: 500;
-      }
-
+    }
+  
       .ndaBtn {
         background-color: #FFFFFF;
         color: #669BBC;

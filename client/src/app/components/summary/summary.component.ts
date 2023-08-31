@@ -18,5 +18,10 @@ export class SummaryComponent implements OnInit {
   goBack(){
     this.usersServices.previousPage
   }
+  fullName: any = '';
 
+  getLoggedInUserName() {
+    this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName
+    console.log(this.fullName);
+  }
 }
