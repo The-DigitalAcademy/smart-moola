@@ -5,6 +5,7 @@
   justify-content: center;
   height: 100vh;
   background-color: #ffffff;
+  position: fixed;
 
   .header {
     display: flex;
@@ -45,6 +46,7 @@
     border: 1px solid var(--main-color);
     border-radius: 20px;
 
+
     .content {
       color: var(--main-color);
       font-size: 12px;
@@ -60,32 +62,31 @@
       text-align: center;
       color: #ffffff;
       margin-top: 2rem;
-      margin-bottom: -4rem;
       padding: 15px 20px;
       border-radius: 20px;
     }
 
     .ndaBtn {
       background-color: #FFFFFF;
-      color: #669BBC;
-      font-weight: 500;
-      width: 100%;
-      margin-top: 2em;
+      color: var(--main-color);
     }
 
-
-    button {
+    submit {
       padding: 10px;
       background-color: var(--main-color);
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      margin-bottom: 2rem;
-      top: 13em;
-      width: 100%;
     }
-
   }
+}
 
+@media (max-width: 414px) {
+  .submit {
+    padding: 10px;
+    position: relative;
+    width: auto;
+    top: 7em;
+  }
 }
