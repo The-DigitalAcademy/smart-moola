@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -20em;
+    margin-top: -15em;
 
     .backAndTitle {
       display: flex;
@@ -42,12 +42,20 @@
     padding: 10px;
     border-radius: 10px;
     background-color: #f6f6f6;
-    margin-top: 3em;
+    margin-top: 5em;
     border: 1px solid var(--main-color);
+    border-radius: 20px;
 
-    .card{
-      background-color: green;
-      height: 20vh;
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: #669bbc;
+      text-align: center;
+      color: #ffffff;
+      margin-top: 2rem;
+      padding: 15px 20px;
+      border-radius: 20px;
     }
 
     .content {
@@ -56,14 +64,16 @@
       font-weight: 400;
       display: flex;
       justify-content: center;
-
+      align-items: center;
     }
 
     .ndaBtn {
       background-color: #FFFFFF;
       color: #669BBC;
       font-weight: 500;
-      margin-bottom: -4em;
+      width: 100%;
+      margin-top: 2em;
+      // margin-bottom: -4em;
     }
 
 
