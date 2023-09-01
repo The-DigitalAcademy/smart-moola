@@ -1,92 +1,71 @@
-* {
-  margin: 0;
-  padding: 2px;
-  box-sizing: border-box;
-}
-
 .container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
 
   .header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    // margin-top: 2em;
+    margin-top: -20em;
 
-    .bi-arrow-left {
-      position: absolute;
-      left: 8;
-      margin-top: -2em;
+    .backAndTitle {
+      display: flex;
+      flex-direction: row;
+
+      h5 {
+        color: #669bbc;
+        font-weight: 600;
+        text-align: center;
+      }
     }
 
     .progress {
       width: 100%;
-      height: 1.8em;
-      border-radius: 50px;
-      margin-bottom: 2em;
-      margin-top: 1em; 
+      background-color: pink;
+      margin-top: -3em;
     }
+
     .progress-bar {
       background-color: #669BBC;
     }
   }
 
-  h5 {
-    color: #669bbc;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 2em;
-    margin-top: -10em;
+  .contentCard {
 
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    margin-top: 3em;
+    border: 1px solid var(--main-color);
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #ffffff;
+    .card{
+      background-color: green;
+      height: 20vh;
+    }
 
-
-
-
-.contentCard{
-  
-  padding: 2px;
-  border-radius: 10px;
-  background-color: #f6f6f6;
-  width: 95%;
-  .card-container {
-
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1em;
-    margin-top: 1em;
-
-
-    .card {
+    .content {
+      color: #669BBC;
+      font-size: 12px;
+      font-weight: 400;
       display: flex;
-      flex-direction: column;
-      background-color: #669BBC;
-      text-align: center;
-      color: #FFFFFF;
-      padding: 20px;
-      border-radius: 20px;
-      margin-top: 2em;
-      padding: 25px 20px;
-      width: 90vw;
-      border: 1px solid #f6f6f6;
+      justify-content: center;
 
     }
-  
-      .ndaBtn {
-        background-color: #FFFFFF;
-        color: #669BBC;
-        font-weight: 500;
-        margin-top: 2.5em;
-        margin-bottom: -1em;
-      }
 
+    .ndaBtn {
+      background-color: #FFFFFF;
+      color: #669BBC;
+      font-weight: 500;
+      margin-bottom: -4em;
     }
+
 
     button {
       padding: 10px;
@@ -102,11 +81,4 @@
 
   }
 
-  .content {
-    padding: 20px;
-    color: #669BBC;
-    font-size: 12px;
-    font-weight: 400;
-    margin-bottom: -3em;
-  }
 }

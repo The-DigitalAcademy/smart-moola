@@ -79,6 +79,11 @@ export class UsersService {
   }
 
   previousPage() {
-    this.location.back();
+    this.location.back()
+    if (this.location.path() == '/response') {
+      this.location.back()
+    } else {
+      this.location.back();
+    }
   }
 }
