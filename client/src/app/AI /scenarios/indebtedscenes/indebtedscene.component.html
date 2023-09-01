@@ -26,7 +26,8 @@
       </div>
 
       <div class="questiondiv">
-        {{ getCurrentQuestion() }}
+        <!-- {{ getCurrentQuestion() }} -->
+        <div [innerHTML]="getCurrentQuestion()"></div>
         <form class="myForm">
           <div>
             <div class="firstSelect">

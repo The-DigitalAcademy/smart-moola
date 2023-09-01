@@ -35,9 +35,9 @@ export class IndebtedScenesComponent implements OnInit {
   ];
 
   questions = [
-    `Which debt management program helped Mbali? <br> Select One answer:`,
-    "Which debt management do you think Nandi needs? Select One answer:",
-    "What helps people in debt by creating a manageable repayment plan:"
+    `Which debt management program helped Mbali? <br> <strong>Select One answer:</strong>`,
+    `Which debt management do you think Nandi needs? <br> <strong>Select One answer:</strong>`,
+    `What helps people in debt by creating a manageable repayment plan:`
   ];
 
   correct = [
@@ -209,5 +209,5 @@ export class IndebtedScenesComponent implements OnInit {
   updateTextScene() {
     this.progressPercentage = ((this.statementIndex + 1) / this.statement.length) * 75;
   }
-  
+
 }
