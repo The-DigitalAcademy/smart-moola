@@ -1,0 +1,15 @@
+.modal {
+    padding: 20px;
+
+    .modal-content {
+        padding: 20px;
+
+        .airesponse {
+            padding: 5px;
+        }
+
+        button {
+            background-color: var(--main-color);
+        }
+    }
+}
