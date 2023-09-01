@@ -3,6 +3,8 @@ import { CounterService } from '../../../services/counter.service';
 import { SessionsService } from 'src/app/services/sessions.service';
 import { QuestionService } from 'src/app/services/question.service';
 import { Router } from '@angular/router';
+import { Loader } from 'ngx-ui-loader';
+import { LoaderService } from 'src/app/services/Loader';
 
 @Component({
   selector: 'app-indebtedscene',
@@ -16,17 +18,20 @@ export class IndebtedScenesComponent implements OnInit {
   statementIndex = 0;
   progressPercentage = 0;
   isResponseCorrect = false;
+  selectedValue = '';
 
   //FROM NO DEBT USER
   question = '';
-  selectedValue = 'selection1';
   prompt = ''
   explanation = ''
+  isLoading: boolean = true;
 
   constructor(private counterService: CounterService,
     private router: Router,
     private questionsService: QuestionService,
-    private session: SessionsService) { }
+    private session: SessionsService,
+    private loaderService: LoaderService
+  ) { }
 
   statement = [
     "Mbali asked for debt management help for medical bills and job loss, with a counselor creating a new repayment plan after negotiating with creditors.",
@@ -35,9 +40,9 @@ export class IndebtedScenesComponent implements OnInit {
   ];
 
   questions = [
-    `Which debt management program helped Mbali? <br> Select One answer:`,
-    "Which debt management do you think Nandi needs? Select One answer:",
-    "What helps people in debt by creating a manageable repayment plan:"
+    `Which debt management program helped Mbali? <br> <strong>Select One answer:</strong>`,
+    `Which debt management do you think Nandi needs? <br> <strong>Select One answer:</strong>`,
+    `What helps people in debt by creating a manageable repayment plan:`
   ];
 
   correct = [
@@ -45,12 +50,6 @@ export class IndebtedScenesComponent implements OnInit {
     "Debt Consolidation",
     "Debt Review"
   ]
-
-  ngOnInit() {
-    this.counterService.currentSelection.subscribe((selectionValue: any) => {
-      this.currentSelectionValue = selectionValue;
-    });
-  }
 
   //AI Method
   getMeaning() {
@@ -71,40 +70,12 @@ export class IndebtedScenesComponent implements OnInit {
     });
   }
 
-  // updateTextScene() {
-  //   this.progressPercentage =  (this.progressPercentage + 1)+ 33.33; // Increase progress by one-third (33.33%) 
-  //   // if (increase) {
-  //   //   this.progressPercentage += 33.33; // Increase progress by one-third (33.33%)
-  //   // } else {
-  //   //   this.progressPercentage -= 33.33; // Decrease progress by one-third (33.33%)
-  //   // }
-  // }
-
-  updateTextScene() {
-    // this.currentStatement = this.statements[this.currentStatementIndex];
-    // this.currentQuestion = this.questions[this.currentStepIndex];
-    this.progressPercentage = (this.progressPercentage + 1) * 33.33; // Update progress
-  }
-
   previousStatement() {
     if (this.statementIndex > 0) {
       this.statementIndex--;
       this.updateTextScene();
     }
   }
-
-  // previousStatement() {
-  //   if (this.statementIndex > 0) {
-  //     this.statementIndex--;
-  //     this.updateTextScene();
-  //   }
-
-
-  //   // if (this.statementIndex > 0) {
-  //   // this.statementIndex--;
-  //   // this.updateTextScene(false); // Decrease progress
-  //   // }
-  // }
 
   onSelectionChange(event: Event) {
     const selectedValue = (event.target as HTMLInputElement).value;
@@ -163,8 +134,7 @@ export class IndebtedScenesComponent implements OnInit {
   }
 
   submitForm() {
-
-    const selectedAnswer = this.currentSelectionValue;
+    const selectedAnswer = this.selectedValue; // Use selectedValue to check the selected radio button
     const correctAnswer = this.correct[this.statementIndex];
     this.getMeaning();
 
@@ -176,23 +146,41 @@ export class IndebtedScenesComponent implements OnInit {
 
     this.statementIndex++;
 
+    // Start the loader
+    this.loaderService.startLoader();
+
+    // After a delay (for example, 3000 milliseconds), navigate to the modal
+    setTimeout(() => {
+      this.router.navigate(['/modal']);
+
+      // Stop the loader and hide it
+      this.isLoading = false;
+      this.loaderService.stopLoader();
+    }, 3000);
+
     if (this.statementIndex < this.statement.length) {
       // If there are more statements/questions, navigate to the next loop
-      this.router.navigate(['/indebtedscene']); // Assuming your component is named "indebtedscene"
+      this.selectedValue = ''; // Clear the selected radio button
+      this.router.navigate(['/indebtedscene']);
     } else {
       // If all statements/questions are done, navigate to "summary2"
       this.router.navigate(['/summary2']);
-    }    // Move to the next loop
+    }
+  }
+
+  ngOnInit() {
+
+    this.progressPercentage = 25; // Initialize progress to 0%
+    console.log("Percentage", this.progressPercentage)
+    this.updateTextScene();
+    this.counterService.currentSelection.subscribe((selectionValue: any) => {
+      this.currentSelectionValue = selectionValue;
+    });
 
   }
 
-  // continueModal() {
-  //   this.statementIndex++; // Move to the next loop
-  //   if (this.statementIndex < this.statement.length) {
-  //     this.updateTextScene(true); // Increase progress
-  //   } else {
-  //     this.statementIndex = 0; // Reset back to the first loop
-  //     this.progressPercentage = 0; // Reset progress
-  //   }
-  // }
+  updateTextScene() {
+    this.progressPercentage = ((this.statementIndex + 1) / this.statement.length) * 75;
+  }
+
 }
