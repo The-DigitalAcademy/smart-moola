@@ -20,7 +20,7 @@ import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-deb
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component';
 import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
 import { SummaryComponent } from './components/summary/summary.component';
-import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component'; 
+import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { IndebtedScenesComponent } from './AI /scenarios/indebtedscenes/indebtedscene.component';
 import { Summary2Component } from './components/summary2/summary2.component';
@@ -31,32 +31,33 @@ const routes: Routes = [
   { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+
   { path: 'home', component: HomeComponent },
+  { path: 'menu', component: NavigationMenuComponent },
 
   { path: 'resetpassword', component: PasswordResetComponent },
+  { path: 'verify-otp', component: VerifyOtpComponent },
+  { path: 'password-update', component: PasswordUpdateComponent },
 
-  // { path: 'no-debt', component: NoDebtComponent },
+  { path: 'no-debt', component: NoDebtComponent },
   { path: 'no-debt-user', component: NoDebtUserComponent },
 
   { path: 'profile', component: ProfileComponent },
   { path: 'profile-editor', component: ProfileEditorComponent },
 
-  { path: 'verify-otp', component: VerifyOtpComponent },
-
+  { path: 'response', component: responseComponent },
   { path: 'answers', component: AnswersComponent },
+  { path: 'wrong-answers', component: WrongAnswersComponent },
 
   { path: 'indebted', component: IndebtedUserComponent },
-  { path: 'password-update', component: PasswordUpdateComponent },
-  { path: 'menu', component: NavigationMenuComponent },
+  { path: 'indebtedscenes', component: IndebtedScenesComponent },
+
   { path: 'summary', component: SummaryComponent },
   { path: 'summary2', component: Summary2Component },
 
-  { path: 'response', component: responseComponent },
   { path: 'footer', component: FooterComponent },
-  { path: 'indebtedscenes', component: IndebtedScenesComponent },
 
   { path: 'modalresponse', component: ModalContentComponent },
-
 ];
 
 @NgModule({

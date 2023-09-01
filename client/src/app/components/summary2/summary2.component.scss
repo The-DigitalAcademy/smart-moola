@@ -1,113 +1,80 @@
-* {
-  margin: 0;
-  padding: 2px;
-  box-sizing: border-box;
-}
-
 .container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
 
   .header {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    margin-top: -12em;
+    margin-top: -15em;
 
-    .backBtn {
-      display: block;
-      width: 4rem;
-      height: 4rem;
-      padding: 10px;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
+    .backAndTitle {
+      display: flex;
+      flex-direction: row;
 
+      h5 {
+        color: #669bbc;
+        font-weight: 600;
+        text-align: center;
+      }
     }
 
-    .bi-arrow-left {
-      position: absolute;
-      /* Position the SVG absolutely */
-      left: 8;
-      /* Place it at the left edge of the container */
-      margin-bottom: 6em;
-      margin-top: -2em;
+    .progress {
+      width: 100%;
+      background-color: pink;
+      margin-top: -3em;
     }
 
-    .progress{
-      width: 100%;;
-    }
     .progress-bar {
       background-color: #669BBC;
     }
   }
 
-  h5 {
-    color: #669BBC;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 1em;
-    margin-top: 2em;
+  .contentCard {
 
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    margin-top: 5em;
+    border: 1px solid var(--main-color);
+    border-radius: 20px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #FFFFFF;
-
-  .card-container {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1em;
-
+    .content {
+      color: #669BBC;
+      font-size: 12px;
+      display: flex;
+      text-align: center;
+      font-weight: bold;
+    }
 
     .card {
       display: flex;
       flex-direction: column;
-      background-color: #669BBC;
+      background-color: #669bbc;
       text-align: center;
-      color: #FFFFFF;
-      padding: 10px;
-      border-radius: 20px;
-      margin-top: 3rem;
+      color: #ffffff;
+      margin-top: 2rem;
+      margin-bottom: -4rem;
       padding: 15px 20px;
-      width: 90vw;
-      border: 1px solid black;
-
-
-      p {
-        font-size: largef;
-        margin-bottom: 20px;
-        color: #669BBC;
-        text-align: center;
-        padding: 10px;
-        // background-color: pink;
-      }
-
-      .a {
-        background-color: #FFFFFF;
-        color: #669BBC;
-
-      }
-
-      .amdBtn {
-        background-color: #FFFFFF;
-        color: #669BBC;
-        font-weight: 500;
-      }
-
-      .ndaBtn {
-        background-color: #FFFFFF;
-        color: #669BBC;
-        font-weight: 500;
-        margin-top: 2.5em;
-        margin-bottom: -1em;
-      }
-
+      border-radius: 20px;
     }
+
+    .ndaBtn {
+      background-color: #FFFFFF;
+      color: #669BBC;
+      font-weight: 500;
+      width: 100%;
+      margin-top: 2em;
+      // margin-bottom: -4em;
+    }
+
 
     button {
       padding: 10px;
@@ -123,11 +90,4 @@
 
   }
 
-  .content {
-    padding: 20px;
-    color: #669BBC;
-    font-size: 12px;
-    font-weight: 400;
-    margin-bottom: -3em;
-  }
 }

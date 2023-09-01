@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './indebtedscene.component.html',
   styleUrls: ['./indebtedscene.component.scss']
 })
+
 export class IndebtedScenesComponent implements OnInit {
 
   currentSelectionValue = '';
@@ -34,9 +35,9 @@ export class IndebtedScenesComponent implements OnInit {
   ];
 
   questions = [
-    "Which debt management program helped Mbali? Select One answer",
-    "Which debt management do you think Nandi needs? Select One answer",
-    "what helps people in debt by creating a manageable repayment plan"
+    `Which debt management program helped Mbali? <br> Select One answer:`,
+    "Which debt management do you think Nandi needs? Select One answer:",
+    "What helps people in debt by creating a manageable repayment plan:"
   ];
 
   correct = [
@@ -89,11 +90,7 @@ export class IndebtedScenesComponent implements OnInit {
     if (this.statementIndex > 0) {
       this.statementIndex--;
       this.updateTextScene();
-    } else {
-      // If it's the last scenario, navigate to the home page
-      this.router.navigate(['/summary2']); // Replace '/home' with your actual home page route
     }
-
   }
 
   // previousStatement() {
@@ -177,7 +174,15 @@ export class IndebtedScenesComponent implements OnInit {
       this.isResponseCorrect = false; // Set response to incorrect
     }
 
-    this.statementIndex++; // Move to the next loop
+    this.statementIndex++;
+
+    if (this.statementIndex < this.statement.length) {
+      // If there are more statements/questions, navigate to the next loop
+      this.router.navigate(['/indebtedscene']); // Assuming your component is named "indebtedscene"
+    } else {
+      // If all statements/questions are done, navigate to "summary2"
+      this.router.navigate(['/summary2']);
+    }    // Move to the next loop
 
   }
 

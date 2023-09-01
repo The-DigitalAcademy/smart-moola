@@ -37,28 +37,17 @@
         width: 100%;
         color: var(--main-color);
         font-size: 12px;
-        padding-top: 4%;
         padding-bottom: 4%;
+        margin-top: 3em;
 
         .imagebox {
-            width: 20rem;
+            width: 22rem;
             height: 15rem;
         }
 
         .statementdiv {
-            font-weight: bold;
-            margin-top: 0.1rem;
-            margin-bottom: 0.5rem;
-            padding-left: 0.2rem;
-            padding-right: 0.1rem;
             background-color: #F6F6F6;
-            border-radius: 2%;
-            height: 17%;
-        }
-
-        .statementdiv {
-            background-color: #F6F6F6;
-            margin-bottom: 5em;
+            margin-top: 2.5em;
             padding: 10px;
         }
 
@@ -66,8 +55,8 @@
             background-color: #F6F6F6;
             border-radius: 2%;
             padding: 10px;
-            margin-bottom: 5em;
-
+            margin-top: 2.5em;
+            margin-bottom: 2.5em;
         }
 
         .btn-group {
@@ -89,17 +78,22 @@
                     background-color: #175175;
                 }
             }
-
         }
-
     }
 
     .modal {
         padding: 20px;
-        background-color: pink;
 
         .modal-content {
-            background-color: green;
+            padding: 20px;
+
+            .airesponse {
+                padding: 5px;
+            }
+
+            button {
+                background-color: var(--main-color);
+            }
         }
     }
 }

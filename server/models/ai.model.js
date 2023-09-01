@@ -30,9 +30,6 @@ async function getExplanationForWord(prompt) {
         },
       }
     );
-
-    
-
     return response.data.choices[0].text.trim();
   } catch (error) {
     console.error('Error fetching simplified explanation:', error.message);

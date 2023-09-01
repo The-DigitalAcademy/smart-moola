@@ -1,68 +1,58 @@
-* {
-  margin: 0;
-  padding: 2px;
-  padding: 2px;
-  box-sizing: border-box;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: #ffffff;
   height: 100vh;
 
   .header {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    margin-top: -30em;
+    flex-direction: column;
+    margin-top: -15em;
+
+    .backAndTitle {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 2em;
+
+      h5 {
+        color: #669bbc;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+
+    .back {
+      height: 2em;
+      width: 2em;
+      margin-bottom: 2em;
+
+      .bi {
+        height: 25px;
+        fill: rgb(102, 155, 188);
+      }
+    }
 
     .progress-bar {
       background-color: #669bbc;
     }
-
-    .bi {
-      // margin-bottom: 10rem;
-    }
-    
-    .progress {
-      width: 100%;
-      height: auto;
-      margin-right: 1.5rem;
-      border-radius: 50px;
-      // margin-top: -55em;
-      margin-left: 1.5em;
-    }
-
-    .backBtn {
-      display: block;
-      width: 4rem;
-      height: 4rem;
-      padding: 10px;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
-      // margin-top: 30em;
-    }
-
-  }
-
-  h5 {
-    color: #669bbc;
-    font-weight: 800;
-    // margin-top: -35em;
   }
 
   .card-container {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1em;
-    // margin-top: -15em;
+    h4 {
+      color: var(--main-color);
+    }
+
+    border: 1px solid var(--main-color);
+    background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 5em;
+    padding: 15px 20px;
+    border-radius: 2em;
   }
 
   .card {
@@ -71,14 +61,10 @@
     background-color: #669bbc;
     text-align: center;
     color: #ffffff;
-    padding: 10px;
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding: 15px 20px;
-    width: 90vw;
     border-radius: 20px;
-    border: 1px solid black;
 
-    //Absa credit package component
     a {
       background-color: #ffffff;
       width: 100%;
@@ -97,9 +83,7 @@
     text-decoration: none;
     text-align: center;
     position: flex;
-    margin-top: 2em;
+    margin-top: 5em;
     border-radius: 4px;
   }
-
-
 }

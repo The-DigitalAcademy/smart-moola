@@ -35,7 +35,6 @@ export class SessionsService {
   }
 
   //answer
-
   public saveAns1(ans: boolean) {
     window.sessionStorage.setItem(a1, JSON.stringify(ans))
   }
