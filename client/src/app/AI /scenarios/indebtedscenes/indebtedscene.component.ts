@@ -46,11 +46,11 @@ export class IndebtedScenesComponent implements OnInit {
     "Debt Review"
   ]
 
-  ngOnInit() {
-    this.counterService.currentSelection.subscribe((selectionValue: any) => {
-      this.currentSelectionValue = selectionValue;
-    });
-  }
+  // ngOnInit() {
+  //   this.counterService.currentSelection.subscribe((selectionValue: any) => {
+  //     this.currentSelectionValue = selectionValue;
+  //   });
+  // }
 
   //AI Method
   getMeaning() {
@@ -80,11 +80,11 @@ export class IndebtedScenesComponent implements OnInit {
   //   // }
   // }
 
-  updateTextScene() {
-    // this.currentStatement = this.statements[this.currentStatementIndex];
-    // this.currentQuestion = this.questions[this.currentStepIndex];
-    this.progressPercentage = (this.progressPercentage + 1) * 33.33; // Update progress
-  }
+  // updateTextScene() {
+  //   // this.currentStatement = this.statements[this.currentStatementIndex];
+  //   // this.currentQuestion = this.questions[this.currentStepIndex];
+  //   this.progressPercentage = (this.progressPercentage + 1) * 33.33; // Update progress
+  // }
 
   previousStatement() {
     if (this.statementIndex > 0) {
@@ -195,4 +195,19 @@ export class IndebtedScenesComponent implements OnInit {
   //     this.progressPercentage = 0; // Reset progress
   //   }
   // }
+
+
+  ngOnInit() {
+    this.progressPercentage = 25; // Initialize progress to 0%
+    console.log("Percentage", this.progressPercentage)
+    this.updateTextScene();
+    this.counterService.currentSelection.subscribe((selectionValue: any) => {
+      this.currentSelectionValue = selectionValue;
+    });
+  }
+
+  updateTextScene() {
+    this.progressPercentage = ((this.statementIndex + 1) / this.statement.length) * 75;
+  }
+  
 }
