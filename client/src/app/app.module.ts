@@ -28,7 +28,7 @@ import { IndebtedScenesComponent } from './AI /scenarios/indebtedscenes/indebted
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { SummaryComponent } from './components/summary/summary.component';
-import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
+import { TumiResponseComponent } from './AI /scenarios/no-debt/response-tumi/response-tumi.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 
 @NgModule({
@@ -60,7 +60,7 @@ import { ModalContentComponent } from './components/modal-content/modal-content.
     ModalContentComponent,
     NoDebtUserComponent,
     NoDebtComponent,
-    WrongAnswersComponent,
+    TumiResponseComponent,
   ],
 
   imports: [

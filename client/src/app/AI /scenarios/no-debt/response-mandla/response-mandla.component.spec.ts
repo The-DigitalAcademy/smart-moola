@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnswersComponent } from './answers.component';
+import { MandlaResponseComponent } from './response-mandla.component';
 
-describe('AnswersComponent', () => {
-  let component: AnswersComponent;
-  let fixture: ComponentFixture<AnswersComponent>;
+describe('MandlaResponseComponent', () => {
+  let component: MandlaResponseComponent;
+  let fixture: ComponentFixture<MandlaResponseComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AnswersComponent ]
+      declarations: [ MandlaResponseComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AnswersComponent);
+    fixture = TestBed.createComponent(MandlaResponseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

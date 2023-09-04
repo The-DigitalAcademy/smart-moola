@@ -3,16 +3,19 @@ import { Router } from '@angular/router';
 import { LoaderService } from 'src/app/services/Loader';
 
 @Component({
-  selector: 'app-wrong-answers',
-  templateUrl: './wrong-answers.component.html',
-  styleUrls: ['./wrong-answers.component.scss']
+  selector: 'app-response-tumi',
+  templateUrl: './response-tumi.component.html',
+  styleUrls: ['./response-tumi.component.scss']
 })
-export class WrongAnswersComponent implements OnInit {
+export class TumiResponseComponent implements OnInit {
+
+  correctResponse = false;
+  incorrectResponse = false;
 
   constructor(
-    private router: Router, 
+    private router: Router,
     public loaderService: LoaderService
-    ) { }
+  ) { }
 
   ngOnInit() {
 

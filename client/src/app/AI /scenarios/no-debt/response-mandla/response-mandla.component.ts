@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoaderService } from 'src/app/services/Loader';
 @Component({
-  selector: 'app-answers',
-  templateUrl: './answers.component.html',
-  styleUrls: ['./answers.component.scss']
+  selector: 'app-response-mandla',
+  templateUrl: './response-mandla.component.html',
+  styleUrls: ['./response-mandla.component.scss']
 })
-export class AnswersComponent implements OnInit {
+export class MandlaResponseComponent implements OnInit {
   answers: [] = [];
   @Input() answer: any;
 

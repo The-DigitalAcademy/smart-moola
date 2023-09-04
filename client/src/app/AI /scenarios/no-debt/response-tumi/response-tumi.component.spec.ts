@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { WrongAnswersComponent } from './wrong-answers.component';
+import { TumiResponseComponent } from './response-tumi.component';
 
-describe('WrongAnswersComponent', () => {
-  let component: WrongAnswersComponent;
-  let fixture: ComponentFixture<WrongAnswersComponent>;
+describe('TumiResponseComponent', () => {
+  let component: TumiResponseComponent;
+  let fixture: ComponentFixture<TumiResponseComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WrongAnswersComponent ]
+      declarations: [ TumiResponseComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WrongAnswersComponent);
+    fixture = TestBed.createComponent(TumiResponseComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

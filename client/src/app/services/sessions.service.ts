@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { UsersService } from './users.service';
+// import { Router } from '@angular/router';
+// import { UsersService } from './users.service';
 import { LoginResponse } from '../interface/users';
 
 const q1 = "q1"
 const activeQ = "activeQ"
-const convo = "convo"
+// const convo = "convo"
 const a1 = 'a1';
 const activeA = 'activeA';
 
@@ -17,7 +17,12 @@ export class SessionsService {
   saveLoggedUser(data: LoginResponse) {
     throw new Error('Method not implemented.');
   }
-  constructor(private router: Router, private usersServices: UsersService) { }
+  constructor(
+    // private router: Router, 
+    // private usersServices: UsersService
+    ) { 
+
+    }
 
   //Quiz
   public saveActiveQuestion(q: string) {
@@ -45,11 +50,9 @@ export class SessionsService {
     if (question1) {
       return JSON.parse(question1)
     }
-
   }
 
   ///answer
-
   public getActiveAnswer() {
     const answer1 = window.sessionStorage.getItem(activeA)
     if (answer1) {
@@ -67,12 +70,10 @@ export class SessionsService {
   }
 
   ///answer
-
   public getA1() {
     const answer1 = window.sessionStorage.getItem(a1)
     if (answer1) {
       return JSON.parse(answer1)
-
     }
   }
 

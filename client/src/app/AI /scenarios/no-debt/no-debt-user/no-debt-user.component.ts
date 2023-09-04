@@ -40,7 +40,7 @@ export class NoDebtUserComponent implements OnInit {
   //Method which nevigate to wrong-answers component
   submitTumi() {
     this.getMeaning();
-    this.router.navigate(['/wrong-answers']);
+    this.router.navigate(['/response-tumi']);
   }
 
   getQuestions() {
