@@ -9,16 +9,22 @@ import { LoaderService } from 'src/app/services/Loader';
 })
 export class TumiResponseComponent implements OnInit {
 
-  correctResponse = false;
-  incorrectResponse = false;
+  responses = false
+
+  userRes: any;
 
   constructor(
     private router: Router,
     public loaderService: LoaderService
   ) { }
 
-  ngOnInit() {
+  getUserResponse() {
+    let responses = localStorage.getItem('userResponse');
+    console.log("userb res: " + responses)
+  }
 
+  ngOnInit() {
+    this.getUserResponse()
     setTimeout(() => {
       this.loaderService.startLoader()
       this.router.navigate(['/response'])

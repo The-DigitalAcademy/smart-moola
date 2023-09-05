@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 // import { Router } from '@angular/router';
 // import { UsersService } from './users.service';
 import { LoginResponse } from '../interface/users';
-
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 const q1 = "q1"
 const activeQ = "activeQ"
 // const convo = "convo"
 const a1 = 'a1';
 const activeA = 'activeA';
+
 
 @Injectable({
   providedIn: 'root',
@@ -17,18 +19,15 @@ export class SessionsService {
   saveLoggedUser(data: LoginResponse) {
     throw new Error('Method not implemented.');
   }
-  constructor(
-    // private router: Router, 
-    // private usersServices: UsersService
-    ) { 
 
-    }
+  private jsonURL = '../assets/resp.json'
+  constructor(private http: HttpClient) { }
 
   //Quiz
   public saveActiveQuestion(q: string) {
     window.sessionStorage.setItem(activeQ, JSON.stringify(q))
   }
- 
+
   public saveActiveAnswer(a: string) {
     window.sessionStorage.setItem(activeQ, JSON.stringify(a))
   }
@@ -75,6 +74,10 @@ export class SessionsService {
     if (answer1) {
       return JSON.parse(answer1)
     }
+  }
+
+  questionData(): Observable<any[]>{
+    return this.http.get<any[]>(this.jsonURL)
   }
 
 }
