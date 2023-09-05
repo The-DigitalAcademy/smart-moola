@@ -1,0 +1,111 @@
+.container {
+  height: 100vh;
+  position: fixed;
+  margin-bottom: 10px;
+
+  .back-button
+  {
+    margin-top: 5em;
+    margin-left: 1em;
+  }
+
+  .questions {
+    padding: 3px;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    height: 64vh;
+
+    .column {
+      float: left;
+      width: 50%;
+      padding: 15px 6px;
+      height: 50%;
+
+      .card {
+        padding: 4px;
+        text-align: center;
+        background-color: #f1f1f1;
+        color: #669bbc;
+        border: 1px solid;
+        font-size: 18x;
+      }
+    }
+  }
+ 
+  .textStyle{
+    text-align: center;
+    color: #669bbc;
+    font-weight: 600;
+    margin-top: -2em;
+  }
+
+  h5 {
+    margin-top: 4vh;
+    margin-bottom: 2em;
+    text-align: center;
+    color: #669bbc;
+    font-weight: 500;
+  }
+
+  .submit {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #669bbc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 4px;
+    text-align: center;
+    margin-top: -45em;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 14px;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+  }
+
+  span {
+    margin-top: 5vh;
+    text-align: center;
+    color: #669bbc;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+
+.getHomeImg {
+  height: 15em;
+  width: 12em;
+  position: absolute;
+  top: 1em;
+  left: 6em;
+}
+
+.submit {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  background-color: #669bbc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 4px;
+  text-align: center;
+  margin-top: 130px;
+  margin-top: -40em;
+}

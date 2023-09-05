@@ -9,17 +9,15 @@ import { Observable, catchError, throwError } from 'rxjs';
 })
 export class AnswerService {
 
-url = "http://localhost:4545/api/qna/"
+  url = "https://smart-moola-app-v1.onrender.com/api/qna/"
 
-constructor(private http : HttpClient, private router : Router){}
+  constructor(private http: HttpClient, private router: Router) { }
 
- 
-getQnA() : Observable<any>{
-   return this.http.get("http://localhost:4545/api/qna/qna").pipe(
-    catchError((error : HttpErrorResponse)=>{
-      return throwError(error.error.message);
-    }))
 
-    this.router.navigate(['/home']);
+  getQnA(): Observable<any> {
+    return this.http.get("https://smart-moola-app-v1.onrender.com/api/qna/qna").pipe(
+      catchError((error: HttpErrorResponse) => {
+        return throwError(error.error.message);
+      }))
   }
 }

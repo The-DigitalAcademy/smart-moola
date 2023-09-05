@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: -2.5em;
+    margin-bottom: 15em;
+  }
+
+  .getHomeImg {
+    height: 16em;
+    width: 16em;
+    position: absolute;
+    margin-top: -36em;
+  }
+
+  background-color: #FFFFFF;
+  height: 100vh;
+
+  p {
+    background-color: #F6F6F6;
+    color: var(--main-color);
+    font-size: large;
+    text-align: center;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+
+    .card {
+      display: flex;
+      flex-direction: row;
+
+      justify-content: space-between;
+      color: var(--main-color);
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 20px;
+
+      .firstElem {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cardImg {
+        height: 12em;
+        width: 12em;
+      }
+    }
+
+    a {
+      background-color: #669BBC;
+      color: #fff;
+      margin-top: 1em;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    form {
+      background-color: #FFFFFF;
+      height: 100vh;
+
+      h2 {
+        text-align: center;
+      }
+
+      img {
+        width: 60vw;
+      }
+
+      .box {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          font-weight: bold;
+          color: #669BBC;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+
+        }
+
+      }
+
+      .boxSubmit {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #669BBC;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    form {
+      background-color: #FFFFFF;
+      height: 100vh;
+
+      h2 {
+        text-align: center;
+      }
+
+      img {
+        width: 60vw;
+      }
+
+      .box {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          font-weight: bold;
+          color: #669BBC;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+
+        }
+
+      }
+
+      .boxSubmit {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #669BBC;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    form {
+      background-color: #FFFFFF;
+      height: 100vh;
+
+      h2 {
+        text-align: center;
+      }
+
+      img {
+        width: 94vw;
+      }
+
+      .box {
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          font-weight: bold;
+          color: #669BBC;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+
+        }
+
+      }
+
+      .boxSubmit {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #669BBC;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+      }
+    }
+  }
+
+}

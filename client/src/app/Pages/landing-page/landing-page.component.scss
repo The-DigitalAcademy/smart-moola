@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  align-items: stretch;
+  height: 100vh;
+  padding: 20px;
+
+  .ellipse {
+    background-color: var(--main-color);
+    border-radius: 171px/184px;
+    height: 24em;
+    width: 23em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .smallEllipse {
+    background-color: #5c8ba9;
+    border-radius: 171px/184px;
+    height: 15em;
+    width: 14em;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-20%, -50%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000000;
+
+  }
+
+  .text-wrapper-2 {
+    max-width: 80%;
+    font-size: 12px;
+    color: #FFFFFF;
+  }
+
+  .overlap-wrapper {
+    flex: 1;
+
+    a {
+      text-decoration: none;
+    }
+    
+  }
+
+  .getStartedImg {
+    margin-top: 6em;
+    width: 21em;
+    height: 21em;
+  }
+
+}

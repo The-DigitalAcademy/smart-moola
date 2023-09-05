@@ -2,8 +2,7 @@ const bcrypt = require("bcrypt");
 let jwt = require("jsonwebtoken");
 const JwtSecret = require('../config/JwtSecret.config');
 const nodemailer = require("nodemailer");
-
-const db = require('../config/db.config');
+var currentOtp = "";
 
 const User = require("../models/user.model"); // Import the Sequelize model for "User"
 
@@ -13,7 +12,7 @@ const sendVerificationEmail = (req, res, email, otp, callback) => {
         service: "gmail",
         auth: {
             user: "owethusotomela@gmail.com",
-            pass: "69384876Os",
+            pass: "ywsjnzgnypziayyx",
         },
     });
 
@@ -21,7 +20,7 @@ const sendVerificationEmail = (req, res, email, otp, callback) => {
         from: "owethusotomela@gmail.com",
         to: email,
         subject: "Email Verification OTP",
-        text: `Your OTP for email verification is: ${otp}`,
+        text: `Enter this OTP: ${otp} to reset your password`,
     };
 
     transporter.sendMail(mailOptions, callback);
@@ -31,7 +30,8 @@ const sendEmail = async (req, res) => {
     const { email } = req.body;
     console.log('Request Body:', req.body);
 
-    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const otp = Math.floor(1000 + Math.random() * 9000).toString();
+    currentOtp = otp;
 
     console.log("Otp", otp);
 
@@ -55,8 +55,6 @@ const sendEmail = async (req, res) => {
 const createUser = async (request, response) => {
     const { fullName, email, password, confirmPassword } = request.body;
 
-    console.log(fullName + "fullName", email + "email", password + "password", confirmPassword, " confirmPassword")
-
     try {
         // Hash the password
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -66,22 +64,26 @@ const createUser = async (request, response) => {
             fullName: fullName,
             email: email,
             password: hashedPassword,
-            confirmPassword: confirmPassword
+            confirmPassword: confirmPassword,
         });
 
         console.log("newUser", newUser);
 
         response.status(201).send({
             message: `User added with ID: ${newUser.id}`,
-            id: newUser.id,
-            fullName: fullName,
-            email: email
+            user: {
+                id: newUser.id,
+                fullName: fullName,
+                email: email
+            }
         });
+
     } catch (error) {
         console.error("Error creating user", error);
         response.status(500).send({ error: "Internal server error" });
     }
 };
+
 
 const getUsers = async (request, response) => {
     try {
@@ -140,6 +142,42 @@ const updateUser = async (request, response) => {
         response.status(500).send({ error: "Internal server error" });
     }
 };
+
+const isOtpValid = (req, res) => {
+    const { otp } = req.body;
+
+    if (otp === currentOtp) {
+        return res.status(200).json({ otpIsVerified: true })
+    } else {
+        return res.status(404).json({ otpIsVerified: false })
+    }
+}
+
+const updatePassword = async (req, res) => {
+    try {
+        const { email, password, confirmPassword } = req.body;
+
+        const user = await findOne(email);
+
+        if (!user) {
+            return res.status(404).send({ message: "User not found" });
+        }
+
+        // Hash the new password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Update the user's password and confirmPassword
+        user.password = hashedPassword;
+        user.confirmPassword = confirmPassword;
+
+        await user.save();
+
+        res.status(200).send({ message: "Password updated!" });
+    } catch (err) {
+        res.status(500).send({ message: err.message + "Testing" });
+    }
+};
+
 
 const deleteUser = async (request, response) => {
     const id = parseInt(request.params.id);
@@ -236,6 +274,9 @@ module.exports = {
     updateUser,
     deleteUser,
     login,
-    sendEmail
+    sendEmail,
+    isOtpValid,
+    updatePassword
+
     // deleteAll
 }

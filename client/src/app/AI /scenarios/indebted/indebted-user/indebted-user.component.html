@@ -1,0 +1,45 @@
+<div class="container fullScreen">
+
+    <div class="header">
+        <div class="backAndTitle">
+            <div class="back-button" (click)="goBack()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                </svg>
+            </div>
+            <h2 class="userName">{{fullName}} did you know?</h2>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="topStatement">
+            <p class="statement">
+                You don't have to face the suffocating debt alone; SmartMoola is here to support you & help you find a
+                way to ease your financial burden.
+            </p>
+        </div>
+
+        <div class="TheImage">
+            <img class="imagebox1"
+                src="https://cdn.discordapp.com/attachments/1093145057919520828/1138459034161270844/Free_Vector___Calculator_concept_illustration-removebg-preview.png"
+                alt="">
+        </div>
+
+        <div class="BottomStatement">
+            <p class="statement2">
+                We're here to guide you through your journey toward a brighter financial future, free from the weight of
+                debt. Let’s help you explore some solutions.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="btnNext">
+        <button class="btn" routerLink="/indebtedscenes">Next</button>
+    </div>
+
+    <app-footer></app-footer>
+
+</div>

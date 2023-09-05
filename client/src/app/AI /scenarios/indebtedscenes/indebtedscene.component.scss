@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--WHITE);
+
+    .header {
+        background-color: var(--WHITE);
+        height: 15%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+
+        .back-button {
+            margin-top: 1rem;
+            margin-left: 0.5rem;
+            width: 22rem;
+            padding-left: 1%;
+            padding-right: 4%;
+            color: var(--main-color);
+        }
+
+        .pgbar {
+            margin-top: 1%;
+            width: 22rem;
+            height: 1rem;
+            margin-left: 2%;
+            margin-right: 2%;
+            margin-bottom: 1%;
+            padding-top: 5%;
+
+            .progress-bar {
+                background-color: var(--main-color);
+            }
+        }
+    }
+
+    .body {
+        height: 75%;
+        width: 100%;
+        color: var(--main-color);
+        font-size: 12px;
+        padding-bottom: 4%;
+        margin-top: 3em;
+
+        .imagebox {
+            width: 22rem;
+            height: 15rem;
+        }
+
+        .statementdiv {
+            background-color: #F6F6F6;
+            margin-top: 2.5em;
+            padding: 10px;
+        }
+
+        .questiondiv {
+            background-color: #F6F6F6;
+            border-radius: 2%;
+            padding: 10px;
+            margin-top: 2.5em;
+            margin-bottom: 2.5em;
+
+            .myForm {
+                margin-top: 1em;
+            }
+        }
+
+        .btn-group {
+            align-content: center;
+            margin-top: 1rem;
+            gap: 2rem;
+            width: 100%;
+
+            .btn {
+                text-align: center;
+                color: var(--WHITE);
+                cursor: pointer;
+                border: none;
+                background-color: var(--main-color);
+
+                width: 100%;
+
+                &:hover {
+                    background-color: #175175;
+                }
+            }
+        }
+    }
+
+    .modal {
+        padding: 20px;
+
+        .modal-content {
+            padding: 20px;
+
+            .airesponse {
+                padding: 5px;
+            }
+
+            button {
+                background-color: var(--main-color);
+            }
+        }
+    }
+}

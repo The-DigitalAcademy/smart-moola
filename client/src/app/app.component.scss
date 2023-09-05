@@ -1,0 +1,26 @@
+
+:root {
+    
+    --GRAY-150: #B2B2B2;
+    --WHITE: white;
+    --blue-50: #669BBC;
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.button
+{
+    width: 100%;
+    color: var(--PINK-50);
+
+
+}
+
+router-outlet{
+    height:90vh;
+    width:100%;
+}

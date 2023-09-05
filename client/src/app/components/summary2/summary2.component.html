@@ -1,0 +1,43 @@
+<div class="container">
+
+  <div class="header">
+
+    <div class="backAndTitle">
+      <div class="back" (click)="goBack()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#669BBC" class="bi bi-arrow-left">
+          <path fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+        </svg>
+      </div>
+
+      <h5>Thank {{fullName}} you for taking your first step in <strong>Debt Management</strong>. <br> We really
+        appreciate your time.
+      </h5>
+    </div>
+
+    <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="10" aria-valuemin="0"
+      aria-valuemax="100">
+      <div class="progress-bar" style="width: 100%">100%</div>
+    </div>
+
+  </div>
+
+  <div class="contentCard">
+
+    <p class="content">
+      Like we said earlier on, you don't have to face the suffocating debt alone.
+      There always solutions to problems. All you needed was to be well informed
+      on where to get the help that you really need.
+    </p>
+
+    <div class="card">
+      <h4>Visit National Debt Advisor</h4>
+      <a href="National Debt Advisor" target="_blank" class="ndaBtn btn btn-primary">National Debt Advisor</a>
+    </div>
+
+  </div>
+
+  <button class="submit" routerLink="/home">Done</button>
+
+  <app-footer></app-footer>
+</div>

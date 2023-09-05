@@ -1,0 +1,41 @@
+.container {
+  height: 100vh;
+  padding: 4em;
+
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 5px;
+    height: 65%;
+    align-items: center;
+    border: 1px solid var(--main-color);
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    align-items: center;
+
+    .headerTopMargins {
+      margin-top: 100px;
+    }
+
+    .imageContainer {
+      width: 182px;
+      height: 203px;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      border-radius: 2em;
+    }
+
+    .textColor {
+      align-content: center;
+      padding: 0.3em;
+      margin-left: 2em;
+      width: 100%;
+    }
+    //for Tumi;s image
+    .p-4 {
+      border-radius: 3em;
+      margin-bottom: 1.5em;
+    }
+  }
+}

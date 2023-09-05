@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 100vh;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    margin-top: -15em;
+
+    .backAndTitle {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 2em;
+
+      h5 {
+        color: #669bbc;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+
+    .back {
+      height: 2em;
+      width: 2em;
+      margin-bottom: 2em;
+
+      .bi {
+        height: 25px;
+        fill: rgb(102, 155, 188);
+      }
+    }
+
+    .progress-bar {
+      background-color: #669bbc;
+    }
+  }
+
+  .card-container {
+    h4 {
+      color: var(--main-color);
+    }
+
+    border: 1px solid var(--main-color);
+    background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 5em;
+    padding: 15px 20px;
+    border-radius: 2em;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: #669bbc;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 2rem;
+    padding: 15px 20px;
+    border-radius: 20px;
+
+    a {
+      background-color: #ffffff;
+      width: 100%;
+      color: #669bbc;
+    }
+  }
+
+  .submit-1 {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    position: flex;
+    margin-top: 5em;
+    border-radius: 4px;
+  }
+}
