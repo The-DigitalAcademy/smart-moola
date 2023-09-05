@@ -8,6 +8,8 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class SummaryComponent implements OnInit {
 
+  fullName: any = '';
+
   constructor(
     private usersServices: UsersService
   ) { }
@@ -16,9 +18,8 @@ export class SummaryComponent implements OnInit {
   }
 
   goBack(){
-    this.usersServices.previousPage
+    this.usersServices.previousPage();
   }
-  fullName: any = '';
 
   getLoggedInUserName() {
     this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName

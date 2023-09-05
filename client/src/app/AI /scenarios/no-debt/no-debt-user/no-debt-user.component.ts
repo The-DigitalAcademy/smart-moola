@@ -23,14 +23,12 @@ export class NoDebtUserComponent implements OnInit {
   mandlaResponse = "";
   tumiResponse = "";
   prompt = ''
-  explanation= ''
+  explanation = ''
   progressPercentage = 0;
   questions: any;
 
-
   verifyAnswer() {
     this.router.navigate(['/answers']);
-    // this.router.navigate(['/response']);
   }
 
   //Method which nevigate to answers component
@@ -43,9 +41,8 @@ export class NoDebtUserComponent implements OnInit {
   submitTumi() {
     this.getMeaning();
     this.router.navigate(['/wrong-answers']);
-
   }
-  
+
   getQuestions() {
     this.questionsService.getAllQuestions().subscribe((data) => {
       for (const item of data) {
@@ -56,7 +53,7 @@ export class NoDebtUserComponent implements OnInit {
   
 
   //Send prompt to AI and display explaination from the AI 
-  getMeaning(){
+  getMeaning() {
     this.questionsService.sendQuestionAndGetExplanation(this.prompt).subscribe(data => {
       console.log(data); // Check the entire response object
       console.log(data.explanation); // Check the explanation property
@@ -67,29 +64,29 @@ export class NoDebtUserComponent implements OnInit {
 
   //Check if the question is read then move to the next question
   verify() {
-        this.active = this.session.getActiveQuestion();
-        switch (this.active) {
-        case 'q1':
+    this.active = this.session.getActiveQuestion();
+    switch (this.active) {
+      case 'q1':
         this.question = 'Why is credit important?';
         this.mandlaResponse = "Credit is when you owe money to someone else.";
         this.tumiResponse = "Credit allows you to make large purchases...";
-       //sending this quiz to AI
+        //sending this quiz to AI
         this.prompt = 'Why is credit important?'
         this.session.saveActiveQuestion('q2');
-        this.progressPercentage =  this.progressPercentage + 15;
+        this.progressPercentage = this.progressPercentage + 15;
         break;
 
       case 'q2':
         this.question =
-        'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
+          'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
         this.mandlaResponse =
-        'Drivers License and proof of residence.';
+          'Drivers License and proof of residence.';
         this.tumiResponse =
           'Tumi has proof of residence, Identity document';
         //sending this quiz to AI
         this.prompt = 'To apply for credit what documents are requiedd?'
         this.session.saveActiveQuestion('q3');
-        this.progressPercentage =  30;
+        this.progressPercentage = 30;
         break;
       case 'q3':
         this.question =
@@ -101,9 +98,8 @@ export class NoDebtUserComponent implements OnInit {
         //sending this quiz to AI
         this.prompt = 'What is credit score?'
         this.session.saveActiveQuestion('q4');
-        this.progressPercentage =  45;
+        this.progressPercentage = 45;
         break;
-
 
       case 'q4':
         this.question =
@@ -115,22 +111,8 @@ export class NoDebtUserComponent implements OnInit {
         //sending this quiz to AI
         this.prompt = 'Defination of debt?'
         this.session.saveActiveQuestion('q5');
-        this.progressPercentage =  60;
+        this.progressPercentage = 60;
         break;
-
-        //  case 'q7':
-        // this.question =
-        //   'Between Mandla and tumi who is correct about a debtor';
-        // this.question = 'Between Mandla and tumi who is correct in terms of explaining bad debt';
-        // this.mandlaResponse =
-        //   'Debtor Is the creditor that loans money to anonther party ';
-        // this.tumiResponse =
-        //   'Debtor is a person or one party that owes money to the other party, and can be paid over time.  ';
-        // //sending this quiz to AI
-        // this.prompt = 'What is a debtor?'
-        // this.session.saveActiveQuestion('q8');
-        // this.progressPercentage =  70;
-        // break;
 
       case 'q5':
         this.question =
@@ -142,12 +124,12 @@ export class NoDebtUserComponent implements OnInit {
         //sending this quiz to AI
         this.prompt = 'What is a good debtor?'
         this.session.saveActiveQuestion('q6');
-        this.progressPercentage =  75;
+        this.progressPercentage = 75;
         break;
 
       case 'q6':
         this.question =
-        'Between Mandla and tumi who is correct in terms of explaining bad debt';
+          'Between Mandla and tumi who is correct in terms of explaining bad debt';
         this.mandlaResponse =
           'Debt is bad when it used for for things that do not bring you money.';
         this.tumiResponse =
@@ -156,24 +138,25 @@ export class NoDebtUserComponent implements OnInit {
         this.prompt = 'What is a bad debtor?'
         this.session.saveActiveQuestion('7');
         this.router.navigate(['/summary']);
-        this.progressPercentage =  90;
+        this.progressPercentage = 90;
         break;
 
-        default:
+      default:
         this.active = 'q1';
         this.question = 'Why is credit important?';
         this.mandlaResponse =
-        'Credit allows you to get into debt that you might fail to to repay ';
+          'Credit allows you to get into debt that you might fail to to repay ';
         this.tumiResponse =
-        'Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ';
-           //sending this quiz to AI
+          'Credit allows you to make large purchasesthat otherwise you would not be able to afford if you were to pay in cash ';
+        //sending this quiz to AI
         this.prompt = 'Why is credit important?'
         this.session.saveActiveQuestion('q2');
-        this.progressPercentage =  15;
-      
+        this.progressPercentage = 15;
+
         break;
     }
   }
+
   ngOnInit(): void {
     this.verify();
     this.getQuestions();

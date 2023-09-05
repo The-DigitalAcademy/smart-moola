@@ -1,112 +1,92 @@
-* {
-  margin: 0;
-  padding: 2px;
-  box-sizing: border-box;
-}
-
 .container {
-
-  .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    // margin-top: 2em;
-
-    .bi-arrow-left {
-      position: absolute;
-      left: 8;
-      margin-top: -2em;
-    }
-
-    .progress {
-      width: 100%;
-      height: 1.8em;
-      border-radius: 50px;
-      margin-bottom: 2em;
-      margin-top: 1em; 
-    }
-    .progress-bar {
-      background-color: #669BBC;
-    }
-  }
-
-  h5 {
-    color: #669bbc;
-    font-weight: 500;
-    text-align: center;
-    margin-bottom: 2em;
-    margin-top: -10em;
-
-  }
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   height: 100vh;
   background-color: #ffffff;
+  position: fixed;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -15em;
+
+    .backAndTitle {
+      display: flex;
+      flex-direction: row;
+
+      h5 {
+        color: var(--main-color);
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+
+    .progress {
+      width: 100%;
+      margin-top: -3em;
+    }
+
+    .progress-bar {
+      background-color: var(--main-color);
+    }
+  }
+
+  .contentCard {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    margin-top: 5em;
+    border: 1px solid var(--main-color);
+    border-radius: 20px;
 
 
-
-
-.contentCard{
-  
-  padding: 2px;
-  border-radius: 10px;
-  background-color: #f6f6f6;
-  width: 95%;
-  .card-container {
-
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1em;
-    margin-top: 1em;
-
+    .content {
+      color: var(--main-color);
+      font-size: 12px;
+      display: flex;
+      text-align: center;
+      font-weight: bold;
+    }
 
     .card {
       display: flex;
       flex-direction: column;
-      background-color: #669BBC;
+      background-color: var(--main-color);
       text-align: center;
-      color: #FFFFFF;
-      padding: 20px;
+      color: #ffffff;
+      margin-top: 2rem;
+      padding: 15px 20px;
       border-radius: 20px;
-      margin-top: 2em;
-      padding: 25px 20px;
-      width: 90vw;
-      border: 1px solid #f6f6f6;
-
-    }
-  
-      .ndaBtn {
-        background-color: #FFFFFF;
-        color: #669BBC;
-        font-weight: 500;
-        margin-top: 2.5em;
-        margin-bottom: -1em;
-      }
-
     }
 
-    button {
+    .ndaBtn {
+      background-color: #FFFFFF;
+      color: var(--main-color);
+    }
+
+    submit {
       padding: 10px;
-      background-color: #669BBC;
+      background-color: var(--main-color);
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
-      margin-bottom: 2rem;
-      top: 13em;
-      width: 100%;
     }
-
   }
+}
 
-  .content {
-    padding: 20px;
-    color: #669BBC;
-    font-size: 12px;
-    font-weight: 400;
-    margin-bottom: -3em;
+@media (max-width: 414px) {
+  .submit {
+    padding: 10px;
+    position: relative;
+    width: auto;
+    top: 7em;
   }
 }

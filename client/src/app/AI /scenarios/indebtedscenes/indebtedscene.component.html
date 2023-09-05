@@ -11,8 +11,8 @@
     <div class="pgbar">
       <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
         aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" style="background-color: #669bbc;" [style.width.%]="progressPercentage">{{
-          progressPercentage }}%</div>
+        <div class="progress-bar" role="progressbar" [style.width]="progressPercentage + '%'">{{progressPercentage +
+          '%'}}</div>
       </div>
     </div>
 
@@ -27,26 +27,31 @@
       </div>
 
       <div class="questiondiv">
-        {{ getCurrentQuestion() }}
+
+        <div [innerHTML]="getCurrentQuestion()"></div>
         <form class="myForm">
+
           <div>
             <div class="firstSelect">
               <label>
-                <input type="radio" name="selection" value="selection1" (change)="onSelectionChange($event)">
+                <input type="radio" name="selection1" [(ngModel)]="selectedValue" value="selection1"
+                  (change)="onSelectionChange($event)">
                 Debt Review
               </label>
             </div>
 
             <div class="secondSelect">
               <label>
-                <input type="radio" name="selection" value="selection2" (change)="onSelectionChange($event)">
+                <input type="radio" name="selection2" [(ngModel)]="selectedValue" value="selection2"
+                  (change)="onSelectionChange($event)">
                 Debt Counselling
               </label>
             </div>
 
             <div class="thirdSelect">
               <label>
-                <input type="radio" name="selection" value="selection3" (change)="onSelectionChange($event)">
+                <input type="radio" name="selection3" [(ngModel)]="selectedValue" value="selection3"
+                  (change)="onSelectionChange($event)">
                 Debt Consolidation
               </label>
             </div>
@@ -79,18 +84,12 @@
     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="creditHeading" style="padding-top: 1rem; height: 20%;">
-          <!-- <h2>Heading</h2> -->
-        </div>
 
         <ng-container *ngIf="isResponseCorrect; else incorrectResponse">
-          Correct!
-          <div class="airesponse">
-            <!-- {{explanation}} -->
-          </div>
+          <h3 class="success"> Correct! </h3>
         </ng-container>
         <ng-template #incorrectResponse>
-          Incorrect!
+          <h3 class="error"> Incorrect! </h3>
           <div class="airesponse">
             {{explanation}}
           </div>

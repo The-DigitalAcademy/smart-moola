@@ -58,6 +58,14 @@ h1 {
     background-color: var(--main-color);
 }
 
+.success{
+    color: green;
+}
+
+.error{
+    color: red;
+}
+
 @media (max-width: 414px) {
     .submit {
         padding: 10px;

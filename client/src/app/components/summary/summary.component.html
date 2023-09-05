@@ -1,35 +1,38 @@
 <div class="container">
-  <div class="container1 container">
-    <div class="header">
-      <h5>Congratulations on your incredible success! </h5>
 
+  <div class="header">
+
+    <div class="backAndTitle">
       <div class="back" (click)="goBack()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" fill="#669BBC" class="bi bi-arrow-left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#669BBC" class="bi bi-arrow-left">
           <path fill-rule="evenodd"
             d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
         </svg>
       </div>
 
-      <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="10" aria-valuemin="0"
-        aria-valuemax="100">
-        <div class="progress-bar" style="width: 100%">100%</div>
+      <h5>Congratulations on your incredible success! </h5>
 
+    </div>
+    <div class="progress " role="progressbar" aria-label="Example with label" aria-valuenow="10" aria-valuemin="0"
+      aria-valuemax="100">
+      <div class="progress-bar" style="width: 100%">100%</div>
+    </div>
+
+  </div>
+
+  <div class="card-container">
+    <h4>View Absa credit packages</h4>
+
+    <div class="card">
+      <p>Absa Credit Packages</p>
+
+      <div class="thEnd">
+        <a href="https://www.absa.co.za/personal/bank/a-credit-card/explore/?cmpid=SGOOGL_E7ot2&gad=1&gclid=CjwKCAjw5_GmBhBIEiwA5QSMxODz2ur0eA_JszP3qtlVXT-RyZYScf9mFv7nsX5PmHmDlF8WnDtyiRoCmN4QAvD_BwE"
+          class="btn btn-primary">Absa Credit Packages</a>
       </div>
     </div>
-    
-    <h5>View Absa credit packages</h5>
-
-    <ul class="card-container">
-      <div class="card">
-        <p>Absa Credit Packages</p>
-
-        <div class="thEnd">
-          <a href="https://www.absa.co.za/personal/bank/a-credit-card/explore/?cmpid=SGOOGL_E7ot2&gad=1&gclid=CjwKCAjw5_GmBhBIEiwA5QSMxODz2ur0eA_JszP3qtlVXT-RyZYScf9mFv7nsX5PmHmDlF8WnDtyiRoCmN4QAvD_BwE"
-            class="btn btn-primary">Absa Credit Packages</a>
-        </div>
-      </div>
-    </ul>
-    <a routerLink="/home" class="submit-1">Done</a>
-    <app-footer></app-footer>
   </div>
+  <a routerLink="/home" class="submit-1">Done</a>
+  <app-footer></app-footer>
+
 </div>

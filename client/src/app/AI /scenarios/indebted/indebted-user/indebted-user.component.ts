@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-indebted-user',
@@ -8,7 +9,9 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 export class IndebtedUserComponent implements OnInit {
   fullName: any = '';
 
-  constructor() { }
+  constructor(
+    private usersServices: UsersService
+  ) { }
 
   getLoggedInUserName() {
     this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName
@@ -18,6 +21,10 @@ export class IndebtedUserComponent implements OnInit {
   ngOnInit() {
     this.getLoggedInUserName();
     console.log(this.getLoggedInUserName());
+  }
+
+  goBack() {
+    this.usersServices.previousPage();
   }
 
 }

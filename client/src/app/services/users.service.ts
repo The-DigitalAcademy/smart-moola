@@ -64,6 +64,24 @@ export class UsersService {
       })
   }
 
+    // Method to trigger email sending
+    inviteUsingEmail(email: string) {
+      // Make an HTTP POST request to the backend API to trigger the email sending
+      this.http.post(`${usersAPI}/invite-using-email`, { email }).subscribe(
+        (response) => {
+          console.log('Email sent:', response);
+          this.http.post<CreateUserResponse>(`${this.usersURL}/postUser`, this.user, this.options).subscribe(data => {
+            console.log("data", data);
+  
+            const loggedInUserEmail = data.email;
+            const id = data.id.toString();
+  
+            localStorage.setItem('Email', loggedInUserEmail);
+            localStorage.setItem('id', id);
+          })
+        })
+    }
+
   discardProfileEdit() {
     return this.router.navigate(['/profile']);
   }
@@ -79,6 +97,11 @@ export class UsersService {
   }
 
   previousPage() {
-    this.location.back();
+    this.location.back()
+    if (this.location.path() == '/response') {
+      this.location.back()
+    } else {
+      this.location.back();
+    }
   }
 }
