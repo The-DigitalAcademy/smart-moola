@@ -4,19 +4,23 @@ import { SessionsService } from 'src/app/services/sessions.service';
 import { QuestionService } from 'src/app/services/question.service';
 import { LoaderService } from 'src/app/services/Loader';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-no-debt-user',
   templateUrl: './no-debt-user.component.html',
   styleUrls: ['./no-debt-user.component.scss']
 })
+
 export class NoDebtUserComponent implements OnInit {
-  userQues: any;
+
   constructor(
     private router: Router,
     private questionsService: QuestionService,
     private usersServices: UsersService,
-    private session: SessionsService, public loaderService: LoaderService
+    private route: ActivatedRoute,
+    private session: SessionsService,
+    public loaderService: LoaderService
   ) { }
 
   question = '';
@@ -28,79 +32,14 @@ export class NoDebtUserComponent implements OnInit {
   progressPercentage = 0;
   questions: any;
 
-  userSelection: any = false;
-
   responses = {
     correctResponse: false,
-  }
-
-  Ques: any = []
-  useranswer = ''
-
-  getQues() {
-    this.session.questionData().subscribe(
-      (data) => {
-        this.Ques = data
-
-        localStorage.setItem('userQues', JSON.stringify(this.Ques))
-        console.log("And here?" + JSON.stringify(this.Ques))
-
-      },
-      (error) => {
-        console.log("Can't get ques", error)
-      }
-    )
   }
 
   verifyAnswer() {
     this.router.navigate(['/response-mandla']);
   }
 
-  //Method which nevigate to answers component
-  // submitMandla(que: any) {
-  //   this.getMeaning();
-  //   // this.router.navigate(['/response-mandla']);
-
-  //   this.useranswer = que
-  //   console.log("json test, want user id: " + JSON.stringify(this.useranswer))
-  //   this.getMeaning();
-  //   // this.verify();
-
-  //   if (this.useranswer == "Credit is when you owe money to someone else.") {
-  //     this.responses.correctResponse = false
-  //     let booleanResponse = this.responses.correctResponse
-
-  //     //  localStorage.setItem('userReponse', booleanResponse.toString())
-  //     localStorage.setItem('userReponse', JSON.stringify(this.responses.correctResponse))
-  //     this.router.navigate(['/response-mandla']);
-  //     console.log("testing for json: " + JSON.stringify(this.responses))
-  //     console.log("testing two for json: " + booleanResponse)
-  //   }
-
-  // }
-
-  //Method which nevigate to wrong-answers component
-  // submitTumi(que: any) {
-
-  //   this.useranswer = que
-  //   console.log("json test, want user id: " + JSON.stringify(this.useranswer))
-  //   this.getMeaning();
-  //   // this.verify();
-
-  //   if (this.useranswer == "Credit allows you to make large purchases...") {
-  //     this.responses.correctResponse = true
-  //     let booleanResponse = this.responses.correctResponse
-
-  //     localStorage.setItem('userReponse', JSON.stringify(this.responses.correctResponse))
-  //     this.router.navigate(['/response-tumi']);
-  //     console.log("testing for json: " + JSON.stringify(this.responses))
-  //     console.log("testing two for json: " + booleanResponse)
-  //   }
-  //   else {
-  //     this.responses.correctResponse = false
-  //   }
-
-  // }
 
   getQuestions() {
     this.questionsService.getAllQuestions().subscribe((data) => {
@@ -137,7 +76,7 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q2':
         this.question =
-          'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
+          'Lets assume you want get credit, what do you think will be needed from you to get credit? ';
         this.mandlaResponse =
           'Drivers License and proof of residence.';
         this.tumiResponse =
@@ -150,7 +89,7 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q3':
         this.question =
-          'Between Mandla and Tumi is correct about credit score ';
+          'Between Mandla and Tumi who is correct about credit score ';
         this.mandlaResponse =
           'Credit score is a prediction of your credit behavior, such as how likely you are to pay a loan back on time, based on information from your credit reports.';
         this.tumiResponse =
@@ -163,11 +102,11 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q4':
         this.question =
-          'Between Mandla and Tumi who is correct with debt definition';
+          'Between Mandla and Tumi who is correct about debt definition';
         this.mandlaResponse =
-          'Debt is the money available for one can borrow to make purchaces they cannot afford to buy right away';
+          'Debt is the money available for one to borrow to make purchaces they cannot afford to buy right away';
         this.tumiResponse =
-          'Debt is the moneyone party owes another party, and can be paid over time ';
+          'Debt is the money one party owes another party, and can be paid over time ';
         //sending this quiz to AI
         this.prompt = 'Defination of debt?'
         this.session.saveActiveQuestion('q5');
@@ -222,31 +161,28 @@ export class NoDebtUserComponent implements OnInit {
   }
 
   submitTumi() {
-    
-    if (this.question === "Why is credit important?" && this.tumiResponse) {
-      console.log("le question", this.question)
-      this.responses.correctResponse = true
 
-      this.userSelection = this.responses.correctResponse 
-      localStorage.setItem('userResponse', this.userSelection)
-
+    if (
+      (this.question === "Why is credit important?" && this.tumiResponse) ||
+      (this.question === "Lets assume you want to get credit, what do you think will be needed from you to get credit?" && this.tumiResponse) ||
+      (this.question === "Debt is the money one party owes another party, and can be paid over time " && this.tumiResponse)
+    ) {
+      this.responses.correctResponse = true;
+      localStorage.setItem('userResponse', JSON.stringify(this.responses.correctResponse));
     } else {
       this.responses.correctResponse = false;
-      this.userSelection = this.responses.correctResponse 
-      localStorage.setItem('userResponse', this.userSelection)
+      localStorage.setItem('userResponse', JSON.stringify(this.responses.correctResponse));
     }
-    this.router.navigate(['/response-tumi']);
+    this.router.navigate(['/response-tumi'], { queryParams: { userResponse: this.responses.correctResponse } });
 
-    console.log(this.responses.correctResponse, "Le boolean")
   }
+
+
 
   //Check if the question is read then move to the next question
   ngOnInit(): void {
     this.verify();
     this.getQuestions();
-
-    this.userSelection = localStorage.getItem('userResponse');
-
   }
 
   goBack() {

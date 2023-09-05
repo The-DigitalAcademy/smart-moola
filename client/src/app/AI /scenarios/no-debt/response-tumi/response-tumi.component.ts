@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoaderService } from 'src/app/services/Loader';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-response-tumi',
@@ -9,27 +10,26 @@ import { LoaderService } from 'src/app/services/Loader';
 })
 export class TumiResponseComponent implements OnInit {
 
-  responses = false
-
+  responses: any = ''
   userRes: any;
 
   constructor(
     private router: Router,
-    public loaderService: LoaderService
+    public loaderService: LoaderService,
+    private route: ActivatedRoute
   ) { }
 
-  getUserResponse() {
-    let responses = localStorage.getItem('userResponse');
-    console.log("userb res: " + responses)
-  }
-
   ngOnInit() {
-    this.getUserResponse()
+    this.route.queryParams.subscribe(params => {
+      this.responses = params['userResponse'];
+    });
+
     setTimeout(() => {
       this.loaderService.startLoader()
       this.router.navigate(['/response'])
       this.loaderService.stopLoader();
     }, 3000);
+
   }
 
 }

@@ -9,8 +9,8 @@ import { Location } from '@angular/common';
   providedIn: 'root',
 })
 export class UsersService {
-  //usersURL: any = usersAPI;
-  usersURL = 'https://smart-9qg3.onrender.com/api/users';
+
+  usersURL: any = usersAPI;
   usersLocalURL = 'http://localhost:4545/api/users';
 
   headers: any = new HttpHeaders({
