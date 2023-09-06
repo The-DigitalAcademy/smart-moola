@@ -15,7 +15,7 @@ export class NoDebtComponent implements OnInit {
   fullName: any = '';
 
   getLoggedInUserName() {
-    this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName
+    this.fullName = localStorage.getItem('FullName');
     console.log(this.fullName);
   }
 
@@ -23,7 +23,7 @@ export class NoDebtComponent implements OnInit {
     this.getLoggedInUserName();
     console.log(this.getLoggedInUserName())
   }
-  
+
   goBack() {
     this.usersServices.previousPage();
   }

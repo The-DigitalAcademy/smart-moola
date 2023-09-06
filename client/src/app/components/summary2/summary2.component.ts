@@ -8,15 +8,14 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class Summary2Component implements OnInit {
 progressPercentage: any;
+fullName: any = '';
 
   constructor( 
   private usersServices: UsersService
   ){}
 
-  fullName: any = '';
-
   getLoggedInUserName() {
-    this.fullName = localStorage.getItem('FullName'); // Assign the value to fullName
+    this.fullName = localStorage.getItem('FullName'); 
     console.log(this.fullName);
   }
  ngOnInit(): void {

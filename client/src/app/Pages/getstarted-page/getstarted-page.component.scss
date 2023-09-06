@@ -34,7 +34,7 @@
     border: 1px solid #000000;
   }
 
-  .getStartedImg{
+  .getStartedImg {
     margin-top: 2.6rem;
     margin-left: -3.5em;
   }
@@ -58,6 +58,11 @@
     gap: 10px;
     margin-top: auto;
     left: 0;
+
+    a {
+      text-decoration: none;
+    }
+
   }
 
   .submit {

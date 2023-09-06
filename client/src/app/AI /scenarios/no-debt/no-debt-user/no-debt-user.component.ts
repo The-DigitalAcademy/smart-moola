@@ -4,18 +4,23 @@ import { SessionsService } from 'src/app/services/sessions.service';
 import { QuestionService } from 'src/app/services/question.service';
 import { LoaderService } from 'src/app/services/Loader';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-no-debt-user',
   templateUrl: './no-debt-user.component.html',
   styleUrls: ['./no-debt-user.component.scss']
 })
+
 export class NoDebtUserComponent implements OnInit {
+
   constructor(
     private router: Router,
     private questionsService: QuestionService,
     private usersServices: UsersService,
-    private session: SessionsService, public loaderService: LoaderService
+    private route: ActivatedRoute,
+    private session: SessionsService,
+    public loaderService: LoaderService
   ) { }
 
   question = '';
@@ -27,21 +32,14 @@ export class NoDebtUserComponent implements OnInit {
   progressPercentage = 0;
   questions: any;
 
+  responses = {
+    correctResponse: false,
+  }
+
   verifyAnswer() {
-    this.router.navigate(['/answers']);
+    this.router.navigate(['/response-mandla']);
   }
 
-  //Method which nevigate to answers component
-  submitMandla() {
-    this.getMeaning();
-    this.router.navigate(['/answers']);
-  }
-
-  //Method which nevigate to wrong-answers component
-  submitTumi() {
-    this.getMeaning();
-    this.router.navigate(['/wrong-answers']);
-  }
 
   getQuestions() {
     this.questionsService.getAllQuestions().subscribe((data) => {
@@ -50,7 +48,6 @@ export class NoDebtUserComponent implements OnInit {
       }
     });
   }
-  
 
   //Send prompt to AI and display explaination from the AI 
   getMeaning() {
@@ -62,14 +59,15 @@ export class NoDebtUserComponent implements OnInit {
     });
   }
 
-  //Check if the question is read then move to the next question
   verify() {
+
     this.active = this.session.getActiveQuestion();
     switch (this.active) {
       case 'q1':
         this.question = 'Why is credit important?';
         this.mandlaResponse = "Credit is when you owe money to someone else.";
         this.tumiResponse = "Credit allows you to make large purchases...";
+
         //sending this quiz to AI
         this.prompt = 'Why is credit important?'
         this.session.saveActiveQuestion('q2');
@@ -78,7 +76,7 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q2':
         this.question =
-          'Lerato lets assume you want get credit, what do you think will be needed from you to get credit? ';
+          'Lets assume you want get credit, what do you think will be needed from you to get credit? ';
         this.mandlaResponse =
           'Drivers License and proof of residence.';
         this.tumiResponse =
@@ -88,9 +86,10 @@ export class NoDebtUserComponent implements OnInit {
         this.session.saveActiveQuestion('q3');
         this.progressPercentage = 30;
         break;
+
       case 'q3':
         this.question =
-          'Between Mandla and Tumi is correct about credit score ';
+          'Between Mandla and Tumi who is correct about credit score ';
         this.mandlaResponse =
           'Credit score is a prediction of your credit behavior, such as how likely you are to pay a loan back on time, based on information from your credit reports.';
         this.tumiResponse =
@@ -103,11 +102,11 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q4':
         this.question =
-          'Between Mandla and Tumi who is correct with debt definition';
+          'Between Mandla and Tumi who is correct about debt definition';
         this.mandlaResponse =
-          'Debt is the money available for one can borrow to make purchaces they cannot afford to buy right away';
+          'Debt is the money available for one to borrow to make purchaces they cannot afford to buy right away';
         this.tumiResponse =
-          'Debt is the moneyone party owes another party, and can be paid over time ';
+          'Debt is the money one party owes another party, and can be paid over time ';
         //sending this quiz to AI
         this.prompt = 'Defination of debt?'
         this.session.saveActiveQuestion('q5');
@@ -129,7 +128,7 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q6':
         this.question =
-          'Between Mandla and tumi who is correct in terms of explaining bad debt';
+          'Between Mandla and Tumi who is correct about credit score ?';
         this.mandlaResponse =
           'Debt is bad when it used for for things that do not bring you money.';
         this.tumiResponse =
@@ -152,15 +151,50 @@ export class NoDebtUserComponent implements OnInit {
         this.prompt = 'Why is credit important?'
         this.session.saveActiveQuestion('q2');
         this.progressPercentage = 15;
-
         break;
     }
+
   }
 
+  submitMandla() {
+    if (
+      (this.question === "Between Mandla and Tumi who is correct about credit score ?" && this.mandlaResponse) ||
+      (this.question === "Between Mandla and Tumi who is correct in explaining bad debt ?" && this.mandlaResponse) 
+    ) {
+      this.responses.correctResponse = true;
+      localStorage.setItem('userResponse', JSON.stringify(this.responses.correctResponse));
+    } else {
+      this.responses.correctResponse = false;
+      localStorage.setItem('userResponse', JSON.stringify(this.responses.correctResponse));
+    }
+    this.router.navigate(['/response-mandla'], { queryParams: { userResponse: this.responses.correctResponse } });
+
+
+  }
+
+  submitTumi() {
+
+    if (
+      (this.question === "Why is credit important?" && this.tumiResponse) ||
+      (this.question === "Lets assume you want to get credit, what do you think will be needed from you to get credit?" && this.tumiResponse) ||
+      (this.question === "Debt is the money one party owes another party, and can be paid over time " && this.tumiResponse)
+    ) {
+      this.responses.correctResponse = true;
+      localStorage.setItem('userResponse', JSON.stringify(this.responses.correctResponse));
+    } else {
+      this.responses.correctResponse = false;
+      localStorage.setItem('userResponse', JSON.stringify(this.responses.correctResponse));
+    }
+    this.router.navigate(['/response-tumi'], { queryParams: { userResponse: this.responses.correctResponse } });
+
+  }
+
+  //Check if the question is read then move to the next question
   ngOnInit(): void {
     this.verify();
     this.getQuestions();
   }
+
   goBack() {
     this.usersServices.previousPage();
   }
