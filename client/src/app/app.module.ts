@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuardService } from '../app/services/auth.guard';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -20,7 +22,6 @@ import { ProfileEditorComponent } from './Pages/profile-editor/profile-editor.co
 import { PasswordUpdateComponent } from './Aunthentication/password-update/password-update.component';
 import { responseComponent } from './AI /response/response.component';
 import { NavigationMenuComponent } from './components/navigation-menu/navigation-menu.component';
-import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { Summary2Component } from './components/summary2/summary2.component';
 import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component';
@@ -30,6 +31,7 @@ import { HomeComponent } from './Pages/home/home.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { TumiResponseComponent } from './AI /scenarios/no-debt/response-tumi/response-tumi.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
+import { MandlaResponseComponent } from './AI /scenarios/no-debt/response-mandla/response-mandla.component';
 
 @NgModule({
   declarations: [
@@ -61,9 +63,11 @@ import { ModalContentComponent } from './components/modal-content/modal-content.
     NoDebtUserComponent,
     NoDebtComponent,
     TumiResponseComponent,
+    MandlaResponseComponent
   ],
 
   imports: [
+    CommonModule,
     NgxUiLoaderModule,
     BrowserModule,
     AppRoutingModule,

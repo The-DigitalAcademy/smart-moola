@@ -11,7 +11,6 @@ import { ActivatedRoute } from '@angular/router';
 export class TumiResponseComponent implements OnInit {
 
   responses: any = ''
-  // userRes: any;
 
   constructor(
     private router: Router,
