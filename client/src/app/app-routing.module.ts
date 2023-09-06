@@ -18,9 +18,9 @@ import { ModalComponent } from './components/modal/modal.component';
 import { NoDebtComponent } from './AI /scenarios/no-debt/no-debt.component';
 import { NoDebtUserComponent } from './AI /scenarios/no-debt/no-debt-user/no-debt-user.component';
 import { IndebtedUserComponent } from './AI /scenarios/indebted/indebted-user/indebted-user.component';
-import { AnswersComponent } from './AI /scenarios/no-debt/answers/answers.component';
+import { MandlaResponseComponent } from './AI /scenarios/no-debt/response-mandla/response-mandla.component';
 import { SummaryComponent } from './components/summary/summary.component';
-import { WrongAnswersComponent } from './AI /scenarios/no-debt/wrong-answers/wrong-answers.component';
+import { TumiResponseComponent } from './AI /scenarios/no-debt/response-tumi/response-tumi.component';
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { IndebtedScenesComponent } from './AI /scenarios/indebtedscenes/indebtedscene.component';
 import { Summary2Component } from './components/summary2/summary2.component';
@@ -46,8 +46,8 @@ const routes: Routes = [
   { path: 'profile-editor', component: ProfileEditorComponent },
 
   { path: 'response', component: responseComponent },
-  { path: 'answers', component: AnswersComponent },
-  { path: 'wrong-answers', component: WrongAnswersComponent },
+  { path: 'response-mandla', component: MandlaResponseComponent },
+  { path: 'response-tumi', component: TumiResponseComponent },
 
   { path: 'indebted', component: IndebtedUserComponent },
   { path: 'indebtedscenes', component: IndebtedScenesComponent },
