@@ -128,7 +128,7 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q6':
         this.question =
-          'Between Mandla and tumi who is correct in terms of explaining bad debt';
+          'Between Mandla and Tumi who is correct about credit score ?';
         this.mandlaResponse =
           'Debt is bad when it used for for things that do not bring you money.';
         this.tumiResponse =
@@ -157,6 +157,18 @@ export class NoDebtUserComponent implements OnInit {
   }
 
   submitMandla() {
+    if (
+      (this.question === "Between Mandla and Tumi who is correct about credit score ?" && this.mandlaResponse) ||
+      (this.question === "Between Mandla and Tumi who is correct in explaining bad debt ?" && this.mandlaResponse) 
+    ) {
+      this.responses.correctResponse = true;
+      localStorage.setItem('userResponse', JSON.stringify(this.responses.correctResponse));
+    } else {
+      this.responses.correctResponse = false;
+      localStorage.setItem('userResponse', JSON.stringify(this.responses.correctResponse));
+    }
+    this.router.navigate(['/response-mandla'], { queryParams: { userResponse: this.responses.correctResponse } });
+
 
   }
 
@@ -176,8 +188,6 @@ export class NoDebtUserComponent implements OnInit {
     this.router.navigate(['/response-tumi'], { queryParams: { userResponse: this.responses.correctResponse } });
 
   }
-
-
 
   //Check if the question is read then move to the next question
   ngOnInit(): void {
