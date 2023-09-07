@@ -19,6 +19,11 @@ export class TumiResponseComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    localStorage.getItem('userResponse')
+    console.log(
+      localStorage.getItem('userResponse'), "the response")
+
     this.route.queryParams.subscribe(params => {
       this.responses = params['userResponse'];
     });

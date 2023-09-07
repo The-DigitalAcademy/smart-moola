@@ -169,7 +169,6 @@ export class NoDebtUserComponent implements OnInit {
     }
     this.router.navigate(['/response-mandla'], { queryParams: { userResponse: this.responses.correctResponse } });
 
-
   }
 
   submitTumi() {
