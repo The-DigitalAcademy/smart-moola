@@ -22,6 +22,8 @@ export interface CreateUserResponse {
     id: number;
     fullName: string;
     email: string;
+    password: string,
+    confirmPassword: string
 }
 // Loggin in response model
 export interface LoginResponse {

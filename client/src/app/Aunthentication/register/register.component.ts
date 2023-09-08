@@ -15,16 +15,17 @@ export class RegisterComponent {
   session: any;
 
   constructor(
+
     private fb: FormBuilder,
     private userService: UsersService,
     private router: Router
+
   ) {
     this.form = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', Validators.required],
-      userImage: ['', Validators.required]
+      confirmPassword: ['', Validators.required]
     }, { validators: this.passwordMatchValidator });
   }
 
@@ -43,6 +44,10 @@ export class RegisterComponent {
     if (this.form.valid) {
       const fullName = this.form.value.fullName;
       const email = this.form.value.email;
+
+      console.log("Name", fullName)
+      console.log("E-mail",email)
+      console.log("submitForm() called");
 
       this.userService.createUser(this.form.value).subscribe(
         (data: any) => {
