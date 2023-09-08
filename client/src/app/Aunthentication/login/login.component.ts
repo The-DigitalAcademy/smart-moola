@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { UsersService } from '../../services/users.service';
 import { AuthGuardService } from '../../services/auth.guard';
 import Swal from 'sweetalert2';
-import { SessionsService } from 'src/app/services/sessions.service';
 import { LoginResponse } from 'src/app/interface/users';
 
 @Component({
@@ -22,8 +21,8 @@ export class LoginComponent {
     private fb: FormBuilder,
     private usersService: UsersService,
     private router: Router,
-    private auth: AuthGuardService,
-    private session: SessionsService
+    private auth: AuthGuardService
+
   ) {
     this.form = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -40,10 +39,12 @@ export class LoginComponent {
           const accessToken = data.accessToken;
           const loggedInUserEmail = data.email;
           const id = data.id;
+          const fullName = data.fullName;
   
           localStorage.setItem('Token', accessToken);
           localStorage.setItem('Email', loggedInUserEmail);
           localStorage.setItem('id', id);
+          localStorage.setItem('FullName', fullName);
   
           // Check if accessToken is present and valid
           if (accessToken && accessToken !== 'undefined') {

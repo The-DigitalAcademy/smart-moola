@@ -42,6 +42,7 @@ export class PasswordUpdateComponent implements OnInit {
   }
 
   submitForm() {
+    console.log("Working")
     if (this.passwordUpdateForm.valid) {
       const password = this.passwordUpdateForm.value.password;
       const confirmPassword = this.passwordUpdateForm.value.confirmPassword;
