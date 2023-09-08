@@ -44,7 +44,7 @@ export class UsersService {
   }
 
   updatePassword(passwordUpdate: PasswordUpdate): Observable<any> {
-    return this.http.post<any>(`${this.usersLocalURL}/password-update`, passwordUpdate);
+    return this.http.post<any>(`${this.usersURL}/password-update`, passwordUpdate);
   }
   // Method to trigger email sending
   sendEmail(email: string) {
