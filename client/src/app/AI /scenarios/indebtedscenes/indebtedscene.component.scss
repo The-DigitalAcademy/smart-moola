@@ -96,7 +96,11 @@
             padding: 20px;
 
             .airesponse {
-                padding: 5px;
+                padding: 10px;
+                height: 100%;
+                font-size: large;
+                color: var(--main-color);
+                
             }
 
             button {
