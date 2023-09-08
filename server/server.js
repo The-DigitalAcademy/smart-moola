@@ -42,3 +42,5 @@ sequelize
     console.error('Error synchronizing the database:', err);
   });
 
+const { getMeaningOfWord } = require('./controllers/ai.controller');
+app.post('/api/meaning', getMeaningOfWord);

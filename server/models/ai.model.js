@@ -1,5 +1,5 @@
 const axios = require('axios');
-const openAIApiKey = process.env.OPENAI
+const openAIApiKey = process.env.OPENAI;
 
 async function getExplanationForQuestion(req, res) {
   const question = req.body.question;
