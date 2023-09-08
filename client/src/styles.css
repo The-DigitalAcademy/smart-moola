@@ -66,6 +66,15 @@ h1 {
     color: red;
 }
 
+.modal {
+    padding: 20px;
+    
+}
+
+.modal-content {
+    padding: 20px;
+}
+
 @media (max-width: 414px) {
     .submit {
         padding: 10px;
