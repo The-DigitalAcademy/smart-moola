@@ -82,7 +82,7 @@ export class NoDebtUserComponent implements OnInit {
         this.tumiResponse =
           'Tumi has proof of residence, Identity document';
         //sending this quiz to AI
-        this.prompt = 'To apply for credit what documents are requiedd?'
+        this.prompt = 'To apply for credit what documents are requied?'
         this.session.saveActiveQuestion('q3');
         this.progressPercentage = 30;
         break;
