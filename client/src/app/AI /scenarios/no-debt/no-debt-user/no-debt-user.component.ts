@@ -76,7 +76,7 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q2':
         this.question =
-          'Lets assume you want get credit, what do you think will be needed from you to get credit? ';
+          'Lets assume you want to get credit, what do you think will be needed from you to get it?';
         this.mandlaResponse =
           'Drivers License and proof of residence.';
         this.tumiResponse =
@@ -115,7 +115,7 @@ export class NoDebtUserComponent implements OnInit {
 
       case 'q5':
         this.question =
-          'Between Mandla and tumi who is correct in terms of explaining good debt';
+          'Between Mandla and Tumi who is correct in explaining bad debt ?';
         this.mandlaResponse =
           'Debt is good when is used for for things that gain value over time.';
         this.tumiResponse =
@@ -174,7 +174,7 @@ export class NoDebtUserComponent implements OnInit {
   submitTumi() {
     if (
       (this.question === "Why is credit important?" && this.tumiResponse) ||
-      (this.question === "Lets assume you want to get credit, what do you think will be needed from you to get credit?" && this.tumiResponse) ||
+      (this.question === "Lets assume you want to get credit, what do you think will be needed from you to get it?" && this.tumiResponse) ||
       (this.question === "Debt is the money one party owes another party, and can be paid over time " && this.tumiResponse)
     ) {
       this.responses.correctResponse = true;
