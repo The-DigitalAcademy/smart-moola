@@ -96,7 +96,9 @@
 // Desktop Responsiveness 
 
 @media (min-width: 414px) {
-
+  body{
+    background-color: var(--main-color);
+}
   .container {
     margin-left: 15em;
     background-color: var(--main-color);

@@ -13,7 +13,7 @@
     --WHITE: #FFFFFF;
 }
 
- body {
+body {
     background-color: var(--WHITE);
     font-family: 'Poppins', sans-serif;
     font-size: 12px;
@@ -23,20 +23,20 @@
 }
 
 h1 {
-    color: var(--main-color); 
+    color: var(--main-color);
     text-align: center;
     margin-bottom: 20px;
     font-weight: 600;
     font-size: 48px;
 }
 
-.fullScreen{
-    height:100vh;
-    width:100%;
+.fullScreen {
+    height: 100vh;
+    width: 100%;
 }
 
-.textColor{
-    color:#669BBC
+.textColor {
+    color: #669BBC
 }
 
 .submit {
@@ -59,17 +59,17 @@ h1 {
     background-color: var(--main-color);
 }
 
-.success{
+.success {
     color: green;
 }
 
-.error{
+.error {
     color: red;
 }
 
 .modal {
     padding: 20px;
-    
+
 }
 
 .modal-content {
@@ -79,9 +79,10 @@ h1 {
 @media (max-width: 390px) {
 
 
-  .container-left {
-    display: none;
-  }
+    .container-left {
+        display: none;
+    }
+
     .submit {
         padding: 10px;
         position: relative;
@@ -96,7 +97,13 @@ h1 {
         justify-content: space-between;
         gap: 5px;
         padding: 10px;
-      } 
+    }
 
-} 
+}
 
+@media (min-width: 414px) {
+    /* body {
+        background-color: var(--main-color);
+    } */
+
+}
