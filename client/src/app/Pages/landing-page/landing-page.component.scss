@@ -186,6 +186,11 @@
         top: 50em;
       }
 
+      .submit:hover{
+        background-color: var(--sub-color);
+        color: white;
+      }
+
     }
   }
 }
