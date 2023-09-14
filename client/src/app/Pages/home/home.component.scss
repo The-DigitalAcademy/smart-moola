@@ -257,3 +257,70 @@
   }
 
 }
+
+@media (min-width: 414px) {
+
+  .container {
+    margin-left: 15em;
+    display: flex;
+
+    .header {
+      h1 {
+        font-weight: 900;
+        text-shadow: 1px 1px #669BBC;
+      }
+    }
+
+    .getHomeImg {
+      margin-top: -28em;
+    }
+
+    p {
+      margin-top: 5em;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 5em;
+      // background-color: purple;
+      width: 70%;
+
+      .card {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: var(--main-color);
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 20px;
+
+        .firstElem {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          width: 50%;
+          padding: 20px;
+          font-size: 12px;
+          font-weight: 700;
+
+          a{
+            margin-top: 3em;
+          }
+        }
+
+        .cardElem {
+          width: 50%;
+
+          img {
+            height: 12em;
+            width: 100%;
+
+          }
+        }
+      }
+    }
+  }
+}

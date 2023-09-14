@@ -102,8 +102,7 @@ h1 {
 }
 
 @media (min-width: 414px) {
-    /* body {
+    body {
         background-color: var(--main-color);
-    } */
-
+    }
 }
