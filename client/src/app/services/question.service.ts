@@ -6,15 +6,15 @@ import { Observable, catchError, throwError } from 'rxjs';
 
 const URL = 'https://smart-moola-app-v1.onrender.com/api/qna/getqna'
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
+// const httpOptions = {
+//   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+// };
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionService {
-  
+
   renderURL = "https://smart-moola-app-v1.onrender.com/api/qna/"
 
   private backendUrl = "https://smart-moola-app-v1.onrender.com/api/meaning"

@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="header">
     <div class="back-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#669BBC" class="bi bi-arrow-left"
@@ -11,23 +10,22 @@
     <div class="pgbar">
       <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
         aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" role="progressbar" [style.width]="progressPercentage + '%'">{{progressPercentage +
-          '%'}}</div>
+        <div class="progress-bar" role="progressbar" [style.width]="progressPercentage + '%'">
+          {{ progressPercentage + "%" }}
+        </div>
       </div>
     </div>
 
     <div class="body">
-
       <img class="imagebox"
         src="https://cdn.discordapp.com/attachments/1093145057919520828/1138459034161270844/Free_Vector___Calculator_concept_illustration-removebg-preview.png"
-        alt="">
+        alt="" />
 
       <div class="statementdiv">
         {{ getCurrentStatement() }}
       </div>
 
       <div class="questiondiv">
-
         <div [innerHTML]="getCurrentQuestion()"></div>
 
         <form class="myForm">
@@ -35,7 +33,7 @@
             <div class="firstSelect">
               <label>
                 <input type="radio" name="selectionGroup" [(ngModel)]="selectedValue" value="Debt Review"
-                  (change)="onSelectionChange(selectedValue)">
+                  (change)="onSelectionChange(selectedValue)" />
                 Debt Review
               </label>
             </div>
@@ -43,7 +41,7 @@
             <div class="secondSelect">
               <label>
                 <input type="radio" name="selectionGroup" [(ngModel)]="selectedValue" value="Debt Counselling"
-                  (change)="onSelectionChange(selectedValue)">
+                  (change)="onSelectionChange(selectedValue)" />
                 Debt Counselling
               </label>
             </div>
@@ -51,20 +49,20 @@
             <div class="thirdSelect">
               <label>
                 <input type="radio" name="selectionGroup" [(ngModel)]="selectedValue" value="Debt Consolidation"
-                  (change)="onSelectionChange(selectedValue)">
+                  (change)="onSelectionChange(selectedValue)" />
                 Debt Consolidation
               </label>
             </div>
           </div>
         </form>
-
       </div>
 
       <div class="btn-group">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="height: 80%;"
-          data-bs-target="#staticBackdrop" (click)="submitForm()">Submit</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" style="height: 80%"
+          data-bs-target="#staticBackdrop" (click)="submitForm()">
+          Submit
+        </button>
       </div>
-
     </div>
 
     <div class="footer">
@@ -75,26 +73,30 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" style="margin-top: 6rem;" id="staticBackdrop" data-bs-backdrop="static"
+  <div class="modal fade" style="margin-top: 6rem" id="staticBackdrop" data-bs-backdrop="static"
     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-
         <ng-container *ngIf="isResponseCorrect; else incorrectResponse">
-          <h3 class="success"> Correct! </h3>
+          <h3 class="success">Correct!</h3>
+          <p class="aiSub-Title">You are doing great, keep it up</p>
         </ng-container>
         <ng-template #incorrectResponse>
-          <h3 class="error"> Incorrect! </h3>
+          <!-- <h3 class="error">Incorrect!</h3> -->
+          <i class="bi bi-emoji-frown">Some</i>
+          <p class="aiSub-Title">
+            Thanks for trying, check the correct answer below
+          </p>
+          <img src="https://res.cloudinary.com/dp4dd0gis/image/upload/v1694609016/2_paa7io.png" class="aiImg" />
           <div class="airesponse">
-            {{explanation}}
+            {{ explanation }}
           </div>
         </ng-template>
 
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
-          (click)="updateTextScene()">Continue</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateTextScene()">
+          Continue
+        </button>
       </div>
-
     </div>
   </div>
-  
 </div>

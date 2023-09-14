@@ -68,6 +68,7 @@ export class IndebtedScenesComponent implements OnInit {
   }
 
   onSelectionChange(selectedValue: string) {
+    console.log("Selected Val", selectedValue)
     this.selectedValue = selectedValue;
   }
 
@@ -107,11 +108,11 @@ export class IndebtedScenesComponent implements OnInit {
     return this.questions[this.statementIndex];
   }
 
-
   ngOnInit() {
     this.progressPercentage = 25;
     this.updateTextScene();
     this.counterService.currentSelection.subscribe((selectionValue: any) => {
+      console.log("SeleCted Ini", selectionValue);
       this.currentSelectionValue = selectionValue;
     });
   }
