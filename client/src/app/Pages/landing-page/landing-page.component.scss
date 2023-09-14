@@ -47,7 +47,7 @@
     a {
       text-decoration: none;
     }
-    
+
   }
 
   .getStartedImg {
@@ -56,4 +56,142 @@
     height: 21em;
   }
 
+}
+
+// Desktop Responsiveness 
+
+@media (min-width: 414px) {
+
+  .container {
+
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    padding: 0;
+
+    .container-left {
+      padding: 20px;
+      background-color: var(--main-color);
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        margin-top: 1em;
+        color: #FFFFFF;
+        font-weight: 700;
+      }
+
+      p {
+        color: #FFFFFF;
+        font-weight: 500;
+        text-align: center;
+        margin-top: 10em;
+        font-weight: 700;
+
+      }
+
+      .bottom {
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 7em;
+
+        .one {
+          border-radius: 20px;
+          padding: 10px;
+          background-color: #FFFFFF;
+
+          .imgBS {
+            height: 50%;
+
+            .landingImgBS {
+              height: 100%;
+              width: 100%;
+            }
+          }
+
+          .contentLandingBS {
+            height: 50%;
+            h5{
+              text-align: center;
+              padding: 5px;
+              color: var(--main-color);
+              font-weight: 700;
+              margin-top: 20px;
+            }
+            p{
+              margin-top: 3em;
+              color: var(--main-color);
+            }
+          }
+        }
+      }
+
+    }
+
+    .container-right {
+      padding: 20px;
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h1 {
+        margin-top: 1em;
+      }
+
+      .ellipse {
+        background-color: var(--main-color);
+        border-radius: 171px/184px;
+        height: 24em;
+        width: 23em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(60%, -50%);
+      }
+
+      .smallEllipse {
+        background-color: #5c8ba9;
+        border-radius: 171px/184px;
+        height: 15em;
+        width: 14em;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(170%, -50%);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000000;
+
+      }
+
+      .text-wrapper-2 {
+        max-width: 80%;
+        font-size: 12px;
+        color: #FFFFFF;
+      }
+
+      .submit {
+        padding: 10px;
+        position: relative;
+        width: 30em;
+        top: 50em;
+      }
+
+      .submit:hover{
+        background-color: var(--sub-color);
+        color: white;
+      }
+
+    }
+  }
 }

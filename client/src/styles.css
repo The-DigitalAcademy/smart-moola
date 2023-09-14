@@ -9,6 +9,7 @@
 
 :root {
     --main-color: #669BBC;
+    --sub-color: #175175;
     --WHITE: #FFFFFF;
 }
 
@@ -75,7 +76,12 @@ h1 {
     padding: 20px;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 390px) {
+
+
+  .container-left {
+    display: none;
+  }
     .submit {
         padding: 10px;
         position: relative;

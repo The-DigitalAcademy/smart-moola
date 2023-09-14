@@ -94,13 +94,21 @@
 
         .modal-content {
             padding: 20px;
+            color: var(--main-color);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
 
             .airesponse {
-                padding: 10px;
+                padding: 15px;
                 height: 100%;
-                font-size: large;
+                width: 100%;
+                font-size: 12px;
                 color: var(--main-color);
-                
+                align-self: stretch;
+
             }
 
             button {
@@ -108,4 +116,41 @@
             }
         }
     }
+}
+
+.aiImg {
+    width: 70%;
+    height: 70%;
+}
+
+.aiSub-Title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.airesponse {
+    padding: 15px;
+    height: 100%;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--main-color);
+    align-self: stretch;
+}
+
+button {
+    background-color: var(--main-color);
+    width: 100%;
+}
+
+button:hover {
+    background-color: #175175;
+}
+
+.modal-content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
