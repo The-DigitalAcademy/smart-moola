@@ -24,6 +24,7 @@ import { TumiResponseComponent } from './AI /scenarios/no-debt/response-tumi/res
 import { ModalContentComponent } from './components/modal-content/modal-content.component';
 import { IndebtedScenesComponent } from './AI /scenarios/indebtedscenes/indebtedscene.component';
 import { Summary2Component } from './components/summary2/summary2.component';
+import { AuthGuardService } from './services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
@@ -32,32 +33,32 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
 
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
   { path: 'menu', component: NavigationMenuComponent },
 
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },
   { path: 'password-update', component: PasswordUpdateComponent },
 
-  { path: 'no-debt', component: NoDebtComponent },
-  { path: 'no-debt-user', component: NoDebtUserComponent },
+  { path: 'no-debt', component: NoDebtComponent, canActivate: [AuthGuardService]  },
+  { path: 'no-debt-user', component: NoDebtUserComponent, canActivate: [AuthGuardService]  },
 
-  { path: 'profile', component: ProfileComponent },
-  { path: 'profile-editor', component: ProfileEditorComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuardService]  },
+  { path: 'profile-editor', component: ProfileEditorComponent, canActivate: [AuthGuardService]  },
 
-  { path: 'response', component: responseComponent },
-  { path: 'response-mandla', component: MandlaResponseComponent },
-  { path: 'response-tumi', component: TumiResponseComponent },
+  { path: 'response', component: responseComponent, canActivate: [AuthGuardService]  },
+  { path: 'response-mandla', component: MandlaResponseComponent, canActivate: [AuthGuardService]  },
+  { path: 'response-tumi', component: TumiResponseComponent, canActivate: [AuthGuardService]  },
 
-  { path: 'indebted', component: IndebtedUserComponent },
-  { path: 'indebtedscenes', component: IndebtedScenesComponent },
+  { path: 'indebted', component: IndebtedUserComponent, canActivate: [AuthGuardService]  },
+  { path: 'indebtedscenes', component: IndebtedScenesComponent, canActivate: [AuthGuardService]  },
 
-  { path: 'summary', component: SummaryComponent },
-  { path: 'summary2', component: Summary2Component },
+  { path: 'summary', component: SummaryComponent, canActivate: [AuthGuardService]  },
+  { path: 'summary2', component: Summary2Component, canActivate: [AuthGuardService]  },
 
-  { path: 'footer', component: FooterComponent },
+  { path: 'footer', component: FooterComponent, canActivate: [AuthGuardService]  },
 
-  { path: 'modalresponse', component: ModalContentComponent },
+  { path: 'modalresponse', component: ModalContentComponent, canActivate: [AuthGuardService]  },
 ];
 
 @NgModule({
