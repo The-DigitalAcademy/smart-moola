@@ -5,7 +5,6 @@ import { RegisterComponent } from './Aunthentication/register/register.component
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { LoginComponent } from './Aunthentication/login/login.component';
-import { GetstartedPageComponent } from './Pages/getstarted-page/getstarted-page.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { PasswordResetComponent } from './Aunthentication/password-reset/password-reset.component';
 import { VerifyOtpComponent } from './Aunthentication/verify-otp/verify-otp.component';
@@ -29,12 +28,11 @@ import { AuthGuardService } from './services/auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full' },
   { path: 'landing', component: LandingPageComponent },
-  { path: 'getstarted', component: GetstartedPageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
 
   { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
-  { path: 'menu', component: NavigationMenuComponent },
+  { path: 'menu', component: NavigationMenuComponent, canActivate: [AuthGuardService] },
 
   { path: 'resetpassword', component: PasswordResetComponent },
   { path: 'verify-otp', component: VerifyOtpComponent },

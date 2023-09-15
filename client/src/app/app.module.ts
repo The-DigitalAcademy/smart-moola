@@ -14,7 +14,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './Aunthentication/login/login.component';
 import { RegisterComponent } from './Aunthentication/register/register.component';
 import { LandingPageComponent } from './Pages/landing-page/landing-page.component';
-import { GetstartedPageComponent } from './Pages/getstarted-page/getstarted-page.component';
 import { PasswordResetComponent } from './Aunthentication/password-reset/password-reset.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { VerifyOtpComponent } from './Aunthentication/verify-otp/verify-otp.component';
@@ -40,7 +39,6 @@ import { MandlaResponseComponent } from './AI /scenarios/no-debt/response-mandla
     LoginComponent,
     RegisterComponent,
     LandingPageComponent,
-    GetstartedPageComponent,
     PasswordResetComponent,
     ProfileComponent,
     VerifyOtpComponent,
