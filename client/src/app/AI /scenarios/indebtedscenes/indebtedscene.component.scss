@@ -155,20 +155,65 @@ button:hover {
     justify-content: center;
 }
 
+
 @media (min-width:414px) {
     .container {
-        input, label, span, p, div{
+
+        input,
+        label,
+        span,
+        p,
+        div {
             font-size: large;
             font-weight: 400;
         }
+
+        .pgbar {
+            // margin-top: 1%;
+            width: 100%;
+            // height: 1rem;
+            // margin-left: 2%;
+            // margin-right: 2%;
+            // margin-bottom: 1%;
+            // padding-top: 5%;
+            // background-color: pink;
+
+            .progress-bar {
+                background-color: var(--sub-color);
+                width: 100%;
+
+            }
+        }
     }
 
-    .airesponse{
+    .airesponse {
         font-size: larger;
         font-weight: 400;
     }
 
-    .btn .btn-primary:hover{
+    .btn .btn-primary:hover {
         background-color: var(--sub-color);
     }
+
+    .container {
+        .header {
+            .pgbar {
+                margin-top: 1%;
+                height: 1rem;
+                margin-left: 2%;
+                margin-right: 2%;
+                margin-bottom: 1%;
+                padding-top: 5%;
+                width: 100%;
+                .progress-bar{
+                    background-color: var(--sub-color);
+                }
+            }
+
+        }
+    }
+
+
+
+
 }
