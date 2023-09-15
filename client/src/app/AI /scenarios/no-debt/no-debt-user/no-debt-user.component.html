@@ -16,7 +16,7 @@
     <div class="pgbar p-4">
       <div class="progress" role="progressbar" aria-label="Example with label" [attr.aria-valuenow]="progressPercentage"
         aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar" style="background-color: #669bbc" [style.width.%]="progressPercentage">
+        <div class="progress-bar" style="background-color: #669BBC" [style.width.%]="progressPercentage">
           {{ progressPercentage }}%
         </div>
       </div>
@@ -32,18 +32,18 @@
             src="https://res.cloudinary.com/dd7nziiac/image/upload/v1693907525/Screenshot_2023-09-05_at_11.48.21_ifexlj.png" />
         </div>
         <div style="height: 30px">
-          <span>{{ mandlaResponse }}</span>
+          <span class="spanGS">{{ mandlaResponse }}</span>
         </div>
 
         <button (click)="submitMandla()" class="submit btn mandlaBtn">Mandla</button>
       </div>
       <div class="column">
-        <div class="card p-1">
+        <div class="card">
           <img style="width: 100%; height: 14em; object-fit: cover" class="p-1"
             src="https://res.cloudinary.com/dd7nziiac/image/upload/v1693903108/IMG-20220331-WA0030_hcl8pm.jpg" />
         </div>
         <div style="height: 30px">
-          <span>{{ tumiResponse }}</span>
+          <span class="spanGS">{{ tumiResponse }}</span>
         </div>
         <button (click)="submitTumi()" class="submit btn tumiBtn">Tumi</button>
       </div>

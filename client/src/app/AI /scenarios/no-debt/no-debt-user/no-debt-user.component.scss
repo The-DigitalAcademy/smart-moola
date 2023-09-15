@@ -111,16 +111,63 @@
 
 @media (min-width:414px) {
   .container {
-  
+
     margin-left: 15em;
+
+    .header {
+      .bi-arrow-left {
+        fill: var(--WHITE);
+      }
+
+      .progress-bar {
+        background-color: var(--sub-color);
+        fill: var(--sub-color);
+      }
+    }
 
     .mandlaBtn {
       width: 49%;
+      margin-left: 0.5em;
+    }
+
+    .mandlaBtn:hover {
+      width: 49%;
+      background-color: var(--sub-color);
     }
 
     .tumiBtn {
       width: 49%;
       margin-left: 40.5em;
     }
+
+    .tumiBtn:hover {
+      width: 49%;
+      margin-left: 40.5em;
+      background-color: var(--sub-color);
+    }
+
+    .column {
+      .spanGS {}
+
+      .card {
+        height: 25vh;
+        width: 100%;
+
+        img {
+          width: 50%;
+          height: 100vh;
+        }
+
+        .p-1 {
+          width: 50%;
+          height: 30vh;
+        }
+      }
+
+      span {
+        font-size: large;
+      }
+    }
+
   }
 }
