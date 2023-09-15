@@ -92,22 +92,12 @@
   position: absolute;
   top: 1em;
   left: 6em;
+
 }
 
-// .submit {
-//   display: block;
-//   width: 80%;
-//   padding: 10px;
-//   background-color: #669bbc;
-//   color: white;
-//   border: none;
-//   border-radius: 4px;
-//   cursor: pointer;
-//   margin-left: 4px;
-//   text-align: center;
-//   margin-top: 130px;
-//   margin-top: -40em;
-// }
+.progress-bar {
+  background-color: #669bbc; /* Default background color */
+}
 
 @media (min-width:414px) {
   .container {

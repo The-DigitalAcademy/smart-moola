@@ -110,6 +110,13 @@
     .submit-1:hover{
       background-color: var(--sub-color);
     }
+
+    .header{
+      .progress-bar{
+        background-color: var(--sub-color);
+        fill: var(--sub-color);
+      }
+    }
   }
 
 }
