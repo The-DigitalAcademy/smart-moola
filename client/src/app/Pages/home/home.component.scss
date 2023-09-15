@@ -265,7 +265,11 @@
     display: flex;
 
     .header {
+      margin-left: -26em;
+      margin-top: -7em;
+
       h1 {
+        margin-left: 5em;
         font-weight: 900;
         text-shadow: 1px 1px #669BBC;
       }
@@ -284,11 +288,9 @@
       flex-direction: row;
       justify-content: center;
       margin-top: 5em;
-      // background-color: purple;
       width: 70%;
 
       .card {
-
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -302,11 +304,11 @@
           flex-direction: column;
           text-align: center;
           width: 50%;
-          padding: 20px;
+          padding: 10px;
           font-size: 12px;
           font-weight: 700;
 
-          a{
+          a {
             margin-top: 3em;
           }
         }

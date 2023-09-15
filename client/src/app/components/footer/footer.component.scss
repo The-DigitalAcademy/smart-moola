@@ -20,3 +20,27 @@
 
     }
 }
+
+@media (min-width:414px) {
+    .container {
+        display: flex;
+        justify-content: center;
+
+        .Nav-icons {
+            background-color: #F6F6F6;
+            height: 3rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+
+            #clickable-icon {
+                transition: transform 0.3s;
+            }
+
+            #clickable-icon.clicked {
+                transform: scale(1.2);
+            }
+
+        }
+    }
+}

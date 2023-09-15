@@ -43,8 +43,45 @@
         }
     }
 
-    .closeMenu{
+    .closeMenu {
         margin-top: 50em;
     }
 }
 
+@media (min-width: 414px) {
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 200px;
+        height: 100%;
+        padding-left: 30px;
+        padding-top: 60px;
+        background-color: var(--sub-color);
+        color: white;
+        transition: left 0.3s ease-in-out;
+        z-index: 999;
+
+        &.open {
+            left: 0;
+        }
+
+        a {
+            margin-top: 3em;
+            display: block;
+            padding: 5px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.2s ease-in-out;
+
+            &:hover {
+                background-color: #444;
+            }
+        }
+
+        .closeMenu {
+            margin-top: 50em;
+        }
+    }
+}
