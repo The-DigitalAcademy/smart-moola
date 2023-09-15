@@ -154,3 +154,21 @@ button:hover {
     text-align: center;
     justify-content: center;
 }
+
+@media (min-width:414px) {
+    .container {
+        input, label, span, p, div{
+            font-size: large;
+            font-weight: 400;
+        }
+    }
+
+    .airesponse{
+        font-size: larger;
+        font-weight: 400;
+    }
+
+    .btn .btn-primary:hover{
+        background-color: var(--sub-color);
+    }
+}

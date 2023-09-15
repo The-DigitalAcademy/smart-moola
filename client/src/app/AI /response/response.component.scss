@@ -13,6 +13,7 @@
     .header {
 
       margin-top: 4em;
+
       .card {
         background-color: aliceblue;
         color: var(--main-color);
@@ -21,7 +22,7 @@
         font-size: 20px;
         text-align: center;
         font-family: Arial, Helvetica, sans-serif;
-       
+
       }
     }
 
@@ -40,7 +41,7 @@
       border-radius: 4px;
     }
 
-   
+
 
     .card2 {
       // background-color: #fff;
@@ -53,7 +54,7 @@
       margin-top: -3em;
       bottom: -10em;
       width: 100%;
-     left: 0em;
+      left: 0em;
       display: block;
       border-radius: 15px;
       border: 1px solid;
@@ -64,12 +65,37 @@
       border-radius: 3em;
       margin-top: 12em;
 
-      .landing{
+      .landing {
         margin-top: 20em;
       }
 
-      
+
 
     }
+  }
+}
+
+@media (min-width: 414px) {
+  .container {
+    #submitBS {
+      background-color: var(--WHITE);
+      box-shadow: 5px 5px var(--sub-color);
+      color: var(--main-color);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #submitBS:hover {
+      background-color: var(--sub-color);
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      color: var(--WHITE);
+    }
+  }
+
+  .submit-1 {
+    background-color: var(--sub-color);
+  }
+
+  a {
+    background-color: var(--WHITE);
   }
 }

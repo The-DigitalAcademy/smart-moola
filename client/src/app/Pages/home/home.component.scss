@@ -311,6 +311,10 @@
           a {
             margin-top: 3em;
           }
+
+          .btn-primary:hover{
+            background-color: var(--sub-color);
+          }
         }
 
         .cardElem {
