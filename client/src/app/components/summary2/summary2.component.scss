@@ -90,3 +90,28 @@
     top: 7em;
   }
 }
+
+@media(min-width:414px) {
+  .container{
+    margin-left: 15em;
+    padding: 20px;
+
+    h4, p{
+      font-size: large;
+      font-weight: 700;
+    }
+
+    .submit{
+      width: 99%;
+      margin-left: 0.5em;
+      margin-bottom: 2em;
+    }
+
+    .submit:hover{
+      width: 99%;
+      margin-left: 0.5em;
+      margin-bottom: 2em;
+      background-color: var(--sub-color);
+    }
+  }
+}

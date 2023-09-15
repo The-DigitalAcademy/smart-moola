@@ -101,3 +101,17 @@
     }
 
 }
+
+@media(min-width:414px){
+   .container{
+    h2{
+        text-align: center;
+        margin-left: 10em;
+    }
+
+    p{
+        font-size: large;
+        font-weight: 700;
+    }
+   }
+}
