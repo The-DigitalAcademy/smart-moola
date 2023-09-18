@@ -158,6 +158,7 @@ button:hover {
 
 @media (min-width:414px) {
     .container {
+        height: 50%;
 
         input,
         label,
@@ -166,23 +167,6 @@ button:hover {
         div {
             font-size: large;
             font-weight: 400;
-        }
-
-        .pgbar {
-            // margin-top: 1%;
-            width: 100%;
-            // height: 1rem;
-            // margin-left: 2%;
-            // margin-right: 2%;
-            // margin-bottom: 1%;
-            // padding-top: 5%;
-            // background-color: pink;
-
-            .progress-bar {
-                background-color: var(--sub-color);
-                width: 100%;
-
-            }
         }
     }
 
@@ -196,6 +180,7 @@ button:hover {
     }
 
     .container {
+
         .header {
             .pgbar {
                 margin-top: 1%;
@@ -205,15 +190,13 @@ button:hover {
                 margin-bottom: 1%;
                 padding-top: 5%;
                 width: 100%;
-                .progress-bar{
+
+                .progress-bar {
                     background-color: var(--sub-color);
                 }
             }
 
         }
     }
-
-
-
 
 }
