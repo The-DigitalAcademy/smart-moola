@@ -7,6 +7,7 @@ import { UsersService } from '../../services/users.service';
 import { AuthGuardService } from '../../services/auth.guard';
 import Swal from 'sweetalert2';
 import { LoginResponse } from 'src/app/interface/users';
+import { LoaderService } from 'src/app/services/Loader';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,8 @@ export class LoginComponent {
     private fb: FormBuilder,
     private usersService: UsersService,
     private router: Router,
-    private auth: AuthGuardService
+    private auth: AuthGuardService,
+    private loaderService: LoaderService
 
   ) {
     this.form = this.fb.group({
@@ -32,22 +34,26 @@ export class LoginComponent {
 
   submitForm() {
     if (this.form.valid) {
+
+      this.loaderService.startLoader();
+
       this.usersService.userLogin(this.form.value).subscribe(
         (data: LoginResponse) => {
           console.log("userData", data);
-  
+
           const accessToken = data.accessToken;
           const loggedInUserEmail = data.email;
           const id = data.id;
           const fullName = data.fullName;
-  
+
           localStorage.setItem('Token', accessToken);
           localStorage.setItem('Email', loggedInUserEmail);
           localStorage.setItem('id', id);
           localStorage.setItem('FullName', fullName);
-  
+
           // Check if accessToken is present and valid
           if (accessToken && accessToken !== 'undefined') {
+            this.loaderService.stopLoader();
             this.router.navigate(['/home']);
           } else {
             Swal.fire({
@@ -58,6 +64,7 @@ export class LoginComponent {
           }
         },
         (error: any) => {
+          this.loaderService.stopLoader();
           Swal.fire({
             icon: 'error',
             title: 'Login Failed!',
@@ -67,6 +74,6 @@ export class LoginComponent {
       );
     }
   }
-  
+
 
 }
