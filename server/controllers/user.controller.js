@@ -281,7 +281,5 @@ module.exports = {
   login,
   sendEmail,
   isOtpValid,
-  updatePassword,
-
-  // deleteAll
+  updatePassword
 };
