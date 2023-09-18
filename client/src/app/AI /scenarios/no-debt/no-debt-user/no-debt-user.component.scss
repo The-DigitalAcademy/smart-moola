@@ -27,6 +27,11 @@
         color: #669bbc;
         border: 1px solid;
         font-size: 18x;
+
+        .p-1 {
+          width: 100%;
+          height: 14em;
+        }
       }
     }
   }
@@ -96,7 +101,8 @@
 }
 
 .progress-bar {
-  background-color: #669bbc; /* Default background color */
+  background-color: #669bbc;
+  /* Default background color */
 }
 
 @media (min-width:414px) {
@@ -138,17 +144,25 @@
 
     .column {
       .card {
-        height: 25vh;
+        // height: 25vh;
+        // height: auto;
+        // width: 100%;
+
+        height: auto;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
 
         img {
-          width: 50%;
-          height: 100vh;
+          max-width: 100%;
+          height: auto;
         }
 
         .p-1 {
-          width: 50%;
-          height: 30vh;
+          max-width: 100%;
+          height: auto;
         }
       }
 
